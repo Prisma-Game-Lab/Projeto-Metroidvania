@@ -9,11 +9,15 @@ public class PlayerMovement : MonoBehaviour
     // Variaveis de controle
     public float jumpForce;
     public float speed;
+    public float holdTime;
 
     // Variaveis privadas 
     private Rigidbody2D _rb;
     private Vector2 _move;
     private bool _onFloor = true;
+    private bool _jumpHold = false;
+    private float _jumpProgression = 0f;
+
 
     private void Start()
     {
@@ -27,18 +31,62 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Esse evento é chamado quando o jogador aperta o botão de pulo 
-    public void OnPlayerJump()
+    public void OnPlayerJump(InputAction.CallbackContext ctx)
     {
-        if(_onFloor)
-            _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        Debug.Log(ctx.started);
+        
+        if (_onFloor && ctx.started)
+        {
+            _jumpHold = true;
+            _jumpProgression = 0f;
+            Debug.Log("Pulou!");
+        }
 
-        _onFloor = false; 
+        if(_jumpHold && ctx.canceled)
+        {
+            _rb.AddForce(new Vector2(0, jumpForce*(_jumpProgression/holdTime)), ForceMode2D.Impulse);
+            _jumpHold = false;
+            _onFloor = false;
+        }
+
+        //Debug.Log("Pulou!");
+         
     }
 
     private void Update()
     {
-        Vector2 m = _move * speed * Time.deltaTime;
-        transform.Translate(new Vector2(m.x, 0f), Space.World);
+       /* Vector2 m = _move * speed * Time.deltaTime;
+        _rb.AddForce(new Vector2(m.x*speed,  0));
+        //transform.Translate(new Vector2(m.x, 0f), Space.World);
+
+        if (_jumpHold)
+        {
+            _jumpProgression += Time.deltaTime;
+            if(_jumpProgression >= holdTime)
+            {
+                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                _jumpHold = false;
+                _onFloor = false;
+            }
+        }*/
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 m = _move * speed * Time.fixedDeltaTime;
+        _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+        //transform.Translate(new Vector2(m.x, 0f), Space.World);
+
+        if (_jumpHold)
+        {
+            _jumpProgression += Time.fixedDeltaTime;
+            if (_jumpProgression >= holdTime)
+            {
+                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                _jumpHold = false;
+                _onFloor = false;
+            }
+        }
     }
 
 
