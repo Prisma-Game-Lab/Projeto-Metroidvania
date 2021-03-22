@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _move;
     private bool _onFloor = true;
+    private bool _isFlipped = false;
     private bool _jumpHold = false;
     private float _jumpProgression = 0f;
 
@@ -53,28 +54,11 @@ public class PlayerMovement : MonoBehaviour
          
     }
 
-    private void Update()
-    {
-       /* Vector2 m = _move * speed * Time.deltaTime;
-        _rb.AddForce(new Vector2(m.x*speed,  0));
-        //transform.Translate(new Vector2(m.x, 0f), Space.World);
-
-        if (_jumpHold)
-        {
-            _jumpProgression += Time.deltaTime;
-            if(_jumpProgression >= holdTime)
-            {
-                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                _jumpHold = false;
-                _onFloor = false;
-            }
-        }*/
-    }
-
     private void FixedUpdate()
     {
         Vector2 m = _move * speed * Time.fixedDeltaTime;
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+        Flip();
         //transform.Translate(new Vector2(m.x, 0f), Space.World);
 
         if (_jumpHold)
@@ -89,6 +73,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // flipar no eixo x quando o player muda de direção 
+    private void Flip()
+    {
+        // movendo para a esquerda não flipado. Vai flipar 
+        if (!_isFlipped && _move.x < 0)
+        {
+            Vector3 newLocalScale = transform.localScale;
+            newLocalScale.x *= -1;
+            transform.localScale = newLocalScale;
+            _isFlipped = true;
+        }
+
+        // movendo para a direta flipado. Vai flipar 
+        if (_isFlipped && _move.x > 0)
+        {
+            Vector3 newLocalScale = transform.localScale;
+            newLocalScale.x *= -1;
+            transform.localScale = newLocalScale;
+            _isFlipped = false;
+        }
+            
+    }
 
     // Detectando colisão com o chão 
     private void OnCollisionEnter2D(Collision2D collision)
