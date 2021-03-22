@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _jumpHold = true;
             _jumpProgression = 0f;
-            Debug.Log("Pulou!");
         }
 
         if(_jumpHold && ctx.canceled)

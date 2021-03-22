@@ -1387,7 +1387,7 @@ MonoBehaviour:
       - m_Target: {fileID: 773858604}
         m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
         m_MethodName: OnPlayerAttack
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1472,6 +1472,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  attackParticle: {fileID: 875834742421117918, guid: 1708eaac8944b48aebebfcf0f08fd253, type: 3}
 --- !u!1 &793624671
 GameObject:
   m_ObjectHideFlags: 0
