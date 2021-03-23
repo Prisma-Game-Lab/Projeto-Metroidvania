@@ -17,6 +17,12 @@ public class PlayerAttack : MonoBehaviour
     //attackRate: Quantas vezes dentro de 1 segundo 
     public float attackRate = 0.5f;
     private float _nextAttackTime = 0f;
+    private PlayerMovement _playerMovement;
+
+    private void Start()
+    {
+        _playerMovement = gameObject.GetComponent<PlayerMovement>();
+    }
 
     // Chamado quando aciona a ação de ataque. 
     public void OnPlayerAttack(InputAction.CallbackContext ctx)
@@ -32,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 // Realizar dano no inimigo
-                enemy.GetComponent<EnemyDamage>().TakeDamage();
+                enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
             }
 
             // resetar o nextAttackTime

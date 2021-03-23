@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _move;
     private bool _onFloor = true;
-    private bool _isFlipped = false;
+    [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private float _jumpProgression = 0f;
 
@@ -76,21 +76,21 @@ public class PlayerMovement : MonoBehaviour
     private void Flip()
     {
         // movendo para a esquerda não flipado. Vai flipar 
-        if (!_isFlipped && _move.x < 0)
+        if (!isFlipped && _move.x < 0)
         {
             Vector3 newLocalScale = transform.localScale;
             newLocalScale.x *= -1;
             transform.localScale = newLocalScale;
-            _isFlipped = true;
+            isFlipped = true;
         }
 
         // movendo para a direta flipado. Vai flipar 
-        if (_isFlipped && _move.x > 0)
+        if (isFlipped && _move.x > 0)
         {
             Vector3 newLocalScale = transform.localScale;
             newLocalScale.x *= -1;
             transform.localScale = newLocalScale;
-            _isFlipped = false;
+            isFlipped = false;
         }
             
     }

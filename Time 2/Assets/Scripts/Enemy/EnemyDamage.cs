@@ -15,19 +15,26 @@ public class EnemyDamage : MonoBehaviour
     public bool CanDamage = true;
     public int enemyLife = 1;
 
+    private Rigidbody2D _rb;
+
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(bool playerFliped)
     {
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
         if (enemyLife == 0)
             CanDamage = false;
         StartCoroutine(FlashSprite());
-    }
+        if(!playerFliped)
+            _rb.AddForce(Vector2.right * 3f, ForceMode2D.Impulse);
+        else
+            _rb.AddForce(Vector2.right * -3f, ForceMode2D.Impulse);
+    }   
    
     ///minAlpha: valor minimo de alpha 
     ///maxAlpha: valor maximo de alpha
