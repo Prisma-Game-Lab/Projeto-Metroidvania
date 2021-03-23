@@ -5,20 +5,29 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
+    // attackPoint; Transforme de onde ocorre o ataque
+    // attackRange: raio de efeito do ataque
+    // enemyLayers: Layer dos inimigos
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public ParticleSystem attackParticle;
 
+    // Variaveis para o controle de tempo do ataque
+    //attackRate: Quantas vezes dentro de 1 segundo 
+    public float attackRate = 0.5f;
+    private float _nextAttackTime = 0f;
+
     // Chamado quando aciona a ação de ataque. 
     public void OnPlayerAttack(InputAction.CallbackContext ctx)
     {
         // Fazer a animação de attack
-        if (ctx.started) {
+        if (ctx.started && Time.time >= _nextAttackTime) {
+
             // Detectar se tem inimigos no range
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
             ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
+
             // Realizar dano nos inimigos
             foreach (Collider2D enemy in hitEnemies)
             {
@@ -26,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
                 enemy.GetComponent<EnemyDamage>().TakeDamage();
             }
 
+            // resetar o nextAttackTime
+            _nextAttackTime = Time.time + 1f / attackRate;
         }
         
     }

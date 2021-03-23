@@ -241,6 +241,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "GlobalActions",
+            "id": "4bfba9da-ed43-49b5-9f49-22a6fcb8b732",
+            "actions": [
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "5fb57970-bbde-43d3-bc77-ae249eaa9d55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4aac7638-eba3-41af-bf3a-651816e5867c",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67112626-bd01-4fb7-b0c9-b2b55a38aaac",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

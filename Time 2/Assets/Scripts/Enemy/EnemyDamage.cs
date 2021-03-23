@@ -12,6 +12,9 @@ public class EnemyDamage : MonoBehaviour
     public float interval = 0.1f;
     public float duration = 0.4f;
 
+    public bool CanDamage = true;
+    public int enemyLife = 1;
+
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
@@ -19,6 +22,10 @@ public class EnemyDamage : MonoBehaviour
 
     public void TakeDamage()
     {
+        // MUDAR SOMENTE PARA TESTE 
+        enemyLife -= 1;
+        if (enemyLife == 0)
+            CanDamage = false;
         StartCoroutine(FlashSprite());
     }
    
@@ -51,6 +58,9 @@ public class EnemyDamage : MonoBehaviour
         }
 
         _sr.color = colorNow;
-        Destroy(gameObject);
+
+        // MUDAR SOMENTE PARA TESTE 
+        if(enemyLife == 0)
+            Destroy(gameObject);
     }
 }
