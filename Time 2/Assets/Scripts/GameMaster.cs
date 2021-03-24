@@ -10,7 +10,7 @@ public class GameMaster : MonoBehaviour
     public void OnReset(InputAction.CallbackContext ctx)
     {
         if(ctx.started)
-            SceneManager.LoadScene("TestScene");
+            SceneManager.LoadScene("TestScene2");
     }
 
 }

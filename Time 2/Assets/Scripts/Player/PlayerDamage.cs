@@ -18,6 +18,7 @@ public class PlayerDamage : MonoBehaviour
     public float interval = 0.1f;
     public float duration = 0.4f;
 
+
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     private bool _takingDamage;
@@ -40,6 +41,14 @@ public class PlayerDamage : MonoBehaviour
             }
             
         }
+
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Water")// acrescentar e não tiver a habilidade de barco depois
+            KillPlayer();
 
     }
 
@@ -92,15 +101,20 @@ public class PlayerDamage : MonoBehaviour
     }
 
 
+    public void KillPlayer()
+    {
+        LifeHud.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        GameOverText.SetActive(true);
+        Destroy(gameObject);
+    }
+
     // MUDAR IMPLEMENTACAO SOMENTE PARA TESTE
     private void RemoveLife()
     {
         actualLife -= 1;
         if(actualLife <= 0)
         {
-            LifeHud.gameObject.transform.GetChild(actualLife).gameObject.SetActive(false);
-            GameOverText.SetActive(true);
-            Destroy(gameObject);
+            KillPlayer();
         }
         else
         {
@@ -109,5 +123,7 @@ public class PlayerDamage : MonoBehaviour
       
 
     }
+
+    
 
 }
