@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float speed;
     public float holdTime;
+    public float detectGroundRange;
+    public LayerMask groundMask;
 
     // Variaveis privadas 
     private Rigidbody2D _rb;
     private Vector2 _move;
-    private bool _onFloor = true;
+    [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private float _jumpProgression = 0f;
 
@@ -35,46 +37,27 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(ctx.started);
         
-        if (_onFloor && ctx.started)
+        if (IsGrounded() && ctx.started)
         {
             _jumpHold = true;
             _jumpProgression = 0f;
-            Debug.Log("Pulou!");
         }
 
         if(_jumpHold && ctx.canceled)
         {
             _rb.AddForce(new Vector2(0, jumpForce*(_jumpProgression/holdTime)), ForceMode2D.Impulse);
             _jumpHold = false;
-            _onFloor = false;
         }
 
         //Debug.Log("Pulou!");
          
     }
 
-    private void Update()
-    {
-       /* Vector2 m = _move * speed * Time.deltaTime;
-        _rb.AddForce(new Vector2(m.x*speed,  0));
-        //transform.Translate(new Vector2(m.x, 0f), Space.World);
-
-        if (_jumpHold)
-        {
-            _jumpProgression += Time.deltaTime;
-            if(_jumpProgression >= holdTime)
-            {
-                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                _jumpHold = false;
-                _onFloor = false;
-            }
-        }*/
-    }
-
     private void FixedUpdate()
     {
         Vector2 m = _move * speed * Time.fixedDeltaTime;
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+        Flip();
         //transform.Translate(new Vector2(m.x, 0f), Space.World);
 
         if (_jumpHold)
@@ -84,19 +67,61 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _jumpHold = false;
-                _onFloor = false;
             }
         }
     }
 
+    // flipar no eixo x quando o player muda de direção 
+    private void Flip()
+    {
+        // movendo para a esquerda não flipado. Vai flipar 
+        if (!isFlipped && _move.x < 0)
+        {
+            Vector3 newLocalScale = transform.localScale;
+            newLocalScale.x *= -1;
+            transform.localScale = newLocalScale;
+            isFlipped = true;
+        }
+
+        // movendo para a direta flipado. Vai flipar 
+        if (isFlipped && _move.x > 0)
+        {
+            Vector3 newLocalScale = transform.localScale;
+            newLocalScale.x *= -1;
+            transform.localScale = newLocalScale;
+            isFlipped = false;
+        }
+            
+    }
 
     // Detectando colisão com o chão 
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private bool IsGrounded()
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/2);
+        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, groundMask);
+        
+        foreach (Collider2D ground in hitGround)
         {
-            _onFloor = true;
+            if (ground != null)
+                return true;
         }
+
+        return false;
+
+
     }
+
+    private void OnDrawGizmosSelected()
+    {
+
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/2);
+        if (hitPosition == null)
+            return;
+
+        Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
+    }
+
+
 
 }
