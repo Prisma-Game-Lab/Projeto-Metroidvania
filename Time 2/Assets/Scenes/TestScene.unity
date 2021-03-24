@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 2
+  magnetude: 0.2
   enemyMovement: 0
 --- !u!1 &773858597
 GameObject:
@@ -1845,6 +1845,10 @@ MonoBehaviour:
   jumpForce: 8
   speed: 15
   holdTime: 0.1
+  detectGroundRange: 0.1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
   isFlipped: 0
 --- !u!114 &773858604
 MonoBehaviour:
@@ -2040,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 2
+  magnetude: 0.2
   enemyMovement: 0
 --- !u!1 &943525896
 GameObject:
@@ -2225,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 2
+  magnetude: 0.2
   enemyMovement: 0
 --- !u!1 &1523260811
 GameObject:
@@ -2380,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 2
+  magnetude: 0.2
   enemyMovement: 0
 --- !u!1 &1567116446
 GameObject:
@@ -2468,7 +2472,7 @@ GameObject:
   - component: {fileID: 1582495386}
   - component: {fileID: 1582495385}
   - component: {fileID: 1582495384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -2498,7 +2502,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1582495382}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b7283e00c4a6fed4892c2fe583545a28, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

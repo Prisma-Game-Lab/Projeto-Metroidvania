@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float speed;
     public float holdTime;
+    public float detectGroundRange;
+    public LayerMask groundMask;
 
     // Variaveis privadas 
     private Rigidbody2D _rb;
     private Vector2 _move;
-    private bool _onFloor = true;
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private float _jumpProgression = 0f;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(ctx.started);
         
-        if (_onFloor && ctx.started)
+        if (IsGrounded() && ctx.started)
         {
             _jumpHold = true;
             _jumpProgression = 0f;
@@ -46,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.AddForce(new Vector2(0, jumpForce*(_jumpProgression/holdTime)), ForceMode2D.Impulse);
             _jumpHold = false;
-            _onFloor = false;
         }
 
         //Debug.Log("Pulou!");
@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 _jumpHold = false;
-                _onFloor = false;
             }
         }
     }
@@ -96,12 +95,33 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Detectando colisão com o chão 
-    private void OnCollisionEnter2D(Collision2D collision)
+    
+    private bool IsGrounded()
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/2);
+        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, groundMask);
+        
+        foreach (Collider2D ground in hitGround)
         {
-            _onFloor = true;
+            if (ground != null)
+                return true;
         }
+
+        return false;
+
+
     }
+
+    private void OnDrawGizmosSelected()
+    {
+
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/2);
+        if (hitPosition == null)
+            return;
+
+        Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
+    }
+
+
 
 }
