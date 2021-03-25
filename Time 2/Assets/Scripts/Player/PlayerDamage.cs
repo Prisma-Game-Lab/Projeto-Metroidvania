@@ -45,13 +45,6 @@ public class PlayerDamage : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Water")// acrescentar e não tiver a habilidade de barco depois
-            KillPlayer();
-
-    }
-
     // Função auxiliar para monstrar a área do ataque
     private void OnDrawGizmosSelected()
     {

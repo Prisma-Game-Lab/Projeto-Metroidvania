@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     // Esse evento é chamado quando o jogador aperta o botão de pulo 
     public void OnPlayerJump(InputAction.CallbackContext ctx)
     {
-        Debug.Log(ctx.started);
+        //Debug.Log(ctx.started);
         
         if (IsGrounded() && ctx.started)
         {
