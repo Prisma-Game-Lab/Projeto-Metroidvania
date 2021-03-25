@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   CanDamage: 1
-  enemyLife: 1
+  enemyLife: 3
 --- !u!212 &761239608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  magnetude: 0.3
   enemyMovement: 0
 --- !u!1 &773858597
 GameObject:
@@ -1842,8 +1842,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff72812aa5c041f0a8d2d64db94523b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 8
-  speed: 15
+  jumpForce: 7
+  speed: 16
   holdTime: 0.1
   detectGroundRange: 0.1
   groundMask:
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 943525897}
-  attackRange: 0.2
+  attackRange: 0.4
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   CanDamage: 1
-  enemyLife: 1
+  enemyLife: 3
 --- !u!212 &793624675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2044,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  magnetude: 0.3
   enemyMovement: 0
 --- !u!1 &943525896
 GameObject:
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   CanDamage: 1
-  enemyLife: 1
+  enemyLife: 3
 --- !u!212 &1106327240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2229,7 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  magnetude: 0.3
   enemyMovement: 0
 --- !u!1 &1523260811
 GameObject:
@@ -2371,7 +2371,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   CanDamage: 1
-  enemyLife: 1
+  enemyLife: 3
 --- !u!114 &1523260817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,7 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  magnetude: 0.3
   enemyMovement: 0
 --- !u!1 &1567116446
 GameObject:
