@@ -21,4 +21,16 @@ public class SkillItem : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        VerticalMovement();
+    }
+
+    // Realização de movimento vertical simples
+    private void VerticalMovement()
+    {
+        /// fazer a skill ficar pulando 
+        transform.position = transform.position + transform.up * Mathf.Sin(3f*Time.time) * 1f/50f;
+    }
+
 }

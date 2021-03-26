@@ -10,8 +10,10 @@ public class PlayerAttack : MonoBehaviour
     // enemyLayers: Layer dos inimigos
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
     public ParticleSystem attackParticle;
+
+    // variaves para ver se já possui o ataque
+    public bool obtained = false;
 
     // Variaveis para o controle de tempo do ataque
     //attackRate: Quantas vezes dentro de 1 segundo 
@@ -28,10 +30,10 @@ public class PlayerAttack : MonoBehaviour
     public void OnPlayerAttack(InputAction.CallbackContext ctx)
     {
         // Fazer a animação de attack
-        if (ctx.started && Time.time >= _nextAttackTime) {
-
+        if (ctx.started && Time.time >= _nextAttackTime && obtained) {
+            LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
             // Detectar se tem inimigos no range
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);
             ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
 
             // Realizar dano nos inimigos

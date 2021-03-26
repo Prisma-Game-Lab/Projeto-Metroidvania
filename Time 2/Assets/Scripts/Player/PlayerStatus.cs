@@ -7,6 +7,7 @@ using UnityEngine;
 public enum PlayerSkill
 {
     Normal,
+    AttackSkill,
     BoatMode
 }
 
@@ -29,10 +30,21 @@ public class PlayerStatus : MonoBehaviour
 
     public void SetPlayerSkill(PlayerSkill skill, string description)
     {
-        if (skill == PlayerSkill.BoatMode) { 
-            gameObject.GetComponent<BoatSkill>().obtained = true;
-            GameMaster.instance.ShowSkillDescription(description);
+
+        switch (skill)
+        {
+            case  PlayerSkill.AttackSkill:
+                gameObject.GetComponent<PlayerAttack>().obtained = true;
+                break;
+            case PlayerSkill.BoatMode:
+                gameObject.GetComponent<BoatSkill>().obtained = true;
+                break;
+            default:
+                break;
         }
+
+        // Mostrar a descri??o de ajuda asobre a habilidade 
+        GameMaster.instance.ShowSkillDescription(description);
     }
 
 }
