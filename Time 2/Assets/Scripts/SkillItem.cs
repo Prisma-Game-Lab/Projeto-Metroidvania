@@ -10,6 +10,12 @@ public class SkillItem : MonoBehaviour
     // texto explicativo
     public string helpDescription;
 
+    public float speed;
+
+    public float verticalOffset;
+
+    // movementControl
+    private bool _back = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,8 +35,8 @@ public class SkillItem : MonoBehaviour
     // Realização de movimento vertical simples
     private void VerticalMovement()
     {
-        /// fazer a skill ficar pulando 
-        transform.position = transform.position + transform.up * Mathf.Sin(3f*Time.time) * 1f/80f;
+        Vector3 posTop = new Vector3(transform.position.x, transform.position.y + verticalOffset/100f, transform.position.z);
+        Vector3 posBottom = new Vector3(transform.position.x, transform.position.y - verticalOffset/100f, transform.position.z);
+        transform.position = Vector3.Lerp(posTop, posBottom, Mathf.PingPong(Time.time * speed, 1.0f));
     }
-
 }
