@@ -30,7 +30,7 @@ public class SkillItem : MonoBehaviour
     private void VerticalMovement()
     {
         /// fazer a skill ficar pulando 
-        transform.position = transform.position + transform.up * Mathf.Sin(3f*Time.time) * 1f/50f;
+        transform.position = transform.position + transform.up * Mathf.Sin(3f*Time.time) * 1f/80f;
     }
 
 }

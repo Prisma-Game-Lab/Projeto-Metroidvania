@@ -27,7 +27,7 @@ public class GameMaster : MonoBehaviour
     public void OnReset(InputAction.CallbackContext ctx)
     {
         if(ctx.started)
-            SceneManager.LoadScene("TestScene2");
+            SceneManager.LoadScene("POC");
     }
 
     public void ShowSkillDescription(string description)
