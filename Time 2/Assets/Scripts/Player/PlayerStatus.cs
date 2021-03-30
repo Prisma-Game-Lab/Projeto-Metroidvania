@@ -57,23 +57,20 @@ public class PlayerStatus : MonoBehaviour
             case  PlayerSkill.AttackSkill:
                 gameObject.GetComponent<PlayerAttack>().obtained = true;
                 sword = true;
-                SaveSystem.SavePlayer(this);
                 break;
             case PlayerSkill.BoatMode:
                 gameObject.GetComponent<BoatSkill>().obtained = true;
-                boat = true; 
-                SaveSystem.SavePlayer(this);
+                boat = true;
                 break;
             case PlayerSkill.Normal:
                 break;
             case PlayerSkill.PlaneMode:
                 gameObject.GetComponent<PlaneSkill>().obtained = true;
                 break;
-            default:
-                break;
         }
 
         // Mostrar a descricao de ajuda asobre a habilidade 
+        SaveSystem.SavePlayer(this);
         GameMaster.instance.ShowSkillDescription(description);
     }
 

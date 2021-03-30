@@ -37,4 +37,9 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void DeleteSave()
+    {
+        if(File.Exists(path)) File.Delete((path));
+    }
 }
