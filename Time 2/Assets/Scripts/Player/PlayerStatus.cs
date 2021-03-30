@@ -8,7 +8,8 @@ public enum PlayerSkill
 {
     Normal,
     AttackSkill,
-    BoatMode
+    BoatMode,
+    PlaneMode
 }
 
 public class PlayerStatus : MonoBehaviour
@@ -38,6 +39,9 @@ public class PlayerStatus : MonoBehaviour
                 break;
             case PlayerSkill.BoatMode:
                 gameObject.GetComponent<BoatSkill>().obtained = true;
+                break;
+            case PlayerSkill.PlaneMode:
+                gameObject.GetComponent<PlaneSkill>().obtained = true;
                 break;
             default:
                 break;

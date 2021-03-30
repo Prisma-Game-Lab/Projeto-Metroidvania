@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2348440294670770224}
   - component: {fileID: 2348440294670770225}
   - component: {fileID: 2348440294670770233}
+  - component: {fileID: 222069547470339807}
   - component: {fileID: 2348440294670770239}
   - component: {fileID: 5712722360280575630}
   - component: {fileID: 2348440294670770236}
@@ -101,6 +102,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9fa36fd41c8c4837b5b76539ce2f3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obtained: 0
+--- !u!114 &222069547470339807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e11a30d308301046a64d1a1b3112bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
@@ -286,10 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 2348440294905451806}
   attackRange: 0.4
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 64
   attackParticle: {fileID: 875834742421117918, guid: 1708eaac8944b48aebebfcf0f08fd253, type: 3}
+  obtained: 0
   attackRate: 2
 --- !u!114 &2348440294670770234
 MonoBehaviour:

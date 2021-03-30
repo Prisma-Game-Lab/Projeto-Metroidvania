@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -795,6 +795,95 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!1001 &734547655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.118948035
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9244576
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487357, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Name
+      value: Plane PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487357, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487359, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: skill
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487359, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: helpDescription
+      value: 'Use a tecla "C" ou "L1" para virar um barco '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.4666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9577691
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7363e221381d4e2f84728864951651a, type: 3}
 --- !u!1 &761239604
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,7 +1037,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  speed: 0
+  pointStart: {fileID: 0}
+  pointEnd: {fileID: 0}
   enemyMovement: 0
 --- !u!1 &773858597
 GameObject:
@@ -1298,6 +1389,46 @@ PrefabInstance:
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 528680517}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 4c630342-e33d-4055-b034-f63e256e7312
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: PlayerActions/PlaneSkill[/Keyboard/a]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1788687427}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlaneSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlaneSkill, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
 --- !u!1 &793624671
@@ -1453,7 +1584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  speed: 0
+  pointStart: {fileID: 0}
+  pointEnd: {fileID: 0}
   enemyMovement: 0
 --- !u!1 &943525896
 GameObject:
@@ -1497,6 +1630,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10762167
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.05980776
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
     - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1543,11 +1688,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 590784270923487357, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: m_Name
-      value: PowerUp (1)
+      value: Attack PowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 590784270923487359, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: helpDescription
       value: 'Use a tecla "Z" ou "quadrado" para atacar e quebrar coisas  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.13837634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.09807763
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7169812
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7363e221381d4e2f84728864951651a, type: 3}
@@ -1704,7 +1861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  speed: 0
+  pointStart: {fileID: 0}
+  pointEnd: {fileID: 0}
   enemyMovement: 0
 --- !u!1001 &1325121906
 PrefabInstance:
@@ -1972,6 +2131,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610598050}
   m_CullTransparentMesh: 1
+--- !u!114 &1788687427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 222069547470339807, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+  m_PrefabInstance: {fileID: 777555181}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e11a30d308301046a64d1a1b3112bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1868002526
 GameObject:
   m_ObjectHideFlags: 3
@@ -2303,6 +2473,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8113208
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.0978002
+      objectReference: {fileID: 0}
+    - target: {fileID: 590784270923487328, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08802067
+      objectReference: {fileID: 0}
     - target: {fileID: 590784270923487329, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -2349,11 +2531,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 590784270923487357, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: m_Name
-      value: PowerUp
+      value: Boat PowerUp
       objectReference: {fileID: 0}
     - target: {fileID: 590784270923487359, guid: d7363e221381d4e2f84728864951651a, type: 3}
       propertyPath: skill
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.27726117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772970228342775429, guid: d7363e221381d4e2f84728864951651a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.043075833
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7363e221381d4e2f84728864951651a, type: 3}
@@ -2492,7 +2686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_LocalPosition.x

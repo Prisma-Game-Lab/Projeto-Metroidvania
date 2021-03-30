@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     // Esse evento é chamado quando o jogador aperta o botão de pulo 
     public void OnPlayerJump(InputAction.CallbackContext ctx)
     {
+        PlayerSkill playerState = gameObject.GetComponent<PlayerStatus>().playerState;
+
+        if (playerState == PlayerSkill.BoatMode)//Nao pula quando se for barco
+            return;
         //Debug.Log(ctx.started);
         
         if (IsGrounded() && ctx.started)
@@ -121,7 +125,6 @@ public class PlayerMovement : MonoBehaviour
 
         Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
     }
-
 
 
 }

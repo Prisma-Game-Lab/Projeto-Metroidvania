@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "PlaneSkill",
+                    "type": "Button",
+                    "id": "4c630342-e33d-4055-b034-f63e256e7312",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -267,6 +275,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "BoatSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e55f9c00-a733-40a3-801f-5e66cb501349",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaneSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0423ef32-5243-4ed4-b0c8-6418ecb1ced5",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaneSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
