@@ -13,6 +13,10 @@ public class EnemyDamage : MonoBehaviour
     public float duration = 0.4f;
 
     public bool CanDamage = true;
+    
+    //forca que lanca o inimigo depois do ataque
+    public float damageMagnetude; 
+    
     public int enemyLife = 1;
 
     private Rigidbody2D _rb;
@@ -28,14 +32,19 @@ public class EnemyDamage : MonoBehaviour
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
         if (enemyLife == 0)
+        {
             CanDamage = false;
+        }
+
         StartCoroutine(FlashSprite());
         if(!playerFliped)
-            _rb.AddForce(Vector2.right * 3f, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
         else
-            _rb.AddForce(Vector2.right * -3f, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
     }   
-   
+    
+    // Funcao para ganhar de novo o aggro
+
     ///minAlpha: valor minimo de alpha 
     ///maxAlpha: valor maximo de alpha
     ///interval: intervalo de cada piscada em segundos

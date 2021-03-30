@@ -12,13 +12,14 @@ public class EnemyMovement : MonoBehaviour
     public Transform pointEnd;
 
     public SimpleEnemyMovements enemyMovement;
-
-    // movementControl
-    private bool _back = false;
+    
+    //state of the enemy 
+    [HideInInspector] public EnemyState enemyState = EnemyState.Idle;
+    
     // Update is called once per frame
     void Update()
     {
-        if(enemyMovement == SimpleEnemyMovements.Horizontal)
+        if(enemyMovement == SimpleEnemyMovements.Horizontal && enemyState == EnemyState.Idle)
         {
             HorizontalMovement();
         }
@@ -40,4 +41,10 @@ public enum SimpleEnemyMovements
 {
     Horizontal,
     Vertical
+}
+
+public enum EnemyState
+{
+    Idle,
+    Damaged
 }

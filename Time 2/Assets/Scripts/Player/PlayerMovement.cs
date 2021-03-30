@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Variaveis de controle
     public float jumpForce;
+    public float jumpDecreaseRate;
     public float speed;
     public float holdTime;
     public float detectGroundRange;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _move;
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
-    private float _jumpProgression = 0f;
+    private bool _jumpbreak = false;
 
 
     private void Start()
@@ -40,12 +41,14 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded() && ctx.started)
         {
             _jumpHold = true;
-            _jumpProgression = 0f;
+            _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
 
         if(_jumpHold && ctx.canceled)
         {
-            _rb.AddForce(new Vector2(0, jumpForce*(_jumpProgression/holdTime)), ForceMode2D.Impulse);
+            if (_rb.velocity.y > 0f)
+                _jumpbreak = true;
+            
             _jumpHold = false;
         }
 
@@ -55,19 +58,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 m = _move * speed * Time.fixedDeltaTime;
+        Vector2 m = _move * (speed * Time.fixedDeltaTime);
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
         Flip();
         //transform.Translate(new Vector2(m.x, 0f), Space.World);
 
-        if (_jumpHold)
+        if (_jumpbreak)
         {
-            _jumpProgression += Time.fixedDeltaTime;
-            if (_jumpProgression >= holdTime)
+            float yVelocity = _rb.velocity.y;
+            if ( yVelocity > 0f)
             {
-                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                _jumpHold = false;
+                _rb.velocity = new Vector2(_rb.velocity.x, yVelocity - jumpDecreaseRate);
             }
+            else
+                _jumpbreak = false;
         }
     }
 

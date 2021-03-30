@@ -1747,6 +1747,18 @@ PrefabInstance:
       propertyPath: speed
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770236, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770236, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: jumpDecreaseRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770236, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: detectGroundRange
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2348440294905451806, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.968
