@@ -36,7 +36,12 @@ public class GameMaster : MonoBehaviour
         HelpSkillText.SetActive(true);
         StartCoroutine(DisableHelperText());
     }
-
+    
+    // DELETE SAVE 
+    public void DeleteSave()
+    {
+        SaveSystem.DeleteSave();
+    }
 
     private IEnumerator DisableHelperText()
     {
