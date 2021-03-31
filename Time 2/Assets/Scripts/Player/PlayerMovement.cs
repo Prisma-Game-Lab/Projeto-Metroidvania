@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float holdTime;
     public float detectGroundRange;
+    public float flightGravity;
     public LayerMask groundMask;
 
     // Variaveis privadas 
@@ -48,8 +49,17 @@ public class PlayerMovement : MonoBehaviour
             _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
 
+        if(playerState==PlayerSkill.PlaneMode && !IsGrounded() && ctx.started)//se o player for aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
+        {
+            //Debug.Log("Voa");
+            _jumpHold = true;
+            _rb.gravityScale = flightGravity;
+        }
+
         if(_jumpHold && ctx.canceled)
         {
+            _rb.gravityScale = 1f;//corrige a gravidade quando o jogador solta o botao de pular
+
             if (_rb.velocity.y > 0f)
                 _jumpbreak = true;
             
@@ -66,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
         Flip();
         //transform.Translate(new Vector2(m.x, 0f), Space.World);
+        
+        if (IsGrounded())//corrige a gravidade quando o aviao toca o chao
+            _rb.gravityScale = 1f;
 
         if (_jumpbreak)
         {

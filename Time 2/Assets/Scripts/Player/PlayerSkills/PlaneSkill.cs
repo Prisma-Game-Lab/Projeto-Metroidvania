@@ -17,7 +17,7 @@ public class PlaneSkill : MonoBehaviour
     public void OnPlaneSkill(InputAction.CallbackContext ctx)
     {
         PlayerSkill playerState = gameObject.GetComponent<PlayerStatus>().playerState;
-        // apertou e não e barco
+        // apertou e nao e barco
 
         if (ctx.started && obtained)
         {
