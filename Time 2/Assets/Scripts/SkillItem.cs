@@ -14,9 +14,6 @@ public class SkillItem : MonoBehaviour
 
     public float verticalOffset;
 
-    // movementControl
-    private bool _back = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

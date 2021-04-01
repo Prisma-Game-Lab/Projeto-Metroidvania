@@ -37,7 +37,7 @@ public class PlayerStatus : MonoBehaviour
     {
         // checar se existe player a ser carregado 
         LoadPlayer();
-
+        
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -66,6 +66,7 @@ public class PlayerStatus : MonoBehaviour
                 break;
             case PlayerSkill.PlaneMode:
                 gameObject.GetComponent<PlaneSkill>().obtained = true;
+                airplane = true; 
                 break;
         }
 
@@ -93,7 +94,8 @@ public class PlayerStatus : MonoBehaviour
         // liberar as skills de acordo com o save 
         gameObject.GetComponent<BoatSkill>().obtained = boat;
         gameObject.GetComponent<PlayerAttack>().obtained = sword;
-        
+        gameObject.GetComponent<PlaneSkill>().obtained = airplane;
+
     }
 
 }

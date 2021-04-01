@@ -6,12 +6,16 @@ using UnityEngine.InputSystem;
 public class BoatSkill : MonoBehaviour
 {
     private SpriteRenderer _sr;
-
+    private Rigidbody2D _rb;
+    private float _playerGravity;
+    
     public bool obtained = false;
 
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _rb = gameObject.GetComponent<Rigidbody2D>();
+        _playerGravity = _rb.gravityScale; // gravidade original do player
     }
 
     public void OnBoatSkill(InputAction.CallbackContext ctx)
@@ -24,9 +28,10 @@ public class BoatSkill : MonoBehaviour
             if(playerState != PlayerSkill.BoatMode)
             {
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.BoatMode;
+                _rb.gravityScale = _playerGravity;
                 _sr.color = Color.blue;
             }
-            else if(playerState == PlayerSkill.BoatMode)
+            else
             {
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
                 _sr.color = Color.white;
