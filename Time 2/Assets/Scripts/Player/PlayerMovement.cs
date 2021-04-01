@@ -21,15 +21,19 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private bool _jumpbreak = false;
+    private SpriteRenderer _sr;
+
 
 
     private void Start()
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _sr = gameObject.GetComponent<SpriteRenderer>();
+
     }
 
-    // Esse evento é chamado quando o jogador mexe nos inputs de movimento 
-    public void OnPlayerMove(InputAction.CallbackContext ctx)
+        // Esse evento é chamado quando o jogador mexe nos inputs de movimento 
+        public void OnPlayerMove(InputAction.CallbackContext ctx)
     {
         _move = ctx.ReadValue<Vector2>();
     }
@@ -49,16 +53,26 @@ public class PlayerMovement : MonoBehaviour
             _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
 
-        if(playerState==PlayerSkill.PlaneMode && !IsGrounded() && ctx.started)//se o player for aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
+        /*if(playerState==PlayerSkill.PlaneMode && !IsGrounded() && ctx.started)//se o player for aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
         {
             //Debug.Log("Voa");
             _jumpHold = true;
             _rb.gravityScale = flightGravity;
+        }*/
+
+        if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && ctx.started)//se o player tiver o  aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
+        {
+            gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.PlaneMode;
+            _sr.color = Color.yellow;
+            _jumpHold = true;
+            _rb.gravityScale = flightGravity;
         }
 
-        if(_jumpHold && ctx.canceled)
+        if (_jumpHold && ctx.canceled)
         {
             _rb.gravityScale = 1f;//corrige a gravidade quando o jogador solta o botao de pular
+            gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
+            _sr.color = Color.white;
 
             if (_rb.velocity.y > 0f)
                 _jumpbreak = true;
@@ -72,13 +86,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        PlayerSkill playerState = gameObject.GetComponent<PlayerStatus>().playerState;
+
         Vector2 m = _move * (speed * Time.fixedDeltaTime);
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
         Flip();
         //transform.Translate(new Vector2(m.x, 0f), Space.World);
-        
-        if (IsGrounded())//corrige a gravidade quando o aviao toca o chao
-            _rb.gravityScale = 1f;
+
+        if (IsGrounded() && playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
+        {
+            _rb.gravityScale = 1f;//corrige a gravidade quando o aviao toca o chao
+            gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;//corrige a forma do player
+            _sr.color = Color.white;
+        }
 
         if (_jumpbreak)
         {

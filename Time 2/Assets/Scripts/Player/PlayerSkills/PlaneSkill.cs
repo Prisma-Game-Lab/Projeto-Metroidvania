@@ -14,12 +14,12 @@ public class PlaneSkill : MonoBehaviour
         _sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void OnPlaneSkill(InputAction.CallbackContext ctx)
+    /*public void OnPlaneSkill()
     {
         PlayerSkill playerState = gameObject.GetComponent<PlayerStatus>().playerState;
         // apertou e nao e barco
 
-        if (ctx.started && obtained)
+        if (obtained)
         {
             if (playerState != PlayerSkill.PlaneMode)
             {
@@ -34,5 +34,5 @@ public class PlaneSkill : MonoBehaviour
 
         }
 
-    }
+    }*/
 }
