@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         if(OnWater())
             return;
         
-        if (IsGrounded() && _playerStatus.playerState == PlayerSkill.BoatMode)//verificacao para quando o player retorna ao chao, depois de planar
+        if (IsGrounded() && _playerStatus.playerState == PlayerSkill.BoatMode) //verificacao para quando o player retorna ao chao, depois de planar
         {
             _rb.velocity = _rb.velocity = new Vector2(0f, _rb.velocity.y); 
         }
