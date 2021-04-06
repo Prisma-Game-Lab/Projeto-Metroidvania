@@ -88,8 +88,12 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
         Flip();
 
-        FlightBreak();
-        BoatBreak();
+        if (IsGrounded())
+        {
+            FlightBreak();
+            BoatBreak();
+        }
+
 
         if (_jumpbreak)
         {
@@ -105,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlightBreak()
     {
-        if (IsGrounded() && _playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
+        if (_playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
         {
             _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
@@ -119,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         if(OnWater())
             return;
         
-        if (IsGrounded() && _playerStatus.playerState == PlayerSkill.BoatMode) //verificacao para quando o player retorna ao chao, depois de planar
+        if (_playerStatus.playerState == PlayerSkill.BoatMode) //verificacao para quando o player retorna ao chao, depois de planar
         {
             _rb.velocity = _rb.velocity = new Vector2(0f, _rb.velocity.y); 
         }
@@ -159,7 +163,21 @@ public class PlayerMovement : MonoBehaviour
             layers = LayerMask.GetMask("BoatFloor", "Floor");
         }
         Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layers);
-
+        
+      
+        // Quebra chao caso seja a bolinha
+        if (_playerStatus.playerState == PlayerSkill.BallMode)
+        {
+            foreach (Collider2D colider in hitGround)
+            {
+                if (colider.CompareTag("BreakableFloor"))
+                {
+                    if (_rb.velocity.y <= -10f)
+                        Destroy(colider.gameObject);
+                }
+            }
+        }
+        
         // breake floors with ballmode 
 
         if (hitGround.Length > 0)
@@ -170,23 +188,6 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/2);
-        LayerMask layers = groundMask;
-        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layers);
-        if (_playerStatus.playerState == PlayerSkill.BallMode)
-        {
-            foreach (Collider2D colider in hitGround)
-            {
-                if (colider.CompareTag("BreakableFloor"))
-                {
-                    colider.GetComponent<EnemyDamage>().TakeStaticDamage();
-                }
-            }
-        }
-
-    }
 
     private bool OnWater()
     {
