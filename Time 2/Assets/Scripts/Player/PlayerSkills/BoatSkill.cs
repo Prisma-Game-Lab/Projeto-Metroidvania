@@ -8,6 +8,8 @@ public class BoatSkill : MonoBehaviour
     private SpriteRenderer _sr;
     private Rigidbody2D _rb;
     private float _playerGravity;
+    private Transform _playerTransform;
+    private Vector3 _originalLocalScale;
     
     public bool obtained = false;
 
@@ -16,6 +18,8 @@ public class BoatSkill : MonoBehaviour
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _playerGravity = _rb.gravityScale; // gravidade original do player
+        _playerTransform = transform;
+        _originalLocalScale = _playerTransform.localScale;
     }
 
     public void OnBoatSkill(InputAction.CallbackContext ctx)
@@ -28,6 +32,7 @@ public class BoatSkill : MonoBehaviour
             if(playerState != PlayerSkill.BoatMode)
             {
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.BoatMode;
+                _playerTransform.localScale = _originalLocalScale;
                 _rb.gravityScale = _playerGravity;
                 _sr.color = Color.blue;
             }
