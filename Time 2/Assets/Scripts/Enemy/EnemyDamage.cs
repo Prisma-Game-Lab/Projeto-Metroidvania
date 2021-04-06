@@ -41,7 +41,20 @@ public class EnemyDamage : MonoBehaviour
             _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
         else
             _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
-    }   
+    }
+
+    public void TakeStaticDamage()
+    {
+        // MUDAR SOMENTE PARA TESTE 
+        enemyLife -= 1;
+        if (enemyLife == 0)
+        {
+            CanDamage = false;
+        }
+        // MUDAR SOMENTE PARA TESTE 
+        if(enemyLife == 0)
+            Destroy(gameObject);
+    }
     
     // Funcao para ganhar de novo o aggro
 

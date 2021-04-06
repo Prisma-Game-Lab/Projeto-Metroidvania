@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "BallSkill",
+                    "type": "Button",
+                    "id": "7a355469-1a56-47c1-8c23-ea1894fa9f8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -297,6 +305,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "PlaneSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e8afd7c-cae0-4445-8a8c-201494517eec",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BallSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eac65c51-1819-4e7c-a0f9-5f1c2ef9b5ce",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BallSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

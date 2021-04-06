@@ -9,6 +9,7 @@ public enum PlayerSkill
 {
     Normal,
     AttackSkill,
+    BallMode,
     BoatMode,
     PlaneMode
 }
@@ -68,6 +69,10 @@ public class PlayerStatus : MonoBehaviour
                 gameObject.GetComponent<PlaneSkill>().obtained = true;
                 airplane = true; 
                 break;
+            case PlayerSkill.BallMode:
+                gameObject.GetComponent<BallSkill>().obtained = true;
+                ball = true; 
+                break;
         }
 
         // Mostrar a descricao de ajuda asobre a habilidade 
@@ -95,6 +100,7 @@ public class PlayerStatus : MonoBehaviour
         gameObject.GetComponent<BoatSkill>().obtained = boat;
         gameObject.GetComponent<PlayerAttack>().obtained = sword;
         gameObject.GetComponent<PlaneSkill>().obtained = airplane;
+        gameObject.GetComponent<BallSkill>().obtained = ball;
 
     }
 

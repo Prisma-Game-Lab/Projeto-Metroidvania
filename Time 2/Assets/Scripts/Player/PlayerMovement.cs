@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
@@ -64,11 +65,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (_jumpHold && ctx.canceled)
         {
-            _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
+           
             if (_playerStatus.playerState == PlayerSkill.PlaneMode)
             {
                 _playerStatus.playerState = PlayerSkill.Normal;
                 _sr.color = Color.white;
+                _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
             }
             
             if (_rb.velocity.y > 0f)
@@ -105,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && _playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
         {
-            _rb.gravityScale = 1f;//corrige a gravidade quando o aviao toca o chao
+            _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
             _sr.color = Color.white;
         }
@@ -158,12 +160,32 @@ public class PlayerMovement : MonoBehaviour
         }
         Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layers);
 
+        // breake floors with ballmode 
+
         if (hitGround.Length > 0)
         {
             return true; 
         }
         
         return false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/2);
+        LayerMask layers = groundMask;
+        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layers);
+        if (_playerStatus.playerState == PlayerSkill.BallMode)
+        {
+            foreach (Collider2D colider in hitGround)
+            {
+                if (colider.CompareTag("BreakableFloor"))
+                {
+                    colider.GetComponent<EnemyDamage>().TakeStaticDamage();
+                }
+            }
+        }
+
     }
 
     private bool OnWater()
