@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ShurikenSkill",
+                    "type": "Button",
+                    "id": "93159ea3-3824-4faa-88fd-b5b7bf15e196",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -327,6 +335,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "BallSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e886ade7-27a6-4c21-aff3-6f0a343e075c",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShurikenSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13acd7a3-dbdb-4593-8413-73ad1d86b38d",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShurikenSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

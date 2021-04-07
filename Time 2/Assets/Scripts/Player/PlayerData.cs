@@ -17,7 +17,7 @@ public class PlayerData
   public bool airplane;
   public bool sword;
   public bool ball;
-  
+  public bool shuriken;
   
   // Class init 
   public PlayerData(PlayerStatus player)
@@ -33,6 +33,7 @@ public class PlayerData
     airplane = player.airplane;
     sword = player.sword;
     ball = player.ball;
+    shuriken = player.shuriken;
     
   }
 }

@@ -11,7 +11,8 @@ public enum PlayerSkill
     AttackSkill,
     BallMode,
     BoatMode,
-    PlaneMode
+    PlaneMode,
+    ShurikenMode
 }
 
 public class PlayerStatus : MonoBehaviour
@@ -31,6 +32,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public bool airplane = false;
     [HideInInspector] public bool sword = false;
     [HideInInspector] public bool ball = false;
+    [HideInInspector] public bool shuriken = false;
     
     
     // Start is called before the first frame update
@@ -73,6 +75,10 @@ public class PlayerStatus : MonoBehaviour
                 gameObject.GetComponent<BallSkill>().obtained = true;
                 ball = true; 
                 break;
+            case PlayerSkill.ShurikenMode:
+                gameObject.GetComponent<ShurikenSkill>().obtained = true;
+                shuriken = true; 
+                break;
         }
 
         // Mostrar a descricao de ajuda asobre a habilidade 
@@ -95,12 +101,14 @@ public class PlayerStatus : MonoBehaviour
         airplane = data.airplane;
         sword = data.sword;
         ball = data.ball;
+        shuriken = data.shuriken;
         
         // liberar as skills de acordo com o save 
         gameObject.GetComponent<BoatSkill>().obtained = boat;
         gameObject.GetComponent<PlayerAttack>().obtained = sword;
         gameObject.GetComponent<PlaneSkill>().obtained = airplane;
         gameObject.GetComponent<BallSkill>().obtained = ball;
+        gameObject.GetComponent<ShurikenSkill>().obtained = shuriken;
 
     }
 

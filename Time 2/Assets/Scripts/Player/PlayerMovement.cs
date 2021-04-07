@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Variaveis de controle
     public float jumpForce;
+    public float wallJumpForce;
     public float jumpDecreaseRate;
     public float speed;
     public float holdTime;
@@ -46,22 +47,43 @@ public class PlayerMovement : MonoBehaviour
     // Esse evento é chamado quando o jogador aperta o botão de pulo 
     public void OnPlayerJump(InputAction.CallbackContext ctx)
     {
-        // if (playerState == PlayerSkill.BoatMode)//Nao pula quando se for barco
-        //     return;
-
-        if (IsGrounded() && ctx.started)
+        // comecou a pressionar o butao
+        if (ctx.started)
         {
-            _jumpHold = true;
-            _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
+            {
+                if(CheckWall() && !IsGrounded())
+                {
+                   
+                    _rb.gravityScale = _playerGravity;
+                    if (isFlipped)
+                    {
+                        _rb.AddForce(new Vector2(5*wallJumpForce, wallJumpForce), ForceMode2D.Impulse);
+                        
+                    }
+                    else
+                    {
+                        _rb.AddForce(new Vector2(-5*wallJumpForce, wallJumpForce), ForceMode2D.Impulse);
+                        
+                    }
+                }
+            }
+        
+            if (IsGrounded())
+            {
+                _jumpHold = true;
+                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            }
+
+            if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && (_playerStatus.playerState != PlayerSkill.ShurikenMode || !CheckWall()))//se o player tiver o  aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
+            {
+                _playerStatus.playerState = PlayerSkill.PlaneMode;
+                _sr.color = Color.yellow;
+                _jumpHold = true;
+                _rb.gravityScale = flightGravity;
+            }
         }
 
-        if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && ctx.started)//se o player tiver o  aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
-        {
-            _playerStatus.playerState = PlayerSkill.PlaneMode;
-            _sr.color = Color.yellow;
-            _jumpHold = true;
-            _rb.gravityScale = flightGravity;
-        }
 
         if (_jumpHold && ctx.canceled)
         {
@@ -81,20 +103,47 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
+        {
+            if (CheckWall() && !IsGrounded())
+            {
+                _rb.gravityScale = 0f;
+                _rb.velocity = new Vector2(_rb.velocity.x,0f);
+            }
+            else
+            {
+                _rb.gravityScale = _playerGravity;
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
-  
-        Vector2 m = _move * (speed * Time.fixedDeltaTime);
-        _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+        if (!(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()) )
+        {
+            Vector2 m = _move * (speed * Time.fixedDeltaTime);
+            _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+        }
+        
+        if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
+        {
+            if (!CheckWall())
+            {
+                _rb.gravityScale = _playerGravity;
+            }
+        }
+
         Flip();
 
         if (IsGrounded())
         {
             FlightBreak();
             BoatBreak();
+            ShurikenBreak();
         }
-
-
+        
         if (_jumpbreak)
         {
             float yVelocity = _rb.velocity.y;
@@ -116,6 +165,14 @@ public class PlayerMovement : MonoBehaviour
             _sr.color = Color.white;
         }
     }
+
+    private void ShurikenBreak()
+    {
+        if (_playerStatus.playerState == PlayerSkill.ShurikenMode)//verificacao para quando o player retorna ao chao, depois de planar
+        {
+            _rb.velocity = new Vector2(0f, _rb.velocity.y); 
+        }
+    }
     
     private void BoatBreak()
     { 
@@ -125,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (_playerStatus.playerState == PlayerSkill.BoatMode) //verificacao para quando o player retorna ao chao, depois de planar
         {
-            _rb.velocity = _rb.velocity = new Vector2(0f, _rb.velocity.y); 
+             _rb.velocity = new Vector2(0f, _rb.velocity.y); 
         }
     }
 
@@ -155,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
     // Detectando colisão com o chão 
     private bool IsGrounded()
     {
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/2);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/4);
         LayerMask layers = groundMask;
 
         if (_playerStatus.playerState == PlayerSkill.BoatMode)
@@ -192,7 +249,7 @@ public class PlayerMovement : MonoBehaviour
     private bool OnWater()
     {
         
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/2);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/4);
         LayerMask waterLayer = LayerMask.GetMask("BoatFloor");
         Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, waterLayer);
 
@@ -203,11 +260,33 @@ public class PlayerMovement : MonoBehaviour
         
         return false;
     }
+    
+    // Checar se ta na  parede para a habilidade da shuriken 
+    
+    private bool CheckWall()
+    {
+        Vector3 position = transform.position;
+        Vector2 hitPosition = new Vector2(position.x + _collider2D.bounds.size.x / 4, position.y);
+        if (isFlipped)
+            hitPosition = new Vector2(position.x - _collider2D.bounds.size.x / 4, position.y);
+        
+        LayerMask layer = LayerMask.GetMask( "Floor");
+        Collider2D[] hitWall= Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layer);
+        
+        // breake floors with ballmode 
+        if (hitWall.Length > 0)
+        {
+            return true; 
+        }
+        
+        return false;
+        
+    }
 
     private void OnDrawGizmosSelected()
     {
 
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/2);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/4);
 
         Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
     }
