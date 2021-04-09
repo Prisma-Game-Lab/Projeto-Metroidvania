@@ -38,15 +38,23 @@ public class ShurikenSkill : MonoBehaviour
             {
                 _playerStatus.playerState = PlayerSkill.ShurikenMode;
                 _sr.color = Color.magenta;
-                _playerTransform.localScale = _originalLocalScale;
+                // flip tem que se manter 
+                if (_playerMovement.isFlipped)
+                {
+                    Vector3 flippedScale = _originalLocalScale;
+                    flippedScale.x *= -1f;
+                    _playerTransform.localScale = flippedScale;
+                }
+                else
+                {
+                    _playerTransform.localScale = _originalLocalScale;
+                }
                 _rb.gravityScale = _playerGravity;
-                // change player size and colider 
             }
             else
             {
                 _playerStatus.playerState = PlayerSkill.Normal;
                 _sr.color = Color.white;
-                _playerTransform.localScale = _originalLocalScale;
                 _rb.gravityScale = _playerGravity;
             }
 

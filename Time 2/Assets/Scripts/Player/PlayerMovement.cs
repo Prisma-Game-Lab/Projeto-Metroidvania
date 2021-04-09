@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private bool _jumpbreak = false;
+    private Transform _playerTransform;
+    private Vector3 _originalLocalScale;
     private SpriteRenderer _sr;
     private PlayerStatus _playerStatus;
     private Collider2D _collider2D;
@@ -36,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
         _collider2D = gameObject.GetComponent<Collider2D>();
+        _playerTransform = transform;
+        _originalLocalScale = _playerTransform.localScale;
+        
     }
 
         // Esse evento é chamado quando o jogador mexe nos inputs de movimento 
@@ -56,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                    
                     _rb.gravityScale = _playerGravity;
+                    // Pulo na diagonal realizado pela shuriken 
                     if (isFlipped)
                     {
                         _rb.AddForce(new Vector2(5*wallJumpForce, wallJumpForce), ForceMode2D.Impulse);
@@ -74,14 +80,8 @@ public class PlayerMovement : MonoBehaviour
                 _jumpHold = true;
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
-
-            if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && (_playerStatus.playerState != PlayerSkill.ShurikenMode || !CheckWall()))//se o player tiver o  aviao, ele flutua quando o jogador segura o botao de pulo com estando no ar
-            {
-                _playerStatus.playerState = PlayerSkill.PlaneMode;
-                _sr.color = Color.yellow;
-                _jumpHold = true;
-                _rb.gravityScale = flightGravity;
-            }
+            
+            Flight();
         }
 
 
@@ -103,6 +103,38 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    // funcao que faz a logica do voo
+    private void Flight()
+    {
+        //Se o player tiver o aviao, ele flutua quando o jogador segura o botao de pulo no ar. E NAO PODE SER USADO ENQUANTO SHURIKEN NA PAREDE 
+        if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && !(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()))
+        {
+            _playerStatus.playerState = PlayerSkill.PlaneMode;
+            //manter o flip 
+            // flip tem que se manter 
+            if (isFlipped)
+            {
+                Vector3 flippedScale = _originalLocalScale;
+                flippedScale.x *= -1f;
+                _playerTransform.localScale = flippedScale;
+            }
+            else
+            {
+                _playerTransform.localScale = _originalLocalScale;
+            }
+            _sr.color = Color.yellow;
+            _jumpHold = true;
+            _rb.gravityScale = flightGravity;
+              
+            // 
+            if (_rb.velocity.y < -10f)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+                _rb.AddForce(new Vector2(0f, _rb.velocity.y *0.1f),ForceMode2D.Impulse);
+            }
+                    
+        }
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
@@ -230,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
                 if (colider.CompareTag("BreakableFloor"))
                 {
                     if (_rb.velocity.y <= -10f)
-                        Destroy(colider.gameObject);
+                        Destroy(colider.gameObject); // Trocar por animacao de Chao destruido 
                 }
             }
         }

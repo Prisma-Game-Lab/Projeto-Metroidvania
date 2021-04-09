@@ -10,6 +10,7 @@ public class BoatSkill : MonoBehaviour
     private float _playerGravity;
     private Transform _playerTransform;
     private Vector3 _originalLocalScale;
+    private PlayerMovement _playerMovement;
     
     public bool obtained = false;
 
@@ -17,6 +18,7 @@ public class BoatSkill : MonoBehaviour
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _playerMovement = gameObject.GetComponent<PlayerMovement>();
         _playerGravity = _rb.gravityScale; // gravidade original do player
         _playerTransform = transform;
         _originalLocalScale = _playerTransform.localScale;
@@ -32,7 +34,17 @@ public class BoatSkill : MonoBehaviour
             if(playerState != PlayerSkill.BoatMode)
             {
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.BoatMode;
-                _playerTransform.localScale = _originalLocalScale;
+                // flip tem que se manter 
+                if (_playerMovement.isFlipped)
+                {
+                    Vector3 flippedScale = _originalLocalScale;
+                    flippedScale.x *= -1f;
+                    _playerTransform.localScale = flippedScale;
+                }
+                else
+                {
+                    _playerTransform.localScale = _originalLocalScale;
+                }
                 _rb.gravityScale = _playerGravity;
                 _sr.color = Color.blue;
             }

@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 2348440294670770238}
   - component: {fileID: 2348440294670770235}
   - component: {fileID: 2348440294670770234}
+  - component: {fileID: 1616248053}
+  - component: {fileID: 1616248063}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -60,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f24b25cf32aa44c6b2e9db2e71fc3f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,13 +215,13 @@ MonoBehaviour:
     m_ActionName: PlayerActions/BoatSkill[/Keyboard/x]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 222069547470339807}
+        m_TargetAssemblyTypeName: PlaneSkill, Assembly-CSharp
+        m_MethodName: OnPlaneSkill
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -227,6 +229,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4c630342-e33d-4055-b034-f63e256e7312
     m_ActionName: PlayerActions/PlaneSkill[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1616248053}
+        m_TargetAssemblyTypeName: BallSkill, Assembly-CSharp
+        m_MethodName: OnBallSkill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7a355469-1a56-47c1-8c23-ea1894fa9f8e
+    m_ActionName: PlayerActions/BallSkill[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1616248063}
+        m_TargetAssemblyTypeName: ShurikenSkill, Assembly-CSharp
+        m_MethodName: OnShurikenSkill
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 93159ea3-3824-4faa-88fd-b5b7bf15e196
+    m_ActionName: PlayerActions/ShurikenSkill[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -253,6 +287,7 @@ MonoBehaviour:
   airplane: 0
   sword: 0
   ball: 0
+  shuriken: 0
 --- !u!114 &2348440294670770236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,10 +301,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 9
+  wallJumpForce: 8
   jumpDecreaseRate: 0.5
   speed: 18
   holdTime: 0.1
-  detectGroundRange: 0.25
+  detectGroundRange: 0.28
+  flightGravity: 0.2
   groundMask:
     serializedVersion: 2
     m_Bits: 256
@@ -289,7 +326,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -350,6 +387,34 @@ MonoBehaviour:
   maxAlpha: 1
   interval: 0.2
   duration: 1.25
+--- !u!114 &1616248053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5f123c379254f23a0f25c0671c498b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballGravity: 10
+  obtained: 1
+  reduceFactor: 0.8
+--- !u!114 &1616248063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab573a726244c4a0baf473b7ee95d94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obtained: 1
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0

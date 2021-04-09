@@ -13,6 +13,7 @@ public class BallSkill : MonoBehaviour
     private SpriteRenderer _sr;
     private Rigidbody2D _rb;
     private PlayerStatus _playerStatus;
+    private PlayerMovement _playerMovement;
     private Collider2D _collider;
     private Transform _playerTransform;
     private Vector3 _originalLocalScale;
@@ -24,9 +25,11 @@ public class BallSkill : MonoBehaviour
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
         _collider = gameObject.GetComponent<CircleCollider2D>();
+        _playerMovement = gameObject.GetComponent<PlayerMovement>();
         _playerGravity = _rb.gravityScale;
         _playerTransform = transform;
         _originalLocalScale = _playerTransform.localScale;
+        
     }
 
     public void OnBallSkill(InputAction.CallbackContext ctx)
@@ -47,7 +50,19 @@ public class BallSkill : MonoBehaviour
             {
                 _playerStatus.playerState = PlayerSkill.Normal;
                 _sr.color = Color.white;
-                _playerTransform.localScale = _originalLocalScale;
+                
+                // flip tem que se manter 
+                if (_playerMovement.isFlipped)
+                {
+                    Vector3 flippedScale = _originalLocalScale;
+                    flippedScale.x *= -1f;
+                    _playerTransform.localScale = flippedScale;
+                }
+                else
+                {
+                    _playerTransform.localScale = _originalLocalScale;
+                }
+                
                 _rb.gravityScale = _playerGravity;
             }
 

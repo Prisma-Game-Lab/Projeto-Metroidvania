@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public ParticleSystem attackParticle;
+    
+    //SOMENTE PARA DEBUG
+    public GameObject dummyAttack;
 
     // variaves para ver se já possui o ataque
     public bool obtained = false;
@@ -34,8 +37,8 @@ public class PlayerAttack : MonoBehaviour
             LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
             // Detectar se tem inimigos no range
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);
-            ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
-
+            // ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
+            StartCoroutine(ShowAttack());
             // Realizar dano nos inimigos
             foreach (Collider2D enemy in hitEnemies)
             {
@@ -49,6 +52,12 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
+    private IEnumerator ShowAttack()
+    {
+        dummyAttack.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
+        dummyAttack.SetActive(false);
+    }
     // Função auxiliar para monstrar a área do ataque
     private void OnDrawGizmosSelected()
     {

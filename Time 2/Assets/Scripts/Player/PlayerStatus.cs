@@ -19,7 +19,7 @@ public class PlayerStatus : MonoBehaviour
 {
 
     public PlayerSkill playerState = PlayerSkill.Normal;
-    
+
     // Variaveis para serem salvas 
     // Colors
     [HideInInspector] public bool cyan = false;
