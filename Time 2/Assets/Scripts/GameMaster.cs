@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,8 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     // Texto para auxiliar no funcionamento da skill 
-    public GameObject HelpSkillText;
-
+  
+    private UIMaster _UIMaster;
     public static GameMaster instance;
 
     void Awake()
@@ -17,12 +18,15 @@ public class GameMaster : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
+            
             Destroy(this);
         }
     }
+
 
     public void OnReset(InputAction.CallbackContext ctx)
     {
@@ -32,9 +36,7 @@ public class GameMaster : MonoBehaviour
 
     public void ShowSkillDescription(string description)
     {
-        HelpSkillText.GetComponent<Text>().text = description;
-        HelpSkillText.SetActive(true);
-        StartCoroutine(DisableHelperText());
+        _UIMaster.ShowSkillDescription(description);
     }
     
     // DELETE SAVE 
@@ -43,9 +45,4 @@ public class GameMaster : MonoBehaviour
         SaveSystem.DeleteSave();
     }
 
-    private IEnumerator DisableHelperText()
-    {
-        yield return new WaitForSeconds(5.0f);
-        HelpSkillText.SetActive(false);
-    }
 }

@@ -19,6 +19,16 @@ public class PlayerStatus : MonoBehaviour
 {
 
     public PlayerSkill playerState = PlayerSkill.Normal;
+    public ItemDescription itemDescription;
+    [HideInInspector] public Vector3 _lastSafePos; // ultima posicao segura para o jogador
+    // player Components 
+    [HideInInspector] public SpriteRenderer sr;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public PlayerMovement playerMovement;
+    [HideInInspector] public Collider2D collider;
+    [HideInInspector] public Transform playerTransform;
+    [HideInInspector] public Vector3 originalLocalScale;
+    [HideInInspector] public float playerGravity;
 
     // Variaveis para serem salvas 
     // Colors
@@ -40,7 +50,17 @@ public class PlayerStatus : MonoBehaviour
     {
         // checar se existe player a ser carregado 
         LoadPlayer();
+        _lastSafePos = transform.position;
         
+        // pegar os componentes do player
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        playerMovement = gameObject.GetComponent<PlayerMovement>();
+        playerGravity = rb.gravityScale; // gravidade original do player
+        playerTransform = transform;
+        originalLocalScale = playerTransform.localScale;
+        collider = gameObject.GetComponent<CircleCollider2D>();
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -48,7 +68,8 @@ public class PlayerStatus : MonoBehaviour
         // Verifica a morte pela agua
         if (collision.collider.CompareTag("Water") && (playerState != PlayerSkill.BoatMode))
         {
-            gameObject.GetComponent<PlayerDamage>().KillPlayer();
+            gameObject.GetComponent<PlayerDamage>().TakeDamage();
+            ReturnPlayerToSafePos();
         }
 
     }
@@ -83,7 +104,7 @@ public class PlayerStatus : MonoBehaviour
 
         // Mostrar a descricao de ajuda asobre a habilidade 
         SaveSystem.SavePlayer(this);
-        GameMaster.instance.ShowSkillDescription(description);
+        itemDescription.description = description;
     }
 
     private void LoadPlayer()
@@ -112,4 +133,31 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    private void ReturnPlayerToSafePos()
+    {
+        transform.position = _lastSafePos;
+        // transformar o player no estado normal
+        SetToNormalState();
+        
+    }
+
+    public void SetToNormalState()
+    {
+        playerState = PlayerSkill.Normal;
+        sr.color = Color.white;
+                
+        // flip tem que se manter 
+        if (playerMovement.isFlipped)
+        {
+            Vector3 flippedScale = originalLocalScale;
+            flippedScale.x *= -1f;
+            playerTransform.localScale = flippedScale;
+        }
+        else
+        {
+            playerTransform.localScale = originalLocalScale;
+        }
+                
+        rb.gravityScale = playerGravity;
+    }
 }

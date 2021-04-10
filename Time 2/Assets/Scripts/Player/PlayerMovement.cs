@@ -171,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsGrounded())
         {
+            SaveSafePosition(); // Save Safe position for the player 
             FlightBreak();
             BoatBreak();
             ShurikenBreak();
@@ -237,6 +238,18 @@ public class PlayerMovement : MonoBehaviour
             newLocalScale.x *= -1;
             transform.localScale = newLocalScale;
             isFlipped = false;
+        }
+            
+    }
+    
+    //verifica uma posição segura para o player 
+    private void SaveSafePosition()
+    {
+        if (!OnWater())
+        {
+            _playerStatus._lastSafePos = _playerTransform.position;
+            float safeDistance = _collider2D.bounds.size.x * 0.25f;
+            _playerStatus._lastSafePos.x += isFlipped ? safeDistance : -safeDistance;
         }
             
     }

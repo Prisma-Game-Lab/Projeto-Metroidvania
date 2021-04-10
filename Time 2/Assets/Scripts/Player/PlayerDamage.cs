@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,8 @@ public class PlayerDamage : MonoBehaviour
     public LayerMask enemyLayers;
 
     // MUDAR DE LUGAR SOMENTE PARA TESTE
-    public GameObject LifeHud;
-    public GameObject GameOverText;
-    private int actualLife = 3;
+    public PlayerHealth life;
+    public int playerLife = 3;
 
     // Variaveis do efeito de blink
     public float minAlpha = 0.3f;
@@ -23,9 +23,15 @@ public class PlayerDamage : MonoBehaviour
     private SpriteRenderer _sr;
     private bool _takingDamage;
 
+    private void Awake()
+    {
+        life.life = playerLife;
+    }
+
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        
     }
 
     private void Update()
@@ -96,25 +102,17 @@ public class PlayerDamage : MonoBehaviour
 
     public void KillPlayer()
     {
-        LifeHud.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        GameOverText.SetActive(true);
         Destroy(gameObject);
     }
 
     // MUDAR IMPLEMENTACAO SOMENTE PARA TESTE
     private void RemoveLife()
     {
-        actualLife -= 1;
-        if(actualLife <= 0)
+        life.life -= 1;
+        if(life.life <= 0)
         {
             KillPlayer();
         }
-        else
-        {
-            LifeHud.gameObject.transform.GetChild(actualLife).gameObject.SetActive(false);
-        }
-      
-
     }
 
     
