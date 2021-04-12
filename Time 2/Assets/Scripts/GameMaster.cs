@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     // Texto para auxiliar no funcionamento da skill 
-  
-    private UIMaster _UIMaster;
     public static GameMaster instance;
 
     void Awake()
@@ -18,11 +16,9 @@ public class GameMaster : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            
             Destroy(this);
         }
     }
@@ -33,11 +29,7 @@ public class GameMaster : MonoBehaviour
         if(ctx.started)
             SceneManager.LoadScene("POC");
     }
-
-    public void ShowSkillDescription(string description)
-    {
-        _UIMaster.ShowSkillDescription(description);
-    }
+    
     
     // DELETE SAVE 
     public void DeleteSave()

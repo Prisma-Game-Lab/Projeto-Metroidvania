@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5043188181269210630}
   - component: {fileID: 5043188181269210628}
   - component: {fileID: 5043188181269210629}
+  - component: {fileID: 1939140284}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -89,6 +90,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bde579a5-36a3-4c01-9c2c-90e0f80d6eeb
     m_ActionName: PlayerActions/BoatSkill[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4c630342-e33d-4055-b034-f63e256e7312
+    m_ActionName: PlayerActions/PlaneSkill[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a355469-1a56-47c1-8c23-ea1894fa9f8e
+    m_ActionName: PlayerActions/BallSkill[/Keyboard/b]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93159ea3-3824-4faa-88fd-b5b7bf15e196
+    m_ActionName: PlayerActions/ShurikenSkill[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GlobalActions
@@ -106,4 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29e0efafff3c4721aef8d22a3e31951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HelpSkillText: {fileID: 0}
+--- !u!114 &1939140284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043188181269210631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61482980a1184e048d49a14fbee17aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  gates:
+  - {fileID: 0}
+  - {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
