@@ -10,6 +10,7 @@ public class UIMaster : MonoBehaviour
     public GameObject HelpSkillText;
     public GameObject LifeHud;
     public GameObject GameOverText;
+    public GameObject Fade;
     public GameObject LifeIcon;
     public PlayerHealth life;
     public ItemDescription itemDescription;
@@ -21,6 +22,7 @@ public class UIMaster : MonoBehaviour
 
     private void Start()
     {
+        Fade.SetActive(true);
         _UILife = life.life;
         itemDescription.description = "";
         _UIItemDescription = itemDescription.description;
