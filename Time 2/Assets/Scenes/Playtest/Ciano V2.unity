@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5797,6 +5797,17 @@ Transform:
   m_Father: {fileID: 1072688532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933151811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+  m_PrefabInstance: {fileID: 204732818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1057783144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,7 +7503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1740022178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7692,11 +7703,11 @@ PrefabInstance:
     - target: {fileID: 1939140284, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: gates.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 933151811}
     - target: {fileID: 1939140284, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: gates.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2069307297}
     - target: {fileID: 5043188181269210630, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7777,6 +7788,17 @@ Transform:
   m_Father: {fileID: 477117679}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069307297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+  m_PrefabInstance: {fileID: 869465766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2071256600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7917,6 +7939,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: Fade
+      value: 
+      objectReference: {fileID: 1740022177}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: LifeHud
       value: 
