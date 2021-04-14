@@ -352,7 +352,7 @@
                 {
                     "name": "",
                     "id": "7e8afd7c-cae0-4445-8a8c-201494517eec",
-                    "path": "<Keyboard>/b",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -374,7 +374,7 @@
                 {
                     "name": "",
                     "id": "77ab581f-bf82-4429-9b67-434c1acd6e3e",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -397,6 +397,17 @@
                     "name": "",
                     "id": "13acd7a3-dbdb-4593-8413-73ad1d86b38d",
                     "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShurikenSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee6581b5-1c84-47db-85ca-b0c018349abb",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
