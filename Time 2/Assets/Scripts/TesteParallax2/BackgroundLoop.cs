@@ -16,6 +16,8 @@ public class BackgroundLoop : MonoBehaviour
     {
         mainCamera = gameObject.GetComponent<Camera>();
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
+        //Debug.Log(Screen.width);
+        //Debug.Log(screenBounds.x);
         foreach (GameObject obj in levels)
         {
             loadChildObjects(obj);
@@ -25,7 +27,9 @@ public class BackgroundLoop : MonoBehaviour
     void loadChildObjects(GameObject obj)
     {
         float objectWidth = obj.GetComponent<SpriteRenderer>().bounds.size.x - choke;
-        int childsNeeded = (int)Mathf.Ceil(screenBounds.x * 2 / objectWidth);
+        //Debug.Log(objectWidth);
+        int childsNeeded = (int)Mathf.Ceil(Mathf.Abs(screenBounds.x) * 2 / objectWidth);
+        //Debug.Log(childsNeeded);
         GameObject clone = Instantiate(obj) as GameObject;
         for (int i = 0; i <= childsNeeded; i++)
         {
