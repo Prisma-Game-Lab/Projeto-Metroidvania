@@ -25,6 +25,7 @@ public class BoatSkill : MonoBehaviour
 
         if (ctx.started && obtained)
         {
+            AudioManager.instance.Play("Transform");
             if(_playerStatus.playerState != PlayerSkill.BoatMode)
             {
                 _playerStatus.playerState = PlayerSkill.BoatMode;
@@ -43,13 +44,24 @@ public class BoatSkill : MonoBehaviour
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
                 //_playerStatus.sr.color = Color.blue;
                 _playerStatus.sr.sprite = boatSprite;
+                Vector3 v = _playerStatus.sr.bounds.size; 
+
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+
+                b.size = v;
             }
             else
             {
+                
                 _trasformationParticles.Play();//liga particulas de transformacao
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
                 _playerStatus.sr.sprite = _playerStatus.normalSprite;
+                Vector3 v = _playerStatus.sr.bounds.size; 
+
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+
+                b.size = v;
             }
 
         }

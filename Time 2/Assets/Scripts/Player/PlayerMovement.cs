@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         // comecou a pressionar o butao
         if (ctx.started)
         {
+            
             if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
             {
                 if(CheckWall() && !IsGrounded())
@@ -78,9 +79,10 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-        
+
             if (IsGrounded())
             {
+                AudioManager.instance.Play("Jump");
                 _jumpHold = true;
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
@@ -95,7 +97,9 @@ public class PlayerMovement : MonoBehaviour
             if (_playerStatus.playerState == PlayerSkill.PlaneMode)
             {
                 _trasformationParticles.Play();//liga particulas de transformacao
+                AudioManager.instance.Play("Transform");
                 _playerStatus.playerState = PlayerSkill.Normal;
+                
                 //_sr.color = Color.white;
                 _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
                 _sr.sprite = _playerStatus.normalSprite;
@@ -116,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (_planeSkill.obtained && !IsGrounded() && !(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()))
         {
             _playerStatus.playerState = PlayerSkill.PlaneMode;
+            
             //manter o flip 
             // flip tem que se manter 
             if (isFlipped)
@@ -128,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _playerTransform.localScale = _originalLocalScale;
             }
+            AudioManager.instance.Play("Transform");
             _trasformationParticles.Play();//liga particulas de transformacao
             //_sr.color = Color.yellow;
             _jumpHold = true;
@@ -201,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
         {
+            AudioManager.instance.Play("Transform");
             _trasformationParticles.Play();//liga particulas de transformacao
             _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player

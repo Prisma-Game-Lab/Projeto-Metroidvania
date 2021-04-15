@@ -26,6 +26,7 @@ public class ShurikenSkill : MonoBehaviour
         // apertou e não e barco
         if (ctx.started && obtained)
         {
+            AudioManager.instance.Play("Transform");
             if(_playerStatus.playerState != PlayerSkill.ShurikenMode)
             {
                 _trasformationParticles.Play();

@@ -26,6 +26,7 @@ public class BallSkill : MonoBehaviour
         // apertou e não e barco
         if (ctx.started && obtained)
         {
+            AudioManager.instance.Play("Transform");
             if(_playerStatus.playerState != PlayerSkill.BallMode)
             {
                 _trasformationParticles.Play();//liga particulas de transformacao
