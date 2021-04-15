@@ -33,14 +33,19 @@ public class EnemyDamage : MonoBehaviour
         enemyLife -= 1;
         if (enemyLife == 0)
         {
+            
+            gameObject.GetComponent<EnemyMovement>().enabled = false;
+            _rb.velocity = Vector2.zero;
             CanDamage = false;
         }
 
         StartCoroutine(FlashSprite());
+        // PARA O PLAYTEST 
+
         if(!playerFliped)
-            _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * 0.5f, ForceMode2D.Impulse);
         else
-            _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * -0.5f, ForceMode2D.Impulse);
     }
 
     public void TakeStaticDamage()
