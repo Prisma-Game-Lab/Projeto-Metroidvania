@@ -5788,6 +5788,10 @@ PrefabInstance:
       propertyPath: planeSprite
       value: 
       objectReference: {fileID: 21300000, guid: 72bb0c4fbc1fcb647924db07c1bf6762, type: 3}
+    - target: {fileID: 1762319343436213774, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770224, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5868,6 +5872,10 @@ PrefabInstance:
       propertyPath: normalSprite
       value: 
       objectReference: {fileID: 21300000, guid: 41701f1423390714992c352af300571b, type: 3}
+    - target: {fileID: 5712722360280575630, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: transformationParticles
+      value: 
+      objectReference: {fileID: 1616248053}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
 --- !u!4 &1616248051 stripped
@@ -5878,6 +5886,11 @@ Transform:
 --- !u!1 &1616248052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2348440294670770226, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+  m_PrefabInstance: {fileID: 1616248050}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1616248053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1913081182035609188, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
   m_PrefabInstance: {fileID: 1616248050}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623241030
