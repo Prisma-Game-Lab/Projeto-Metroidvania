@@ -47,9 +47,21 @@ MonoBehaviour:
   sounds:
   - name: Lobby
     clip: {fileID: 8300000, guid: 2b2b96adfa8d44be8b04f7862e531cf2, type: 3}
-    volume: 0.19
+    volume: 0.02
     pitch: 0.8
     loop: 1
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 7a4ae53efa6364cb38a0fb161ff0ed30, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Transform
+    clip: {fileID: 8300000, guid: 7370c9b65c4be42f1ba5264cd99e824a, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    loop: 0
     source: {fileID: 0}
 --- !u!82 &6073523794936321909
 AudioSource:
