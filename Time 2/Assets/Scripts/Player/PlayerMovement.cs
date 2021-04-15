@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _sr;
     private PlayerStatus _playerStatus;
     private Collider2D _collider2D;
+    private PlaneSkill _planeSkill;
 
     
     private void Start()
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
         _collider2D = gameObject.GetComponent<Collider2D>();
+        _planeSkill = gameObject.GetComponent<PlaneSkill>();
         _playerTransform = transform;
         _originalLocalScale = _playerTransform.localScale;
         
@@ -91,8 +93,9 @@ public class PlayerMovement : MonoBehaviour
             if (_playerStatus.playerState == PlayerSkill.PlaneMode)
             {
                 _playerStatus.playerState = PlayerSkill.Normal;
-                _sr.color = Color.white;
+                //_sr.color = Color.white;
                 _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
+                _sr.sprite = _playerStatus.normalSprite;
             }
             
             if (_rb.velocity.y > 0f)
@@ -107,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
     private void Flight()
     {
         //Se o player tiver o aviao, ele flutua quando o jogador segura o botao de pulo no ar. E NAO PODE SER USADO ENQUANTO SHURIKEN NA PAREDE 
-        if (gameObject.GetComponent<PlaneSkill>().obtained && !IsGrounded() && !(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()))
+        if (_planeSkill.obtained && !IsGrounded() && !(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()))
         {
             _playerStatus.playerState = PlayerSkill.PlaneMode;
             //manter o flip 
@@ -122,9 +125,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 _playerTransform.localScale = _originalLocalScale;
             }
-            _sr.color = Color.yellow;
+            //_sr.color = Color.yellow;
             _jumpHold = true;
             _rb.gravityScale = flightGravity;
+            _sr.sprite = _planeSkill.planeSprite;
               
             // 
             if (_rb.velocity.y < -10f)
@@ -195,7 +199,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
-            _sr.color = Color.white;
+            //_sr.color = Color.white;
+            _sr.sprite = _playerStatus.normalSprite;
         }
     }
 

@@ -8,6 +8,7 @@ public class PlaneSkill : MonoBehaviour
     private SpriteRenderer _sr;
 
     public bool obtained = false;
+    public Sprite planeSprite;
 
     private void Start()
     {

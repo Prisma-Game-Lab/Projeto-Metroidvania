@@ -9,6 +9,7 @@ public class BoatSkill : MonoBehaviour
     private PlayerStatus _playerStatus;
     
     public bool obtained = false;
+    public Sprite boatSprite;
 
     private void Start()
     {
@@ -37,12 +38,14 @@ public class BoatSkill : MonoBehaviour
                     _playerStatus.playerTransform.localScale = _playerStatus.originalLocalScale;
                 }
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
-                _playerStatus.sr.color = Color.blue;
+                //_playerStatus.sr.color = Color.blue;
+                _playerStatus.sr.sprite = boatSprite;
             }
             else
             {
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
-                _playerStatus.sr.color = Color.white;
+                //_playerStatus.sr.color = Color.white;
+                _playerStatus.sr.sprite = _playerStatus.normalSprite;
             }
 
         }

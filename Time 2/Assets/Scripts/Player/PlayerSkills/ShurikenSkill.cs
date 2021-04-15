@@ -7,6 +7,7 @@ using UnityEngine;
 public class ShurikenSkill : MonoBehaviour
 {
     public bool obtained = false;
+    public Sprite shurikenSprite;
 
 
     private PlayerStatus _playerStatus;
@@ -26,7 +27,8 @@ public class ShurikenSkill : MonoBehaviour
             if(_playerStatus.playerState != PlayerSkill.ShurikenMode)
             {
                 _playerStatus.playerState = PlayerSkill.ShurikenMode;
-                _playerStatus.sr.color = Color.magenta;
+                //_playerStatus.sr.color = Color.magenta;
+                _playerStatus.sr.sprite = shurikenSprite;
                 // flip tem que se manter 
                 if (_playerStatus.playerMovement.isFlipped)
                 {
@@ -43,7 +45,9 @@ public class ShurikenSkill : MonoBehaviour
             else
             {
                 _playerStatus.playerState = PlayerSkill.Normal;
-                _playerStatus.sr.color = Color.white;
+                //_playerStatus.sr.color = Color.white;
+                _playerStatus.sr.sprite = _playerStatus.normalSprite;
+
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
             }
 

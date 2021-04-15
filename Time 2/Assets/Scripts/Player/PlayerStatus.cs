@@ -43,8 +43,11 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public bool sword = false;
     [HideInInspector] public bool ball = false;
     [HideInInspector] public bool shuriken = false;
-    
-    
+
+    //Sprites
+    public Sprite normalSprite;
+
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -145,6 +148,7 @@ public class PlayerStatus : MonoBehaviour
     {
         playerState = PlayerSkill.Normal;
         sr.color = Color.white;
+        sr.sprite = normalSprite;
                 
         // flip tem que se manter 
         if (playerMovement.isFlipped)

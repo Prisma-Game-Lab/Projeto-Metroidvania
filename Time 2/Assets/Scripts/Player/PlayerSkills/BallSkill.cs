@@ -9,6 +9,7 @@ public class BallSkill : MonoBehaviour
     public float ballGravity;
     public bool obtained = false;
     public float reduceFactor;
+    public Sprite ballSprite;
     
 
     private PlayerStatus _playerStatus;
@@ -27,7 +28,8 @@ public class BallSkill : MonoBehaviour
             {
                 _playerStatus.playerState = PlayerSkill.BallMode;
                  _playerStatus.rb.gravityScale = ballGravity;
-                 _playerStatus.sr.color = Color.gray;
+                 //_playerStatus.sr.color = Color.gray;
+                _playerStatus.sr.sprite = ballSprite;
                 
                 // change player size and colider 
                  _playerStatus.playerTransform.localScale *= reduceFactor;
