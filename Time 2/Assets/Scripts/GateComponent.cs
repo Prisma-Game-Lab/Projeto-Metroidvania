@@ -19,6 +19,7 @@ public class GateComponent : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             destination.door = doorToGo;
+            destination.SceneToGo = sceneToLoad;
             SceneManager.LoadScene(sceneToLoad);
         }
     }

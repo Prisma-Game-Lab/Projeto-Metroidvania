@@ -10,6 +10,7 @@ public class GateListener : MonoBehaviour
     public Destination playerDestination;
     void Start()
     {
+        AudioManager.instance.Play(playerDestination.SceneToGo);
         // No inicio da scena procura atribuir o player a porta que ele adentrou 
         foreach (GateComponent gate in gates)
         {
