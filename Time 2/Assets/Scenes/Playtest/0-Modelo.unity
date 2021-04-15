@@ -3837,6 +3837,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1616248053, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: ballSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1e414fef104d35641a1c0efe7067f6f8, type: 3}
+    - target: {fileID: 1616248063, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: shurikenSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95b13784f6a9c1a4ea0c4fa50f65926b, type: 3}
+    - target: {fileID: 222069547470339807, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: planeSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72bb0c4fbc1fcb647924db07c1bf6762, type: 3}
     - target: {fileID: 2348440294670770224, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3882,13 +3894,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770225, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41701f1423390714992c352af300571b, type: 3}
+    - target: {fileID: 2348440294670770225, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770225, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04ac8f8125b39e0438c12e677b2f6039, type: 2}
     - target: {fileID: 2348440294670770226, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770233, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: boatSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d53fdc76128a82f4a874f7dbe1b7d7b8, type: 3}
     - target: {fileID: 2348440294670770236, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: speed
       value: 17
@@ -3901,6 +3925,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5712722360280575630, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 41701f1423390714992c352af300571b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
 --- !u!4 &1616248051 stripped
