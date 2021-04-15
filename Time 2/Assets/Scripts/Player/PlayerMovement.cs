@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerStatus _playerStatus;
     private Collider2D _collider2D;
     private PlaneSkill _planeSkill;
+    private ParticleSystem _trasformationParticles;
 
     
     private void Start()
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         _planeSkill = gameObject.GetComponent<PlaneSkill>();
         _playerTransform = transform;
         _originalLocalScale = _playerTransform.localScale;
+        _trasformationParticles = _playerStatus.transformationParticles.GetComponent<ParticleSystem>();
         
     }
 
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
            
             if (_playerStatus.playerState == PlayerSkill.PlaneMode)
             {
+                _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.playerState = PlayerSkill.Normal;
                 //_sr.color = Color.white;
                 _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
@@ -125,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _playerTransform.localScale = _originalLocalScale;
             }
+            _trasformationParticles.Play();//liga particulas de transformacao
             //_sr.color = Color.yellow;
             _jumpHold = true;
             _rb.gravityScale = flightGravity;
@@ -197,6 +201,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
         {
+            _trasformationParticles.Play();//liga particulas de transformacao
             _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
             //_sr.color = Color.white;
