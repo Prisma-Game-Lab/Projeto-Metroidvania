@@ -51508,6 +51508,10 @@ PrefabInstance:
       propertyPath: skill
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: typerOfGate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8713729303599050701, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_Name
       value: Gate L
