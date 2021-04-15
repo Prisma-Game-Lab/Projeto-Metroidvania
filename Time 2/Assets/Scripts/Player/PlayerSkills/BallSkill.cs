@@ -13,10 +13,12 @@ public class BallSkill : MonoBehaviour
     
 
     private PlayerStatus _playerStatus;
+    private ParticleSystem _trasformationParticles;
 
     private void Start()
     {
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _trasformationParticles = _playerStatus.transformationParticles.GetComponent<ParticleSystem>();
     }
 
     public void OnBallSkill(InputAction.CallbackContext ctx)
@@ -26,6 +28,7 @@ public class BallSkill : MonoBehaviour
         {
             if(_playerStatus.playerState != PlayerSkill.BallMode)
             {
+                _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.playerState = PlayerSkill.BallMode;
                  _playerStatus.rb.gravityScale = ballGravity;
                  //_playerStatus.sr.color = Color.gray;

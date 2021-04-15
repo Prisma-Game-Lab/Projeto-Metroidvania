@@ -6,14 +6,16 @@ using UnityEngine.InputSystem;
 public class BoatSkill : MonoBehaviour
 {
 
-    private PlayerStatus _playerStatus;
-    
     public bool obtained = false;
     public Sprite boatSprite;
+
+    private PlayerStatus _playerStatus;
+    private ParticleSystem _trasformationParticles;
 
     private void Start()
     {
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _trasformationParticles = _playerStatus.transformationParticles.GetComponent<ParticleSystem>();
     }
 
     public void OnBoatSkill(InputAction.CallbackContext ctx)
@@ -37,12 +39,14 @@ public class BoatSkill : MonoBehaviour
                 {
                     _playerStatus.playerTransform.localScale = _playerStatus.originalLocalScale;
                 }
+                _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
                 //_playerStatus.sr.color = Color.blue;
                 _playerStatus.sr.sprite = boatSprite;
             }
             else
             {
+                _trasformationParticles.Play();//liga particulas de transformacao
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
                 _playerStatus.sr.sprite = _playerStatus.normalSprite;

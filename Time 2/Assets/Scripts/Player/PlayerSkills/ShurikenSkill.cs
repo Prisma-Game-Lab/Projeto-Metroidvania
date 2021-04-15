@@ -11,12 +11,14 @@ public class ShurikenSkill : MonoBehaviour
 
 
     private PlayerStatus _playerStatus;
+    private ParticleSystem _trasformationParticles;
 
 
 
     private void Start()
     {
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _trasformationParticles = _playerStatus.transformationParticles.GetComponent<ParticleSystem>();
     }
 
     public void OnShurikenSkill(InputAction.CallbackContext ctx)
@@ -26,6 +28,7 @@ public class ShurikenSkill : MonoBehaviour
         {
             if(_playerStatus.playerState != PlayerSkill.ShurikenMode)
             {
+                _trasformationParticles.Play();
                 _playerStatus.playerState = PlayerSkill.ShurikenMode;
                 //_playerStatus.sr.color = Color.magenta;
                 _playerStatus.sr.sprite = shurikenSprite;
@@ -44,6 +47,7 @@ public class ShurikenSkill : MonoBehaviour
             }
             else
             {
+                _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
                 _playerStatus.sr.sprite = _playerStatus.normalSprite;

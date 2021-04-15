@@ -29,7 +29,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
-
+    public GameObject transformationParticles;
     // Variaveis para serem salvas 
     // Colors
     [HideInInspector] public bool cyan = false;
@@ -47,14 +47,14 @@ public class PlayerStatus : MonoBehaviour
     //Sprites
     public Sprite normalSprite;
 
-
     // Start is called before the first frame update
     private void Start()
     {
         // checar se existe player a ser carregado 
         LoadPlayer();
         _lastSafePos = transform.position;
-        
+        transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//o jogo começa com o efeito de particulas ligado
+
         // pegar os componentes do player
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -146,6 +146,7 @@ public class PlayerStatus : MonoBehaviour
 
     public void SetToNormalState()
     {
+        transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//liga particulas
         playerState = PlayerSkill.Normal;
         sr.color = Color.white;
         sr.sprite = normalSprite;
@@ -164,4 +165,5 @@ public class PlayerStatus : MonoBehaviour
                 
         rb.gravityScale = playerGravity;
     }
+
 }
