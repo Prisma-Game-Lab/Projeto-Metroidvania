@@ -2489,6 +2489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 1
+  shurikenSprite: {fileID: 0}
 --- !u!114 &1196478134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2504,6 +2505,7 @@ MonoBehaviour:
   ballGravity: 10
   obtained: 1
   reduceFactor: 0.8
+  ballSprite: {fileID: 0}
 --- !u!114 &1196478142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 222069547470339807, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
