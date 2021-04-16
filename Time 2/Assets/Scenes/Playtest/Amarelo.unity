@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1496,10 +1496,14 @@ PrefabInstance:
       propertyPath: pointStart
       value: 
       objectReference: {fileID: 718066654}
+    - target: {fileID: 2850124879399924912, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+      objectReference: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -1507,7 +1511,7 @@ PrefabInstance:
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dd998084a91c84909b4348ae3df2f0bc, type: 2}
+      objectReference: {fileID: 2100000, guid: 04ac8f8125b39e0438c12e677b2f6039, type: 2}
     - target: {fileID: 2850124879399924915, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1882,6 +1886,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1436185020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436185021}
+  - component: {fileID: 1436185024}
+  - component: {fileID: 1436185023}
+  - component: {fileID: 1436185022}
+  m_Layer: 5
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1436185021
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436185020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 119.27605, y: 119.27605, z: 119.27605}
+  m_Children: []
+  m_Father: {fileID: 1670283341}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00012207031, y: -0.00021362305}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1436185022
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436185020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 64cfe54286902498c85622ff6bea9675, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1436185023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436185020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1436185024
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436185020}
+  m_CullTransparentMesh: 1
 --- !u!1 &1569736092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,7 +2200,7 @@ PrefabInstance:
     - target: {fileID: 5592557204143354759, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: Fade
       value: 
-      objectReference: {fileID: 1670283341}
+      objectReference: {fileID: 1436185020}
     - target: {fileID: 6896531379837113505, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_Text
       value: "Aperte Pular duas vezes para se transformar em Avi\xE3o\r\nNesta forma,
@@ -56701,9 +56800,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
---- !u!1 &1670283341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7331859495395618145, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+--- !u!224 &1670283341 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7331859493298809949, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
   m_PrefabInstance: {fileID: 1670283340}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1670283342 stripped
@@ -57002,7 +57101,7 @@ PrefabInstance:
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+      objectReference: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -57010,7 +57109,7 @@ PrefabInstance:
     - target: {fileID: 2850124879399924914, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dd998084a91c84909b4348ae3df2f0bc, type: 2}
+      objectReference: {fileID: 2100000, guid: 04ac8f8125b39e0438c12e677b2f6039, type: 2}
     - target: {fileID: 2850124879399924915, guid: c7671603a6ada4801bf1181d393b7885, type: 3}
       propertyPath: m_RootOrder
       value: 2

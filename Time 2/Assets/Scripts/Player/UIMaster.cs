@@ -26,13 +26,18 @@ public class UIMaster : MonoBehaviour
 
     private void Start()
     {
-        Fade.SetActive(true);
+        
         _UILife = life.life;
         itemDescription.description = "";
         _UIItemDescription = itemDescription.description;
         _sceneToGo = playerDestination.SceneToGo;
         _UILifes = new List<GameObject>();
         CreateLifeIcon(_UILife);
+    }
+
+    private void Awake()
+    {
+        Fade.SetActive(true);
     }
 
     public void ShowSkillDescription(string description)
