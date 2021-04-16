@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float wallJumpForce;
     public float jumpDecreaseRate;
+    public float ballVelocityThreshold;
     public float speed;
     public float holdTime;
     public float detectGroundRange;
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _originalLocalScale;
     private SpriteRenderer _sr;
     private PlayerStatus _playerStatus;
-    private Collider2D _collider2D;
+    private BoxCollider2D _collider2D;
     private PlaneSkill _planeSkill;
     private ParticleSystem _trasformationParticles;
 
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         _playerGravity = _rb.gravityScale; // gravidade original do player
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
-        _collider2D = gameObject.GetComponent<Collider2D>();
+        _collider2D = gameObject.GetComponent<BoxCollider2D>();
         _planeSkill = gameObject.GetComponent<PlaneSkill>();
         _playerTransform = transform;
         _originalLocalScale = _playerTransform.localScale;
@@ -103,6 +104,9 @@ public class PlayerMovement : MonoBehaviour
                 //_sr.color = Color.white;
                 _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
                 _sr.sprite = _playerStatus.normalSprite;
+                Vector3 v = _playerStatus.sr.bounds.size;
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                b.size = v;
             }
             
             if (_rb.velocity.y > 0f)
@@ -139,6 +143,9 @@ public class PlayerMovement : MonoBehaviour
             _jumpHold = true;
             _rb.gravityScale = flightGravity;
             _sr.sprite = _planeSkill.planeSprite;
+            Vector3 v = _playerStatus.sr.bounds.size;
+            BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+            b.size = v;
               
             // 
             if (_rb.velocity.y < -10f)
@@ -181,8 +188,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        Flip();
-
+        Flip(); 
+        BallBreak();
         if (IsGrounded())
         {
             SaveSafePosition(); // Save Safe position for the player 
@@ -190,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
             BoatBreak();
             ShurikenBreak();
         }
-        
+
         if (_jumpbreak)
         {
             float yVelocity = _rb.velocity.y;
@@ -202,6 +209,8 @@ public class PlayerMovement : MonoBehaviour
                 _jumpbreak = false;
         }
     }
+    
+    
 
     private void FlightBreak()
     {
@@ -213,7 +222,28 @@ public class PlayerMovement : MonoBehaviour
             _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
             //_sr.color = Color.white;
             _sr.sprite = _playerStatus.normalSprite;
+            Vector3 v = _playerStatus.sr.bounds.size;
+            BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+            b.size = v;
         }
+    }
+
+    private void BallBreak()
+    {
+        if (_playerStatus.playerState == PlayerSkill.BallMode) //verificacao para quando o player retorna ao chao, depois de planar
+        {
+            if (_rb.velocity.y <= -ballVelocityThreshold)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, -ballVelocityThreshold);
+            }
+            
+            if ( _rb.velocity.y < 0f && IsGrounded())
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+            }
+        }
+
+
     }
 
     private void ShurikenBreak()
@@ -274,7 +304,10 @@ public class PlayerMovement : MonoBehaviour
     // Detectando colisão com o chão 
     private bool IsGrounded()
     {
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/4);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.25f);
+        if(_playerStatus.playerState == PlayerSkill.Normal)
+            hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
+        
         LayerMask layers = groundMask;
 
         if (_playerStatus.playerState == PlayerSkill.BoatMode)
@@ -311,7 +344,7 @@ public class PlayerMovement : MonoBehaviour
     private bool OnWater()
     {
         
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.bounds.size.y/4);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.25f);
         LayerMask waterLayer = LayerMask.GetMask("BoatFloor");
         Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, waterLayer);
 
@@ -328,9 +361,9 @@ public class PlayerMovement : MonoBehaviour
     private bool CheckWall()
     {
         Vector3 position = transform.position;
-        Vector2 hitPosition = new Vector2(position.x + _collider2D.bounds.size.x / 4, position.y);
+        Vector2 hitPosition = new Vector2(position.x + _collider2D.size.x * 0.5f, position.y);
         if (isFlipped)
-            hitPosition = new Vector2(position.x - _collider2D.bounds.size.x / 4, position.y);
+            hitPosition = new Vector2(position.x - _collider2D.size.x * 0.5f, position.y);
         
         LayerMask layer = LayerMask.GetMask( "Floor");
         Collider2D[] hitWall= Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layer);

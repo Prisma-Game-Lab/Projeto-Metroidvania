@@ -33,6 +33,9 @@ public class ShurikenSkill : MonoBehaviour
                 _playerStatus.playerState = PlayerSkill.ShurikenMode;
                 //_playerStatus.sr.color = Color.magenta;
                 _playerStatus.sr.sprite = shurikenSprite;
+                Vector3 v = _playerStatus.sr.bounds.size;
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                b.size = v;
                 // flip tem que se manter 
                 if (_playerStatus.playerMovement.isFlipped)
                 {
@@ -52,6 +55,10 @@ public class ShurikenSkill : MonoBehaviour
                 _playerStatus.playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
                 _playerStatus.sr.sprite = _playerStatus.normalSprite;
+                
+                Vector3 v = _playerStatus.sr.bounds.size;
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                b.size = v;
 
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
             }

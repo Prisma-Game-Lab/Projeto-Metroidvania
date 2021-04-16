@@ -63,6 +63,11 @@ public class PlayerStatus : MonoBehaviour
         playerTransform = transform;
         originalLocalScale = playerTransform.localScale;
         collider = gameObject.GetComponent<BoxCollider2D>();
+        
+        // correct player colider 
+        Vector3 v = sr.bounds.size;
+        BoxCollider2D b = collider as BoxCollider2D;
+        b.size = v;
 
     }
 
@@ -150,6 +155,9 @@ public class PlayerStatus : MonoBehaviour
         playerState = PlayerSkill.Normal;
         sr.color = Color.white;
         sr.sprite = normalSprite;
+        Vector3 v = sr.bounds.size;
+        BoxCollider2D b = collider as BoxCollider2D;
+        b.size = v;
                 
         // flip tem que se manter 
         if (playerMovement.isFlipped)

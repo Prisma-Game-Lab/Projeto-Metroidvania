@@ -34,6 +34,9 @@ public class BallSkill : MonoBehaviour
                  _playerStatus.rb.gravityScale = ballGravity;
                  //_playerStatus.sr.color = Color.gray;
                 _playerStatus.sr.sprite = ballSprite;
+                Vector3 v = _playerStatus.sr.bounds.size;
+                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                b.size = v;
                 
                 // change player size and colider 
                  _playerStatus.playerTransform.localScale *= reduceFactor;

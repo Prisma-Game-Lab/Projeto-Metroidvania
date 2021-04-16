@@ -9655,7 +9655,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9702,6 +9702,7 @@ GameObject:
   - component: {fileID: 2348440294670770234}
   - component: {fileID: 1616248053}
   - component: {fileID: 1616248063}
+  - component: {fileID: 1616248069}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -9745,7 +9746,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f24b25cf32aa44c6b2e9db2e71fc3f1, type: 2}
+  - {fileID: 2100000, guid: 04ac8f8125b39e0438c12e677b2f6039, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9765,13 +9766,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 6120707212930331797, guid: 41701f1423390714992c352af300571b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.77, y: 1.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9790,7 +9791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
-  boatSprite: {fileID: 0}
+  boatSprite: {fileID: 5323417389375188855, guid: d53fdc76128a82f4a874f7dbe1b7d7b8, type: 3}
 --- !u!114 &222069547470339807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9804,7 +9805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
-  planeSprite: {fileID: 0}
+  planeSprite: {fileID: 6244448364755092823, guid: 72bb0c4fbc1fcb647924db07c1bf6762, type: 3}
 --- !u!114 &2348440294670770239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9973,7 +9974,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
   playerGravity: 0
-  transformationParticles: {fileID: 0}
+  transformationParticles: {fileID: 1913081182035609188}
   cyan: 0
   yellow: 0
   magenta: 0
@@ -9983,7 +9984,7 @@ MonoBehaviour:
   sword: 0
   ball: 0
   shuriken: 0
-  normalSprite: {fileID: 0}
+  normalSprite: {fileID: 6120707212930331797, guid: 41701f1423390714992c352af300571b, type: 3}
 --- !u!114 &2348440294670770236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9999,6 +10000,7 @@ MonoBehaviour:
   jumpForce: 11
   wallJumpForce: 8
   jumpDecreaseRate: 0.5
+  ballVelocityThreshold: 18
   speed: 17
   holdTime: 0.1
   detectGroundRange: 0.28
@@ -10035,7 +10037,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2348440294670770226}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -10099,7 +10101,7 @@ MonoBehaviour:
   ballGravity: 10
   obtained: 0
   reduceFactor: 0.8
-  ballSprite: {fileID: 0}
+  ballSprite: {fileID: 6209913801216140511, guid: 1e414fef104d35641a1c0efe7067f6f8, type: 3}
 --- !u!114 &1616248063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10113,7 +10115,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
-  shurikenSprite: {fileID: 0}
+  shurikenSprite: {fileID: 5664577399506284494, guid: 95b13784f6a9c1a4ea0c4fa50f65926b, type: 3}
+--- !u!61 &1616248069
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.034116745, y: 0.045489848}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.52894396, y: 0.48057795}
+    oldSize: {x: 0.77, y: 1.53}
+    newSize: {x: 0.77, y: 1.53}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9125633, y: 1.5390202}
+  m_EdgeRadius: 0
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0
