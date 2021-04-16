@@ -10,13 +10,16 @@ public class UIMaster : MonoBehaviour
     public GameObject HelpSkillText;
     public GameObject LifeHud;
     public GameObject GameOverText;
-    public GameObject Fade;
     public GameObject LifeIcon;
     public PlayerHealth life;
     public ItemDescription itemDescription;
-    
+
+    public Destination playerDestination;
+
+    public GameObject Fade;
     // variavies de monitoramento da UI
     private string _UIItemDescription;
+    private string _sceneToGo;
     private int _UILife;
     private List<GameObject> _UILifes;
 
@@ -26,6 +29,7 @@ public class UIMaster : MonoBehaviour
         _UILife = life.life;
         itemDescription.description = "";
         _UIItemDescription = itemDescription.description;
+        _sceneToGo = playerDestination.SceneToGo;
         _UILifes = new List<GameObject>();
         CreateLifeIcon(_UILife);
     }
@@ -99,6 +103,17 @@ public class UIMaster : MonoBehaviour
             _UIItemDescription = itemDescription.description;
             ShowSkillDescription(_UIItemDescription);
         }
+
+        if (_sceneToGo != playerDestination.SceneToGo)
+        {
+            _sceneToGo = playerDestination.SceneToGo;
+            ChangeSceneEffect();
+        }
         
+    }
+
+    private void ChangeSceneEffect()
+    {
+        Fade.GetComponent<Animator>().SetTrigger("FadeIn");
     }
 }

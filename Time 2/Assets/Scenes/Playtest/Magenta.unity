@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2589,6 +2589,10 @@ PrefabInstance:
       propertyPath: boatSprite
       value: 
       objectReference: {fileID: 21300000, guid: d53fdc76128a82f4a874f7dbe1b7d7b8, type: 3}
+    - target: {fileID: 5592557204143354759, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: Fade
+      value: 
+      objectReference: {fileID: 1791362442}
     - target: {fileID: 7184355860639734107, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
       value: 1
@@ -70555,6 +70559,11 @@ Transform:
 --- !u!4 &1791362441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331859494924462127, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+  m_PrefabInstance: {fileID: 1791362438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1791362442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7331859495395618145, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
   m_PrefabInstance: {fileID: 1791362438}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810062723

@@ -16964,6 +16964,10 @@ PrefabInstance:
       propertyPath: HelpSkillText
       value: 
       objectReference: {fileID: 896023802}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: playerDestination
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
     - target: {fileID: 2892224073605061357, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: m_RootOrder
       value: 5
