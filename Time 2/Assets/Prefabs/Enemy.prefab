@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   CanDamage: 1
+  damageMagnetude: 0
   enemyLife: 1
 --- !u!114 &2850124879399924909
 MonoBehaviour:
@@ -116,8 +117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetude: 0.2
+  speed: 0
+  pointStart: {fileID: 0}
+  pointEnd: {fileID: 0}
   enemyMovement: 0
+  enemyState: 0
 --- !u!50 &2850124879399924913
 Rigidbody2D:
   serializedVersion: 4
