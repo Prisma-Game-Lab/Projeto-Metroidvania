@@ -34,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
     {
         // Fazer a animação de attack
         if (ctx.started && Time.time >= _nextAttackTime && obtained) {
+            AudioManager.instance.Play("Ataque");
             LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
             // Detectar se tem inimigos no range
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);

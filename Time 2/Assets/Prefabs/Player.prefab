@@ -10100,7 +10100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballGravity: 10
   obtained: 0
-  reduceFactor: 0.8
+  reduceFactor: 1
   ballSprite: {fileID: 6209913801216140511, guid: 1e414fef104d35641a1c0efe7067f6f8, type: 3}
 --- !u!114 &1616248063
 MonoBehaviour:

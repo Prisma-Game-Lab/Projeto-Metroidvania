@@ -26,8 +26,11 @@ public class GameMaster : MonoBehaviour
 
     public void OnReset(InputAction.CallbackContext ctx)
     {
-        if(ctx.started)
+        if (ctx.started)
+        {
             SceneManager.LoadScene("Lobby");
+        }
+           
     }
     
     

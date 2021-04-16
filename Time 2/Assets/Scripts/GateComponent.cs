@@ -19,6 +19,8 @@ public class GateComponent : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             destination.door = doorToGo;
+            // para a musica da fase 
+            AudioManager.instance.Stop(destination.SceneToGo);
             destination.SceneToGo = sceneToLoad;
             SceneManager.LoadScene(sceneToLoad);
         }

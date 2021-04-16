@@ -63,6 +63,8 @@ public class PlayerDamage : MonoBehaviour
     public void TakeDamage()
     {
         _takingDamage = true;
+        // audio de Dano 
+        AudioManager.instance.Play("Dano");
         RemoveLife();
         StartCoroutine(FlashSprite());
     }

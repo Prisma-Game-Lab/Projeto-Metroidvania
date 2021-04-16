@@ -240,6 +240,7 @@ public class PlayerMovement : MonoBehaviour
             if ( _rb.velocity.y < 0f && IsGrounded())
             {
                 _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+                AudioManager.instance.Play("Tombo");
             }
         }
 

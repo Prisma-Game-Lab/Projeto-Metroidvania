@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine.Audio;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class AudioManager : MonoBehaviour
 {
@@ -42,6 +44,17 @@ public class AudioManager : MonoBehaviour
            return;
        }
        s.source.Play();
+    }
+
+    public void Stop(string name)
+    {
+        Sound s =  Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.Stop();
     }
     
 }
