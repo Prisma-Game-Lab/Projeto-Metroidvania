@@ -8,6 +8,7 @@ public class UIMaster : MonoBehaviour
 {
 
     public GameObject HelpSkillText;
+    public GameObject HelpPanel;
     public GameObject LifeHud;
     public GameObject GameOverText;
     public GameObject LifeIcon;
@@ -37,14 +38,15 @@ public class UIMaster : MonoBehaviour
     public void ShowSkillDescription(string description)
     {
         HelpSkillText.GetComponent<Text>().text = description;
-        HelpSkillText.SetActive(true);
+        //HelpSkillText.SetActive(true);
+        HelpPanel.SetActive(true);
         StartCoroutine(DisableHelperText());
     }
     
     private IEnumerator DisableHelperText()
     {
         yield return new WaitForSeconds(5.0f);
-        HelpSkillText.SetActive(false);
+        HelpPanel.SetActive(false);
     }
     
     
