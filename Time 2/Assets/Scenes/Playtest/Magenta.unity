@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2557,6 +2557,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1955226097963492588, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955226097963492588, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847119936805744902, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.5144723
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847119936805744902, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.32079923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847119936805744902, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
     - target: {fileID: 3096319187133026542, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: normalSprite
       value: 
@@ -2564,6 +2584,11 @@ PrefabInstance:
     - target: {fileID: 3096319187133026542, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: transformationParticles
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396168830079192095, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: m_Text
+      value: "Aperte Shift ou C para se transformar em Estrela Ninja\r\nNesta forma,
+        \xE9 poss\xEDvel grudar e paredes"
       objectReference: {fileID: 0}
     - target: {fileID: 4983419200298982992, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.x

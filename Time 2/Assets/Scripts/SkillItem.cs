@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillItem : MonoBehaviour
 {
@@ -8,17 +9,25 @@ public class SkillItem : MonoBehaviour
     public PlayerSkill skill;
 
     // texto explicativo
-    public string helpDescription;
 
     public float speed;
 
     public float verticalOffset;
 
+    private Text _helpDescription;
+
+
+    private void Start()
+    {
+        _helpDescription = gameObject.GetComponent<Text>();
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerStatus>().SetPlayerSkill(skill, helpDescription);
+            collision.GetComponent<PlayerStatus>().SetPlayerSkill(skill, _helpDescription.text);
             Destroy(gameObject);
         }
 
