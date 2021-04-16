@@ -6342,6 +6342,10 @@ PrefabInstance:
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: gates.Array.data[0]
+      value: 
+      objectReference: {fileID: 1791362439}
+    - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: gates.Array.data[1]
       value: 
       objectReference: {fileID: 1417287150}
@@ -70532,6 +70536,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7331859495155248561, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+--- !u!114 &1791362439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+  m_PrefabInstance: {fileID: 1791362438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1791362440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7331859493424164537, guid: 83770053b6fb249b898e66712f37b61d, type: 3}

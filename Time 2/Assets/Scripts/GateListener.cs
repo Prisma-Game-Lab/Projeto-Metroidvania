@@ -14,7 +14,7 @@ public class GateListener : MonoBehaviour
         // No inicio da scena procura atribuir o player a porta que ele adentrou 
         foreach (GateComponent gate in gates)
         {
-            if (playerDestination.door == gate.doorToGo)
+            if (playerDestination.door == gate.myDoor)
             {
                 Vector3 spawPosition = gate.gameObject.transform.position;
                 switch (gate.typerOfGate)
