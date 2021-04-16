@@ -22,10 +22,18 @@ public class GateComponent : MonoBehaviour
             // para a musica da fase 
             AudioManager.instance.Stop(destination.SceneToGo);
             destination.SceneToGo = sceneToLoad;
-            SceneManager.LoadScene(sceneToLoad);
+            StartCoroutine(WaitFade());
         }
     }
+
+    private IEnumerator WaitFade()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene(destination.SceneToGo);
+    }
 }
+
+
 
 public enum TyperOfGate{
     Left,
