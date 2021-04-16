@@ -43,7 +43,10 @@ public class PlayerAttack : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 // Realizar dano no inimigo
-                enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
+                if (enemy.CompareTag("Wall"))
+                    enemy.GetComponent<EnemyDamage>().TakeStaticDamage();
+                else
+                    enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
             }
 
             // resetar o nextAttackTime
