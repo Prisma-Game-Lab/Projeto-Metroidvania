@@ -29,6 +29,8 @@ public class GameMaster : MonoBehaviour
     {
         if (ctx.started)
         {
+            // parar as musicas de outros leveis
+            AudioManager.instance.Stop(playerDestination.SceneToGo);
             playerDestination.SceneToGo = "Lobby";
             playerDestination.door = -1;
             SceneManager.LoadScene("Lobby");
