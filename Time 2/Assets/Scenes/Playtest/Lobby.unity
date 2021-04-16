@@ -597,8 +597,16 @@ PrefabInstance:
       value: Gate M
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: doorToGo
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Magenta
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
@@ -13654,8 +13662,16 @@ PrefabInstance:
       value: Gate Y
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: doorToGo
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Amarelo
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: typerOfGate
@@ -15801,8 +15817,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: doorToGo
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Preto
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: typerOfGate
@@ -16825,7 +16849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: doorToGo
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: sceneToLoad

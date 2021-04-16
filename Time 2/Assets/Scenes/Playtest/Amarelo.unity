@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1242,8 +1242,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate K
       objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: doorToGo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Preto
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+--- !u!114 &921335284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+  m_PrefabInstance: {fileID: 921335283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &940747796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1413,11 +1436,34 @@ PrefabInstance:
       value: Gate M
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: doorToGo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Magenta
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: typerOfGate
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+--- !u!114 &986796398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+  m_PrefabInstance: {fileID: 986796397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1209445343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,8 +1640,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate C
       objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: myDoor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: doorToGo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+      propertyPath: sceneToLoad
+      value: Ciano
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+--- !u!114 &1397446557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
+  m_PrefabInstance: {fileID: 1397446556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569736092
 GameObject:
   m_ObjectHideFlags: 0
@@ -13912,6 +13981,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: gates.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: gates.Array.data[1]
+      value: 
+      objectReference: {fileID: 1397446557}
+    - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: gates.Array.data[2]
+      value: 
+      objectReference: {fileID: 921335284}
+    - target: {fileID: 7331859493895671209, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: gates.Array.data[3]
+      value: 
+      objectReference: {fileID: 986796398}
     - target: {fileID: 7331859494352442368, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_Size.x
       value: 238
@@ -52731,6 +52816,18 @@ PrefabInstance:
     - target: {fileID: 7893997019723184124, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: skill
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: myDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: doorToGo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: sceneToLoad
+      value: Lobby
       objectReference: {fileID: 0}
     - target: {fileID: 8713729303599050696, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: typerOfGate
