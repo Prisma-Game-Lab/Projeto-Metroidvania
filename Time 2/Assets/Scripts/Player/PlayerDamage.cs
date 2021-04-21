@@ -38,12 +38,18 @@ public class PlayerDamage : MonoBehaviour
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, hitboxRange, enemyLayers);
 
-        //colidiu com pelo menos 1 inimigo
         if(hitEnemies.Length > 0)
         {
-            if (!_takingDamage)
+            foreach (Collider2D colider in hitEnemies)
             {
-                TakeDamage();
+                if (colider.gameObject.GetComponent<EnemyDamage>().CanDamage)
+                {
+                    if (!_takingDamage)
+                    {
+                        TakeDamage();
+                    }
+                }
+                    
             }
             
         }
