@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 AudioManager.instance.Play("Jump");
                 _jumpHold = true;
+                _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             
@@ -172,6 +173,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
+        {
+            if (CheckWall() && !IsGrounded() && _rb.velocity.y < 0f)
+            {
+                _rb.gravityScale = 0f;
+                _rb.velocity = new Vector2(_rb.velocity.x,0f);
+            }
+        }
+    }
+
     private void FixedUpdate()
     {
         if (!(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()) )
@@ -189,6 +202,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip(); 
+        VelocityBreak();
         BallBreak();
         if (IsGrounded())
         {
@@ -209,8 +223,6 @@ public class PlayerMovement : MonoBehaviour
                 _jumpbreak = false;
         }
     }
-    
-    
 
     private void FlightBreak()
     {
@@ -232,19 +244,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerStatus.playerState == PlayerSkill.BallMode) //verificacao para quando o player retorna ao chao, depois de planar
         {
-            if (_rb.velocity.y <= -ballVelocityThreshold)
-            {
-                _rb.velocity = new Vector2(_rb.velocity.x, -ballVelocityThreshold);
-            }
-            
-            if ( _rb.velocity.y < 0f && IsGrounded())
+            if ( _rb.velocity.y < -3f && IsGrounded())
             {
                 _rb.velocity = new Vector2(_rb.velocity.x, 0f);
                 AudioManager.instance.Play("Tombo");
             }
         }
-
-
+        
+    }
+    
+    // Impedir o jogador de ganhar uma velocidade muito alta 
+    private void VelocityBreak()
+    {
+        if (_rb.velocity.y <= -ballVelocityThreshold)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, -ballVelocityThreshold);
+        }
+        
+        if (_rb.velocity.y >= ballVelocityThreshold)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, ballVelocityThreshold);
+        }
     }
 
     private void ShurikenBreak()
@@ -293,11 +313,24 @@ public class PlayerMovement : MonoBehaviour
     //verifica uma posição segura para o player 
     private void SaveSafePosition()
     {
-        if (!OnWater())
+        if (!OnWater() && _playerStatus.playerState != PlayerSkill.PlaneMode)
         {
-            _playerStatus._lastSafePos = _playerTransform.position;
-            float safeDistance = _collider2D.bounds.size.x * 0.25f;
-            _playerStatus._lastSafePos.x += isFlipped ? safeDistance : -safeDistance;
+            Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.25f);
+            if(_playerStatus.playerState == PlayerSkill.Normal)
+                hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
+        
+            LayerMask layers = groundMask;
+            
+            layers = LayerMask.GetMask( "Floor");
+            Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.01f, 0.05f), layers);
+            
+            if (hitGround.Length > 0)
+            {
+                _playerStatus._lastSafePos = _playerTransform.position;
+                float safeDistance = _collider2D.bounds.size.x * 0.5f;
+                _playerStatus._lastSafePos.x += isFlipped ? safeDistance : -safeDistance;
+            }
+            
         }
             
     }
@@ -305,7 +338,7 @@ public class PlayerMovement : MonoBehaviour
     // Detectando colisão com o chão 
     private bool IsGrounded()
     {
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.25f);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
         if(_playerStatus.playerState == PlayerSkill.Normal)
             hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
         
@@ -315,9 +348,9 @@ public class PlayerMovement : MonoBehaviour
         {
             layers = LayerMask.GetMask("BoatFloor", "Floor");
         }
-        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layers);
         
-      
+        Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_collider2D.size.x * 0.8f, 0.1f),0f ,layers);
+        
         // Quebra chao caso seja a bolinha
         if (_playerStatus.playerState == PlayerSkill.BallMode)
         {
@@ -345,9 +378,9 @@ public class PlayerMovement : MonoBehaviour
     private bool OnWater()
     {
         
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.25f);
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
         LayerMask waterLayer = LayerMask.GetMask("BoatFloor");
-        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, waterLayer);
+        Collider2D[] hitGround =  Physics2D.OverlapBoxAll(hitPosition, new Vector2(_collider2D.size.x * 0.8f, 0.1f),0f ,waterLayer);
 
         if (hitGround.Length > 0)
         {
@@ -367,7 +400,7 @@ public class PlayerMovement : MonoBehaviour
             hitPosition = new Vector2(position.x - _collider2D.size.x * 0.5f, position.y);
         
         LayerMask layer = LayerMask.GetMask( "Floor");
-        Collider2D[] hitWall= Physics2D.OverlapCircleAll(hitPosition, detectGroundRange, layer);
+        Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,_collider2D.size.y * 0.2f),0f ,layer);
         
         // breake floors with ballmode 
         if (hitWall.Length > 0)
@@ -379,12 +412,22 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    
+    // Funcao para debugar as hitboxes 
     private void OnDrawGizmosSelected()
     {
-
-        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - gameObject.GetComponent<Collider2D>().bounds.size.y/4);
-
-        Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
+        if (_collider2D != null)
+        {
+            Vector3 position = transform.position;
+            Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y*0.5f);
+            Vector2 hitPosition2 = new Vector2(position.x + _collider2D.size.x * 0.5f, position.y);
+        
+            Gizmos.DrawWireSphere(hitPosition, detectGroundRange);
+            Gizmos.DrawCube(hitPosition, new Vector2(_collider2D.size.x, 0.1f));
+            Gizmos.DrawCube(hitPosition2, new Vector2(0.1f,_collider2D.size.y * 0.2f));
+        }
+        
+        
     }
 
 
