@@ -24,6 +24,10 @@ public class GateListener : MonoBehaviour
                         break;
                     case TyperOfGate.Right:
                         spawPosition.x -= 3f;
+                        Vector3 newLocalScale = player.transform.localScale;
+                        newLocalScale.x *= -1;
+                        player.transform.localScale = newLocalScale;
+                        player.GetComponent<PlayerMovement>().isFlipped = true;
                         break;
                 }
 
