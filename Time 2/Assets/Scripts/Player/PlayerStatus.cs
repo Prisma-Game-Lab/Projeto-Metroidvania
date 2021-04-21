@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 
@@ -146,7 +148,8 @@ public class PlayerStatus : MonoBehaviour
         transform.position = _lastSafePos;
         // transformar o player no estado normal
         SetToNormalState();
-        
+        StartCoroutine(WaitRespawn());
+
     }
 
     public void SetToNormalState()
@@ -172,6 +175,13 @@ public class PlayerStatus : MonoBehaviour
         }
                 
         rb.gravityScale = playerGravity;
+    }
+
+    private IEnumerator WaitRespawn()
+    {
+        gameObject.GetComponent<PlayerInput>().actions.Disable();
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<PlayerInput>().actions.Enable();
     }
 
 }
