@@ -50,10 +50,16 @@ public class PlayerStatus : MonoBehaviour
     public Sprite normalSprite;
 
     // Start is called before the first frame update
-    private void Start()
+
+    private void Awake()
     {
         // checar se existe player a ser carregado 
         LoadPlayer();
+    }
+
+    private void Start()
+    {
+
         _lastSafePos = transform.position;
         transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//o jogo come�a com o efeito de particulas ligado
 
