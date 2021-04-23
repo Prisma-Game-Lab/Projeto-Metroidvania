@@ -55,6 +55,8 @@ public class PlayerStatus : MonoBehaviour
     {
         // checar se existe player a ser carregado 
         LoadPlayer();
+        playerTransform = transform;
+        originalLocalScale = playerTransform.localScale;
     }
 
     private void Start()
@@ -62,14 +64,11 @@ public class PlayerStatus : MonoBehaviour
 
         _lastSafePos = transform.position;
         transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//o jogo come�a com o efeito de particulas ligado
-
         // pegar os componentes do player
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         playerGravity = rb.gravityScale; // gravidade original do player
-        playerTransform = transform;
-        originalLocalScale = playerTransform.localScale;
         collider = gameObject.GetComponent<BoxCollider2D>();
         
         // correct player colider 

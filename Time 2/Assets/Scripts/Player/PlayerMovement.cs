@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
     private bool _jumpbreak = false;
+    private bool _jumped = false;
     private Transform _playerTransform;
     private Vector3 _originalLocalScale;
     private SpriteRenderer _sr;
@@ -81,10 +82,12 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (IsGrounded())
+            if (IsGrounded() && !_jumped)
             {
                 AudioManager.instance.Play("Jump");
                 _jumpHold = true;
+                _jumped = true;
+                _jumpbreak = false;
                 _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
@@ -111,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             }
             
             if (_rb.velocity.y > 0f)
-                _jumpbreak = true;
+                _jumpbreak = true; // cancelou o pulo no ar o pulo deve freiar 
             
             _jumpHold = false;
         }
@@ -349,7 +352,7 @@ public class PlayerMovement : MonoBehaviour
             layers = LayerMask.GetMask("BoatFloor", "Floor");
         }
         
-        Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_collider2D.size.x * 0.8f, 0.1f),0f ,layers);
+        Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_collider2D.size.x * 1.5f, 0.1f),0f ,layers);
         
         // Quebra chao caso seja a bolinha
         if (_playerStatus.playerState == PlayerSkill.BallMode)
@@ -368,6 +371,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (hitGround.Length > 0)
         {
+            if (_rb.velocity.y <= 0.01f && _rb.velocity.y >= -0.01f )
+            {
+                _jumped = false;
+            }
             return true; 
         }
         
