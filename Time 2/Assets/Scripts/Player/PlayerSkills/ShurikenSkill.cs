@@ -34,7 +34,7 @@ public class ShurikenSkill : MonoBehaviour
                 //_playerStatus.sr.color = Color.magenta;
                 _playerStatus.sr.sprite = shurikenSprite;
                 Vector3 v = _playerStatus.sr.bounds.size;
-                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                BoxCollider2D b = _playerStatus.playerCollider ;
                 b.size = v;
                 // flip tem que se manter 
                 if (_playerStatus.playerMovement.isFlipped)
@@ -57,7 +57,7 @@ public class ShurikenSkill : MonoBehaviour
                 _playerStatus.sr.sprite = _playerStatus.normalSprite;
                 
                 Vector3 v = _playerStatus.sr.bounds.size;
-                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
                 b.size = v;
 
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;

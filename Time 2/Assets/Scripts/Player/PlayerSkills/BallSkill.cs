@@ -35,7 +35,7 @@ public class BallSkill : MonoBehaviour
                  //_playerStatus.sr.color = Color.gray;
                 _playerStatus.sr.sprite = ballSprite;
                 Vector3 v = _playerStatus.sr.bounds.size;
-                BoxCollider2D b = _playerStatus.collider as BoxCollider2D;
+                BoxCollider2D b = _playerStatus.playerCollider ;
                 b.size = v;
                 
                 // change player size and colider 

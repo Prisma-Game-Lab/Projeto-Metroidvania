@@ -27,7 +27,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public PlayerMovement playerMovement;
-    [HideInInspector] public Collider2D collider;
+    [HideInInspector] public BoxCollider2D playerCollider;
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
@@ -57,6 +57,7 @@ public class PlayerStatus : MonoBehaviour
         LoadPlayer();
         playerTransform = transform;
         originalLocalScale = playerTransform.localScale;
+        playerCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -69,11 +70,10 @@ public class PlayerStatus : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         playerGravity = rb.gravityScale; // gravidade original do player
-        collider = gameObject.GetComponent<BoxCollider2D>();
-        
+
         // correct player colider 
         Vector3 v = sr.bounds.size;
-        BoxCollider2D b = collider as BoxCollider2D;
+        BoxCollider2D b = playerCollider;
         b.size = v;
 
     }
@@ -81,12 +81,13 @@ public class PlayerStatus : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         // Verifica a morte pela agua
-        if (collision.collider.CompareTag("Water") && (playerState != PlayerSkill.BoatMode))
+        if (collision.collider.CompareTag("Water") && (playerState != PlayerSkill.BoatMode) )
         {
             gameObject.GetComponent<PlayerDamage>().TakeDamage();
+            Debug.Log(gameObject.name);
             ReturnPlayerToSafePos();
         }
-
+    
     }
 
     public void SetPlayerSkill(PlayerSkill skill, string description)
@@ -164,7 +165,7 @@ public class PlayerStatus : MonoBehaviour
         sr.color = Color.white;
         sr.sprite = normalSprite;
         Vector3 v = sr.bounds.size;
-        BoxCollider2D b = collider as BoxCollider2D;
+        BoxCollider2D b = playerCollider;
         b.size = v;
                 
         // flip tem que se manter 

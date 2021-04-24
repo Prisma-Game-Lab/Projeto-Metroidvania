@@ -9970,7 +9970,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   playerMovement: {fileID: 0}
-  collider: {fileID: 0}
+  playerCollider: {fileID: 0}
   playerTransform: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
   playerGravity: 0
@@ -10043,9 +10043,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005411148, y: -0.21378887}
+  m_Offset: {x: -0.005411148, y: -0.053922117}
   serializedVersion: 2
-  m_Radius: 0.15103489
+  m_Radius: 0.05077946
 --- !u!114 &2348440294670770235
 MonoBehaviour:
   m_ObjectHideFlags: 0
