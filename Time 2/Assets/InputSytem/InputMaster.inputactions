@@ -308,7 +308,7 @@
                 {
                     "name": "",
                     "id": "e55f9c00-a733-40a3-801f-5e66cb501349",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -318,7 +318,7 @@
                 },
                 {
                     "name": "",
-                    "id": "0423ef32-5243-4ed4-b0c8-6418ecb1ced5",
+                    "id": "cbbd75cf-916b-45b2-867a-17b7f23193ed",
                     "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
@@ -375,17 +375,6 @@
                     "name": "",
                     "id": "13acd7a3-dbdb-4593-8413-73ad1d86b38d",
                     "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShurikenSkill",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ee6581b5-1c84-47db-85ca-b0c018349abb",
-                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

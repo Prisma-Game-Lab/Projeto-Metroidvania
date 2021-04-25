@@ -10,32 +10,46 @@ public class PlaneSkill : MonoBehaviour
     public bool obtained = false;
     public Sprite planeSprite;
 
-    private SpriteRenderer _sr;
-
+    private PlayerStatus _playerStatus ;
+    private ParticleSystem _trasformationParticles;
+    private float _planeGravity;
+    
     private void Start()
     {
-        _sr = gameObject.GetComponent<SpriteRenderer>();
+        _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _trasformationParticles = _playerStatus.transformationParticles.GetComponent<ParticleSystem>();
+        _planeGravity = gameObject.GetComponent<PlayerMovement>().flightGravity;
     }
 
-    /*public void OnPlaneSkill()
-    {
-        PlayerSkill playerState = gameObject.GetComponent<PlayerStatus>().playerState;
-        // apertou e nao e barco
+     public void OnPlaneSkill(InputAction.CallbackContext ctx)
+     {
+         if (ctx.started && obtained)
+         {
+             AudioManager.instance.Play("Transform");
+             if(_playerStatus.playerState != PlayerSkill.PlaneMode)
+             {
+                 _trasformationParticles.Play();//liga particulas de transformacao
+                 _playerStatus.playerState = PlayerSkill.PlaneMode;
+                 _playerStatus.rb.gravityScale = _planeGravity;
 
-        if (obtained)
-        {
-            if (playerState != PlayerSkill.PlaneMode)
-            {
-                gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.PlaneMode;
-                _sr.color = Color.yellow;
-            }
-            else if (playerState == PlayerSkill.PlaneMode)
-            {
-                gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
-                _sr.color = Color.white;
-            }
+                 _playerStatus.sr.sprite = planeSprite;
+                 Vector3 v = _playerStatus.sr.bounds.size;
+                 BoxCollider2D b = _playerStatus.playerCollider ;
+                 b.size = v;
+                 
+                 _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
+                 // COMPORTAMENTO DE VELOCIDADE DO AVIAO 
+                 if (_playerStatus.rb.velocity.y < -10f)
+                 {
+                     _playerStatus.rb.AddForce(new Vector2(0f, _playerStatus.rb.velocity.y *0.1f),ForceMode2D.Impulse);
+                 }
+             }
+             else
+             {
+                 _playerStatus.SetToNormalState();
+             }
 
-        }
+         }
 
-    }*/
+     }
 }

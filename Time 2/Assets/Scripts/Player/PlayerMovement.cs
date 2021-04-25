@@ -81,8 +81,9 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-
-            if (IsGrounded() && !_jumped)
+            
+            // _jumped impede pulos adicionais em paredes e o avião não pode pular
+            if (IsGrounded() && !_jumped && _playerStatus.playerState != PlayerSkill.PlaneMode)
             {
                 AudioManager.instance.Play("Jump");
                 _jumpHold = true;
@@ -92,26 +93,26 @@ public class PlayerMovement : MonoBehaviour
                 _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
             
-            Flight();
+            //Flight();
         }
 
 
         if (_jumpHold && ctx.canceled)
         {
            
-            if (_playerStatus.playerState == PlayerSkill.PlaneMode)
-            {
-                _trasformationParticles.Play();//liga particulas de transformacao
-                AudioManager.instance.Play("Transform");
-                _playerStatus.playerState = PlayerSkill.Normal;
-                
-                //_sr.color = Color.white;
-                _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
-                _sr.sprite = _playerStatus.normalSprite;
-                Vector3 v = _playerStatus.sr.bounds.size;
-                BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
-                b.size = v;
-            }
+            // if (_playerStatus.playerState == PlayerSkill.PlaneMode)
+            // {
+            //     _trasformationParticles.Play();//liga particulas de transformacao
+            //     AudioManager.instance.Play("Transform");
+            //     _playerStatus.playerState = PlayerSkill.Normal;
+            //     
+            //     //_sr.color = Color.white;
+            //     _rb.gravityScale = _playerGravity;//corrige a gravidade quando o jogador solta o botao de pulaa
+            //     _sr.sprite = _playerStatus.normalSprite;
+            //     Vector3 v = _playerStatus.sr.bounds.size;
+            //     BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
+            //     b.size = v;
+            // }
             
             if (_rb.velocity.y > 0f)
                 _jumpbreak = true; // cancelou o pulo no ar o pulo deve freiar 
@@ -129,18 +130,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerStatus.playerState = PlayerSkill.PlaneMode;
             
-            //manter o flip 
-            // flip tem que se manter 
-            if (isFlipped)
-            {
-                Vector3 flippedScale = _originalLocalScale;
-                flippedScale.x *= -1f;
-                _playerTransform.localScale = flippedScale;
-            }
-            else
-            {
-                _playerTransform.localScale = _originalLocalScale;
-            }
             AudioManager.instance.Play("Transform");
             _trasformationParticles.Play();//liga particulas de transformacao
             //_sr.color = Color.yellow;
@@ -230,18 +219,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlightBreak()
     {
+        //AVIAO ANTIGO
+        // if (_playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
+        // {
+        //     AudioManager.instance.Play("Transform");
+        //     _trasformationParticles.Play();//liga particulas de transformacao
+        //     _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
+        //     _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
+        //     //_sr.color = Color.white;
+        //     _sr.sprite = _playerStatus.normalSprite;
+        //     Vector3 v = _playerStatus.sr.bounds.size;
+        //     BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
+        //     b.size = v;
+        // }
+        
         if (_playerStatus.playerState == PlayerSkill.PlaneMode)//verificacao para quando o player retorna ao chao, depois de planar
         {
-            AudioManager.instance.Play("Transform");
-            _trasformationParticles.Play();//liga particulas de transformacao
-            _rb.gravityScale = _playerGravity;//corrige a gravidade quando o aviao toca o chao
-            _playerStatus.playerState = PlayerSkill.Normal;//corrige a forma do player
-            //_sr.color = Color.white;
-            _sr.sprite = _playerStatus.normalSprite;
-            Vector3 v = _playerStatus.sr.bounds.size;
-            BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
-            b.size = v;
+            _rb.velocity = new Vector2(0f, _rb.velocity.y); 
         }
+        
     }
 
     private void BallBreak()
