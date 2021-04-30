@@ -5,20 +5,37 @@ using UnityEngine.UI;
 
 public class PlayerVictory : MonoBehaviour
 {
-    public List<ObjectColor> _obtainedColors = new List<ObjectColor>();//mudar para private quando acabar de testar
     public GameObject UIMaster;
+    public PlayerStatus playerStatus;
+
+
+    private void Start()
+    {
+        playerStatus = gameObject.GetComponent<PlayerStatus>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Color"))
         {
             ObjectColor collectedColor = collision.GetComponent<ColorComponent>().collectibleColor;
-            if (!_obtainedColors.Contains(collectedColor))
+            switch (collectedColor)
             {
-                _obtainedColors.Add(collectedColor);
-                Destroy(collision.gameObject);
+                case ObjectColor.Magenta:
+                    playerStatus.magenta= true;
+                    break;
+                case ObjectColor.Cyan:
+                    playerStatus.cyan = true;
+                    break;
+                case ObjectColor.Yellow:
+                    playerStatus.yellow = true;
+                    break;
+                case ObjectColor.Black:
+                    playerStatus.black = true;
+                    break;
             }
-
+            SaveSystem.SavePlayer(playerStatus);
+            Destroy(collision.gameObject);
         }
         else if (collision.CompareTag("FinalDoor"))
         {
@@ -32,7 +49,7 @@ public class PlayerVictory : MonoBehaviour
 
     public bool CollectedAll()
     {
-        if (_obtainedColors.Count == 4)
+        if (playerStatus.magenta && playerStatus.cyan && playerStatus.yellow && playerStatus.black )
             return true;
         return false;
     }
