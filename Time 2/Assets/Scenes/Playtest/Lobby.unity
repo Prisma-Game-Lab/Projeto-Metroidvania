@@ -14552,7 +14552,7 @@ Transform:
   - {fileID: 52891661}
   - {fileID: 1289822049}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110237383
 GameObject:
@@ -14973,6 +14973,11 @@ Transform:
   m_Father: {fileID: 901450648}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1353737473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2892224073605061358, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+  m_PrefabInstance: {fileID: 2892224073116601547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1380802620
 GameObject:
   m_ObjectHideFlags: 0
@@ -16445,7 +16450,8 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.053922117
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5203908061383129676, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
 --- !u!4 &1616248051 stripped
 Transform:
@@ -16469,8 +16475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d3520f53daee6498216f7821598766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obtainedColors: 
-  UIMaster: {fileID: 0}
+  UIMaster: {fileID: 1353737473}
+  playerStatus: {fileID: 0}
 --- !u!1 &1623241030
 GameObject:
   m_ObjectHideFlags: 0
@@ -17596,6 +17602,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1110237383}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: VictoryUI
+      value: 
+      objectReference: {fileID: 1809027858}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: GameOverText
       value: 
       objectReference: {fileID: 1057783144}
@@ -17666,7 +17676,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6073523794936321907, guid: a663d9c6c7ea24fe599d9cd67f2ec73f, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6073523794936321907, guid: a663d9c6c7ea24fe599d9cd67f2ec73f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerVictory : MonoBehaviour
 {
     public GameObject UIMaster;
-    public PlayerStatus playerStatus;
+    [HideInInspector]public PlayerStatus playerStatus;
 
 
     private void Start()
@@ -35,6 +35,10 @@ public class PlayerVictory : MonoBehaviour
                     break;
             }
             SaveSystem.SavePlayer(playerStatus);
+            Debug.Log(playerStatus.magenta);
+            Debug.Log(playerStatus.black);
+            Debug.Log(playerStatus.yellow);
+            Debug.Log(playerStatus.cyan);
             Destroy(collision.gameObject);
         }
         else if (collision.CompareTag("FinalDoor"))
@@ -49,7 +53,7 @@ public class PlayerVictory : MonoBehaviour
 
     public bool CollectedAll()
     {
-        if (playerStatus.magenta && playerStatus.cyan && playerStatus.yellow && playerStatus.black )
+        if (playerStatus.magenta && playerStatus.cyan && playerStatus.yellow && playerStatus.black)
             return true;
         return false;
     }

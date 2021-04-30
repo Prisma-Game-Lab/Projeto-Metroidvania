@@ -75,8 +75,9 @@ public class PlayerStatus : MonoBehaviour
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
         b.size = v;
+        
 
-    }
+}
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -162,7 +163,7 @@ public class PlayerStatus : MonoBehaviour
     {
         transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//liga particulas
         playerState = PlayerSkill.Normal;
-        sr.color = Color.white;
+        //sr.color = Color.white;
         sr.sprite = normalSprite;
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
