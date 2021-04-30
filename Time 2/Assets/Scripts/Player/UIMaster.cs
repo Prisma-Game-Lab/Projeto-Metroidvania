@@ -12,6 +12,7 @@ public class UIMaster : MonoBehaviour
     public GameObject LifeHud;
     public GameObject GameOverText;
     public GameObject LifeIcon;
+    public GameObject VictoryUI;
     public PlayerHealth life;
     public ItemDescription itemDescription;
 
@@ -59,6 +60,11 @@ public class UIMaster : MonoBehaviour
     {
         GameOverText.SetActive(true);
         Destroy(gameObject);
+    }
+
+    public void PlayerWon()
+    {
+        VictoryUI.SetActive(true);
     }
 
     // MUDAR IMPLEMENTACAO SOMENTE PARA TESTE

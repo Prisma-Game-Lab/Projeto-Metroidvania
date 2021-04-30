@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerVictory : MonoBehaviour
 {
-    private List<ObjectColor> _obtainedColors = new List<ObjectColor>();
+    public List<ObjectColor> _obtainedColors = new List<ObjectColor>();//mudar para private quando acabar de testar
+    public GameObject UIMaster;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,11 +23,9 @@ public class PlayerVictory : MonoBehaviour
         else if (collision.CompareTag("FinalDoor"))
         {
             if (CollectedAll())
-                //aparece aviso de vitoria;
-                Debug.Log("Ganhou");
-            /*else
-                //avisa que ainda nao pode acessar a porta
-            */ 
+            {
+                UIMaster.GetComponent<UIMaster>().PlayerWon();
+            }
         }
 
     }
