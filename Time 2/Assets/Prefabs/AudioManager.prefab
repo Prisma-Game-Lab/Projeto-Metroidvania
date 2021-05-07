@@ -46,11 +46,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Lobby
-    clip: {fileID: 8300000, guid: 2b2b96adfa8d44be8b04f7862e531cf2, type: 3}
+    clip: {fileID: 8300000, guid: b88e7520c3f324ae9b28a1c6da98c18f, type: 3}
     volume: 0.02
     pitch: 0.8
     loop: 1
     source: {fileID: 0}
+  - name: Ciano
+    clip: {fileID: 8300000, guid: e6f2a7c188e724b84a6a6c3a1b82cee9, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
+  - name: Magenta
+    clip: {fileID: 8300000, guid: f732b96727e2740e39867b45caec6231, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
+  - name: Preto
+    clip: {fileID: 8300000, guid: 8249b4f98fd2141ca98644f2c8b7fcc5, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
+  - name: Amarelo
+    clip: {fileID: 8300000, guid: e69a283c4da4746d09e65ea6058c6de4, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
+  soundEffects:
   - name: Jump
     clip: {fileID: 8300000, guid: 7a4ae53efa6364cb38a0fb161ff0ed30, type: 3}
     volume: 0.3
@@ -59,6 +84,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Transform
     clip: {fileID: 8300000, guid: 7370c9b65c4be42f1ba5264cd99e824a, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Tombo
+    clip: {fileID: 8300000, guid: b3fae1370d4ec4f6ea6492fee93e16bd, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Ataque
+    clip: {fileID: 8300000, guid: eeadda3ef06ff49b3b351685dda9a597, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Dano
+    clip: {fileID: 8300000, guid: d8f2195310b7a4b1898c1366fc1184e2, type: 3}
     volume: 0.3
     pitch: 1.2
     loop: 0
