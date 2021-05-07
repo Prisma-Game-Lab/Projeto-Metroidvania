@@ -142,7 +142,8 @@ public class EnemyMovement : MonoBehaviour
 public enum SimpleEnemyMovements
 {
     Horizontal,
-    Vertical
+    Vertical,
+    None
 }
 
 public enum EnemyState
