@@ -12,6 +12,11 @@ public class GameMaster : MonoBehaviour
     public static GameMaster instance;
     public Destination playerDestination;
 
+    public GameObject SettingsUI;
+    public GameObject CreditsUI;
+    public GameObject MainMenuUI;
+    public GameObject ControlsUI;
+
     void Awake()
     { 
         if (instance == null)
@@ -54,6 +59,38 @@ public class GameMaster : MonoBehaviour
         SaveSystem.DeleteSave();
         StartCoroutine(WaitFade());
 
+    }
+
+    public void GoToSettings()
+    {
+        MainMenuUI.SetActive(false);
+        SettingsUI.SetActive(true);
+    }
+
+    public void GoToCredits()
+    {
+        MainMenuUI.SetActive(false);
+        CreditsUI.SetActive(true);
+    }
+
+    public void GoToControls()
+    {
+        SettingsUI.SetActive(false);
+        ControlsUI.SetActive(true);
+    }
+
+    public void BackToSettings()
+    {
+        SettingsUI.SetActive(true);
+        ControlsUI.SetActive(false);
+    }
+
+    public void BackToMainMenu()
+    {
+        MainMenuUI.SetActive(true);
+        CreditsUI.SetActive(false);
+        SettingsUI.SetActive(false);
+        ControlsUI.SetActive(false);
     }
     
     private IEnumerator WaitFade()
