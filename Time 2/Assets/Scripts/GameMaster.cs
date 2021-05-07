@@ -11,11 +11,9 @@ public class GameMaster : MonoBehaviour
     // Texto para auxiliar no funcionamento da skill 
     public static GameMaster instance;
     public Destination playerDestination;
-
     public GameObject SettingsUI;
-    public GameObject CreditsUI;
-    public GameObject MainMenuUI;
     public GameObject ControlsUI;
+    public GameObject PauseMenuUI;
 
     void Awake()
     { 
@@ -43,6 +41,18 @@ public class GameMaster : MonoBehaviour
            
     }
     
+    public void OnPause(InputAction.CallbackContext ctx)
+    {
+        PauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void BackToGame()
+    {
+        PauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    
     
     // DELETE SAVE 
     public void DeleteSave()
@@ -63,14 +73,8 @@ public class GameMaster : MonoBehaviour
 
     public void GoToSettings()
     {
-        MainMenuUI.SetActive(false);
+        PauseMenuUI.SetActive(false);
         SettingsUI.SetActive(true);
-    }
-
-    public void GoToCredits()
-    {
-        MainMenuUI.SetActive(false);
-        CreditsUI.SetActive(true);
     }
 
     public void GoToControls()
@@ -84,15 +88,16 @@ public class GameMaster : MonoBehaviour
         SettingsUI.SetActive(true);
         ControlsUI.SetActive(false);
     }
-
-    public void BackToMainMenu()
+     public void BackToPauseMenu()
     {
-        MainMenuUI.SetActive(true);
-        CreditsUI.SetActive(false);
+        PauseMenuUI.SetActive(true);
         SettingsUI.SetActive(false);
-        ControlsUI.SetActive(false);
     }
-    
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("FirstScene");
+    }
+
     private IEnumerator WaitFade()
     {
         yield return new WaitForSeconds(1f);

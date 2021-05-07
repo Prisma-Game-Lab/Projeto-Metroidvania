@@ -284,43 +284,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 92000620}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 329226671}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 329226672}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FadeIn
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &92000620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,8 +522,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -844,8 +808,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: GoToCredits
         m_Mode: 1
         m_Arguments:
@@ -1591,8 +1555,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: BackToSettings
         m_Mode: 1
         m_Arguments:
@@ -1803,9 +1767,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2340,6 +2304,7 @@ GameObject:
   - component: {fileID: 1122132873}
   - component: {fileID: 1122132872}
   - component: {fileID: 1122132876}
+  - component: {fileID: 1122132877}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2445,6 +2410,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
+--- !u!114 &1122132877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122132871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47c02504d012394c912337764e95362, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   SettingsUI: {fileID: 1776316471}
   CreditsUI: {fileID: 677093028}
   MainMenuUI: {fileID: 579978686}
@@ -2993,8 +2970,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: GoToControls
         m_Mode: 1
         m_Arguments:
@@ -3126,8 +3103,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: GoToSettings
         m_Mode: 1
         m_Arguments:
@@ -3763,8 +3740,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132876}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+      - m_Target: {fileID: 1122132877}
+        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
