@@ -117,6 +117,16 @@ public class EnemyAggro : MonoBehaviour
 
     }
     
+    // O inimigo agressivo morre na agua
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Verifica a morte pela agua
+        if (collision.collider.CompareTag("Water"))
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     
     // Funcao para debugar as hitboxes 
     // private void OnDrawGizmosSelected()
