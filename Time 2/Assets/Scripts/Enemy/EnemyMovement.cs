@@ -18,18 +18,19 @@ public class EnemyMovement : MonoBehaviour
     
     //state of the enemy 
     [HideInInspector] public EnemyState enemyState = EnemyState.Idle;
-    private bool going;
+    private bool _going;
 
-    private Rigidbody2D _rb;
-
-    private void Start()
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public SpriteRenderer sp;
+    public virtual void Start()
     {
-        _rb = gameObject.GetComponent<Rigidbody2D>();
-        going = false;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        sp = gameObject.GetComponent<SpriteRenderer>();
+        _going = false;
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         Flip();
         if(enemyMovement == SimpleEnemyMovements.Horizontal && enemyState == EnemyState.Idle)
@@ -50,7 +51,7 @@ public class EnemyMovement : MonoBehaviour
 
         //Vector3 idleDestination = Vector3.Lerp(pointToStart, pointToEnd, Mathf.PingPong(Time.time * speed, 1.0f));
         float direction = 0f;
-        if (going)
+        if (_going)
         {
             direction = Mathf.Sign(pointToStart.x - transform.position.x);
         }
@@ -61,19 +62,19 @@ public class EnemyMovement : MonoBehaviour
         
         if (transform.position.x < pointToStart.x + Mathf.Abs(pointToEnd.x - pointToStart.x)/10)
         {
-            going = false;
+            _going = false;
         }
         else if (transform.position.x > pointToEnd.x - Mathf.Abs(pointToEnd.x - pointToStart.x)/10)
         {
-            going = true;
+            _going = true;
         }
         
         Vector2 MovePos = new Vector2(direction  * speed * Time.deltaTime, //MoveTowards on 1 axis
-            0
+            rb.velocity.y
         );
         //transform.position = MovePos;
         
-        _rb.velocity = MovePos;
+        rb.velocity = MovePos;
     }
     
     private void VerticalMovement()
@@ -89,29 +90,6 @@ public class EnemyMovement : MonoBehaviour
         );
         transform.position = MovePos;
     }
-
-    // private void Flip()
-    // {
-    //     Vector3 pos = transform.position;
-    //     // movendo para a esquerda não flipado. Vai flipar 
-    //     if (!isFlipped && pos.x == pointEnd.position.x )
-    //     {
-    //         Vector3 newLocalScale = transform.localScale;
-    //         newLocalScale.x *= -1;
-    //         transform.localScale = newLocalScale;
-    //         isFlipped = true;
-    //     }
-    //
-    //     // movendo para a direta flipado. Vai flipar 
-    //     if (isFlipped && pos.x == pointStart.position.x )
-    //     {
-    //         Vector3 newLocalScale = transform.localScale;
-    //         newLocalScale.x *= -1;
-    //         transform.localScale = newLocalScale;
-    //         isFlipped = false;
-    //     }
-    //         
-    // }
     
     
     private void Flip()
@@ -119,7 +97,7 @@ public class EnemyMovement : MonoBehaviour
         // movendo para a esquerda não flipado. Vai flipar 
         if (enemyState == EnemyState.Idle)
         {
-            if (!isFlipped && _rb.velocity.x > 0)
+            if (!isFlipped && rb.velocity.x > 0)
             {
                 Vector3 newLocalScale = transform.localScale;
                 newLocalScale.x *= -1;
@@ -128,7 +106,7 @@ public class EnemyMovement : MonoBehaviour
             }
 
             // movendo para a direta flipado. Vai flipar 
-            if (isFlipped && _rb.velocity.x < 0)
+            if (isFlipped && rb.velocity.x < 0)
             {
                 Vector3 newLocalScale = transform.localScale;
                 newLocalScale.x *= -1;
