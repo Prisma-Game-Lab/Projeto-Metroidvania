@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyDamage : MonoBehaviour
 {
     private SpriteRenderer _sr;
+    public UnityEvent dieEvent;
 
     // Variaveis do efeito de blink
     public float minAlpha = 0.3f;
@@ -44,12 +46,12 @@ public class EnemyDamage : MonoBehaviour
         {
             StartCoroutine(FlashSprite());
         }
+        
         // PARA O PLAYTEST 
-
         if(!playerFliped)
-            _rb.AddForce(Vector2.right * 0.5f, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
         else
-            _rb.AddForce(Vector2.right * -0.5f, ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
     }
 
     public void TakeStaticDamage()
@@ -99,6 +101,12 @@ public class EnemyDamage : MonoBehaviour
 
         // MUDAR SOMENTE PARA TESTE 
         if(enemyLife == 0)
-            Destroy(gameObject);
+            dieEvent.Invoke();
+    }
+
+    public void DeathAnimation()
+    {
+        // ENQUANTO NAO TEM ANIMACAO 
+        Destroy(gameObject);
     }
 }

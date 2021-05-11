@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2670785371601351746
+--- !u!1 &27090089945739735
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2670785371601351750}
-  - component: {fileID: 2670785371601351751}
-  - component: {fileID: 2670785371601351769}
-  - component: {fileID: 2670785371601351748}
-  - component: {fileID: 2670785371601351749}
-  - component: {fileID: 2670785371601351747}
-  - component: {fileID: 2670785371601351744}
+  - component: {fileID: 27090089945739731}
+  - component: {fileID: 27090089945739730}
+  - component: {fileID: 27090089945739724}
+  - component: {fileID: 27090089945739725}
+  - component: {fileID: 27090089945739729}
+  - component: {fileID: 27090089945739728}
+  - component: {fileID: 2877117576662779237}
+  - component: {fileID: 5897080041647197713}
   m_Layer: 6
-  m_Name: EnemyTurret
+  m_Name: BlackEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2670785371601351750
+--- !u!4 &27090089945739731
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.69, y: -2.82, z: 41.757584}
-  m_LocalScale: {x: 1, y: 1.7625, z: 1}
+  m_GameObject: {fileID: 27090089945739735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 63.8, y: -2.9, z: 41.757584}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2670785371601351751
+--- !u!212 &27090089945739730
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2670785371601351769
+--- !u!114 &27090089945739724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33bd5a597729547b9bf623bb58e646fb, type: 3}
@@ -102,9 +103,9 @@ MonoBehaviour:
   dieEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2670785371601351769}
-        m_TargetAssemblyTypeName: EnemyDamage, Assembly-CSharp
-        m_MethodName: DeathAnimation
+      - m_Target: {fileID: 5897080041647197713}
+        m_TargetAssemblyTypeName: EnemyBomb, Assembly-CSharp
+        m_MethodName: Explode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -120,16 +121,36 @@ MonoBehaviour:
   duration: 0.4
   imortal: 0
   CanDamage: 1
-  damageMagnetude: 0
+  damageMagnetude: 7
   enemyLife: 1
---- !u!50 &2670785371601351748
+--- !u!114 &27090089945739725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27090089945739735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
+  pointStart: {fileID: 0}
+  pointEnd: {fileID: 0}
+  enemyMovement: 0
+  isFlipped: 0
+  enemyState: 0
+  rb: {fileID: 0}
+  sp: {fileID: 0}
+--- !u!50 &27090089945739729
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -137,19 +158,19 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &2670785371601351749
+--- !u!58 &27090089945739728
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -159,40 +180,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2670785371601351747
+--- !u!114 &2877117576662779237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 092a1f3278956460f9f65579277d2375, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e439019e1a774b67a539c6fc4338b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 8
-  aggroPreparationTime: 0.5
-  enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
-  resetAggroTime: 1
-  bulletSpeed: 8
---- !u!114 &2670785371601351744
+  aggroRadius: 6
+  aggroSpeed: 6
+  aggroPreparationTime: 0
+  resetAggroTime: 2
+--- !u!114 &5897080041647197713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2670785371601351746}
+  m_GameObject: {fileID: 27090089945739735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a730ff735fd04431ba6a0624ce12dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  pointStart: {fileID: 0}
-  pointEnd: {fileID: 0}
-  enemyMovement: 2
-  isFlipped: 0
-  enemyState: 0
-  rb: {fileID: 0}
-  sp: {fileID: 0}
+  littleMe: {fileID: 27090089945739735}
+  numberOfLifes: 2

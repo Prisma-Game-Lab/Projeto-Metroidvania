@@ -99,12 +99,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bd5a597729547b9bf623bb58e646fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5017939160169245545}
+        m_TargetAssemblyTypeName: EnemyDamage, Assembly-CSharp
+        m_MethodName: DeathAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.2
   duration: 0.4
+  imortal: 0
   CanDamage: 1
-  damageMagnetude: 8
+  damageMagnetude: 5
   enemyLife: 1
 --- !u!114 &5017939160169245544
 MonoBehaviour:
@@ -124,6 +140,8 @@ MonoBehaviour:
   enemyMovement: 0
   isFlipped: 0
   enemyState: 0
+  rb: {fileID: 0}
+  sp: {fileID: 0}
 --- !u!50 &5017939160169245556
 Rigidbody2D:
   serializedVersion: 4

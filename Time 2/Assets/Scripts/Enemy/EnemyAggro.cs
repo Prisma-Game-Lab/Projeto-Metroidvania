@@ -17,6 +17,7 @@ public class EnemyAggro : MonoBehaviour
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
+    private EnemyDamage _enemyDamage;
 
     private bool _performingAggro = false;
     // Start is called before the first frame update
@@ -26,11 +27,12 @@ public class EnemyAggro : MonoBehaviour
         _transform = transform;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _enemyDamage = gameObject.GetComponent<EnemyDamage>();
     }
 
     private void Update()
     {
-        if (PlayerInRange())
+        if (PlayerInRange() && _enemyDamage.CanDamage)
         {
             _enemyMovement.enemyState = EnemyState.Aggro;
             PerformAggro();
