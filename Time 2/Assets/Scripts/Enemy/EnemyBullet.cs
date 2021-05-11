@@ -9,6 +9,9 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if(other.gameObject.layer ==  LayerMask.GetMask("Enemies"))
+            return;
+        
         Destroy(gameObject);
     }
     

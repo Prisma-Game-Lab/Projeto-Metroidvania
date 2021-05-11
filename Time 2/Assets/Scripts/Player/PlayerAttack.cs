@@ -50,7 +50,11 @@ public class PlayerAttack : MonoBehaviour
                     if (enemy.CompareTag("Wall"))
                         enemy.GetComponent<EnemyDamage>().TakeStaticDamage();
                     else
-                        enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
+                    {
+                        if(enemy.GetComponent<EnemyDamage>() != null) 
+                            enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
+                    }
+                      
                 }
 
                 // resetar o nextAttackTime

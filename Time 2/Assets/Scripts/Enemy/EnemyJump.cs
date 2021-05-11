@@ -14,9 +14,9 @@ public class EnemyJump : EnemyMovement
         base.Start();
         _enemyCollider = gameObject.GetComponent<CircleCollider2D>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
     }
 
     private void OnCollisionStay2D(Collision2D other)

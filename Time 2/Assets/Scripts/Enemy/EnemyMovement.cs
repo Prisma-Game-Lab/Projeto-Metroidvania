@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    public virtual void FixedUpdate()
     {
         Flip();
         if(enemyMovement == SimpleEnemyMovements.Horizontal && enemyState == EnemyState.Idle)

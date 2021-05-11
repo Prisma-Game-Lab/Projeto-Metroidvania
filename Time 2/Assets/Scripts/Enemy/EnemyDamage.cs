@@ -12,6 +12,8 @@ public class EnemyDamage : MonoBehaviour
     public float interval = 0.1f;
     public float duration = 0.4f;
 
+    public bool imortal; 
+
     public bool CanDamage = true;
     
     //forca que lanca o inimigo depois do ataque
@@ -31,15 +33,17 @@ public class EnemyDamage : MonoBehaviour
     {
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
-        if (enemyLife == 0)
+        if (enemyLife == 0 && !imortal)
         {
-            
             gameObject.GetComponent<EnemyMovement>().enabled = false;
             _rb.velocity = Vector2.zero;
             CanDamage = false;
         }
 
-        StartCoroutine(FlashSprite());
+        if (!imortal)
+        {
+            StartCoroutine(FlashSprite());
+        }
         // PARA O PLAYTEST 
 
         if(!playerFliped)
@@ -52,12 +56,12 @@ public class EnemyDamage : MonoBehaviour
     {
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
-        if (enemyLife == 0)
+        if (enemyLife == 0 && !imortal)
         {
             CanDamage = false;
         }
         // MUDAR SOMENTE PARA TESTE 
-        if(enemyLife == 0)
+        if(enemyLife == 0 && !imortal)
             Destroy(gameObject);
     }
     

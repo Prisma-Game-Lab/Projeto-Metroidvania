@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D _collider2D;
     private PlaneSkill _planeSkill;
     private ParticleSystem _trasformationParticles;
+    //checar plataforma que se move 
+    private bool _onMovingFloor;
 
     
     private void Start()
@@ -164,6 +166,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+        // checar plataforma que se move 
+        OnMovingFloor();
+        
+        
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -180,10 +186,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // animacao 
+        if (_move == Vector2.zero)
+        {
+            _playerStatus.playerAnimationState = PlayerAnimationState.Idle;
+        }
+        else
+        {
+            _playerStatus.playerAnimationState = PlayerAnimationState.Movement;
+        }
+        
+        //Realizando o movimento horizontal 
         if (!(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()) )
         {
             Vector2 m = _move * (speed * Time.fixedDeltaTime);
-            _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
+            if (!(_onMovingFloor && m.x == 0))
+                _rb.velocity = (new Vector2(m.x * speed, _rb.velocity.y));
         }
         
         if (_playerStatus.playerState == PlayerSkill.ShurikenMode)
@@ -343,7 +361,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _playerStatus.playerCollider.size.y * 0.5f);
 
         LayerMask layers = groundMask;
-
+        layers = LayerMask.GetMask("MovingFloor", "Floor");
         if (_playerStatus.playerState == PlayerSkill.BoatMode)
         {
             layers = LayerMask.GetMask("BoatFloor", "Floor");
@@ -399,6 +417,21 @@ public class PlayerMovement : MonoBehaviour
         }
         
         return false;
+    }
+    
+    private void OnMovingFloor()
+    {
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
+        LayerMask waterLayer = LayerMask.GetMask("MovingFloor");
+        Collider2D[] hitGround =  Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.8f, 0.1f),0f ,waterLayer);
+
+        if (hitGround.Length > 0)
+        {
+            _onMovingFloor = true;
+            return;
+        }
+        
+        _onMovingFloor = false;
     }
     
     // Checar se ta na  parede para a habilidade da shuriken 
