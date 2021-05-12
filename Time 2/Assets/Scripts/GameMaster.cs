@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
+
+    private bool _paused = false;
     // Texto para auxiliar no funcionamento da skill 
     public static GameMaster instance;
     public Destination playerDestination;
@@ -43,7 +45,16 @@ public class GameMaster : MonoBehaviour
     
     public void OnPause(InputAction.CallbackContext ctx)
     {
+        if (_paused)
+        {
+            PauseMenuUI.SetActive(false);
+            _paused = false;
+            Time.timeScale = 1f;
+            return;
+        }
+
         PauseMenuUI.SetActive(true);
+        _paused = true;
         Time.timeScale = 0f;
     }
 
