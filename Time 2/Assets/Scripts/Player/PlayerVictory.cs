@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerVictory : MonoBehaviour
 {
-    public GameObject UIMaster;
+    [HideInInspector]public PlayerInteraction playerInteraction;
     [HideInInspector]public PlayerStatus playerStatus;
 
 
     private void Start()
     {
         playerStatus = gameObject.GetComponent<PlayerStatus>();
+        playerInteraction = gameObject.GetComponent<PlayerInteraction>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,14 +42,23 @@ public class PlayerVictory : MonoBehaviour
             Debug.Log(playerStatus.cyan);
             Destroy(collision.gameObject);
         }
-        else if (collision.CompareTag("FinalDoor"))
-        {
-            if (CollectedAll())
-            {
-                UIMaster.GetComponent<UIMaster>().PlayerWon();
-            }
-        }
+        
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("em frente a porta");
+        if (collision.CompareTag("FinalDoor"))
+        {
+            playerInteraction.onDoor = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("sai da porta");
+        playerInteraction.onDoor = false;
     }
 
     public bool CollectedAll()
@@ -57,4 +67,7 @@ public class PlayerVictory : MonoBehaviour
             return true;
         return false;
     }
+
+    
+
 }

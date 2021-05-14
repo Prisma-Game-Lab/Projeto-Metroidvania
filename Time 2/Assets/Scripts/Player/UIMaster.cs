@@ -9,6 +9,7 @@ public class UIMaster : MonoBehaviour
 
     public GameObject HelpSkillText;
     public GameObject HelpPanel;
+    public GameObject DoorPanel;
     public GameObject LifeHud;
     public GameObject GameOverText;
     public GameObject LifeIcon;
@@ -62,10 +63,19 @@ public class UIMaster : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void PlayerWon()
+    public void PlayerWon(bool openDoor)
     {
-        VictoryUI.SetActive(true);
+        if (openDoor)
+        {
+            StartCoroutine(WaitDoor1());
+        }
+        else
+        {
+            StartCoroutine(WaitDoor2());
+        }
+        
     }
+
 
     // MUDAR IMPLEMENTACAO SOMENTE PARA TESTE
     private void RemoveLife()
@@ -129,4 +139,23 @@ public class UIMaster : MonoBehaviour
     {
         Fade.GetComponent<Animator>().SetTrigger("FadeIn");
     }
+
+    private IEnumerator WaitDoor1()
+    {
+        DoorPanel.SetActive(true);
+        DoorPanel.transform.GetChild(0).gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        DoorPanel.transform.GetChild(0).gameObject.SetActive(false);
+        DoorPanel.SetActive(false);
+    }
+
+    private IEnumerator WaitDoor2()
+    {
+        DoorPanel.SetActive(true);
+        DoorPanel.transform.GetChild(1).gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        DoorPanel.transform.GetChild(1).gameObject.SetActive(false);
+        DoorPanel.SetActive(false);
+    }
+
 }
