@@ -13,7 +13,6 @@ public class UIMaster : MonoBehaviour
     public GameObject LifeHud;
     public GameObject GameOverText;
     public GameObject LifeIcon;
-    public GameObject VictoryUI;
     public PlayerHealth life;
     public ItemDescription itemDescription;
 
@@ -140,7 +139,7 @@ public class UIMaster : MonoBehaviour
         Fade.GetComponent<Animator>().SetTrigger("FadeIn");
     }
 
-    private IEnumerator WaitDoor1()
+    private IEnumerator WaitDoor1()//mostra o texto da porta quando ha vitoria
     {
         DoorPanel.SetActive(true);
         DoorPanel.transform.GetChild(0).gameObject.SetActive(true);
@@ -149,7 +148,7 @@ public class UIMaster : MonoBehaviour
         DoorPanel.SetActive(false);
     }
 
-    private IEnumerator WaitDoor2()
+    private IEnumerator WaitDoor2()//mostra o texto da porta quando ainda nao foram coletadadas todas as tintas
     {
         DoorPanel.SetActive(true);
         DoorPanel.transform.GetChild(1).gameObject.SetActive(true);

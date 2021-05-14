@@ -22,13 +22,6 @@ public class SoundControl : MonoBehaviour
         SetSoundPrefsSoundEffects();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-     
-    }
-
-
     void SetSoundPrefsBackground()
     {
         if (_firstGameValue == 0)
@@ -40,7 +33,6 @@ public class SoundControl : MonoBehaviour
         }
         else
         {
-            Debug.Log("Else");
             _backgroundValue = PlayerPrefs.GetFloat(_backgroundPrefs);
             backgroundSlider.value = _backgroundValue;
             AudioManager.instance.UpdateSoundVolumes();
@@ -59,9 +51,7 @@ public class SoundControl : MonoBehaviour
         }
         else
         {
-            Debug.Log("Else");
             _soundEffectsValue = PlayerPrefs.GetFloat(_soundEffectsPrefs);
-            Debug.Log(_soundEffectsValue);
             soundEffectsSlider.value = _soundEffectsValue;
             AudioManager.instance.UpdateSoundVolumes();
         }

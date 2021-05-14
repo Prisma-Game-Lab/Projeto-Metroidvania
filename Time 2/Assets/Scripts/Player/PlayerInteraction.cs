@@ -10,16 +10,9 @@ public class PlayerInteraction : MonoBehaviour
     [HideInInspector]public bool onDoor = false;
     private PlayerVictory _playerVictory;
 
-    // Start is called before the first frame update
     void Start()
     {
         _playerVictory = GetComponent<PlayerVictory>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Interaction(InputAction.CallbackContext ctx)

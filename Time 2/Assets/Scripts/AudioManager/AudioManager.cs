@@ -9,14 +9,9 @@ using Debug = UnityEngine.Debug;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Sound[] sounds;
-
     public Sound[] soundEffects;
-
     public static AudioManager instance;
-    
-
     private void Awake()
     {
         if (instance == null)

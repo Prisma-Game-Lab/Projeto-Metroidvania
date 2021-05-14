@@ -7,8 +7,6 @@ public class PlayerVictory : MonoBehaviour
 {
     [HideInInspector]public PlayerInteraction playerInteraction;
     [HideInInspector]public PlayerStatus playerStatus;
-
-
     private void Start()
     {
         playerStatus = gameObject.GetComponent<PlayerStatus>();
@@ -36,10 +34,10 @@ public class PlayerVictory : MonoBehaviour
                     break;
             }
             SaveSystem.SavePlayer(playerStatus);
-            Debug.Log(playerStatus.magenta);
+            /*Debug.Log(playerStatus.magenta);
             Debug.Log(playerStatus.black);
             Debug.Log(playerStatus.yellow);
-            Debug.Log(playerStatus.cyan);
+            Debug.Log(playerStatus.cyan);*/
             Destroy(collision.gameObject);
         }
         
@@ -48,7 +46,6 @@ public class PlayerVictory : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("em frente a porta");
         if (collision.CompareTag("FinalDoor"))
         {
             playerInteraction.onDoor = true;
@@ -57,7 +54,6 @@ public class PlayerVictory : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("sai da porta");
         playerInteraction.onDoor = false;
     }
 

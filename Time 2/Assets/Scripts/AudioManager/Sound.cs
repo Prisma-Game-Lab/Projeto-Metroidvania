@@ -8,7 +8,6 @@ public class Sound
 {
 
     public string name;
-    // Start is called before the first frame update
     public AudioClip clip;
 
     [Range(0f, 1f)]

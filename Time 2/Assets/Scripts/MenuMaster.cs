@@ -11,8 +11,6 @@ public class MenuMaster : MonoBehaviour
     public GameObject loadGameButton;
     public GameObject warningUI;
     private GameMaster _gameMaster;
-
-
     private void Start()
     {
         Time.timeScale = 1f;
