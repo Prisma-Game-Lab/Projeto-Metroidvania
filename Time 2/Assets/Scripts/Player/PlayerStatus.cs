@@ -62,6 +62,7 @@ public class PlayerStatus : MonoBehaviour
     private void Awake()
     {
         // checar se existe player a ser carregado 
+        Time.timeScale = 1f;
         LoadPlayer();
         playerTransform = transform;
         originalLocalScale = playerTransform.localScale;

@@ -82,6 +82,14 @@ public class GameMaster : MonoBehaviour
 
     }
 
+
+    public void LoadGame()
+    {
+        playerDestination.SceneToGo = "Lobby";
+        playerDestination.door = -1;
+        StartCoroutine(WaitFade());
+    }
+
     public void GoToSettings()
     {
         PauseMenuUI.SetActive(false);

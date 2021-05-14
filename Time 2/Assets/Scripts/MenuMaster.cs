@@ -15,6 +15,7 @@ public class MenuMaster : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         _gameMaster = GetComponent<GameMaster>();
         if (CheckLoad())
         {
