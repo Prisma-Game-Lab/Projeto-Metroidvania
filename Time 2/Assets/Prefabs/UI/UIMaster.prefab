@@ -44,12 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HelpSkillText: {fileID: 0}
-  HelpPanel: {fileID: 0}
-  DoorPanel: {fileID: 0}
   LifeHud: {fileID: 0}
   GameOverText: {fileID: 0}
   LifeIcon: {fileID: 308387993484948778, guid: 7e6f54026559e4622a24c47843e93bc5, type: 3}
   life: {fileID: 11400000, guid: ddd46d8dbda19421f81016db4a4ce479, type: 2}
   itemDescription: {fileID: 11400000, guid: 471cd16b7bd4249adaa485050300b579, type: 2}
-  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
-  Fade: {fileID: 0}
