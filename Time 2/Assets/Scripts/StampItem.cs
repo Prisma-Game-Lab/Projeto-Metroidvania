@@ -5,7 +5,7 @@ using UnityEngine;
 public class StampItem : MonoBehaviour
 {
     public Stamp stamp;
-    public GameObject mailBox;
+    private PlayerStatus _playerStatus;
     
     // Start is called before the first frame update
 
@@ -28,7 +28,7 @@ public class StampItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerStatus>().SetStampStatus(stamp.mailBoxToGo);
-            mailBox.GetComponent<MailBox>().UpdateStampStatus();
+            collision.GetComponent<PlayerStatus>().UpdateStampStatus(stamp);
             Destroy(gameObject);
         }
 

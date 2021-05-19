@@ -241,6 +241,26 @@ public class PlayerStatus : MonoBehaviour
         SaveSystem.SavePlayer(this);
     }
 
+    public void UpdateStampStatus(Stamp stamp)
+    {
+        switch (stamp.mailBoxToGo)
+        {
+            case stampDestination.magenta:
+                stamp.obtained = stampMagenta;
+                break;
+            case stampDestination.cyan:
+                stamp.obtained = stampCyan;
+                break;
+            case stampDestination.yellow:
+                stamp.obtained = stampYellow;
+                break;
+            case stampDestination.black:
+                stamp.obtained = stampBlack;
+                break;
+        }
+
+    }
+
     public void SetTeleportStatus(bool status)
     {
         stampTeleport = status;

@@ -18,7 +18,11 @@ public class MailBox : MonoBehaviour
     private void Start()
     {
         playerStatus = player.GetComponent<PlayerStatus>();
-        UpdateStampStatus();
+        foreach (Stamp stamp in stamps)
+        {
+            playerStatus.UpdateStampStatus(stamp);
+        }
+        
     }
     
     public void LeaveMailBox()
@@ -27,30 +31,7 @@ public class MailBox : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void UpdateStampStatus()
-    {
-        foreach (Stamp stamp in stamps)
-        {//verificar quais selos ja foram obtidos pelo jogador ao iniciar a cena
-
-            switch (stamp.mailBoxToGo)
-            {
-                case stampDestination.magenta:
-                    stamp.obtained = playerStatus.stampMagenta;
-                    break;
-                case stampDestination.cyan:
-                    stamp.obtained = playerStatus.stampCyan;
-                    break;
-                case stampDestination.yellow:
-                    stamp.obtained = playerStatus.stampYellow;
-                    break;
-                case stampDestination.black:
-                    stamp.obtained = playerStatus.stampBlack;
-                    break;
-            }
-
-
-        }
-    }
+    
 
     
 
