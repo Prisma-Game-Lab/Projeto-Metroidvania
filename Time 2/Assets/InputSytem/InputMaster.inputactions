@@ -422,6 +422,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "GetStamps",
+                    "type": "Button",
+                    "id": "2134523e-e3dd-404c-b7df-120dff091ddf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -455,6 +463,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4320b05-c507-4f0e-94ee-409c312202d8",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GetStamps",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

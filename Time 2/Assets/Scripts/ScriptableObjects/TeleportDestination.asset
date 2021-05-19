@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fd79d624f8adf49b54258399e2039b, type: 3}
   m_Name: TeleportDestination
   m_EditorClassIdentifier: 
-  SceneToGo: Magenta
-  targetedMailBox: 0
+  SceneToGo: Lobby
+  targetedMailBox: 4

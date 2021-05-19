@@ -13,7 +13,6 @@ public class MailBoxListener : MonoBehaviour
         if (player.GetComponent<PlayerStatus>().stampTeleport)
         {
             AudioManager.instance.Play(playerDestination.SceneToGo);
-            // No inicio da scena procura atribuir o player a porta que ele adentrou 
             foreach (MailBox mailBox in mailBoxes)
             {
                 if (playerDestination.targetedMailBox == mailBox.myMailBox)

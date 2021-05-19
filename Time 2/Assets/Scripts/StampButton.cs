@@ -22,6 +22,8 @@ public class StampButton : MonoBehaviour
     public void Teleport()
     {
         Time.timeScale = 1f;
+        // para a musica da fase 
+        AudioManager.instance.Stop(destination.SceneToGo);
         destination.SceneToGo = stamp.SceneToGo;
         destination.targetedMailBox = stamp.mailBoxToGo;
         player.GetComponent<PlayerStatus>().SetTeleportStatus(true);

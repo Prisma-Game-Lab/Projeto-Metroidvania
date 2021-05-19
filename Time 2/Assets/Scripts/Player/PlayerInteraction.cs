@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     public GameObject UIMaster;
-    public GameObject mailBox;
+    private GameObject _mailBoxObject;
     [HideInInspector]public bool onDoor = false;
     [HideInInspector] public bool onMailBox = false;
     private PlayerVictory _playerVictory;
@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     void Start()
     {
         _playerVictory = GetComponent<PlayerVictory>();
-        _mailBox = mailBox.GetComponent<MailBox>();
+        
     }
 
     public void Interaction(InputAction.CallbackContext ctx)
@@ -45,6 +45,8 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.CompareTag("MailBox"))
         {
             onMailBox = true;
+            _mailBoxObject = collision.gameObject;
+            _mailBox = _mailBoxObject.GetComponent<MailBox>();
         }
     }
 
