@@ -41,7 +41,11 @@ public class MailBox : MonoBehaviour
         }
     }
     
-
+    public void LeaveMailBox()
+    {
+        mailBoxUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
  
 }
 
