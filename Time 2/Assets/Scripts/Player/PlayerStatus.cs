@@ -65,6 +65,10 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public bool stampYellow = false;
     [HideInInspector] public bool stampBlack = false;
 
+    //Teleport Status
+    [HideInInspector] public bool stampTeleport = false;
+
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -171,6 +175,9 @@ public class PlayerStatus : MonoBehaviour
         stampYellow = data.stampYellow;
         stampBlack = data.stampBlack;
 
+        //Teleport Status
+        stampTeleport = data.stampTeleport;
+
     }
 
     private void ReturnPlayerToSafePos()
@@ -231,6 +238,12 @@ public class PlayerStatus : MonoBehaviour
                 stampBlack = true;
                 break;
         }
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void SetTeleportStatus(bool status)
+    {
+        stampTeleport = status;
         SaveSystem.SavePlayer(this);
     }
 

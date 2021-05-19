@@ -586,7 +586,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86723979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86723981}
+        m_TargetAssemblyTypeName: StampButton, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &86723979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +650,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamp: {fileID: 11400000, guid: bdd89c551a5bb5343bb87f914d97c00c, type: 2}
+  destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+  player: {fileID: 1616248052}
 --- !u!1 &137414727
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +784,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamp: {fileID: 11400000, guid: 7e804c7c05f1f5b43b44962cae31179c, type: 2}
+  destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+  player: {fileID: 1616248052}
 --- !u!114 &146994144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,7 +829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 146994145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 146994143}
+        m_TargetAssemblyTypeName: StampButton, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &146994145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14447,7 +14475,7 @@ Transform:
   m_GameObject: {fileID: 410027881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 48.63, y: -1, z: 0}
-  m_LocalScale: {x: 0.5908, y: 1.9821, z: 1}
+  m_LocalScale: {x: 1, y: 1.9821, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
@@ -15938,6 +15966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamp: {fileID: 11400000, guid: c1d861bd58d76fc469c588e1a05b7808, type: 2}
+  destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+  player: {fileID: 1616248052}
 --- !u!114 &817830045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15981,7 +16011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 817830046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 817830044}
+        m_TargetAssemblyTypeName: StampButton, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &817830046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16300,6 +16342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamp: {fileID: 11400000, guid: a383cd29deb75b64599df6ca7e532f9e, type: 2}
+  destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+  player: {fileID: 1616248052}
 --- !u!114 &850466463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16343,7 +16387,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 850466464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850466462}
+        m_TargetAssemblyTypeName: StampButton, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &850466464
 MonoBehaviour:
   m_ObjectHideFlags: 0

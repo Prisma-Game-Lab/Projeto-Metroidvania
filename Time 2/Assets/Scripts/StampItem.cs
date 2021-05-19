@@ -6,6 +6,7 @@ public class StampItem : MonoBehaviour
 {
     public Stamp stamp;
     public GameObject mailBox;
+    
     // Start is called before the first frame update
 
     void Start()

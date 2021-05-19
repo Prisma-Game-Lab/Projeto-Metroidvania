@@ -6,24 +6,29 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public class PlayerData
 {
-  // Colors 
-  public bool cyan;
-  public bool yellow;
-  public bool magenta;
-  public bool black; 
+    // Colors 
+    public bool cyan;
+    public bool yellow;
+    public bool magenta;
+    public bool black; 
   
-  // Skills 
-  public bool boat;
-  public bool airplane;
-  public bool sword;
-  public bool ball;
-  public bool shuriken;
+    // Skills 
+    public bool boat;
+    public bool airplane;
+    public bool sword;
+    public bool ball;
+    public bool shuriken;
 
     //Stamps
     public bool stampMagenta;
     public bool stampCyan;
     public bool stampYellow;
     public bool stampBlack;
+
+
+    //Teleport Status
+    public bool stampTeleport;
+
 
     // Class init 
     public PlayerData(PlayerStatus player)
@@ -46,6 +51,9 @@ public class PlayerData
     stampCyan = player.stampCyan;
     stampYellow = player.stampYellow;
     stampBlack = player.stampBlack;
+
+    //Teleport Status
+    stampTeleport = player.stampTeleport;
 
     }
 }
