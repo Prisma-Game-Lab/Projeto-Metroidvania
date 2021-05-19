@@ -214,4 +214,24 @@ public class PlayerStatus : MonoBehaviour
         gameObject.GetComponent<PlayerInput>().actions.Enable();
     }
 
+    public void SetStampStatus(stampDestination stampMailBox)
+    {
+        switch (stampMailBox)
+        {
+            case stampDestination.magenta:
+                stampMagenta = true;
+                break;
+            case stampDestination.cyan:
+                stampCyan = true;
+                break;
+            case stampDestination.yellow:
+                stampYellow = true;
+                break;
+            case stampDestination.black:
+                stampBlack = true;
+                break;
+        }
+        SaveSystem.SavePlayer(this);
+    }
+
 }

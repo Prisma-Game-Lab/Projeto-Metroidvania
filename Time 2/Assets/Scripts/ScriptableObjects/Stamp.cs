@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum mailBox
+public enum stampDestination
 {
     magenta,
     cyan,
@@ -14,7 +14,7 @@ public enum mailBox
 public class Stamp : ScriptableObject
 {
     public string SceneToGo;
-    public mailBox mailBoxToGo;
+    public stampDestination mailBoxToGo;
     public Sprite sprite;
     public bool obtained;
 }
