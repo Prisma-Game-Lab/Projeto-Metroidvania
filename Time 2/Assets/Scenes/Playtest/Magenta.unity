@@ -1647,6 +1647,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2217535846667569156, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
   m_PrefabInstance: {fileID: 806346579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &806346582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217535848124016864, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+  m_PrefabInstance: {fileID: 806346579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815527670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,6 +3529,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a383cd29deb75b64599df6ca7e532f9e, type: 2}
   player: {fileID: 1791362444}
   mailBoxUI: {fileID: 806346580}
+  mailBoxUIFirstButton: {fileID: 806346582}
   playerStatus: {fileID: 0}
 --- !u!212 &2006613952
 SpriteRenderer:

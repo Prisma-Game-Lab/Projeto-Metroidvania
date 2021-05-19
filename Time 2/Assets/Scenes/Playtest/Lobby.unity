@@ -17248,6 +17248,11 @@ Transform:
   m_Father: {fileID: 901450648}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1333976799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217535848124016864, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+  m_PrefabInstance: {fileID: 2217535848206509416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1353737473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2892224073605061358, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
@@ -21127,6 +21132,10 @@ PrefabInstance:
       propertyPath: mailBoxUI
       value: 
       objectReference: {fileID: 1549528427}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: mailBoxUIFirstButton
+      value: 
+      objectReference: {fileID: 1333976799}
     - target: {fileID: 3277773768845000986, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: m_Name
       value: MailBox

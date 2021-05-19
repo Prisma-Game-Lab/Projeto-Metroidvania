@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class PlayerInteraction : MonoBehaviour
         else if (onMailBox)
         {
             _mailBox.mailBoxUI.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
             Time.timeScale = 0f;
         }
 
@@ -55,7 +57,10 @@ public class PlayerInteraction : MonoBehaviour
         onMailBox = false;
     }
 
-
+    public bool IsInteracting()
+    {
+        return onMailBox || onDoor;
+    }
 
 
 }

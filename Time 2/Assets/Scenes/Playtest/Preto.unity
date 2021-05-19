@@ -4018,6 +4018,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2217535846667569156, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
   m_PrefabInstance: {fileID: 1716187652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1716187655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217535848124016864, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+  m_PrefabInstance: {fileID: 1716187652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1732012951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4037,6 +4042,10 @@ PrefabInstance:
       propertyPath: myMailBox
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: mailBoxUIFirstButton
+      value: 
+      objectReference: {fileID: 1716187655}
     - target: {fileID: 3277773768845000986, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: m_Name
       value: MailBox

@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: myMailBox
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: mailBoxUIFirstButton
+      value: 
+      objectReference: {fileID: 994808524}
     - target: {fileID: 3277773768845000986, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: m_Name
       value: MailBox
@@ -2178,6 +2182,11 @@ GameObject:
 --- !u!224 &994808523 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2217535846667569156, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+  m_PrefabInstance: {fileID: 994808521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &994808524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217535848124016864, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
   m_PrefabInstance: {fileID: 994808521}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1089811840 stripped

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class MailBox : MonoBehaviour
@@ -12,6 +13,7 @@ public class MailBox : MonoBehaviour
     public List<Stamp> stamps;//em toda caixa de correio existirao todos os selos, mas eles estarao "desativados"
     public GameObject player;
     public GameObject mailBoxUI;
+    public GameObject mailBoxUIFirstButton;
     [HideInInspector]public PlayerStatus playerStatus;
 
 
@@ -28,6 +30,7 @@ public class MailBox : MonoBehaviour
     public void LeaveMailBox()
     {
         mailBoxUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
         Time.timeScale = 1f;
     }
 
