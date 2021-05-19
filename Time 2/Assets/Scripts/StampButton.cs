@@ -27,6 +27,7 @@ public class StampButton : MonoBehaviour
         destination.SceneToGo = stamp.SceneToGo;
         destination.targetedMailBox = stamp.mailBoxToGo;
         player.GetComponent<PlayerStatus>().SetTeleportStatus(true);
+        Debug.Log(player.GetComponent<PlayerStatus>().stampTeleport);
         StartCoroutine(WaitFade());
 
     }

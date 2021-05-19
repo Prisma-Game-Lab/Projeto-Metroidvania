@@ -10,6 +10,7 @@ public class MailBoxListener : MonoBehaviour
     public TeleportDestination playerDestination;
     void Start()
     {
+        Debug.Log(player.GetComponent<PlayerStatus>().stampTeleport);
         if (player.GetComponent<PlayerStatus>().stampTeleport)
         {
             AudioManager.instance.Play(playerDestination.SceneToGo);
@@ -19,11 +20,20 @@ public class MailBoxListener : MonoBehaviour
                 {
                     Vector3 spawPosition = mailBox.gameObject.transform.position;
                     player.transform.position = spawPosition;
+                    
                     break;
                 }
             }
-            player.GetComponent<PlayerStatus>().SetTeleportStatus(false);
+            StartCoroutine(WaitTeleport());
+            
         }
         
+    }
+
+    private IEnumerator WaitTeleport()
+    {
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<PlayerStatus>().SetTeleportStatus(false);
+        Debug.Log(player.GetComponent<PlayerStatus>().stampTeleport);
     }
 }
