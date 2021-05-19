@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5043188181269210629}
   - component: {fileID: 1939140284}
   - component: {fileID: 1530690593}
+  - component: {fileID: 7331859494318171797}
+  - component: {fileID: 1509018957269624061}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -103,6 +105,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 93159ea3-3824-4faa-88fd-b5b7bf15e196
     m_ActionName: PlayerActions/ShurikenSkill[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5043188181269210629}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b2166dbf-5ec7-456b-bf43-adbba8d35f5c
+    m_ActionName: GlobalActions/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20f7370e-f6f7-4532-8fb0-976872ab7465
+    m_ActionName: PlayerActions/Interaction[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GlobalActions
@@ -121,6 +143,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
+  teleportDestination: {fileID: 0}
+  SettingsUI: {fileID: 0}
+  ControlsUI: {fileID: 0}
+  PauseMenuUI: {fileID: 0}
 --- !u!114 &1939140284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   gates:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
@@ -155,3 +179,33 @@ MonoBehaviour:
   player: {fileID: 0}
   powerUps:
   - {fileID: 0}
+--- !u!114 &7331859494318171797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043188181269210631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b21ca087175084a955a9ddc8992b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mailBoxes:
+  - {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+--- !u!114 &1509018957269624061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043188181269210631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d327b4d29595c34b858653f8c82d44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mailBox: {fileID: 0}

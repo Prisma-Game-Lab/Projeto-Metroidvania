@@ -9703,7 +9703,8 @@ GameObject:
   - component: {fileID: 1616248053}
   - component: {fileID: 1616248063}
   - component: {fileID: 1616248069}
-  - component: {fileID: 5203908061383129676}
+  - component: {fileID: 8024735329453298166}
+  - component: {fileID: 6875496449765456379}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -9881,7 +9882,19 @@ MonoBehaviour:
     m_ActionId: 59c36bc3-645e-4da0-af62-6097325f2ae2
     m_ActionName: PlayerActions/Attack[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: OnReset
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 5fb57970-bbde-43d3-bc77-ae249eaa9d55
     m_ActionName: GlobalActions/Reset[/Keyboard/escape]
   - m_PersistentCalls:
@@ -9948,6 +9961,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93159ea3-3824-4faa-88fd-b5b7bf15e196
     m_ActionName: PlayerActions/ShurikenSkill[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 20f7370e-f6f7-4532-8fb0-976872ab7465
+    m_ActionName: PlayerActions/Interaction[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b2166dbf-5ec7-456b-bf43-adbba8d35f5c
+    m_ActionName: GlobalActions/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -9966,6 +10011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: 0
+  playerAnimationState: 0
   itemDescription: {fileID: 11400000, guid: 471cd16b7bd4249adaa485050300b579, type: 2}
   _lastSafePos: {x: 0, y: 0, z: 0}
   sr: {fileID: 0}
@@ -9986,6 +10032,11 @@ MonoBehaviour:
   ball: 0
   shuriken: 0
   normalSprite: {fileID: 6120707212930331797, guid: 41701f1423390714992c352af300571b, type: 3}
+  stampMagenta: 0
+  stampCyan: 0
+  stampYellow: 0
+  stampBlack: 0
+  stampTeleport: 0
 --- !u!114 &2348440294670770236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10143,7 +10194,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9125633, y: 1.5390202}
   m_EdgeRadius: 0
---- !u!114 &5203908061383129676
+--- !u!114 &8024735329453298166
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10155,8 +10206,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d3520f53daee6498216f7821598766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obtainedColors: 
+  playerInteraction: {fileID: 0}
+  playerStatus: {fileID: 0}
+--- !u!114 &6875496449765456379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5856c803747c86f43b6ea16dca26291a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   UIMaster: {fileID: 0}
+  mailBox: {fileID: 0}
+  onDoor: 0
+  onMailBox: 0
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0

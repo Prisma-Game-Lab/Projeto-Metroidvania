@@ -24,15 +24,21 @@ public class PlayerAttack : MonoBehaviour
     private float _nextAttackTime = 0f;
     private PlayerMovement _playerMovement;
     private PlayerStatus _playerStatus;
+    private PlayerInteraction _playerInteraction;
     private void Start()
     {
         _playerMovement = gameObject.GetComponent<PlayerMovement>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _playerInteraction = gameObject.GetComponent<PlayerInteraction>();
     }
 
     // Chamado quando aciona a ação de ataque. 
     public void OnPlayerAttack(InputAction.CallbackContext ctx)
     {
+
+        if (_playerInteraction.IsInteracting())
+            return;
+
         // Fazer a animação de attack
         if (_playerStatus.playerState == PlayerSkill.Normal)
         {

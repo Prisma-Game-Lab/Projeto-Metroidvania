@@ -31,6 +31,7 @@ public class PlayerStatus : MonoBehaviour
     public PlayerAnimationState playerAnimationState = PlayerAnimationState.Idle;
     public ItemDescription itemDescription;
     [HideInInspector] public Vector3 _lastSafePos; // ultima posicao segura para o jogador
+
     // player Components 
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
@@ -40,6 +41,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
     public GameObject transformationParticles;
+
     // Variaveis para serem salvas 
     // Colors
     [HideInInspector] public bool cyan = false;
@@ -56,6 +58,16 @@ public class PlayerStatus : MonoBehaviour
 
     //Sprites
     public Sprite normalSprite;
+
+    //Stamps
+    [HideInInspector] public bool stampMagenta = false;
+    [HideInInspector] public bool stampCyan = false;
+    [HideInInspector] public bool stampYellow = false;
+    [HideInInspector] public bool stampBlack = false;
+
+    //Teleport Status
+    [HideInInspector] public bool stampTeleport = false;
+
 
     // Start is called before the first frame update
 
@@ -157,6 +169,15 @@ public class PlayerStatus : MonoBehaviour
         gameObject.GetComponent<BallSkill>().obtained = ball;
         gameObject.GetComponent<ShurikenSkill>().obtained = shuriken;
 
+        //stamps
+        stampMagenta = data.stampMagenta;
+        stampCyan = data.stampCyan;
+        stampYellow = data.stampYellow;
+        stampBlack = data.stampBlack;
+
+        //Teleport Status
+        stampTeleport = data.stampTeleport;
+
     }
 
     private void ReturnPlayerToSafePos()
@@ -198,6 +219,52 @@ public class PlayerStatus : MonoBehaviour
         gameObject.GetComponent<PlayerInput>().actions.Disable();
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<PlayerInput>().actions.Enable();
+    }
+
+    public void SetStampStatus(stampDestination stampMailBox)
+    {
+        switch (stampMailBox)
+        {
+            case stampDestination.magenta:
+                stampMagenta = true;
+                break;
+            case stampDestination.cyan:
+                stampCyan = true;
+                break;
+            case stampDestination.yellow:
+                stampYellow = true;
+                break;
+            case stampDestination.black:
+                stampBlack = true;
+                break;
+        }
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void UpdateStampStatus(Stamp stamp)
+    {
+        switch (stamp.mailBoxToGo)
+        {
+            case stampDestination.magenta:
+                stamp.obtained = stampMagenta;
+                break;
+            case stampDestination.cyan:
+                stamp.obtained = stampCyan;
+                break;
+            case stampDestination.yellow:
+                stamp.obtained = stampYellow;
+                break;
+            case stampDestination.black:
+                stamp.obtained = stampBlack;
+                break;
+        }
+
+    }
+
+    public void SetTeleportStatus(bool status)
+    {
+        stampTeleport = status;
+        SaveSystem.SavePlayer(this);
     }
 
 }

@@ -13,6 +13,7 @@ public class GameMaster : MonoBehaviour
     // Texto para auxiliar no funcionamento da skill 
     public static GameMaster instance;
     public Destination playerDestination;
+    public TeleportDestination teleportDestination;
     public GameObject SettingsUI;
     public GameObject ControlsUI;
     public GameObject PauseMenuUI;
@@ -36,7 +37,11 @@ public class GameMaster : MonoBehaviour
         {
             // parar as musicas de outros leveis
             AudioManager.instance.Stop(playerDestination.SceneToGo);
+            AudioManager.instance.Stop(teleportDestination.SceneToGo);
             playerDestination.SceneToGo = "Lobby";
+            teleportDestination.SceneToGo = "Lobby";
+            teleportDestination.targetedMailBox = stampDestination.lobby;
+            AudioManager.instance.Play(playerDestination.SceneToGo);
             playerDestination.door = -1;
             SceneManager.LoadScene("Lobby");
         }
