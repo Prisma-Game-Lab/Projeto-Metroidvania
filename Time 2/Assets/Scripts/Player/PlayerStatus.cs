@@ -31,6 +31,7 @@ public class PlayerStatus : MonoBehaviour
     public PlayerAnimationState playerAnimationState = PlayerAnimationState.Idle;
     public ItemDescription itemDescription;
     [HideInInspector] public Vector3 _lastSafePos; // ultima posicao segura para o jogador
+
     // player Components 
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
@@ -40,6 +41,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
     public GameObject transformationParticles;
+
     // Variaveis para serem salvas 
     // Colors
     [HideInInspector] public bool cyan = false;
@@ -56,6 +58,12 @@ public class PlayerStatus : MonoBehaviour
 
     //Sprites
     public Sprite normalSprite;
+
+    //Stamps
+    [HideInInspector] public bool stampMagenta = false;
+    [HideInInspector] public bool stampCyan = false;
+    [HideInInspector] public bool stampYellow = false;
+    [HideInInspector] public bool stampBlack = false;
 
     // Start is called before the first frame update
 
@@ -156,6 +164,12 @@ public class PlayerStatus : MonoBehaviour
         gameObject.GetComponent<PlaneSkill>().obtained = airplane;
         gameObject.GetComponent<BallSkill>().obtained = ball;
         gameObject.GetComponent<ShurikenSkill>().obtained = shuriken;
+
+        //stamps
+        stampMagenta = data.stampMagenta;
+        stampCyan = data.stampCyan;
+        stampYellow = data.stampYellow;
+        stampBlack = data.stampBlack;
 
     }
 

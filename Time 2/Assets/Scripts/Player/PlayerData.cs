@@ -18,9 +18,15 @@ public class PlayerData
   public bool sword;
   public bool ball;
   public bool shuriken;
-  
-  // Class init 
-  public PlayerData(PlayerStatus player)
+
+    //Stamps
+    public bool stampMagenta;
+    public bool stampCyan;
+    public bool stampYellow;
+    public bool stampBlack;
+
+    // Class init 
+    public PlayerData(PlayerStatus player)
   {
     // colors 
     cyan = player.cyan;
@@ -34,6 +40,12 @@ public class PlayerData
     sword = player.sword;
     ball = player.ball;
     shuriken = player.shuriken;
-    
-  }
+
+    //stamps
+    stampMagenta = player.stampMagenta;
+    stampCyan = player.stampCyan;
+    stampYellow = player.stampYellow;
+    stampBlack = player.stampBlack;
+
+    }
 }
