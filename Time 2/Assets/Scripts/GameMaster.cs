@@ -125,7 +125,7 @@ public class GameMaster : MonoBehaviour
     private IEnumerator WaitFade()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("Cutscene");
     }
 
 }
