@@ -29,6 +29,14 @@ public class BoatSkill : MonoBehaviour
             if(_playerStatus.playerState != PlayerSkill.BoatMode)
             {
                 _playerStatus.playerState = PlayerSkill.BoatMode;
+                // make animation 
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                _playerStatus.playerCollider.enabled = true;
+                _playerStatus.playerCircleCollider.enabled = false;
+                //
+                
                 // flip tem que se manter 
                 if (_playerStatus.playerMovement.isFlipped)
                 {
@@ -48,18 +56,13 @@ public class BoatSkill : MonoBehaviour
                 BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
                 b.size = v;
                 
-                // make animation 
-                // BALL MOVE ANIMATION 
-                _playerStatus.playerAnimator.enabled = true;
-                transform.rotation = Quaternion.identity;
-                //
+                
                 _playerStatus.playerAnimator.SetTrigger("BoatTrigger");
                 _playerStatus.playerAnimator.SetBool("Boat", true);
                 _playerStatus.playerAnimator.SetBool("Player", false);
             }
             else
             {
-                
                 _trasformationParticles.Play();//liga particulas de transformacao
                 gameObject.GetComponent<PlayerStatus>().playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
@@ -70,10 +73,6 @@ public class BoatSkill : MonoBehaviour
 
                 b.size = v;
                 
-                // BALL MOVE ANIMATION 
-                _playerStatus.playerAnimator.enabled = true;
-                transform.rotation = Quaternion.identity;
-                //
                 
                 // make animation 
                 _playerStatus.playerAnimator.SetBool("Boat", false);

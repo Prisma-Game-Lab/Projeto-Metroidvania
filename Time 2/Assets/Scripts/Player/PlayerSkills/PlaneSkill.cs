@@ -30,6 +30,13 @@ public class PlaneSkill : MonoBehaviour
              {
                  _trasformationParticles.Play();//liga particulas de transformacao
                  _playerStatus.playerState = PlayerSkill.PlaneMode;
+                 // BALL MOVE ANIMATION 
+                 _playerStatus.playerAnimator.enabled = true;
+                 transform.rotation = Quaternion.identity;
+                 _playerStatus.playerCollider.enabled = true;
+                 _playerStatus.playerCircleCollider.enabled = false;
+                 //
+                 
                  _playerStatus.rb.gravityScale = _planeGravity;
 
                  _playerStatus.sr.sprite = planeSprite;
@@ -38,11 +45,7 @@ public class PlaneSkill : MonoBehaviour
                  b.size = v;
                  
                  _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
-                 
-                 // BALL MOVE ANIMATION 
-                 _playerStatus.playerAnimator.enabled = true;
-                 transform.rotation = Quaternion.identity;
-                 //
+
                  _playerStatus.playerAnimator.SetTrigger("PlaneTrigger");
                  _playerStatus.playerAnimator.SetBool("Player", false);
                  // COMPORTAMENTO DE VELOCIDADE DO AVIAO 

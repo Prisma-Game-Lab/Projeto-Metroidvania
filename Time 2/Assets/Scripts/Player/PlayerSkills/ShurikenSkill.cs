@@ -31,6 +31,14 @@ public class ShurikenSkill : MonoBehaviour
             {
                 _trasformationParticles.Play();
                 _playerStatus.playerState = PlayerSkill.ShurikenMode;
+                
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                _playerStatus.playerCollider.enabled = true;
+                _playerStatus.playerCircleCollider.enabled = false;
+                //
+                
                 //_playerStatus.sr.color = Color.magenta;
                 _playerStatus.sr.sprite = shurikenSprite;
                 Vector3 v = _playerStatus.sr.bounds.size;
@@ -49,15 +57,13 @@ public class ShurikenSkill : MonoBehaviour
                 }
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
                 
-                // BALL MOVE ANIMATION 
-                _playerStatus.playerAnimator.enabled = true;
-                transform.rotation = Quaternion.identity;
-                //
+                
                 _playerStatus.playerAnimator.SetBool("Player", false);
                 _playerStatus.playerAnimator.SetTrigger("ShurikenTrigger");
             }
             else
             {
+
                 _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.playerState = PlayerSkill.Normal;
                 //_playerStatus.sr.color = Color.white;
@@ -67,10 +73,6 @@ public class ShurikenSkill : MonoBehaviour
                 BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
                 b.size = v;
                 
-                // BALL MOVE ANIMATION 
-                _playerStatus.playerAnimator.enabled = true;
-                transform.rotation = Quaternion.identity;
-                //
 
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
                 _playerStatus.playerAnimator.SetBool("Player", true);

@@ -35,8 +35,9 @@ public class BallSkill : MonoBehaviour
                  //_playerStatus.sr.color = Color.gray;
                 _playerStatus.sr.sprite = ballSprite;
                 Vector3 v = _playerStatus.sr.bounds.size;
-                BoxCollider2D b = _playerStatus.playerCollider ;
-                b.size = v;
+                _playerStatus.playerCollider.enabled = false ;
+                _playerStatus.playerCircleCollider.enabled = true;
+                _playerStatus.playerCircleCollider.radius = v.x * 0.5f;
                 
                 // change player size and colider 
                  _playerStatus.playerTransform.localScale *= reduceFactor;

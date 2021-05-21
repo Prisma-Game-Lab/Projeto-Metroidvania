@@ -38,6 +38,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public BoxCollider2D playerCollider;
+    [HideInInspector] public CircleCollider2D playerCircleCollider;
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
@@ -94,6 +95,7 @@ public class PlayerStatus : MonoBehaviour
         playerGravity = rb.gravityScale; // gravidade original do player
         playerAnimator = gameObject.GetComponent<Animator>();
         playerAnimator.SetBool("Player", true);
+        playerCircleCollider = gameObject.GetComponent<CircleCollider2D>();
         // correct player colider 
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
@@ -196,7 +198,12 @@ public class PlayerStatus : MonoBehaviour
         // BALL MOVE ANIMATION 
         playerAnimator.enabled = true;
         transform.rotation = Quaternion.identity;
+        playerCollider.enabled = true;
+        playerCircleCollider.enabled = false;
         //
+        // player animations 
+        playerAnimator.SetBool("Player", true);
+        playerAnimator.SetTrigger("PlayerTrigger");
         transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//liga particulas
         playerState = PlayerSkill.Normal;
         //sr.color = Color.white;

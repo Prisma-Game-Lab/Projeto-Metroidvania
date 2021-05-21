@@ -35,28 +35,28 @@ public class MapComponent : MonoBehaviour
                 
                 
                 // discover player scene 
-                if (playerDestination.SceneToGo == "Ciano" || teleportDestination.SceneToGo == "Ciano")
+                if (playerDestination.SceneToGo == "Ciano")
                 {
                     pin.rectTransform.position = cyanPos.position;
                 }
                 Debug.Log("Entrou");
                 Debug.Log(teleportDestination.SceneToGo);
-                if (playerDestination.SceneToGo == "Lobby" || teleportDestination.SceneToGo == "Lobby")
+                if (playerDestination.SceneToGo == "Lobby")
                 {
                     pin.rectTransform.position = whitePos.position;
                 }
                 
-                if (playerDestination.SceneToGo == "Amarelo" || teleportDestination.SceneToGo == "Amarelo")
+                if (playerDestination.SceneToGo == "Amarelo" )
                 {
                     pin.rectTransform.position = yellowPos.position;
                 }
                 
-                if (playerDestination.SceneToGo == "Magenta" || teleportDestination.SceneToGo == "Magenta")
+                if (playerDestination.SceneToGo == "Magenta")
                 {
                     pin.rectTransform.position = magentaPos.position;
                 }
                 
-                if (playerDestination.SceneToGo == "Preto" || teleportDestination.SceneToGo == "Preto")
+                if (playerDestination.SceneToGo == "Preto")
                 {
                     pin.rectTransform.position = blackPos.position;
                 }
