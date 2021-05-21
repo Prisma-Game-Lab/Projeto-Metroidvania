@@ -20680,11 +20680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.19
+      value: 40.15
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.11
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20721,14 +20721,14 @@ PrefabInstance:
     - target: {fileID: 7683829849700040706, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: stamp
       value: 
-      objectReference: {fileID: 11400000, guid: c1d861bd58d76fc469c588e1a05b7808, type: 2}
+      objectReference: {fileID: 11400000, guid: fb06fdba3ebb8934d8fb20807f97e185, type: 2}
     - target: {fileID: 7683829849700040709, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_Name
       value: Stamp
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040709, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
