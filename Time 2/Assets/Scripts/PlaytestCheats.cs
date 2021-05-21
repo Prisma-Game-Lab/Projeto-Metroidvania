@@ -36,10 +36,15 @@ public class PlaytestCheats : MonoBehaviour
         }
 
         player.GetComponent<BoatSkill>().obtained = true;
+        _playerStatus.boat = true;
         player.GetComponent<PlaneSkill>().obtained = true;
+        _playerStatus.airplane = true;
         player.GetComponent<ShurikenSkill>().obtained = true;
+        _playerStatus.shuriken = true;
         player.GetComponent<PlayerAttack>().obtained = true;
+        _playerStatus.sword = true;
         player.GetComponent<BallSkill>().obtained = true;
+        _playerStatus.ball = true;
 
         SaveSystem.SavePlayer(_playerStatus);
 
