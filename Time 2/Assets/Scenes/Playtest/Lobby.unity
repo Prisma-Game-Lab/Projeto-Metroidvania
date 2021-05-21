@@ -20680,11 +20680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.19
+      value: 40.15
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.11
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040705, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20721,14 +20721,14 @@ PrefabInstance:
     - target: {fileID: 7683829849700040706, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: stamp
       value: 
-      objectReference: {fileID: 11400000, guid: c1d861bd58d76fc469c588e1a05b7808, type: 2}
+      objectReference: {fileID: 11400000, guid: fb06fdba3ebb8934d8fb20807f97e185, type: 2}
     - target: {fileID: 7683829849700040709, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_Name
       value: Stamp
       objectReference: {fileID: 0}
     - target: {fileID: 7683829849700040709, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14fa39dc0eee47e428804e7425c3182c, type: 3}
@@ -21501,9 +21501,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889318014}
     m_Modifications:
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1616248052}
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 897413296}
     - target: {fileID: 2217535846667569155, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_Name
       value: mailBoxUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217535846667569155, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2217535846667569156, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_Pivot.x
@@ -21782,7 +21794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 27090089945739731, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.757584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 27090089945739731, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21927,9 +21939,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1549528427}
     - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: myMailBox
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: stamps.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: mailBoxUIFirstButton
       value: 
       objectReference: {fileID: 1065018720}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: stamps.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: fb06fdba3ebb8934d8fb20807f97e185, type: 2}
     - target: {fileID: 3277773768845000986, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: m_Name
       value: MailBox

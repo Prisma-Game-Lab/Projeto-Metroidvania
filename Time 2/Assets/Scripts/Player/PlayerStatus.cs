@@ -66,6 +66,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public bool stampCyan = false;
     [HideInInspector] public bool stampYellow = false;
     [HideInInspector] public bool stampBlack = false;
+    [HideInInspector] public bool stampLobby = false;
 
     //Teleport Status
     [HideInInspector] public bool stampTeleport = false;
@@ -178,6 +179,7 @@ public class PlayerStatus : MonoBehaviour
         stampCyan = data.stampCyan;
         stampYellow = data.stampYellow;
         stampBlack = data.stampBlack;
+        stampLobby = data.stampLobby;
 
         //Teleport Status
         stampTeleport = data.stampTeleport;
@@ -250,6 +252,9 @@ public class PlayerStatus : MonoBehaviour
             case stampDestination.black:
                 stampBlack = true;
                 break;
+            case stampDestination.lobby:
+                stampLobby = true;
+                break;
         }
         SaveSystem.SavePlayer(this);
     }
@@ -270,6 +275,10 @@ public class PlayerStatus : MonoBehaviour
             case stampDestination.black:
                 stamp.obtained = stampBlack;
                 break;
+            case stampDestination.lobby:
+                stamp.obtained = stampLobby;
+                break;
+
         }
 
     }

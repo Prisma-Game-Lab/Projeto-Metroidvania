@@ -1485,6 +1485,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7331859494305447878}
     m_Modifications:
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6338554174190470866}
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 749596786}
     - target: {fileID: 2217535846667569155, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_Name
       value: mailBoxUI
@@ -1579,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848084788918, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 186.06995
+      value: 3.6259
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848084788918, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1595,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 749596786}
     - target: {fileID: 2217535848124016865, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -684.00006
+      value: -759
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848124016865, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1611,7 +1619,7 @@ PrefabInstance:
       objectReference: {fileID: 749596786}
     - target: {fileID: 2217535848486026739, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -253.79005
+      value: -387
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848486026739, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1627,7 +1635,7 @@ PrefabInstance:
       objectReference: {fileID: 749596786}
     - target: {fileID: 2217535848519971829, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 636
+      value: 369
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848519971829, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1664,6 +1672,14 @@ PrefabInstance:
     - target: {fileID: 2217535848628230450, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LeaveMailBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775619509746449951, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 730
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775619509746449951, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
@@ -4137,6 +4153,14 @@ PrefabInstance:
       propertyPath: mailBoxUIFirstButton
       value: 
       objectReference: {fileID: 822203742}
+    - target: {fileID: 3277773768845000985, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1946743
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277773768845000985, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.59733725
+      objectReference: {fileID: 0}
     - target: {fileID: 3277773768845000986, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: m_Name
       value: MailBox
