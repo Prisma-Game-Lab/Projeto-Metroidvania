@@ -10,6 +10,7 @@ public class StampButton : MonoBehaviour
     public Stamp stamp;
     public TeleportDestination destination;
     public GameObject player;
+    public Destination playerDestination;
 
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class StampButton : MonoBehaviour
         // para a musica da fase 
         AudioManager.instance.Stop(destination.SceneToGo);
         destination.SceneToGo = stamp.SceneToGo;
+        playerDestination.SceneToGo = stamp.SceneToGo;
         destination.targetedMailBox = stamp.mailBoxToGo;
         player.GetComponent<PlayerStatus>().SetTeleportStatus(true);
         Debug.Log(player.GetComponent<PlayerStatus>().stampTeleport);

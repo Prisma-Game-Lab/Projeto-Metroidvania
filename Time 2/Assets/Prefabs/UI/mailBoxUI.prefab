@@ -503,6 +503,7 @@ MonoBehaviour:
   stamp: {fileID: 11400000, guid: 7e804c7c05f1f5b43b44962cae31179c, type: 2}
   destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
   player: {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
 --- !u!1 &2217535848124016864
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +653,7 @@ MonoBehaviour:
   stamp: {fileID: 11400000, guid: bdd89c551a5bb5343bb87f914d97c00c, type: 2}
   destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
   player: {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
 --- !u!1 &2217535848143572974
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +961,7 @@ MonoBehaviour:
   stamp: {fileID: 11400000, guid: c1d861bd58d76fc469c588e1a05b7808, type: 2}
   destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
   player: {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
 --- !u!1 &2217535848519971828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1111,7 @@ MonoBehaviour:
   stamp: {fileID: 11400000, guid: a383cd29deb75b64599df6ca7e532f9e, type: 2}
   destination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
   player: {fileID: 0}
+  playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
 --- !u!1 &2217535848539740233
 GameObject:
   m_ObjectHideFlags: 0
