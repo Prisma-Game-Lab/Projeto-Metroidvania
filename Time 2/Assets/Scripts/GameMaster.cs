@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameMaster : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class GameMaster : MonoBehaviour
     public GameObject SettingsUI;
     public GameObject ControlsUI;
     public GameObject PauseMenuUI;
+    public GameObject firstButtonPauseMenu;
+    public GameObject firstButtonSettings;
+    public GameObject firstButtonControls;
+
 
     void Awake()
     { 
@@ -52,6 +57,7 @@ public class GameMaster : MonoBehaviour
     {
         if (_paused)
         {
+            EventSystem.current.SetSelectedGameObject(null);
             PauseMenuUI.SetActive(false);
             _paused = false;
             Time.timeScale = 1f;
@@ -59,6 +65,7 @@ public class GameMaster : MonoBehaviour
         }
 
         PauseMenuUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
         _paused = true;
         Time.timeScale = 0f;
     }
@@ -99,23 +106,27 @@ public class GameMaster : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         SettingsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonSettings);
     }
 
     public void GoToControls()
     {
         SettingsUI.SetActive(false);
         ControlsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonControls);
     }
 
     public void BackToSettings()
     {
         SettingsUI.SetActive(true);
         ControlsUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(firstButtonSettings);
     }
      public void BackToPauseMenu()
     {
         PauseMenuUI.SetActive(true);
         SettingsUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
     }
     public void GoToMainMenu()
     {

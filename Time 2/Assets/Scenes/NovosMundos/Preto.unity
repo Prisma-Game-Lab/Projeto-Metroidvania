@@ -727,7 +727,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1618651586638881111, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
   m_PrefabInstance: {fileID: 582518745}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 582518753}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
@@ -736,6 +736,21 @@ MonoBehaviour:
 --- !u!1 &582518751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1618651585593296266, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 582518745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582518752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1618651586045737176, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 582518745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582518753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1618651586638881109, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 582518745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &582518754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1618651587560635641, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
   m_PrefabInstance: {fileID: 582518745}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &620499239
@@ -129817,9 +129832,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 582518747}
     - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonControls
+      value: 
+      objectReference: {fileID: 582518752}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonSettings
+      value: 
+      objectReference: {fileID: 582518753}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonPauseMenu
+      value: 
+      objectReference: {fileID: 582518754}
     - target: {fileID: 5043188181269210630, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: m_RootOrder
       value: 1

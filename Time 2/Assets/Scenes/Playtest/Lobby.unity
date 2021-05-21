@@ -20146,9 +20146,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 518523852}
     - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonControls
+      value: 
+      objectReference: {fileID: 895550535}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonSettings
+      value: 
+      objectReference: {fileID: 1139198472}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: teleportDestination
       value: 
       objectReference: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: firstButtonPauseMenu
+      value: 
+      objectReference: {fileID: 390757530}
     - target: {fileID: 5043188181269210630, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -20196,6 +20208,10 @@ PrefabInstance:
     - target: {fileID: 5043188181269210631, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: m_Name
       value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043188181269210631, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7331859494318171797, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: player
@@ -21277,6 +21293,10 @@ PrefabInstance:
     - target: {fileID: 3939239847773019775, guid: c73a8a7c99a216544a7bb56dad9fe870, type: 3}
       propertyPath: m_Name
       value: MailBoxFade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939239847773019775, guid: c73a8a7c99a216544a7bb56dad9fe870, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73a8a7c99a216544a7bb56dad9fe870, type: 3}
