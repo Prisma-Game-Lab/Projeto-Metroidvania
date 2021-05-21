@@ -193,6 +193,10 @@ public class PlayerStatus : MonoBehaviour
 
     public void SetToNormalState()
     {
+        // BALL MOVE ANIMATION 
+        playerAnimator.enabled = true;
+        transform.rotation = Quaternion.identity;
+        //
         transformationParticles.GetComponent<ParticleSystem>().Play();//liga particulas//liga particulas
         playerState = PlayerSkill.Normal;
         //sr.color = Color.white;

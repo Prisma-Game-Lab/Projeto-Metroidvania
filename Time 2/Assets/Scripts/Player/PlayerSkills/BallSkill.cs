@@ -40,10 +40,20 @@ public class BallSkill : MonoBehaviour
                 
                 // change player size and colider 
                  _playerStatus.playerTransform.localScale *= reduceFactor;
+                 // BALL MOVE ANIMATION 
+                 _playerStatus.playerAnimator.enabled = true;
+                 transform.rotation = Quaternion.identity;
+                 //
+                 _playerStatus.playerAnimator.SetBool("Player", false);
+                 _playerStatus.playerAnimator.SetBool("Ball", true);
+                 _playerStatus.playerAnimator.enabled = false;
             }
             else
             {
                 _playerStatus.SetToNormalState();
+                _playerStatus.playerAnimator.SetBool("Ball", false);
+                _playerStatus.playerAnimator.SetBool("Player", true);
+                _playerStatus.playerAnimator.SetTrigger("PlayerTrigger");
             }
 
         }

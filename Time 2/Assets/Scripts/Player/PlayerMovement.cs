@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                    
                     _rb.gravityScale = _playerGravity;
+                    _playerStatus.playerAnimator.SetTrigger("Jump");
                     // Pulo na diagonal realizado pela shuriken 
                     if (isFlipped)
                     {
@@ -213,6 +214,13 @@ public class PlayerMovement : MonoBehaviour
         {
             _playerStatus.playerAnimationState = PlayerAnimationState.Movement;
             _playerStatus.playerAnimator.SetBool("Moving", true);
+            if (_playerStatus.playerState == PlayerSkill.BallMode)
+            {
+                if(_move.x > 0)
+                    transform.Rotate(Vector3.forward, -10f);
+                else if (_move.x < 0)
+                    transform.Rotate(Vector3.forward, 10f);
+            }
         }
         
         //Realizando o movimento horizontal 

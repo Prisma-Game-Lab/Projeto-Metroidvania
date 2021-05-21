@@ -49,6 +49,11 @@ public class BoatSkill : MonoBehaviour
                 b.size = v;
                 
                 // make animation 
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                //
+                _playerStatus.playerAnimator.SetTrigger("BoatTrigger");
                 _playerStatus.playerAnimator.SetBool("Boat", true);
                 _playerStatus.playerAnimator.SetBool("Player", false);
             }
@@ -65,9 +70,15 @@ public class BoatSkill : MonoBehaviour
 
                 b.size = v;
                 
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                //
+                
                 // make animation 
                 _playerStatus.playerAnimator.SetBool("Boat", false);
                 _playerStatus.playerAnimator.SetBool("Player", true);
+                _playerStatus.playerAnimator.SetTrigger("PlayerTrigger");
             }
 
         }

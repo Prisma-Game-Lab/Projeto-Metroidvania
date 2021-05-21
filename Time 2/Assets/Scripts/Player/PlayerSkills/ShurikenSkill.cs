@@ -48,6 +48,13 @@ public class ShurikenSkill : MonoBehaviour
                     _playerStatus.playerTransform.localScale = _playerStatus.originalLocalScale;
                 }
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
+                
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                //
+                _playerStatus.playerAnimator.SetBool("Player", false);
+                _playerStatus.playerAnimator.SetTrigger("ShurikenTrigger");
             }
             else
             {
@@ -59,8 +66,15 @@ public class ShurikenSkill : MonoBehaviour
                 Vector3 v = _playerStatus.sr.bounds.size;
                 BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
                 b.size = v;
+                
+                // BALL MOVE ANIMATION 
+                _playerStatus.playerAnimator.enabled = true;
+                transform.rotation = Quaternion.identity;
+                //
 
                 _playerStatus.rb.gravityScale = _playerStatus.playerGravity;
+                _playerStatus.playerAnimator.SetBool("Player", true);
+                _playerStatus.playerAnimator.SetTrigger("PlayerTrigger");
             }
 
         }

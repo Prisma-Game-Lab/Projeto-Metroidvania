@@ -38,6 +38,13 @@ public class PlaneSkill : MonoBehaviour
                  b.size = v;
                  
                  _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
+                 
+                 // BALL MOVE ANIMATION 
+                 _playerStatus.playerAnimator.enabled = true;
+                 transform.rotation = Quaternion.identity;
+                 //
+                 _playerStatus.playerAnimator.SetTrigger("PlaneTrigger");
+                 _playerStatus.playerAnimator.SetBool("Player", false);
                  // COMPORTAMENTO DE VELOCIDADE DO AVIAO 
                  if (_playerStatus.rb.velocity.y < -10f)
                  {
@@ -47,6 +54,8 @@ public class PlaneSkill : MonoBehaviour
              else
              {
                  _playerStatus.SetToNormalState();
+                 _playerStatus.playerAnimator.SetBool("Player", true);
+                 _playerStatus.playerAnimator.SetTrigger("PlayerTrigger");
              }
 
          }
