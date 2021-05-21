@@ -9,7 +9,7 @@ public class Cutscene : MonoBehaviour
 {
     public VideoPlayer video;
     private double _videoDuration;
-    public GameObject fade;
+    public Animator fade;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class Cutscene : MonoBehaviour
     {
         yield return new WaitForSeconds((float)_videoDuration-1f);
         //fade.gameObject.SetActive(true);
-        fade.GetComponent<Animator>().SetTrigger("FadeIn");
+        fade.SetTrigger("Start");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Lobby");
     }

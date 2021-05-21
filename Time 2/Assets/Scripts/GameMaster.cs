@@ -83,7 +83,7 @@ public class GameMaster : MonoBehaviour
         playerDestination.SceneToGo = "Lobby";
         playerDestination.door = -1;
         SaveSystem.DeleteSave();
-        StartCoroutine(WaitFade());
+        StartCoroutine(WaitFadeCutscene());
 
     }
 
@@ -92,7 +92,7 @@ public class GameMaster : MonoBehaviour
     {
         playerDestination.SceneToGo = "Lobby";
         playerDestination.door = -1;
-        StartCoroutine(WaitFade());
+        StartCoroutine(WaitFadeLobby());
     }
 
     public void GoToSettings()
@@ -122,10 +122,15 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("FirstScene");
     }
 
-    private IEnumerator WaitFade()
+    private IEnumerator WaitFadeCutscene()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Cutscene");
+    }
+    private IEnumerator WaitFadeLobby()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Lobby");
     }
 
 }
