@@ -1123,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MailBoxFade
       objectReference: {fileID: 0}
+    - target: {fileID: 3939239847773019775, guid: c73a8a7c99a216544a7bb56dad9fe870, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73a8a7c99a216544a7bb56dad9fe870, type: 3}
 --- !u!95 &749596786 stripped
@@ -2359,6 +2363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7483938733619300216, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7483938733619300217, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3125,10 +3133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7331859494305447878}
     m_Modifications:
-    - target: {fileID: 1618651585510923754, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 321
-      objectReference: {fileID: 0}
     - target: {fileID: 1618651585593296266, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3140,14 +3144,6 @@ PrefabInstance:
     - target: {fileID: 1618651585819596426, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618651586045737177, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.9519
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618651586045737177, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -355
       objectReference: {fileID: 0}
     - target: {fileID: 1618651586045737178, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3369,10 +3365,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToControls
       objectReference: {fileID: 0}
-    - target: {fileID: 1618651587288625291, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1618651587560635643, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3380,6 +3372,22 @@ PrefabInstance:
     - target: {fileID: 1618651587560635643, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968093271151703501, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7331859494305447884}
+    - target: {fileID: 3968093271151703501, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126185258981654832, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7331859494305447884}
+    - target: {fileID: 6126185258981654832, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
@@ -3438,6 +3446,26 @@ GameObject:
 --- !u!1 &1513262839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1618651587560635641, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 1513262830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513262840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3809047037994338039, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 1513262830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513262841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5679371553444855980, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 1513262830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513262842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1106774529230762130, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+  m_PrefabInstance: {fileID: 1513262830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513262843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8558413235463627925, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
   m_PrefabInstance: {fileID: 1513262830}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1538393735 stripped
@@ -73503,6 +73531,7 @@ GameObject:
   - component: {fileID: 7331859494305447880}
   - component: {fileID: 7331859494305447881}
   - component: {fileID: 7331859494305447883}
+  - component: {fileID: 7331859494305447884}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -73524,6 +73553,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSlider: {fileID: 1513262833}
   soundEffectsSlider: {fileID: 1513262832}
+--- !u!114 &7331859494305447884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7331859494305447882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c51308936390c459d511e343d46c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+  - {fileID: 1513262843}
+  - {fileID: 1513262842}
+  - {fileID: 1513262841}
+  - {fileID: 1513262840}
 --- !u!4 &7331859494343552923
 Transform:
   m_ObjectHideFlags: 0
