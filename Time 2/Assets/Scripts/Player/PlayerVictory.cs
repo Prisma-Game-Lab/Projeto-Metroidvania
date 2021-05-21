@@ -54,6 +54,7 @@ public class PlayerVictory : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        playerInteraction.UIMaster.GetComponent<UIMaster>().InteractionPanel.SetActive(false);
         playerInteraction.onDoor = false;
     }
 

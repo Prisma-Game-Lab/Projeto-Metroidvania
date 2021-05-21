@@ -13,11 +13,14 @@ public class PlayerInteraction : MonoBehaviour
     [HideInInspector] public bool onMailBox = false;
     private PlayerVictory _playerVictory;
     private MailBox _mailBox;
+    private UIMaster _uiMaster;
 
     void Start()
     {
         _playerVictory = GetComponent<PlayerVictory>();
-        
+        _uiMaster = UIMaster.GetComponent<UIMaster>();
+
+
     }
 
     public void Interaction(InputAction.CallbackContext ctx)
@@ -26,15 +29,18 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (_playerVictory.CollectedAll())
             {
-                UIMaster.GetComponent<UIMaster>().PlayerWon(true);
+                _uiMaster.InteractionPanel.SetActive(false);
+                _uiMaster.PlayerWon(true);
             }
             else
             {
-                UIMaster.GetComponent<UIMaster>().PlayerWon(false);
+                _uiMaster.InteractionPanel.SetActive(false);
+                _uiMaster.PlayerWon(false);
             }
         }
         else if (onMailBox)
         {
+            _uiMaster.InteractionPanel.SetActive(false);
             _mailBox.mailBoxUI.SetActive(true);
             EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
             Time.timeScale = 0f;
@@ -42,6 +48,16 @@ public class PlayerInteraction : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FinalDoor"))
+        {
+            _uiMaster.InteractionPanel.SetActive(true);
+        }
+        else if(collision.CompareTag("MailBox")){
+            _uiMaster.InteractionPanel.SetActive(true);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("MailBox"))
@@ -55,6 +71,7 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         onMailBox = false;
+        _uiMaster.InteractionPanel.SetActive(false);
     }
 
     public bool IsInteracting()

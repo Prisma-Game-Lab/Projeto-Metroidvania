@@ -15,6 +15,7 @@ public class UIMaster : MonoBehaviour
     public GameObject LifeIcon;
     public PlayerHealth life;
     public ItemDescription itemDescription;
+    public GameObject InteractionPanel;
 
     public Destination playerDestination;
 
