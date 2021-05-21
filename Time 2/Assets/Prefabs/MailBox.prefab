@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3277773768845000986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 48.63, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1.9821, z: 1}
+  m_LocalScale: {x: 1, y: 1.01, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e3d26240ac4b5f944998c7f7e1e7d4b2, type: 3}
+  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88672366c37f7124f8259471bc884f6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMailBox: 4
+  myMailBox: 3
   stamps:
   - {fileID: 11400000, guid: bdd89c551a5bb5343bb87f914d97c00c, type: 2}
   - {fileID: 11400000, guid: 7e804c7c05f1f5b43b44962cae31179c, type: 2}
@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a383cd29deb75b64599df6ca7e532f9e, type: 2}
   player: {fileID: 0}
   mailBoxUI: {fileID: 0}
+  mailBoxUIFirstButton: {fileID: 0}
   playerStatus: {fileID: 0}
 --- !u!61 &3277773768845000985
 BoxCollider2D:
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.73, y: 4.295}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
