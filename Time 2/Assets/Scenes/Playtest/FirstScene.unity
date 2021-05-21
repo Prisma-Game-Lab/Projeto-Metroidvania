@@ -1660,7 +1660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &677093029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3153,6 +3153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
+  teleportDestination: {fileID: 0}
   SettingsUI: {fileID: 0}
   ControlsUI: {fileID: 0}
   PauseMenuUI: {fileID: 0}
@@ -4785,9 +4786,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Produtora\nMadu Venancio\r\n\nArtistas\nJo\xE3o Athayde\r\nLuiza Arantes\r\n\nGame
-    Designers\nGustavo Camerano\r\nVicthor Kronemberger\nRodireito (n\xE3o tem o
-    nome no arquivo txt do github)\n\nProgramadores\nMaria Carolina Esteves\r\nRodrigo
-    Malh\xE3es Bukowitz\r\n\n"
+    Designers\nGustavo Camerano\r\nVicthor Kronemberger\nRodrigo Andrade\n\nProgramadores\nMaria
+    Carolina Esteves\r\nRodrigo Malh\xE3es Bukowitz\r\n\n"
 --- !u!222 &1919120413
 CanvasRenderer:
   m_ObjectHideFlags: 0
