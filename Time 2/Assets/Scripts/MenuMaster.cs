@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MenuMaster : MonoBehaviour
 {
@@ -10,38 +11,49 @@ public class MenuMaster : MonoBehaviour
     public GameObject controlsUI;
     public GameObject loadGameButton;
     public GameObject warningUI;
+    public GameObject firstButtonMain;
+    public GameObject firstButtonSettings;
+    public GameObject firstButtonControls;
+    public GameObject firstButtonCredits;
+    public GameObject firstButtonWarning;
     private GameMaster _gameMaster;
     private void Start()
     {
         Time.timeScale = 1f;
         _gameMaster = GetComponent<GameMaster>();
+        EventSystem.current.SetSelectedGameObject(firstButtonMain);
         if (CheckLoad())
         {
             loadGameButton.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(loadGameButton);
         }
     }
     public void GoToSettings()
     {
         mainMenuUI.SetActive(false);
         settingsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonSettings);
     }
 
     public void GoToCredits()
     {
         mainMenuUI.SetActive(false);
         creditsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonCredits);
     }
 
     public void GoToControls()
     {
         settingsUI.SetActive(false);
         controlsUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstButtonControls);
     }
 
     public void BackToSettings()
     {
         settingsUI.SetActive(true);
         controlsUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(firstButtonSettings);
     }
 
     public void BackToMainMenu()
@@ -50,6 +62,12 @@ public class MenuMaster : MonoBehaviour
         creditsUI.SetActive(false);
         settingsUI.SetActive(false);
         controlsUI.SetActive(false);
+        if (CheckLoad())
+        {
+            EventSystem.current.SetSelectedGameObject(loadGameButton);
+            return;
+        }
+        EventSystem.current.SetSelectedGameObject(firstButtonMain);
     }
 
     public void QuitGame()
@@ -73,6 +91,7 @@ public class MenuMaster : MonoBehaviour
         {
             warningUI.SetActive(true);
             mainMenuUI.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(firstButtonWarning);
         }
         else
         {

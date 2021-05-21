@@ -26,7 +26,8 @@ public class Cutscene : MonoBehaviour
 
     private IEnumerator WaitVideo()
     {
-        yield return new WaitForSeconds((float)_videoDuration);
+        yield return new WaitForSeconds((float)_videoDuration-1f);
+        //fade.gameObject.SetActive(true);
         fade.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Lobby");
