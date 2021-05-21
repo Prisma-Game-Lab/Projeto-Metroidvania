@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51832,6 +51832,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7331859494305447878}
     m_Modifications:
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1114242722}
+    - target: {fileID: 639713461933440814, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1821021655}
     - target: {fileID: 2217535846667569155, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_Name
       value: mailBoxUI
@@ -51926,11 +51934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848084788918, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 179.06985
+      value: 0.0000069141
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848084788918, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.000023
+      value: -3.627
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848084788919, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: player
@@ -51942,7 +51950,7 @@ PrefabInstance:
       objectReference: {fileID: 1821021655}
     - target: {fileID: 2217535848124016865, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -691.0001
+      value: -765
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848124016865, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -51958,11 +51966,11 @@ PrefabInstance:
       objectReference: {fileID: 1821021655}
     - target: {fileID: 2217535848486026739, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -260.79013
+      value: -393
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848486026739, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: 0.0000081062
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848486026740, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: player
@@ -51974,11 +51982,11 @@ PrefabInstance:
       objectReference: {fileID: 1821021655}
     - target: {fileID: 2217535848519971829, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 629
+      value: 376
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848519971829, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4
+      value: -3.627
       objectReference: {fileID: 0}
     - target: {fileID: 2217535848519971830, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: player
@@ -52011,6 +52019,14 @@ PrefabInstance:
     - target: {fileID: 2217535848628230450, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LeaveMailBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775619509746449951, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 748
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775619509746449951, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.627
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f8586801c5b6cc4f973a79c9f028281, type: 3}
