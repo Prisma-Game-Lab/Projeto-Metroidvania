@@ -36,6 +36,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public PlayerMovement playerMovement;
+    [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public BoxCollider2D playerCollider;
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Vector3 originalLocalScale;
@@ -91,7 +92,8 @@ public class PlayerStatus : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         playerGravity = rb.gravityScale; // gravidade original do player
-
+        playerAnimator = gameObject.GetComponent<Animator>();
+        playerAnimator.SetBool("Player", true);
         // correct player colider 
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;

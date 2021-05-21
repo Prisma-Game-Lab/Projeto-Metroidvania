@@ -47,6 +47,10 @@ public class BoatSkill : MonoBehaviour
                 Vector3 v = _playerStatus.sr.bounds.size;
                 BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
                 b.size = v;
+                
+                // make animation 
+                _playerStatus.playerAnimator.SetBool("Boat", true);
+                _playerStatus.playerAnimator.SetBool("Player", false);
             }
             else
             {
@@ -60,6 +64,10 @@ public class BoatSkill : MonoBehaviour
                 BoxCollider2D b = _playerStatus.playerCollider as BoxCollider2D;
 
                 b.size = v;
+                
+                // make animation 
+                _playerStatus.playerAnimator.SetBool("Boat", false);
+                _playerStatus.playerAnimator.SetBool("Player", true);
             }
 
         }

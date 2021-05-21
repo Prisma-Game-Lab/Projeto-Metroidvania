@@ -44,11 +44,12 @@ public class PlayerAttack : MonoBehaviour
         {
             if (ctx.started && Time.time >= _nextAttackTime && obtained) {
                 AudioManager.instance.Play("Ataque");
+                _playerStatus.playerAnimator.SetTrigger("Attack");
                 LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
                 // Detectar se tem inimigos no range
                 Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);
                 // ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
-                StartCoroutine(ShowAttack());
+                //StartCoroutine(ShowAttack());
                 // Realizar dano nos inimigos
                 foreach (Collider2D enemy in hitEnemies)
                 {
