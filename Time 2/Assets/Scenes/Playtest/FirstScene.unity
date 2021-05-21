@@ -3175,6 +3175,11 @@ MonoBehaviour:
   controlsUI: {fileID: 252735680}
   loadGameButton: {fileID: 92000617}
   warningUI: {fileID: 390354676}
+  firstButtonMain: {fileID: 1426536321}
+  firstButtonSettings: {fileID: 2114465937}
+  firstButtonControls: {fileID: 771633058}
+  firstButtonCredits: {fileID: 168613204}
+  firstButtonWarning: {fileID: 947712762}
 --- !u!114 &1122132878
 MonoBehaviour:
   m_ObjectHideFlags: 0
