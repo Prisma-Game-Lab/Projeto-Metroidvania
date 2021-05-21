@@ -28,8 +28,9 @@ public class PlaytestCheats : MonoBehaviour
         _playerStatus.SetStampStatus(stampDestination.cyan);
         _playerStatus.SetStampStatus(stampDestination.yellow);
         _playerStatus.SetStampStatus(stampDestination.black);
+        _playerStatus.SetStampStatus(stampDestination.lobby);
 
-        foreach(Stamp stamp in mailBox.GetComponent<MailBox>().stamps)
+        foreach (Stamp stamp in mailBox.GetComponent<MailBox>().stamps)
         {
             _playerStatus.UpdateStampStatus(stamp);
         }

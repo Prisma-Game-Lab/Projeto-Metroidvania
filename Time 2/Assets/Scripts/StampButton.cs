@@ -15,7 +15,7 @@ public class StampButton : MonoBehaviour
 
     private void OnEnable()
     {
-        if (stamp.obtained)
+        if (stamp.obtained && stamp.SceneToGo!= SceneManager.GetActiveScene().name)
             GetComponent<Button>().interactable = true;
 
         transform.GetChild(0).GetComponent<Text>().text = stamp.destinationName;

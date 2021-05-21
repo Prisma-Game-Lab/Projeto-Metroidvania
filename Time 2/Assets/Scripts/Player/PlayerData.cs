@@ -24,6 +24,7 @@ public class PlayerData
     public bool stampCyan;
     public bool stampYellow;
     public bool stampBlack;
+    public bool stampLobby;
 
 
     //Teleport Status
@@ -51,6 +52,7 @@ public class PlayerData
     stampCyan = player.stampCyan;
     stampYellow = player.stampYellow;
     stampBlack = player.stampBlack;
+    stampLobby = player.stampLobby;
 
     //Teleport Status
     stampTeleport = player.stampTeleport;
