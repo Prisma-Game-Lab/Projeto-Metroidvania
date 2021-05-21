@@ -24,6 +24,11 @@ public class Cutscene : MonoBehaviour
         
     }
 
+    public void SkipCutscene()
+    {
+        StartCoroutine(WaitFade());
+    }
+
     private IEnumerator WaitVideo()
     {
         yield return new WaitForSeconds((float)_videoDuration-1f);
@@ -32,4 +37,13 @@ public class Cutscene : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Lobby");
     }
+
+    private IEnumerator WaitFade()
+    {
+        video.Stop();
+        fade.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Lobby");
+    }
+
 }
