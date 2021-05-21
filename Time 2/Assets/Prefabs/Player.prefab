@@ -4926,8 +4926,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913081182035609188}
   serializedVersion: 7
-  lengthInSec: 0.3
-  simulationSpeed: 1.5
+  lengthInSec: 0.5
+  simulationSpeed: 2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -5054,7 +5054,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5170,7 +5170,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5223,7 +5223,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5276,7 +5276,7 @@ ParticleSystem:
     startSizeZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9974,6 +9974,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2134523e-e3dd-404c-b7df-120dff091ddf
     m_ActionName: GlobalActions/GetStamps[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 46df0b07-a187-4c29-bc7e-310ea470b701
+    m_ActionName: PlayerActions/Map[/Keyboard/m]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -10000,6 +10004,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerAnimator: {fileID: 0}
   playerCollider: {fileID: 0}
+  playerCircleCollider: {fileID: 0}
   playerTransform: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
   playerGravity: 0
@@ -10167,7 +10172,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.8799999, y: 4.30105}
+    oldSize: {x: 1.152, y: 1.72042}
     newSize: {x: 0.77, y: 1.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

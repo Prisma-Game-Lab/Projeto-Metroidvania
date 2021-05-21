@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e956b390d621f4200bdfba9d1b1cc356, type: 3}
   m_Name: PlayerDestination
   m_EditorClassIdentifier: 
-  SceneToGo: Yellow
-  door: -1
+  SceneToGo: Lobby
+  door: 1

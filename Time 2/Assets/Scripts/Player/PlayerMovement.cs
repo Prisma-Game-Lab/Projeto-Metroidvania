@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         float timeForJump;
         if (playerIsNormal)
         {
-            timeForJump = 0.25f;
+            timeForJump = 0.166f;
         }
         else
         {
