@@ -11,6 +11,7 @@ public class StampButton : MonoBehaviour
     public TeleportDestination destination;
     public GameObject player;
     public Destination playerDestination;
+    public Animator transition;
 
     private void OnEnable()
     {
@@ -36,6 +37,7 @@ public class StampButton : MonoBehaviour
 
     private IEnumerator WaitFade()
     {
+        transition.SetTrigger("Start");
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(destination.SceneToGo);
     }
