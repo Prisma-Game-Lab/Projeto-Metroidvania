@@ -9973,7 +9973,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 2134523e-e3dd-404c-b7df-120dff091ddf
-    m_ActionName: GlobalActions/GetStamps[/Keyboard/p]
+    m_ActionName: GlobalActions/GetStampsandSkills[/Keyboard/p]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 46df0b07-a187-4c29-bc7e-310ea470b701
@@ -10121,7 +10121,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   life: {fileID: 11400000, guid: ddd46d8dbda19421f81016db4a4ce479, type: 2}
-  playerLife: 3
+  playerLife: 7
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.2
@@ -10139,7 +10139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballGravity: 10
-  obtained: 0
+  obtained: 1
   reduceFactor: 1
   ballSprite: {fileID: 3135568875895035779, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
 --- !u!114 &1616248063
