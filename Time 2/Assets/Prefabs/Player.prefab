@@ -9705,6 +9705,7 @@ GameObject:
   - component: {fileID: 1616248069}
   - component: {fileID: 8024735329453298166}
   - component: {fileID: 6875496449765456379}
+  - component: {fileID: 5168414375088595286}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -9769,7 +9770,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 6120707212930331797, guid: 41701f1423390714992c352af300571b, type: 3}
+  m_Sprite: {fileID: -3891481647079869347, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9793,7 +9794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
-  boatSprite: {fileID: 5323417389375188855, guid: d53fdc76128a82f4a874f7dbe1b7d7b8, type: 3}
+  boatSprite: {fileID: 5939718406403018866, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
 --- !u!114 &222069547470339807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9807,7 +9808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obtained: 0
-  planeSprite: {fileID: 6244448364755092823, guid: 72bb0c4fbc1fcb647924db07c1bf6762, type: 3}
+  planeSprite: {fileID: 6203606937273922060, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
 --- !u!114 &2348440294670770239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9882,19 +9883,7 @@ MonoBehaviour:
     m_ActionId: 59c36bc3-645e-4da0-af62-6097325f2ae2
     m_ActionName: PlayerActions/Attack[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
-        m_MethodName: OnReset
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 5fb57970-bbde-43d3-bc77-ae249eaa9d55
     m_ActionName: GlobalActions/Reset[/Keyboard/escape]
   - m_PersistentCalls:
@@ -9963,7 +9952,7 @@ MonoBehaviour:
     m_ActionName: PlayerActions/ShurikenSkill[/Keyboard/shift]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6875496449765456379}
         m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
         m_MethodName: Interaction
         m_Mode: 0
@@ -9978,21 +9967,13 @@ MonoBehaviour:
     m_ActionId: 20f7370e-f6f7-4532-8fb0-976872ab7465
     m_ActionName: PlayerActions/Interaction[/Keyboard/h]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
-        m_MethodName: OnPause
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: b2166dbf-5ec7-456b-bf43-adbba8d35f5c
     m_ActionName: GlobalActions/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2134523e-e3dd-404c-b7df-120dff091ddf
+    m_ActionName: GlobalActions/GetStamps[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -10017,6 +9998,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   playerMovement: {fileID: 0}
+  playerAnimator: {fileID: 0}
   playerCollider: {fileID: 0}
   playerTransform: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
@@ -10031,7 +10013,7 @@ MonoBehaviour:
   sword: 0
   ball: 0
   shuriken: 0
-  normalSprite: {fileID: 6120707212930331797, guid: 41701f1423390714992c352af300571b, type: 3}
+  normalSprite: {fileID: -3891481647079869347, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
   stampMagenta: 0
   stampCyan: 0
   stampYellow: 0
@@ -10114,7 +10096,7 @@ MonoBehaviour:
   attackRange: 0.8
   attackParticle: {fileID: 875834742421117918, guid: 1708eaac8944b48aebebfcf0f08fd253, type: 3}
   dummyAttack: {fileID: 1364842515}
-  obtained: 0
+  obtained: 1
   attackRate: 2
 --- !u!114 &2348440294670770234
 MonoBehaviour:
@@ -10151,9 +10133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballGravity: 10
-  obtained: 0
+  obtained: 1
   reduceFactor: 1
-  ballSprite: {fileID: 6209913801216140511, guid: 1e414fef104d35641a1c0efe7067f6f8, type: 3}
+  ballSprite: {fileID: 3135568875895035779, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
 --- !u!114 &1616248063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10166,8 +10148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab573a726244c4a0baf473b7ee95d94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obtained: 0
-  shurikenSprite: {fileID: 5664577399506284494, guid: 95b13784f6a9c1a4ea0c4fa50f65926b, type: 3}
+  obtained: 1
+  shurikenSprite: {fileID: -1492140054791178455, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
 --- !u!61 &1616248069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10184,8 +10166,8 @@ BoxCollider2D:
   m_Offset: {x: -0.034116745, y: 0.045489848}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.52894396, y: 0.48057795}
-    oldSize: {x: 0.77, y: 1.53}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.8799999, y: 4.30105}
     newSize: {x: 0.77, y: 1.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10221,9 +10203,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIMaster: {fileID: 0}
-  mailBox: {fileID: 0}
   onDoor: 0
   onMailBox: 0
+--- !u!95 &5168414375088595286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9795c8af591aa647b923423527d9b0b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0
