@@ -435,7 +435,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "GetStamps",
+                    "name": "GetStampsandSkills",
                     "type": "Button",
                     "id": "2134523e-e3dd-404c-b7df-120dff091ddf",
                     "expectedControlType": "Button",
@@ -495,7 +495,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "GetStamps",
+                    "action": "GetStampsandSkills",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

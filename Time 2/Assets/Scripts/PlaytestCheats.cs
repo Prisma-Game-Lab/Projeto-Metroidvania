@@ -22,7 +22,7 @@ public class PlaytestCheats : MonoBehaviour
         
     }
 
-    public void GetAllStamps(InputAction.CallbackContext ctx)
+    public void GetAllStampsAndSkills(InputAction.CallbackContext ctx)
     {
         _playerStatus.SetStampStatus(stampDestination.magenta);
         _playerStatus.SetStampStatus(stampDestination.cyan);
@@ -33,6 +33,15 @@ public class PlaytestCheats : MonoBehaviour
         {
             _playerStatus.UpdateStampStatus(stamp);
         }
-        
+
+        player.GetComponent<BoatSkill>().obtained = true;
+        player.GetComponent<PlaneSkill>().obtained = true;
+        player.GetComponent<ShurikenSkill>().obtained = true;
+        player.GetComponent<PlayerAttack>().obtained = true;
+        player.GetComponent<BallSkill>().obtained = true;
+
+        SaveSystem.SavePlayer(_playerStatus);
+
+
     }
 }
