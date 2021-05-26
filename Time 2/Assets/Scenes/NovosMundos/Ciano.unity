@@ -10259,15 +10259,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1616248053, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: obtained
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1616248063, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: obtained
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 222069547470339807, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: obtained
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770224, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_RootOrder
@@ -10319,11 +10319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770233, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: obtained
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770235, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: obtained
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_ActionEvents.Array.size
