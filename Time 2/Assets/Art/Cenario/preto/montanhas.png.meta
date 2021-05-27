@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 68c8250767f9da342aac7aec1bde5fef
+guid: 60c6b1e85b3bc294290a7017a06a1177
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -930592887449132391
+    second: montanhas_0
+  - first:
+      213: -6467186211701918949
+    second: montanhas_1
+  - first:
+      213: 5679836240492303761
+    second: montanhas_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,8 +41,8 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: 1
+    filterMode: 0
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -41,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,11 +122,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: montanhas_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 3003
+        height: 1564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992e61903bed513f0800000000000000
+      internalID: -930592887449132391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: montanhas_1
+      rect:
+        serializedVersion: 2
+        x: 3074
+        y: 0
+        width: 1878
+        height: 1843
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13f333b760ff36a0800000000000000
+      internalID: -6467186211701918949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: montanhas_2
+      rect:
+        serializedVersion: 2
+        x: 5009
+        y: 0
+        width: 4645
+        height: 2273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1951fe8b7f4d2de40800000000000000
+      internalID: 5679836240492303761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 121d831a2710b3a4b90dcd6f8e6434d5
     internalID: 0
     vertices: []
     indices: 
