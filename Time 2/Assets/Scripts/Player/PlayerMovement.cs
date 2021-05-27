@@ -88,9 +88,15 @@ public class PlayerMovement : MonoBehaviour
             // _jumped impede pulos adicionais em paredes e o avião não pode pular
             if (IsGrounded() && !_jumped && _playerStatus.playerState != PlayerSkill.PlaneMode)
             {
-                StartCoroutine(JumpAnimation(_playerStatus.playerState == PlayerSkill.Normal));
+                _playerStatus.playerAnimator.SetBool("Jumping", true);
+                AudioManager.instance.Play("Jump");
+                _jumpHold = true;
+                _jumped = true;
+                _jumpbreak = false;
+                _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
+                _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             }
-            
+             
             //Flight();
         }
 
@@ -119,28 +125,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-
-    private IEnumerator JumpAnimation(bool playerIsNormal)
-    {
-        _playerStatus.playerAnimator.SetBool("Jumping", true);
-        float timeForJump;
-        if (playerIsNormal)
-        {
-            timeForJump = 0.166f;
-        }
-        else
-        {
-            timeForJump = 0.01f; 
-        }
-        yield return new WaitForSeconds(timeForJump);
-        AudioManager.instance.Play("Jump");
-        _jumpHold = true;
-        _jumped = true;
-        _jumpbreak = false;
-        _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
-        _rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        _playerStatus.playerAnimator.SetBool("Jumping", false);
-    }
+    
 
     // funcao que faz a logica do voo
     private void Flight()
