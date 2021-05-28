@@ -130,6 +130,7 @@ public class GameMaster : MonoBehaviour
     }
     public void GoToMainMenu()
     {
+        AudioManager.instance.Stop(playerDestination.SceneToGo);
         SceneManager.LoadScene("FirstScene");
     }
 

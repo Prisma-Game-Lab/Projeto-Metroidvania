@@ -26,7 +26,7 @@ public class SoundControl : MonoBehaviour
     {
         if (_firstGameValue == 0)
         {
-            _backgroundValue = 1f;
+            _backgroundValue = 50f;
             backgroundSlider.value = _backgroundValue;
             PlayerPrefs.SetFloat(_backgroundPrefs, _backgroundValue);
             AudioManager.instance.UpdateSoundVolumes();
@@ -43,7 +43,7 @@ public class SoundControl : MonoBehaviour
     {
         if (_firstGameValue == 0)
         {
-            _soundEffectsValue = 1f;
+            _soundEffectsValue = 50f;
             soundEffectsSlider.value = _soundEffectsValue;
             PlayerPrefs.SetFloat(_soundEffectsPrefs, _soundEffectsValue);
             PlayerPrefs.SetInt(_firstGame, 1);

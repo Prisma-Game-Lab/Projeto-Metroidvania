@@ -18244,7 +18244,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1898562168}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0.712
   m_OnValueChanged:
@@ -18563,7 +18563,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1264293960}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
@@ -23884,3 +23884,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
+--- !u!1 &7483938733922849863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7483938733619300216, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
+  m_PrefabInstance: {fileID: 7483938733922849862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &7483938733922849864
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483938733922849863}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

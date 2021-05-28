@@ -15,7 +15,6 @@ public class Stamp : ScriptableObject
 {
     public string SceneToGo;
     public stampDestination mailBoxToGo;
-    public Sprite sprite;
     public bool obtained;
     public string destinationName;
 }

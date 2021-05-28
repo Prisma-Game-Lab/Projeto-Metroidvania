@@ -25,7 +25,7 @@ public class StampButton : MonoBehaviour
     {
         Time.timeScale = 1f;
         // para a musica da fase 
-        AudioManager.instance.Stop(destination.SceneToGo);
+        AudioManager.instance.Stop(SceneManager.GetActiveScene().name);
         destination.SceneToGo = stamp.SceneToGo;
         playerDestination.SceneToGo = stamp.SceneToGo;
         destination.targetedMailBox = stamp.mailBoxToGo;

@@ -10,7 +10,7 @@ public class MailBoxListener : MonoBehaviour
     public TeleportDestination playerDestination;
     void Start()
     {
-        Debug.Log(player.GetComponent<PlayerStatus>().stampTeleport);
+        Debug.Log("Stamp Teleport"+player.GetComponent<PlayerStatus>().stampTeleport);
         if (player.GetComponent<PlayerStatus>().stampTeleport)
         {
             AudioManager.instance.Play(playerDestination.SceneToGo);

@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs");
+            s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs")*0.005f;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs");
+            s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs")*0.005f;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
@@ -81,11 +81,11 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
-            s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs");
+            s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs")*0.005f;
         }
         foreach (Sound s in soundEffects)
         {
-            s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs");
+            s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs")*0.005f;
         }
 
     }
