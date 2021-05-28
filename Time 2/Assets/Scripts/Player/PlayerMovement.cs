@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _move;
     [HideInInspector] public bool isFlipped = false;
     private bool _jumpHold = false;
-    private bool _jumpbreak = false;
+    [HideInInspector] public bool _jumpbreak = false;
     private bool _jumped = false;
     private Transform _playerTransform;
     private Vector3 _originalLocalScale;
@@ -85,8 +85,15 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             
+            
+            // Aviao e Bola não pulam 
+            if(_playerStatus.playerState == PlayerSkill.PlaneMode || _playerStatus.playerState == PlayerSkill.BallMode)
+            {
+                return;
+            }
+            
             // _jumped impede pulos adicionais em paredes e o avião não pode pular
-            if (IsGrounded() && !_jumped && _playerStatus.playerState != PlayerSkill.PlaneMode)
+            if (IsGrounded() && !_jumped)
             {
                 _playerStatus.playerAnimator.SetBool("Jumping", true);
                 AudioManager.instance.Play("Jump");
@@ -380,12 +387,25 @@ public class PlayerMovement : MonoBehaviour
         }
         
         Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.9f, 0.1f),0f ,layers);
-        
-        if(_playerStatus.playerState == PlayerSkill.Normal) // deteccao do normal precisa ter uma largura maior facilitador de pulo 
-            hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 1.5f, 0.1f),0f ,layers);
+
+        if (_playerStatus.playerState == PlayerSkill.Normal)
+        {
+            if (_rb.velocity.y <= 0.01f && _rb.velocity.y >= -0.01f )
+            {
+                // deteccao do normal precisa ter uma largura maior facilitador de pulo 
+                hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 1.5f, 0.1f),0f ,layers);
+            }
+            else
+            {
+                hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.9f, 0.1f),0f ,layers);
+            }
+            
+            
+        } 
 
         if (_playerStatus.playerState == PlayerSkill.BallMode) // deteccao do chao da bola precisa ter uma altura maior (y = 0.4)
-            hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x , 0.4f),0f ,layers);
+            hitGround = Physics2D.OverlapCircleAll(hitPosition, _playerStatus.playerCollider.size.x * 0.5f, layers);
+        
         // Quebra chao caso seja a bolinha
         if (_playerStatus.playerState == PlayerSkill.BallMode)
         {
