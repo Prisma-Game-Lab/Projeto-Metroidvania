@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 7483938733619300217}
   - component: {fileID: 7483938733619300103}
   - component: {fileID: 7483938733619300102}
+  - component: {fileID: 7483938733922849864}
   m_Layer: 5
   m_Name: MapUI
   m_TagString: Untagged
@@ -550,19 +551,7 @@ MonoBehaviour:
     m_ActionId: 20f7370e-f6f7-4532-8fb0-976872ab7465
     m_ActionName: PlayerActions/Interaction[/Keyboard/z]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7483938733619300102}
-        m_TargetAssemblyTypeName: MapComponent, Assembly-CSharp
-        m_MethodName: OnPlayerMap
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 46df0b07-a187-4c29-bc7e-310ea470b701
     m_ActionName: PlayerActions/Map[/Keyboard/m]
   - m_PersistentCalls:
@@ -577,6 +566,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2134523e-e3dd-404c-b7df-120dff091ddf
     m_ActionName: GlobalActions/GetStampsandSkills[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 19170cf2-0bba-43b9-9f7b-099309209e20
+    m_ActionName: PlayerInUI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -604,6 +597,18 @@ MonoBehaviour:
   playerDestination: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
   teleportDestination: {fileID: 11400000, guid: c3a363289d94dc44babaa8ea721db8ed, type: 2}
   mapActivated: 0
+--- !u!225 &7483938733922849864
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483938733619300216}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &7483938733718420111
 GameObject:
   m_ObjectHideFlags: 0

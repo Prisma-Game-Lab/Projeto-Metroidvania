@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     public GameObject UIMaster;
+    public GameObject GameMaster;
     private GameObject _mailBoxObject;
     [HideInInspector]public bool onDoor = false;
     [HideInInspector] public bool onMailBox = false;
@@ -25,26 +26,32 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Interaction(InputAction.CallbackContext ctx)
     {
-        if (onDoor)
+        if (ctx.started)
         {
-            if (_playerVictory.CollectedAll())
+            if (onDoor)
+            {
+                if (_playerVictory.CollectedAll())
+                {
+                    _uiMaster.InteractionPanel.SetActive(false);
+                    _uiMaster.PlayerWon(true);
+                }
+                else
+                {
+                    _uiMaster.InteractionPanel.SetActive(false);
+                    _uiMaster.PlayerWon(false);
+                }
+            }
+            else if (onMailBox)
             {
                 _uiMaster.InteractionPanel.SetActive(false);
-                _uiMaster.PlayerWon(true);
-            }
-            else
-            {
-                _uiMaster.InteractionPanel.SetActive(false);
-                _uiMaster.PlayerWon(false);
+                _mailBox.mailBoxUI.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
+                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+                GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+                //Time.timeScale = 0f;
             }
         }
-        else if (onMailBox)
-        {
-            _uiMaster.InteractionPanel.SetActive(false);
-            _mailBox.mailBoxUI.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
-            Time.timeScale = 0f;
-        }
+        
 
     }
 

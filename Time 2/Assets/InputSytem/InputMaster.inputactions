@@ -541,6 +541,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerInUI",
+            "id": "1d761622-93c9-47fd-a2a5-993ea0ef825f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "19170cf2-0bba-43b9-9f7b-099309209e20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ccbd90f5-4bf1-48f3-bac2-a6df83aaf2ee",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

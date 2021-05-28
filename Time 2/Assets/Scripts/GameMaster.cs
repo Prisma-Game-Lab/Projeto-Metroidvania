@@ -21,6 +21,7 @@ public class GameMaster : MonoBehaviour
     public GameObject firstButtonPauseMenu;
     public GameObject firstButtonSettings;
     public GameObject firstButtonControls;
+    public GameObject player;
 
 
     void Awake()
@@ -57,6 +58,7 @@ public class GameMaster : MonoBehaviour
     {
         if (_paused)
         {
+            player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
             EventSystem.current.SetSelectedGameObject(null);
             PauseMenuUI.SetActive(false);
             _paused = false;
@@ -65,6 +67,7 @@ public class GameMaster : MonoBehaviour
         }
 
         PauseMenuUI.SetActive(true);
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
         EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
         _paused = true;
         Time.timeScale = 0f;
@@ -73,6 +76,7 @@ public class GameMaster : MonoBehaviour
     public void BackToGame()
     {
         PauseMenuUI.SetActive(false);
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
         Time.timeScale = 1f;
     }
     

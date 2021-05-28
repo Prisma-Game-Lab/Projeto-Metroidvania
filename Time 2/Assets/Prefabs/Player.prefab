@@ -9975,9 +9975,25 @@ MonoBehaviour:
     m_ActionId: 2134523e-e3dd-404c-b7df-120dff091ddf
     m_ActionName: GlobalActions/GetStampsandSkills[/Keyboard/p]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MapComponent, Assembly-CSharp
+        m_MethodName: OnPlayerMap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 46df0b07-a187-4c29-bc7e-310ea470b701
     m_ActionName: PlayerActions/Map[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 19170cf2-0bba-43b9-9f7b-099309209e20
+    m_ActionName: PlayerInUI/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -10209,6 +10225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIMaster: {fileID: 0}
+  GameMaster: {fileID: 0}
   onDoor: 0
   onMailBox: 0
 --- !u!95 &5168414375088595286

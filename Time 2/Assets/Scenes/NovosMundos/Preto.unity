@@ -1860,6 +1860,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 620499242}
     - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 7331859495077736594}
+    - target: {fileID: 3277773768845000984, guid: 47f0bac2f2b561548bb8762d28a4dfa8, type: 3}
       propertyPath: mailBoxUIFirstButton
       value: 
       objectReference: {fileID: 620499240}
@@ -16079,6 +16083,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7483938733619300217, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
   m_PrefabInstance: {fileID: 1702161219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1702161221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7483938733619300102, guid: c2d0cf14d97ca4ce8a4ed28faee5ce41, type: 3}
+  m_PrefabInstance: {fileID: 1702161219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099660813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffc757c38b474640924038e4af4f60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1713642135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17644,10 +17659,22 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1702161221}
+    - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerMap
+      objectReference: {fileID: 0}
     - target: {fileID: 6875496449765456379, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: UIMaster
       value: 
       objectReference: {fileID: 7331859493700254450}
+    - target: {fileID: 6875496449765456379, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: GameMaster
+      value: 
+      objectReference: {fileID: 7331859495077736594}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
 --- !u!1 &6338554174190470865 stripped
@@ -133155,6 +133182,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7331859494388989690}
     - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6338554174190470865}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: ControlsUI
       value: 
       objectReference: {fileID: 582518748}
@@ -133245,7 +133276,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
   m_PrefabInstance: {fileID: 7331859495077736590}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7331859495077736594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a29e0efafff3c4721aef8d22a3e31951, type: 3}
@@ -133261,12 +133292,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1509018957269624061, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
   m_PrefabInstance: {fileID: 7331859495077736590}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7331859495077736594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d327b4d29595c34b858653f8c82d44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7331859495077736594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5043188181269210631, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+  m_PrefabInstance: {fileID: 7331859495077736590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &7331859495181760963
 CanvasRenderer:
   m_ObjectHideFlags: 0

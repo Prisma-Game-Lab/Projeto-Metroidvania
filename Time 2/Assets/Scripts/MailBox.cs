@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 
 public class MailBox : MonoBehaviour
@@ -14,6 +15,7 @@ public class MailBox : MonoBehaviour
     public GameObject player;
     public GameObject mailBoxUI;
     public GameObject mailBoxUIFirstButton;
+    public GameObject gameMaster;
     [HideInInspector]public PlayerStatus playerStatus;
 
 
@@ -30,6 +32,8 @@ public class MailBox : MonoBehaviour
     public void LeaveMailBox()
     {
         mailBoxUI.SetActive(false);
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
+        gameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
         EventSystem.current.SetSelectedGameObject(null);
         Time.timeScale = 1f;
     }
