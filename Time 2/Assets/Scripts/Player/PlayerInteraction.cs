@@ -65,6 +65,7 @@ public class PlayerInteraction : MonoBehaviour
             onMailBox = true;
             _mailBoxObject = collision.gameObject;
             _mailBox = _mailBoxObject.GetComponent<MailBox>();
+            _mailBox.GetStamp(_mailBox.myMailBox);
         }
     }
 

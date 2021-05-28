@@ -34,6 +34,16 @@ public class MailBox : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void GetStamp(stampDestination destination)
+    {
+        foreach (Stamp stamp in stamps)
+        {
+            if (stamp.mailBoxToGo == destination)
+                playerStatus.SetStampStatus(stamp.mailBoxToGo);
+                playerStatus.UpdateStampStatus(stamp);
+        }
+    }
+
     
 
     
