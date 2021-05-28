@@ -9809,6 +9809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obtained: 0
   planeSprite: {fileID: 6203606937273922060, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
+  planeUpVelocity: 4
 --- !u!114 &2348440294670770239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10065,6 +10066,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isFlipped: 0
+  _jumpbreak: 0
 --- !u!50 &2348440294670770237
 Rigidbody2D:
   serializedVersion: 4

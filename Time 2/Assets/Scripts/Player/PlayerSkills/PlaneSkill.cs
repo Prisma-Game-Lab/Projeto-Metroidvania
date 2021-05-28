@@ -9,10 +9,12 @@ public class PlaneSkill : MonoBehaviour
 
     public bool obtained = false;
     public Sprite planeSprite;
+    public float planeUpVelocity; 
 
     private PlayerStatus _playerStatus ;
     private ParticleSystem _trasformationParticles;
     private float _planeGravity;
+    
     
     private void Start()
     {
@@ -44,15 +46,25 @@ public class PlaneSkill : MonoBehaviour
                  BoxCollider2D b = _playerStatus.playerCollider ;
                  b.size = v;
                  
-                 _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
-
+                 _playerStatus.playerMovement._jumpbreak = false;
                  _playerStatus.playerAnimator.SetTrigger("PlaneTrigger");
                  _playerStatus.playerAnimator.SetBool("Player", false);
-                 // COMPORTAMENTO DE VELOCIDADE DO AVIAO 
-                 if (_playerStatus.rb.velocity.y < -10f)
+                 
+                 if (_playerStatus.rb.velocity.y < -5f)
                  {
-                     _playerStatus.rb.AddForce(new Vector2(0f, _playerStatus.rb.velocity.y *0.1f),ForceMode2D.Impulse);
+                     _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
                  }
+
+                 if (_playerStatus.rb.velocity.y > 1f)
+                 {
+                     // COMPORTAMENTO DE VELOCIDADE DO AVIAO 
+                     _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);
+                     _playerStatus.rb.AddForce(new Vector2(0f, planeUpVelocity),ForceMode2D.Impulse);
+                 }
+                 
+
+
+                 
              }
              else
              {
