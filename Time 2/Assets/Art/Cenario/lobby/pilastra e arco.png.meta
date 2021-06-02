@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 9c6cfee8425c6d94ab44dc043713c0b3
+guid: d1d89c55b96f17649835d6cc51299241
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7392447799363050477
-    second: pilastra_0
+      213: 8175183917698416314
+    second: pilastra e arco_0
   - first:
-      213: 2830673403933663176
-    second: pilastra_1
+      213: -3453912649440180491
+    second: pilastra e arco_1
   - first:
-      213: 1590153254756795804
-    second: pilastra_2
+      213: -4861245595403925536
+    second: pilastra e arco_2
+  - first:
+      213: -7358584114033980882
+    second: pilastra e arco_3
+  - first:
+      213: -7107851766489483955
+    second: pilastra e arco_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +130,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pilastra_0
+      name: pilastra e arco_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1011
+        width: 1124
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe76eb8576147170800000000000000
+      internalID: 8175183917698416314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilastra e arco_1
       rect:
         serializedVersion: 2
         x: 70
         y: 0
-        width: 178
-        height: 572
+        width: 187
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314e852b4efb86990800000000000000
-      internalID: -7392447799363050477
+      spriteID: 5f6c3e4bebc3110d0800000000000000
+      internalID: -3453912649440180491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pilastra_1
+      name: pilastra e arco_2
       rect:
         serializedVersion: 2
         x: 317
         y: 0
-        width: 166
-        height: 715
+        width: 186
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf9c9c9672984720800000000000000
-      internalID: 2830673403933663176
+      spriteID: 0e7440013e2698cb0800000000000000
+      internalID: -4861245595403925536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pilastra_2
+      name: pilastra e arco_3
       rect:
         serializedVersion: 2
         x: 543
@@ -180,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c95c530d5fb511610800000000000000
-      internalID: 1590153254756795804
+      spriteID: e2a0c295cbe01e990800000000000000
+      internalID: -7358584114033980882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pilastra e arco_4
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 165
+        width: 816
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45f2463a76db5d90800000000000000
+      internalID: -7107851766489483955
       vertices: []
       indices: 
       edges: []
@@ -189,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f88c73ed15140e940b2049d5c0fbbd4a
+    spriteID: 7c1ad21bb58872d45b4d239e3c8427a9
     internalID: 0
     vertices: []
     indices: 
