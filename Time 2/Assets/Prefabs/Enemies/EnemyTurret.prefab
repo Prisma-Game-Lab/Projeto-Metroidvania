@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2670785371601351746}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 57.69, y: -2.82, z: 41.757584}
   m_LocalScale: {x: 1, y: 1.7625, z: 1}
   m_Children: []
@@ -189,11 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pointStart: {fileID: 0}
-  pointEnd: {fileID: 0}
+  pointStart: 2
+  pointEnd: 2
   enemyMovement: 2
   isFlipped: 0
-  knockbackForce: 5
+  knockbackForce: {x: 8, y: 1}
   enemyState: 0
   rb: {fileID: 0}
   sp: {fileID: 0}

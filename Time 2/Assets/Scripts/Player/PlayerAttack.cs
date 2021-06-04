@@ -14,7 +14,8 @@ public class PlayerAttack : MonoBehaviour
     
     //SOMENTE PARA DEBUG
     public GameObject dummyAttack;
-
+    [Tooltip("Tempo em segundo que de fato o ataque esta funcionando como dano")]
+    public float attackTime; 
     // variaves para ver se já possui o ataque
     public bool obtained = false;
 
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRate = 0.5f;
     private float _nextAttackTime = 0f;
     private PlayerMovement _playerMovement;
+    
     private PlayerStatus _playerStatus;
     private PlayerInteraction _playerInteraction;
     private void Start()
@@ -45,38 +47,58 @@ public class PlayerAttack : MonoBehaviour
             if (ctx.started && Time.time >= _nextAttackTime && obtained) {
                 AudioManager.instance.Play("Ataque");
                 _playerStatus.playerAnimator.SetTrigger("Attack");
-                LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
-                // Detectar se tem inimigos no range
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);
-                // ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
-                //StartCoroutine(ShowAttack());
-                // Realizar dano nos inimigos
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    // Realizar dano no inimigo
-                    if (enemy.CompareTag("Wall"))
-                        enemy.GetComponent<EnemyDamage>().TakeStaticDamage();
-                    else
-                    {
-                        if(enemy.GetComponent<EnemyDamage>() != null) 
-                            enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
-                    }
-                      
-                }
 
                 // resetar o nextAttackTime
                 _nextAttackTime = Time.time + 1f / attackRate;
+                
+                // make the attack 
+                StartCoroutine(Attack());
             }
         }
 
         
     }
 
-    private IEnumerator ShowAttack()
+    private IEnumerator Attack()
     {
-        dummyAttack.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        dummyAttack.SetActive(false);
+        float ctxDuration = attackTime;
+        float enemyDeathDuration = 0.2f;
+        List<Collider2D> enemies = new List<Collider2D>();
+        while (ctxDuration > 0)
+        {
+            ctxDuration -= Time.deltaTime;
+            LayerMask layers = LayerMask.GetMask("Enemies", "Wall");
+            // Detectar se tem inimigos no range
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, layers);
+            // ParticleSystem particle = Instantiate(attackParticle, attackPoint.position, attackParticle.transform.rotation);
+            //StartCoroutine(ShowAttack());
+            // Realizar dano nos inimigos
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if(enemies.Contains(enemy))
+                    continue;
+                // Realizar dano no inimigo
+                if (enemy.CompareTag("Wall"))
+                    enemy.GetComponent<EnemyDamage>().TakeStaticDamage();
+                else
+                {
+                    if (enemy.GetComponent<EnemyDamage>() != null)
+                    {
+                        
+                        enemy.GetComponent<EnemyDamage>().TakeDamage(_playerMovement.isFlipped);
+                        enemyDeathDuration += enemy.GetComponent<EnemyDamage>().duration;
+                    }
+                }
+                
+                enemies.Add(enemy);
+                      
+            }
+            yield return new WaitForEndOfFrame();
+            
+        }
+
+        yield return new WaitForSeconds(enemyDeathDuration);
+
     }
     // Função auxiliar para monstrar a área do ataque
     private void OnDrawGizmosSelected()

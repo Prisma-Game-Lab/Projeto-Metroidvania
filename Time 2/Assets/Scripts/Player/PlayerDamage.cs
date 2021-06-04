@@ -37,7 +37,7 @@ public class PlayerDamage : MonoBehaviour
 
     }
 
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D other)
     {
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, new Vector2(_playerStatus.playerCollider.size.x*1.1f, _playerStatus.playerCollider.size.y),0f ,enemyLayers);
 
@@ -52,16 +52,16 @@ public class PlayerDamage : MonoBehaviour
                         
                         colider.gameObject.GetComponent<EnemyMovement>().enemyState = EnemyState.Idle;
                         colider.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                        float knockbackForce = colider.gameObject.GetComponent<EnemyMovement>().knockbackForce;
-
+                        Vector2 knockbackForce = colider.gameObject.GetComponent<EnemyMovement>().knockbackForce;
+                        
                         _playerStatus.rb.velocity = new Vector2(0f, _playerStatus.rb.velocity.y);
-                        if (colider.gameObject.GetComponent<EnemyMovement>().isFlipped)
+                        if (colider.transform.position.x > transform.position.x)
                         {
-                            _playerStatus.rb.AddForce(new Vector2(knockbackForce,0f), ForceMode2D.Impulse);
+                            _playerStatus.rb.AddForce(new Vector2(-knockbackForce.x,knockbackForce.y), ForceMode2D.Impulse);
                         }
                         else
                         {
-                            _playerStatus.rb.AddForce(new Vector2(-knockbackForce, 0f), ForceMode2D.Impulse);
+                            _playerStatus.rb.AddForce(new Vector2(knockbackForce.x,knockbackForce.y), ForceMode2D.Impulse);
                         }
                         
                         // ball case 
@@ -77,7 +77,6 @@ public class PlayerDamage : MonoBehaviour
             }
             
         }
-
     }
 
 
@@ -93,10 +92,12 @@ public class PlayerDamage : MonoBehaviour
     public void TakeDamage()
     {
         takingDamage = true;
+        
         // audio de Dano 
         AudioManager.instance.Play("Dano");
         RemoveLife();
         StartCoroutine(FlashSprite());
+        _playerStatus.playerAnimator.enabled = false;
     }
 
     ///minAlpha: valor minimo de alpha 
@@ -124,11 +125,18 @@ public class PlayerDamage : MonoBehaviour
                 currentInterval = currentInterval - interval;
             }
             ctxDuration -= Time.deltaTime;
+            if (ctxDuration <= duration / 2f)
+            {
+                takingDamage = false;
+                _playerStatus.playerAnimator.enabled = true;
+            }
+
             yield return null;
         }
 
-        takingDamage = false;
-        _sr.color = maxColor;
+
+    
+        _sr.color = _sr.color;
     }
 
 

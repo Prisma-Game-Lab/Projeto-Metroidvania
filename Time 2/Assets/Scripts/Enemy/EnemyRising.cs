@@ -83,12 +83,12 @@ public class EnemyRising : MonoBehaviour
         StartCoroutine(StopAggro());
     }
     
-    //Funcao para debugar as hitboxes 
-     // private void OnDrawGizmosSelected()
-     // {       
-     //         Vector3 position = _transform.position;
-     //         Vector2 aggroPosition = new Vector2(position.x, position.y);
-     //
-     //         Gizmos.DrawWireSphere(aggroPosition, aggroRadius);
-     // }
+    // //Funcao para debugar as hitboxes 
+    //  private void OnDrawGizmosSelected()
+    //  {       
+    //          Vector3 position = _transform.position;
+    //          Vector2 aggroPosition = new Vector2(position.x, position.y);
+    //  
+    //          Gizmos.DrawWireSphere(aggroPosition, aggroRadius);
+    //  }
 }

@@ -10025,6 +10025,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   originalLocalScale: {x: 0, y: 0, z: 0}
   playerGravity: 0
+  playerInput: {fileID: 0}
   transformationParticles: {fileID: 1913081182035609188}
   cyan: 0
   yellow: 0
@@ -10120,6 +10121,7 @@ MonoBehaviour:
   attackRange: 0.8
   attackParticle: {fileID: 875834742421117918, guid: 1708eaac8944b48aebebfcf0f08fd253, type: 3}
   dummyAttack: {fileID: 1364842515}
+  attackTime: 0.4
   obtained: 0
   attackRate: 2
 --- !u!114 &2348440294670770234
@@ -10142,7 +10144,7 @@ MonoBehaviour:
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.2
-  duration: 0.5
+  duration: 1
   takingDamage: 0
 --- !u!114 &1616248053
 MonoBehaviour:

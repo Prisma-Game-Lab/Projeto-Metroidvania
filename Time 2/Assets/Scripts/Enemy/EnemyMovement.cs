@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     [HideInInspector] public bool isFlipped = false;
     
     [Tooltip("Force that enemy apply to player when give damage")]
-    public float knockbackForce;
+    public Vector2 knockbackForce;
     
     //state of the enemy 
     [HideInInspector] public EnemyState enemyState = EnemyState.Idle;
@@ -173,9 +173,12 @@ public class EnemyMovement : MonoBehaviour
         if (sp != null)
         {
             Vector3 position = transform.position;
-            Vector2 hitPosition = new Vector2(position.x - sp.bounds.size.x * 0.5f, position.y);
+            float cyanYOffset = 0.0f;
+            if (gameObject.GetComponent<EnemyRising>() != null)
+                cyanYOffset = sp.bounds.size.y;
+            Vector2 hitPosition = new Vector2(position.x - sp.bounds.size.x * 0.5f, position.y + cyanYOffset);
             if (isFlipped)
-                hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.5f, position.y);
+                hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.5f, position.y + cyanYOffset);
             
             Gizmos.DrawCube(hitPosition, new Vector2(0.1f,0.1f));
         }

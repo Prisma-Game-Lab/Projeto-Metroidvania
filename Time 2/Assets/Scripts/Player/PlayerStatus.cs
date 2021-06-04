@@ -42,6 +42,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
+    [HideInInspector] public PlayerInput playerInput;
     public GameObject transformationParticles;
 
     // Variaveis para serem salvas 
@@ -92,6 +93,7 @@ public class PlayerStatus : MonoBehaviour
         // pegar os componentes do player
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        playerInput = gameObject.GetComponent<PlayerInput>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         playerGravity = rb.gravityScale; // gravidade original do player
         playerAnimator = gameObject.GetComponent<Animator>();

@@ -10208,6 +10208,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 830981702858744768, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
+      propertyPath: knockbackForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 830981702858744769, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
       propertyPath: m_Name
       value: EnemyMagenta (2)
@@ -10879,14 +10883,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 551116721}
     m_Modifications:
-    - target: {fileID: 830981702858744768, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
-      propertyPath: speed
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 830981702858744768, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
-      propertyPath: jumpForce
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 830981702858744769, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
       propertyPath: m_Name
       value: EnemyMagenta
@@ -52678,6 +52674,10 @@ PrefabInstance:
     - target: {fileID: 2348440294670770239, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168414375088595286, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6875496449765456379, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: UIMaster

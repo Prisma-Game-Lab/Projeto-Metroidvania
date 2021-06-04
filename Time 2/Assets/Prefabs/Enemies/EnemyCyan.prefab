@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4544590936722168257}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 61.83, y: -3.86, z: -1}
   m_LocalScale: {x: 1.7875, y: 0.25, z: 1}
   m_Children: []
@@ -119,7 +119,7 @@ MonoBehaviour:
   interval: 0.2
   duration: 0.4
   imortal: 1
-  CanDamage: 0
+  CanDamage: 1
   damageMagnetude: 8
   enemyLife: 1
 --- !u!114 &4544590936722168283
@@ -135,10 +135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  pointStart: {fileID: 0}
-  pointEnd: {fileID: 0}
+  pointStart: 2
+  pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
+  knockbackForce: {x: 10, y: 5}
   enemyState: 0
   rb: {fileID: 0}
   sp: {fileID: 0}
@@ -176,7 +177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017743826, y: 1.585876}
+  m_Offset: {x: -0.057882786, y: 1.6324005}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -187,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1824276, y: 1.6131296}
+  m_Size: {x: 1.3738887, y: 1.6065369}
   m_EdgeRadius: 0
 --- !u!114 &4544590936722168259
 MonoBehaviour:
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72609c24a27d477bb858e2ea0f42ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 0.25
+  aggroRadius: 1.5
   aggroSpeed: 8
   aggroPreparationTime: 0.2
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}

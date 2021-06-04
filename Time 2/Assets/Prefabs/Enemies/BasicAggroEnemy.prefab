@@ -139,7 +139,7 @@ MonoBehaviour:
   pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
-  knockbackForce: 10
+  knockbackForce: {x: 10, y: 0.5}
   enemyState: 0
   rb: {fileID: 0}
   sp: {fileID: 0}
