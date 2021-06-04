@@ -56,21 +56,27 @@ public class GameMaster : MonoBehaviour
     
     public void OnPause(InputAction.CallbackContext ctx)
     {
-        if (_paused)
+        if (ctx.started)
         {
-            player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
-            EventSystem.current.SetSelectedGameObject(null);
-            PauseMenuUI.SetActive(false);
-            _paused = false;
-            Time.timeScale = 1f;
-            return;
-        }
+            if (_paused)
+            {
+                player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
+                player.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
+                EventSystem.current.SetSelectedGameObject(null);
+                PauseMenuUI.SetActive(false);
+                _paused = false;
+                Time.timeScale = 1f;
+                return;
+            }
 
-        PauseMenuUI.SetActive(true);
-        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
-        EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
-        _paused = true;
-        Time.timeScale = 0f;
+            PauseMenuUI.SetActive(true);
+            player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+            EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
+            this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+            _paused = true;
+            Time.timeScale = 0f;
+        }
+        
     }
 
     public void BackToGame()
