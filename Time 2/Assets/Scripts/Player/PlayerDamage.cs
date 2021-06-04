@@ -1,27 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public float hitboxRange = 1f;
+    //public float hitboxRange = 1f;
     public LayerMask enemyLayers;
 
     // MUDAR DE LUGAR SOMENTE PARA TESTE
     public PlayerHealth life;
     public int playerLife = 3;
-
     // Variaveis do efeito de blink
     public float minAlpha = 0.3f;
     public float maxAlpha = 1f;
     public float interval = 0.1f;
     public float duration = 0.4f;
-
+    
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
-    private bool _takingDamage;
+    public bool takingDamage;
+    private PlayerStatus _playerStatus;
+    
 
     private void Awake()
     {
@@ -31,12 +33,13 @@ public class PlayerDamage : MonoBehaviour
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
-        
+        _playerStatus = gameObject.GetComponent<PlayerStatus>();
+
     }
 
     private void Update()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, hitboxRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, new Vector2(_playerStatus.playerCollider.size.x*1.1f, _playerStatus.playerCollider.size.y),0f ,enemyLayers);
 
         if(hitEnemies.Length > 0)
         {
@@ -44,8 +47,29 @@ public class PlayerDamage : MonoBehaviour
             {
                 if (colider.gameObject.GetComponent<EnemyDamage>().CanDamage)
                 {
-                    if (!_takingDamage)
+                    if (!takingDamage)
                     {
+                        
+                        colider.gameObject.GetComponent<EnemyMovement>().enemyState = EnemyState.Idle;
+                        colider.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        float knockbackForce = colider.gameObject.GetComponent<EnemyMovement>().knockbackForce;
+
+                        _playerStatus.rb.velocity = new Vector2(0f, _playerStatus.rb.velocity.y);
+                        if (colider.gameObject.GetComponent<EnemyMovement>().isFlipped)
+                        {
+                            _playerStatus.rb.AddForce(new Vector2(knockbackForce,0f), ForceMode2D.Impulse);
+                        }
+                        else
+                        {
+                            _playerStatus.rb.AddForce(new Vector2(-knockbackForce, 0f), ForceMode2D.Impulse);
+                        }
+                        
+                        // ball case 
+                        if(colider.gameObject.GetComponent<EnemyBullet>() != null)
+                        {
+                            Destroy(colider.gameObject);
+                        }
+                        
                         TakeDamage();
                     }
                 }
@@ -63,12 +87,12 @@ public class PlayerDamage : MonoBehaviour
         if (transform.position == null)
             return;
 
-        Gizmos.DrawWireSphere(transform.position, hitboxRange);
+        Gizmos.DrawWireCube(transform.position, new Vector3(_playerStatus.playerCollider.size.x, _playerStatus.playerCollider.size.y,0.1f));
     }
 
     public void TakeDamage()
     {
-        _takingDamage = true;
+        takingDamage = true;
         // audio de Dano 
         AudioManager.instance.Play("Dano");
         RemoveLife();
@@ -103,7 +127,7 @@ public class PlayerDamage : MonoBehaviour
             yield return null;
         }
 
-        _takingDamage = false;
+        takingDamage = false;
         _sr.color = maxColor;
     }
 

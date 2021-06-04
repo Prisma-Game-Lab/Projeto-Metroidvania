@@ -216,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         //Realizando o movimento horizontal 
-        if (!(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()) )
+        if (!(_playerStatus.playerState == PlayerSkill.ShurikenMode && CheckWall()) && !gameObject.GetComponent<PlayerDamage>().takingDamage )
         {
             Vector2 m = _move * (speed * Time.fixedDeltaTime);
             if (!(_onMovingFloor && m.x == 0))

@@ -193,6 +193,7 @@ MonoBehaviour:
   pointEnd: {fileID: 0}
   enemyMovement: 2
   isFlipped: 0
+  knockbackForce: 5
   enemyState: 0
   rb: {fileID: 0}
   sp: {fileID: 0}

@@ -10134,7 +10134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88847fe6d53ba44fc997d2555421657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitboxRange: 0.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -10143,7 +10142,8 @@ MonoBehaviour:
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.2
-  duration: 1.25
+  duration: 0.5
+  takingDamage: 0
 --- !u!114 &1616248053
 MonoBehaviour:
   m_ObjectHideFlags: 0

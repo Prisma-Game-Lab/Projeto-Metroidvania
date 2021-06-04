@@ -62,7 +62,7 @@ public class EnemyAggro : MonoBehaviour
 
     private void PerformAggro()
     {
-        if (!_performingAggro)
+        if (!_performingAggro && _enemyMovement.enemyState == EnemyState.Aggro)
         {
             _performingAggro = true;
             float direction = 1f;

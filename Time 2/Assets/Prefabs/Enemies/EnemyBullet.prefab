@@ -184,10 +184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pointStart: {fileID: 0}
-  pointEnd: {fileID: 0}
+  pointStart: 2
+  pointEnd: 2
   enemyMovement: 2
   isFlipped: 0
+  knockbackForce: 1
   enemyState: 0
   rb: {fileID: 0}
   sp: {fileID: 0}
