@@ -5971,7 +5971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7331859493690822234, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.8560257
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7331859494352442368, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_Tiles.Array.size
@@ -18325,6 +18325,10 @@ PrefabInstance:
       propertyPath: flightGravity
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8601953840782243194, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 82bd89d63d644ef4daaccbf72ae8a5cd, type: 2}
     - target: {fileID: 8601953840782243195, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.01
