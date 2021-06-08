@@ -45,6 +45,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 _uiMaster.InteractionPanel.SetActive(false);
                 _mailBox.mailBoxUI.SetActive(true);
+                GameMaster.GetComponent<GameMaster>().onOtherMenu = true;
                 EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
                 this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
                 GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");

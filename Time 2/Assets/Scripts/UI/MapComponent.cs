@@ -22,6 +22,9 @@ public class MapComponent : MonoBehaviour
     public TeleportDestination teleportDestination;
 
     [HideInInspector] public bool mapActivated;
+
+    //GameObjetcs for UI Control
+    public GameObject gameMaster;
     
     public void OnPlayerMap(InputAction.CallbackContext ctx)
     {
@@ -31,7 +34,8 @@ public class MapComponent : MonoBehaviour
             {
                 
                 mapActivated = true;
-                mapImages.SetActive(true); 
+                mapImages.SetActive(true);
+                gameMaster.GetComponent<GameMaster>().onOtherMenu = true;//bloqueia o menu de pause quando o mapa estiver ativado
                 
                 
                 // discover player scene 
@@ -67,6 +71,7 @@ public class MapComponent : MonoBehaviour
             {
                 mapImages.SetActive(false);
                 mapActivated = false;
+                gameMaster.GetComponent<GameMaster>().onOtherMenu = false;
             }
             
         }
