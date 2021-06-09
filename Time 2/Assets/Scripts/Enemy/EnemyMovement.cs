@@ -25,8 +25,8 @@ public class EnemyMovement : MonoBehaviour
     [HideInInspector] public EnemyState enemyState = EnemyState.Idle;
     private bool _going;
     private Vector3 _originalPos;
-    private Vector3 _pointToStart;
-    private Vector3 _pointToEnd;
+    public Vector3 _pointToStart;
+    public Vector3 _pointToEnd;
 
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public SpriteRenderer sp;
@@ -41,15 +41,14 @@ public class EnemyMovement : MonoBehaviour
         {
             _pointToStart = new Vector3(_originalPos.x - sp.bounds.size.x*pointStart, transform.position.y, transform.position.z);
             _pointToEnd = new Vector3(_originalPos.x+ sp.bounds.size.x*pointEnd, transform.position.y, transform.position.z);
+            
         }
         else if(enemyMovement == SimpleEnemyMovements.Vertical)
         {
             _pointToStart = new Vector3(transform.position.x, _originalPos.y+ sp.bounds.size.y*pointStart, transform.position.z);
             _pointToEnd = new Vector3(transform.position.x, _originalPos.y + sp.bounds.size.y*pointEnd, transform.position.z);
         }
-        
-        
-   
+
     }
 
     // Update is called once per frame
@@ -66,7 +65,7 @@ public class EnemyMovement : MonoBehaviour
 
         CheckWall();
     }
-
+    
 
     // Realização de movimento horizontalk simples
     private void HorizontalMovement()
@@ -102,8 +101,7 @@ public class EnemyMovement : MonoBehaviour
     
     private void VerticalMovement()
     {
-
-
+        
         Vector3 idleDestination = Vector3.Lerp(_pointToStart, _pointToEnd, Mathf.PingPong(Time.time * speed, 1.0f));
         float direction = Mathf.Sign(idleDestination.y - transform.position.y);
         Vector2 MovePos = new Vector2(
@@ -140,16 +138,26 @@ public class EnemyMovement : MonoBehaviour
     
     private void CheckWall()
     {
+        // inimigo ciano se move de forma diferente 
+
         Vector3 position = transform.position;
         Vector2 hitPosition = new Vector2(position.x - sp.bounds.size.x * 0.25f, position.y);
+
         if (isFlipped)
             hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.25f, position.y);
         
-        LayerMask layer = LayerMask.GetMask( "Floor");
+        LayerMask layer = LayerMask.GetMask( "Floor", "Water");
         Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,0.1f),0f ,layer);
         
-        // breake floors with ballmode 
-        if (hitWall.Length > 0)
+        Collider2D[] hitWall2 = {};
+        // CIANO ENEMY CHECK 
+        if (gameObject.GetComponent<EnemyRising>() != null)
+        {
+            hitPosition.y += sp.bounds.size.y;
+            hitWall2 = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,0.1f),0f ,layer);
+        }
+        
+        if (hitWall.Length > 0 || hitWall2.Length > 0)
         {
             if (!isFlipped)
             {
@@ -182,7 +190,6 @@ public class EnemyMovement : MonoBehaviour
             
             Gizmos.DrawCube(hitPosition, new Vector2(0.1f,0.1f));
         }
-        
         
     }
 }

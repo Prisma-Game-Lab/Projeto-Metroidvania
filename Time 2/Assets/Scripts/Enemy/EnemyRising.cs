@@ -65,9 +65,13 @@ public class EnemyRising : MonoBehaviour
     
     private IEnumerator StopAggro()
     {
+        gameObject.GetComponent<Animator>().SetBool("Rising", true);
+        gameObject.GetComponent<EnemyDamage>().imortal = false;
         yield return new WaitForSeconds(resetAggroTime);
         _performingAggro = false;
         _enemyMovement.enemyState = EnemyState.Idle;
+        gameObject.GetComponent<Animator>().SetBool("Rising", false);
+        gameObject.GetComponent<EnemyDamage>().imortal = true;
     }
     
     private IEnumerator PrepareAggro()
