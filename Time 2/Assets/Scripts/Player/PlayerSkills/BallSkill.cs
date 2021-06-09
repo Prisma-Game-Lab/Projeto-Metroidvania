@@ -24,6 +24,13 @@ public class BallSkill : MonoBehaviour
 
     public void OnBallSkill(InputAction.CallbackContext ctx)
     {
+        // if player are constrained cant change form 
+        if(_playerStatus.isTight)
+        {
+            // PLaytight soundeffect 
+            return;
+        }
+        
         // apertou e não e barco
         if (ctx.started && obtained)
         {

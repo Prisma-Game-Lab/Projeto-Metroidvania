@@ -25,6 +25,14 @@ public class PlaneSkill : MonoBehaviour
 
      public void OnPlaneSkill(InputAction.CallbackContext ctx)
      {
+         // if player are constrained cant change form 
+         if (_playerStatus.isTight)
+         {
+             // play constrained sound effect 
+             return;
+         }
+             
+         
          if (ctx.started && obtained)
          {
              AudioManager.instance.Play("Transform");

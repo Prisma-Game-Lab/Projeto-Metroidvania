@@ -28,6 +28,7 @@ public class PlayerStatus : MonoBehaviour
 {
 
     public PlayerSkill playerState = PlayerSkill.Normal;
+    public bool isTight = false;
     public PlayerAnimationState playerAnimationState = PlayerAnimationState.Idle;
     public ItemDescription itemDescription;
     [HideInInspector] public Vector3 _lastSafePos; // ultima posicao segura para o jogador

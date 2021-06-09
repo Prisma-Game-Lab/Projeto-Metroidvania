@@ -240,6 +240,8 @@ public class PlayerMovement : MonoBehaviour
             FlightBreak();
             BoatBreak();
             ShurikenBreak();
+            _playerStatus.isTight = CheckTunnel();
+   
         }
 
         if (_jumpbreak)
@@ -292,6 +294,20 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+    }
+
+    private bool CheckTunnel()
+    {   
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y + _playerStatus.playerCircleCollider.radius);
+        LayerMask waterLayer = LayerMask.GetMask("Floor");
+        Collider2D[] hitGround =  Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.8f, 0.3f),0f ,waterLayer);
+
+        if (hitGround.Length > 0)
+        {
+            return true; 
+        }
+        
+        return false;
     }
     
     // Impedir o jogador de ganhar uma velocidade muito alta 
@@ -492,23 +508,22 @@ public class PlayerMovement : MonoBehaviour
 
     
     // Funcao para debugar as hitboxes 
-    private void OnDrawGizmosSelected()
-    {
-        if (_collider2D != null)
-        {
-            Vector3 position = transform.position;
-            Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _playerStatus.playerCollider.size.y*0.5f);
-            Vector2 hitPosition2 = new Vector2(position.x + _playerStatus.playerCollider.size.x * 0.5f, position.y);
-            Vector2 safePos = new Vector2(position.x, position.y - _playerStatus.playerCollider.size.y * 0.5f);
-            
-            // Gizmos.DrawCube(hitPosition, new Vector2(_playerStatus.playerCollider.size.x, 0.1f));
-            // Gizmos.DrawCube(hitPosition2, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f));
-            // Gizmos.DrawCube(hitPosition2, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f));
-            Gizmos.DrawCube(safePos, new Vector2(0.01f, 0.05f));
-        }
-        
-        
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     if (_collider2D != null)
+    //     {
+    //         Vector3 position = transform.position;
+    //         //Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _playerStatus.playerCollider.size.y*0.5f);
+    //         Vector2 hitPosition2 = new Vector2(position.x + _playerStatus.playerCollider.size.x * 0.5f, position.y);
+    //         Vector2 safePos = new Vector2(position.x, position.y - _playerStatus.playerCollider.size.y * 0.5f);
+    //         
+    //         // Gizmos.DrawCube(hitPosition, new Vector2(_playerStatus.playerCollider.size.x, 0.1f));
+    //         // Gizmos.DrawCube(hitPosition2, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f));
+    //         // Gizmos.DrawCube(hitPosition2, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f));
+    //         Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y + _playerStatus.playerCircleCollider.radius);
+    //         //Gizmos.DrawCube(hitPosition, new Vector2( 0.8f, 0.2f));
+    //     }
+    // }
 
 
 }

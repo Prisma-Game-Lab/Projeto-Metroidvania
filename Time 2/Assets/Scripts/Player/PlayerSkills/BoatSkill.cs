@@ -20,7 +20,13 @@ public class BoatSkill : MonoBehaviour
 
     public void OnBoatSkill(InputAction.CallbackContext ctx)
     {
-        ;
+        // if player are constrained cant change form 
+        if (_playerStatus.isTight)
+        {
+            // PLaytight soundeffect 
+            return;
+        }
+            
         // apertou e não e barco
 
         if (ctx.started && obtained)
