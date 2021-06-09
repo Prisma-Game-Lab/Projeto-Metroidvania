@@ -10,6 +10,7 @@ public class BallSkill : MonoBehaviour
     public bool obtained = false;
     public float reduceFactor;
     public Sprite ballSprite;
+    public GameObject attackSlash;
     
 
     private PlayerStatus _playerStatus;
@@ -48,6 +49,7 @@ public class BallSkill : MonoBehaviour
                  _playerStatus.playerAnimator.SetBool("Player", false);
                  _playerStatus.playerAnimator.SetBool("Ball", true);
                  _playerStatus.playerAnimator.enabled = false;
+                 attackSlash.SetActive(false);
             }
             else
             {

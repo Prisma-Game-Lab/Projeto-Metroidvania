@@ -9,10 +9,14 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.layer ==  LayerMask.GetMask("Enemies"))
-            return;
+        if (other.gameObject.CompareTag("Floor") ||
+            other.gameObject.layer == LayerMask.GetMask("Water"))
+        {
+            Destroy(gameObject);
+            // REALIZAR ANIMACAO DE TINTA ESPARRAMANDO NA PAREDE e depois destruir o objeto
+        }
+            
         
-        Destroy(gameObject);
     }
     
 }

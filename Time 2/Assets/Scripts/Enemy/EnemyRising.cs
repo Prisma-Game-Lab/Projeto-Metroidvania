@@ -20,6 +20,8 @@ public class EnemyRising : MonoBehaviour
     private SpriteRenderer _sr;
 
     private bool _performingAggro = false;
+    private Animator _animator;
+    private EnemyDamage _enemyDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class EnemyRising : MonoBehaviour
         _transform = transform;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _enemyDamage = gameObject.GetComponent<EnemyDamage>();
+        _animator = gameObject.GetComponent<Animator>();
     }
     
     private void Update()
@@ -65,13 +69,13 @@ public class EnemyRising : MonoBehaviour
     
     private IEnumerator StopAggro()
     {
-        gameObject.GetComponent<Animator>().SetBool("Rising", true);
-        gameObject.GetComponent<EnemyDamage>().imortal = false;
+        _animator.SetBool("Rising", true);
+        _enemyDamage.imortal = false;
         yield return new WaitForSeconds(resetAggroTime);
         _performingAggro = false;
         _enemyMovement.enemyState = EnemyState.Idle;
-        gameObject.GetComponent<Animator>().SetBool("Rising", false);
-        gameObject.GetComponent<EnemyDamage>().imortal = true;
+        _animator.SetBool("Rising", false);
+        _enemyDamage.imortal = true;
     }
     
     private IEnumerator PrepareAggro()
@@ -80,10 +84,6 @@ public class EnemyRising : MonoBehaviour
         AudioManager.instance.Play("Tombo");
         yield return new WaitForSeconds(aggroPreparationTime);
         //performa animacao de pulo orizontal   
-        Vector3 bulletPos = new Vector3(_transform.position.x, _transform.position.y + _sr.bounds.size.y*2f, _transform.position.z);
-        GameObject bullet = Instantiate(enemyBullet, bulletPos, _transform.rotation);
-        bullet.GetComponent<Rigidbody2D>().gravityScale = 1;
-        bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up*aggroSpeed, ForceMode2D.Impulse);
         StartCoroutine(StopAggro());
     }
     

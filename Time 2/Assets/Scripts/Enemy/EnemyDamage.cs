@@ -25,6 +25,8 @@ public class EnemyDamage : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    private bool _takingDamage = false;
+
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
@@ -34,24 +36,33 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(bool playerFliped)
     {
         // MUDAR SOMENTE PARA TESTE 
-        enemyLife -= 1;
-        if (enemyLife == 0 && !imortal)
+        if (!_takingDamage)
         {
-            gameObject.GetComponent<EnemyMovement>().enabled = false;
-            _rb.velocity = Vector2.zero;
-            CanDamage = false;
+            _takingDamage = true;
+            if (enemyLife == 0 && !imortal)
+            {
+                gameObject.GetComponent<EnemyMovement>().enabled = false;
+                _rb.velocity = Vector2.zero;
+                CanDamage = false;
+            }
+
+            if (!imortal)
+            {
+                enemyLife -= 1;
+                StartCoroutine(FlashSprite());
+            
+                // PARA empurrar o inimigo  
+                gameObject.GetComponent<EnemyMovement>().enabled = false;
+                _rb.velocity = Vector2.zero;
+                if(!playerFliped)
+                    _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
+                else
+                    _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
+            }
         }
 
-        if (!imortal)
-        {
-            StartCoroutine(FlashSprite());
-        }
         
-        // PARA O PLAYTEST 
-        if(!playerFliped)
-            _rb.AddForce(Vector2.right * damageMagnetude, ForceMode2D.Impulse);
-        else
-            _rb.AddForce(Vector2.right * -damageMagnetude, ForceMode2D.Impulse);
+
     }
 
     public void TakeStaticDamage()
@@ -80,7 +91,8 @@ public class EnemyDamage : MonoBehaviour
         Color maxColor = new Color(_sr.color.r, _sr.color.g, _sr.color.b, maxAlpha);
 
         float currentInterval = 0;
-        while (duration > 0)
+        float effectDuration = duration;
+        while (effectDuration > 0)
         {
             float tColor = currentInterval / interval;
             _sr.color = Color.Lerp(minColor, maxColor, tColor);
@@ -93,15 +105,19 @@ public class EnemyDamage : MonoBehaviour
                 maxColor = temp;
                 currentInterval = currentInterval - interval;
             }
-            duration -= Time.deltaTime;
+            effectDuration -= Time.deltaTime;
             yield return null;
         }
 
         _sr.color = colorNow;
 
         // MUDAR SOMENTE PARA TESTE 
-        if(enemyLife == 0)
+        _takingDamage = false;
+        
+        if(enemyLife <= 0)
             dieEvent.Invoke();
+        else
+            gameObject.GetComponent<EnemyMovement>().enabled = true;
     }
 
     public void DeathAnimation()

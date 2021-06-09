@@ -50,9 +50,14 @@ public class EnemyShoot : MonoBehaviour{
             if (!_performingAggro)
             {
                 _playerTransform = hitWall[0].transform;
+                
             }
-            
-            return true; 
+
+            if (_playerTransform.position.y >= _transform.position.y - _sr.bounds.size.y*0.5f)
+            {
+                return true; 
+            }
+          
         }
         
         return false;

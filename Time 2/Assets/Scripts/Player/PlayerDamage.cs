@@ -49,7 +49,6 @@ public class PlayerDamage : MonoBehaviour
                 {
                     if (!takingDamage)
                     {
-                        
                         colider.gameObject.GetComponent<EnemyMovement>().enemyState = EnemyState.Idle;
                         colider.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                         Vector2 knockbackForce = colider.gameObject.GetComponent<EnemyMovement>().knockbackForce;
@@ -92,7 +91,7 @@ public class PlayerDamage : MonoBehaviour
     public void TakeDamage()
     {
         takingDamage = true;
-        
+
         // audio de Dano 
         AudioManager.instance.Play("Dano");
         RemoveLife();
@@ -129,6 +128,8 @@ public class PlayerDamage : MonoBehaviour
             {
                 takingDamage = false;
                 _playerStatus.playerAnimator.enabled = true;
+                if(_playerStatus.playerState != PlayerSkill.Normal)
+                    _playerStatus.SetToNormalState();
             }
 
             yield return null;
