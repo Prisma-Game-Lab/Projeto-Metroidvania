@@ -20461,7 +20461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 248906711}
         m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
         m_MethodName: GoLeft
         m_Mode: 1
@@ -21932,7 +21932,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 248906711}
         m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
         m_MethodName: GoRight
         m_Mode: 1
