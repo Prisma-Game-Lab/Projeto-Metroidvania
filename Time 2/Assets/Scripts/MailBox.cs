@@ -31,6 +31,7 @@ public class MailBox : MonoBehaviour
     
     public void LeaveMailBox()
     {
+        gameMaster.GetComponent<GameMaster>().onOtherMenu = false;
         mailBoxUI.SetActive(false);
         player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
         gameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
