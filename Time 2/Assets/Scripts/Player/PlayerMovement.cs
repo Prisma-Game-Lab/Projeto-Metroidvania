@@ -370,7 +370,7 @@ public class PlayerMovement : MonoBehaviour
     //verifica uma posição segura para o player 
     private void SaveSafePosition()
     {
-        if (!OnWater() && _playerStatus.playerState != PlayerSkill.PlaneMode)
+        if (!OnWater() && _playerStatus.playerState != PlayerSkill.PlaneMode && !_playerStatus.isTight)
         {
             Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _playerStatus.playerCollider.size.y * 0.5f);
 

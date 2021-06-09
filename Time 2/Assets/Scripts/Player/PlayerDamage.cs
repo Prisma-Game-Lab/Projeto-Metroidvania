@@ -39,7 +39,12 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, new Vector2(_playerStatus.playerCollider.size.x*1.1f, _playerStatus.playerCollider.size.y),0f ,enemyLayers);
+        Vector2 size = new Vector2(_playerStatus.playerCollider.size.x * 1.1f, _playerStatus.playerCollider.size.y);
+        if (_playerStatus.playerState == PlayerSkill.BallMode)
+            size = new Vector2(_playerStatus.playerCircleCollider.radius * 2.1f,
+                _playerStatus.playerCircleCollider.radius * 2.1f);
+        
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, size,0f ,enemyLayers);
 
         if(hitEnemies.Length > 0)
         {
@@ -127,9 +132,15 @@ public class PlayerDamage : MonoBehaviour
             if (ctxDuration <= duration / 2f)
             {
                 takingDamage = false;
-                _playerStatus.playerAnimator.enabled = true;
-                if(_playerStatus.playerState != PlayerSkill.Normal)
-                    _playerStatus.SetToNormalState();
+                if (!(_playerStatus.isTight && _playerStatus.playerState == PlayerSkill.BallMode))
+                {
+                    _playerStatus.playerAnimator.enabled = true;
+                
+                    if(_playerStatus.playerState != PlayerSkill.Normal)
+                        _playerStatus.SetToNormalState();
+                }
+
+
             }
 
             yield return null;
