@@ -9,6 +9,7 @@ public class MenuMaster : MonoBehaviour
     public GameObject creditsUI;
     public GameObject mainMenuUI;
     public GameObject controlsUI;
+    public GameObject firstControlUI;
     public GameObject loadGameButton;
     public GameObject warningUI;
     public GameObject firstButtonMain;
