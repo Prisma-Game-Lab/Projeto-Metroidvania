@@ -13,12 +13,14 @@ public class PlayerInteraction : MonoBehaviour
     [HideInInspector]public bool onDoor = false;
     [HideInInspector] public bool onMailBox = false;
     private PlayerVictory _playerVictory;
+    private PlayerStatus _playerStatus;
     private MailBox _mailBox;
     private UIMaster _uiMaster;
 
     void Start()
     {
         _playerVictory = GetComponent<PlayerVictory>();
+        _playerStatus = GetComponent<PlayerStatus>();
         _uiMaster = UIMaster.GetComponent<UIMaster>();
 
 
@@ -47,8 +49,8 @@ public class PlayerInteraction : MonoBehaviour
                 _mailBox.mailBoxUI.SetActive(true);
                 GameMaster.GetComponent<GameMaster>().onOtherMenu = true;
                 EventSystem.current.SetSelectedGameObject(_mailBox.mailBoxUIFirstButton);
-                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
-                GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
+                GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
                 //Time.timeScale = 0f;
             }
         }

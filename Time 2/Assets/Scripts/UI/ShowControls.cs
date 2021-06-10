@@ -5,16 +5,37 @@ using UnityEngine;
 public class ShowControls : MonoBehaviour
 {
     public List<GameObject> controls;
+    private static string _firstGame = "FirstGame";
+    private static string _controlPrefs = "ControlPrefs";
+    private int _firstGameValue;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _firstGameValue = PlayerPrefs.GetInt(_firstGame);
+        if(_firstGameValue == 0)
+        {
+            PlayerPrefs.SetInt(_controlPrefs, 0);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void GetControlPrefs()
+    {
+        foreach(GameObject control in controls)
+        {
+            if (control.activeSelf)
+            {
+                int option  = controls.IndexOf(control);
+                PlayerPrefs.SetInt(_controlPrefs, option);
+                Debug.Log(PlayerPrefs.GetInt(_controlPrefs));
+            }
+        }
     }
 
     public void GoRight()

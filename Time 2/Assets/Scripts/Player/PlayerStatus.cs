@@ -46,6 +46,13 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public PlayerInput playerInput;
     public GameObject transformationParticles;
 
+    //Controls
+    private static string _controlPrefs = "ControlPrefs";
+    private int _controlValue;
+    [HideInInspector] public string PlayerActions;
+    [HideInInspector] public string GlobalActions;
+    [HideInInspector] public string PlayerInUI;
+
     // Variaveis para serem salvas 
     // Colors
     [HideInInspector] public bool cyan = false;
@@ -84,6 +91,11 @@ public class PlayerStatus : MonoBehaviour
         playerTransform = transform;
         originalLocalScale = playerTransform.localScale;
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
+        SetControl();
+        Debug.Log(PlayerActions);
+        Debug.Log(GlobalActions);
+        Debug.Log(PlayerInUI);
+
     }
 
     private void Start()
@@ -104,9 +116,10 @@ public class PlayerStatus : MonoBehaviour
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
         b.size = v;
-        
+        this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(PlayerActions);
 
-}
+
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -290,6 +303,35 @@ public class PlayerStatus : MonoBehaviour
     {
         stampTeleport = status;
         SaveSystem.SavePlayer(this);
+    }
+
+    public void SetControl()
+    {
+        _controlValue = PlayerPrefs.GetInt(_controlPrefs);
+        Debug.Log(_controlValue);
+        switch (_controlValue)
+        {
+            case 0:
+                PlayerActions = "PlayerActionsK1";
+                GlobalActions = "GlobalActionsKeyboard";
+                PlayerInUI = "PlayerInUIKeyboard";
+                break;
+            case 1:
+                PlayerActions = "PlayerActionsK2";
+                GlobalActions = "GlobalActionsKeyboard";
+                PlayerInUI = "PlayerInUIKeyboard";
+                break;
+            case 2:
+                PlayerActions = "PlayerActionsXbox";
+                GlobalActions = "GlobalActionsController";
+                PlayerInUI = "PlayerInUIController";
+                break;
+            case 3:
+                PlayerActions = "PlayerActionsPS";
+                GlobalActions = "GlobalActionsController";
+                PlayerInUI = "PlayerInUIController";
+                break;
+        }
     }
 
 }

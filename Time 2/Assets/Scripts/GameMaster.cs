@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour
 {
 
     private bool _paused = false;
+    private PlayerStatus _playerStatus;
     
     // Texto para auxiliar no funcionamento da skill 
     public static GameMaster instance;
@@ -35,6 +36,16 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        if(player != null)
+        {
+            _playerStatus = player.GetComponent<PlayerStatus>();
+            this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
+        }
+       
     }
 
 
@@ -62,8 +73,9 @@ public class GameMaster : MonoBehaviour
             if (!onOtherMenu){
                 if (_paused)
                 {
-                    player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
-                    this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
+                    Debug.Log(_playerStatus.PlayerActions);
+                    player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
+                    this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
                     EventSystem.current.SetSelectedGameObject(null);
                     PauseMenuUI.SetActive(false);
                     _paused = false;
@@ -72,9 +84,11 @@ public class GameMaster : MonoBehaviour
                 }
 
                 PauseMenuUI.SetActive(true);
-                player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+                Debug.Log(_playerStatus.PlayerInUI);
+                player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
+                Debug.Log(player.GetComponent<PlayerInput>().currentActionMap.name);
                 EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
-                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerInUI");
+                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
                 _paused = true;
                 Time.timeScale = 0f;
             }
@@ -85,8 +99,8 @@ public class GameMaster : MonoBehaviour
     public void BackToGame()
     {
         PauseMenuUI.SetActive(false);
-        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
-        this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
+        this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
         Time.timeScale = 1f;
     }
     
@@ -137,6 +151,7 @@ public class GameMaster : MonoBehaviour
         SettingsUI.SetActive(true);
         ControlsUI.SetActive(false);
         EventSystem.current.SetSelectedGameObject(firstButtonSettings);
+        _playerStatus.SetControl();
     }
      public void BackToPauseMenu()
     {

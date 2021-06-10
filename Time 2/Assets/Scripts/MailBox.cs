@@ -33,8 +33,8 @@ public class MailBox : MonoBehaviour
     {
         gameMaster.GetComponent<GameMaster>().onOtherMenu = false;
         mailBoxUI.SetActive(false);
-        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerActions");
-        gameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap("GlobalActions");
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap(playerStatus.PlayerActions);
+        gameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap(playerStatus.GlobalActions);
         EventSystem.current.SetSelectedGameObject(null);
         Time.timeScale = 1f;
     }

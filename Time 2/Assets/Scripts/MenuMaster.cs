@@ -15,6 +15,7 @@ public class MenuMaster : MonoBehaviour
     public GameObject firstButtonMain;
     public GameObject firstButtonSettings;
     public GameObject firstButtonControls;
+    public GameObject firstButtonfirstControlUI;
     public GameObject firstButtonCredits;
     public GameObject firstButtonWarning;
     private GameMaster _gameMaster;
@@ -22,11 +23,10 @@ public class MenuMaster : MonoBehaviour
     {
         Time.timeScale = 1f;
         _gameMaster = GetComponent<GameMaster>();
-        EventSystem.current.SetSelectedGameObject(firstButtonMain);
-        if (CheckLoad())
+        EventSystem.current.SetSelectedGameObject(firstButtonfirstControlUI);
+        if (CheckLoad() && PlayerPrefs.GetInt("FirstGame")==1)
         {
-            loadGameButton.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(loadGameButton);
+            openMainMenu();
         }
     }
     public void GoToSettings()
@@ -100,4 +100,18 @@ public class MenuMaster : MonoBehaviour
         }
         
     }
+
+    public void openMainMenu()
+    {
+        mainMenuUI.SetActive(true);
+        firstControlUI.SetActive(false);
+        if (CheckLoad())
+        {
+            EventSystem.current.SetSelectedGameObject(loadGameButton);
+            loadGameButton.SetActive(true);
+            return;
+        }
+        EventSystem.current.SetSelectedGameObject(firstButtonMain);
+    }
+
 }

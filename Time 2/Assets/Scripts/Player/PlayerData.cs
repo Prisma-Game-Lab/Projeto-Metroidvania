@@ -30,32 +30,31 @@ public class PlayerData
     //Teleport Status
     public bool stampTeleport;
 
-
     // Class init 
     public PlayerData(PlayerStatus player)
-  {
-    // colors 
-    cyan = player.cyan;
-    yellow = player.yellow;
-    magenta = player.magenta;
-    black = player.black;
+    {
+        // colors 
+        cyan = player.cyan;
+        yellow = player.yellow;
+        magenta = player.magenta;
+        black = player.black;
     
-    // skills 
-    boat = player.boat;
-    airplane = player.airplane;
-    sword = player.sword;
-    ball = player.ball;
-    shuriken = player.shuriken;
+        // skills 
+        boat = player.boat;
+        airplane = player.airplane;
+        sword = player.sword;
+        ball = player.ball;
+        shuriken = player.shuriken;
 
-    //stamps
-    stampMagenta = player.stampMagenta;
-    stampCyan = player.stampCyan;
-    stampYellow = player.stampYellow;
-    stampBlack = player.stampBlack;
-    stampLobby = player.stampLobby;
+        //stamps
+        stampMagenta = player.stampMagenta;
+        stampCyan = player.stampCyan;
+        stampYellow = player.stampYellow;
+        stampBlack = player.stampBlack;
+        stampLobby = player.stampLobby;
 
-    //Teleport Status
-    stampTeleport = player.stampTeleport;
+        //Teleport Status
+        stampTeleport = player.stampTeleport;
 
     }
 }

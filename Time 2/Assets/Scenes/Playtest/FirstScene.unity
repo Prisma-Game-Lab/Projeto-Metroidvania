@@ -669,7 +669,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1122132877}
         m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
-        m_MethodName: BackToSettings
+        m_MethodName: openMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1492,13 +1492,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453789813}
+  - component: {fileID: 453789814}
   m_Layer: 5
   m_Name: FirstControlsUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &453789813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1530,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &453789814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453789812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c51308936390c459d511e343d46c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+  - {fileID: 1569025962}
+  - {fileID: 2075309389}
+  - {fileID: 1387199176}
+  - {fileID: 505160559}
 --- !u!1 &505160559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &579978687
 Transform:
   m_ObjectHideFlags: 0
@@ -2545,7 +2563,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132879}
+      - m_Target: {fileID: 453789814}
         m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
         m_MethodName: GoLeft
         m_Mode: 1
@@ -3442,9 +3460,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132877}
-        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
-        m_MethodName: BackToSettings
+      - m_Target: {fileID: 1122132879}
+        m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
+        m_MethodName: GetControlPrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4446,6 +4464,7 @@ MonoBehaviour:
   firstButtonMain: {fileID: 1426536321}
   firstButtonSettings: {fileID: 2114465937}
   firstButtonControls: {fileID: 771633058}
+  firstButtonfirstControlUI: {fileID: 1859662988}
   firstButtonCredits: {fileID: 168613204}
   firstButtonWarning: {fileID: 947712762}
 --- !u!114 &1122132878
@@ -6828,9 +6847,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuMaster, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 453789814}
+        m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
+        m_MethodName: GetControlPrefs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7271,7 +7290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122132879}
+      - m_Target: {fileID: 453789814}
         m_TargetAssemblyTypeName: ShowControls, Assembly-CSharp
         m_MethodName: GoRight
         m_Mode: 1
