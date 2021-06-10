@@ -140,8 +140,10 @@ MonoBehaviour:
   pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
-  knockbackForce: {x: 0, y: 0}
+  knockbackForce: {x: 5, y: 3}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
 --- !u!50 &27090089945739729
