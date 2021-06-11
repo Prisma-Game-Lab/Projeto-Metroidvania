@@ -101,11 +101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  pointStart: {fileID: 0}
-  pointEnd: {fileID: 0}
+  pointStart: 2
+  pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
+  knockbackForce: {x: 0, y: 0}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
 --- !u!50 &6574854409147658881
@@ -116,7 +119,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6574854409147658887}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -223,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8985594102314968725
 Transform:
   m_ObjectHideFlags: 0

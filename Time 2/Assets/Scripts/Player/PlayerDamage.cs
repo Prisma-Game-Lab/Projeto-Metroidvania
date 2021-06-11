@@ -39,7 +39,7 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Vector2 size = new Vector2(_playerStatus.playerCollider.size.x * 1.1f, _playerStatus.playerCollider.size.y);
+        Vector2 size = new Vector2(_playerStatus.playerCollider.size.x * 1.1f, _playerStatus.playerCollider.size.y * 1.1f);
         if (_playerStatus.playerState == PlayerSkill.BallMode)
             size = new Vector2(_playerStatus.playerCircleCollider.radius * 2.1f,
                 _playerStatus.playerCircleCollider.radius * 2.1f);
@@ -75,6 +75,14 @@ public class PlayerDamage : MonoBehaviour
                         }
                         
                         TakeDamage();
+                    }
+                    else
+                    {
+                        // ball case 
+                        if(colider.gameObject.GetComponent<EnemyBullet>() != null)
+                        {
+                            Destroy(colider.gameObject);
+                        }
                     }
                 }
                     
