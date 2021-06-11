@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 
 public enum PlayerSkill
@@ -92,9 +93,9 @@ public class PlayerStatus : MonoBehaviour
         originalLocalScale = playerTransform.localScale;
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
         SetControl();
-        Debug.Log(PlayerActions);
-        Debug.Log(GlobalActions);
-        Debug.Log(PlayerInUI);
+        //Debug.Log(PlayerActions);
+        //Debug.Log(GlobalActions);
+        //Debug.Log(PlayerInUI);
 
     }
 
@@ -308,7 +309,7 @@ public class PlayerStatus : MonoBehaviour
     public void SetControl()
     {
         _controlValue = PlayerPrefs.GetInt(_controlPrefs);
-        Debug.Log(_controlValue);
+        //Debug.Log(_controlValue);
         switch (_controlValue)
         {
             case 0:
