@@ -26,12 +26,6 @@ public class Rain : MonoBehaviour
         
     }
 
-    public void SetRain()
-    {
-        foreach (ParticleSystem rain in rainParticles){
-            rain.gameObject.SetActive(true);
-        }
-    }
     public void SetRainActive()
     {
         foreach (ParticleSystem rain in rainParticles)
