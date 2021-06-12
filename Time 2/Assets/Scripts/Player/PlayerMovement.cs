@@ -54,6 +54,13 @@ public class PlayerMovement : MonoBehaviour
         // Esse evento é chamado quando o jogador mexe nos inputs de movimento 
     public void OnPlayerMove(InputAction.CallbackContext ctx)
     {
+        // nao se move em quanto está dando respawn
+        if (_playerStatus.willRespawn)
+        {
+            _move = Vector2.zero;
+            return;
+        }
+        
         _move = ctx.ReadValue<Vector2>();
     }
 
@@ -236,10 +243,13 @@ public class PlayerMovement : MonoBehaviour
         BallBreak();
         if (IsGrounded())
         {
-            SaveSafePosition(); // Save Safe position for the player 
-            FlightBreak();
-            BoatBreak();
-            ShurikenBreak();
+            SaveSafePosition();// Save Safe position for the player 
+            if (!_playerStatus.playerDamage.takingDamage)
+            {
+                FlightBreak();
+                BoatBreak();
+                ShurikenBreak();
+            }
             _playerStatus.isTight = CheckTunnel();
    
         }
@@ -370,7 +380,7 @@ public class PlayerMovement : MonoBehaviour
     //verifica uma posição segura para o player 
     private void SaveSafePosition()
     {
-        if (!OnWater() && _playerStatus.playerState != PlayerSkill.PlaneMode && !_playerStatus.isTight)
+        if (!OnWater() && !OnSpike() && _playerStatus.playerState != PlayerSkill.PlaneMode && !_playerStatus.isTight)
         {
             Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _playerStatus.playerCollider.size.y * 0.5f);
 
@@ -459,6 +469,21 @@ public class PlayerMovement : MonoBehaviour
         
         Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
         LayerMask waterLayer = LayerMask.GetMask("BoatFloor");
+        Collider2D[] hitGround =  Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.8f, 0.1f),0f ,waterLayer);
+
+        if (hitGround.Length > 0)
+        {
+            return true; 
+        }
+        
+        return false;
+    }
+    
+    private bool OnSpike()
+    {
+        
+        Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - _collider2D.size.y * 0.5f);
+        LayerMask waterLayer = LayerMask.GetMask("Spike");
         Collider2D[] hitGround =  Physics2D.OverlapBoxAll(hitPosition, new Vector2(_playerStatus.playerCollider.size.x * 0.8f, 0.1f),0f ,waterLayer);
 
         if (hitGround.Length > 0)

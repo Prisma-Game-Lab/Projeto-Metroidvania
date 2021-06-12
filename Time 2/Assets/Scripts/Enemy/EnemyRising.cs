@@ -37,7 +37,7 @@ public class EnemyRising : MonoBehaviour
     {
         if (PlayerInRange())
         {
-            _enemyMovement.enemyState = EnemyState.Aggro;
+            //_enemyMovement.enemyState = EnemyState.Aggro;
             PerformAggro();
         }
     }

@@ -22,6 +22,7 @@ public class PlayerDamage : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     public bool takingDamage;
+    public bool cantChange;
     private PlayerStatus _playerStatus;
     
 
@@ -34,6 +35,7 @@ public class PlayerDamage : MonoBehaviour
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        cantChange = false;
 
     }
 
@@ -104,12 +106,19 @@ public class PlayerDamage : MonoBehaviour
     public void TakeDamage()
     {
         takingDamage = true;
-
+        cantChange = true;
         // audio de Dano 
         AudioManager.instance.Play("Dano");
         RemoveLife();
         StartCoroutine(FlashSprite());
         _playerStatus.playerAnimator.enabled = false;
+    }
+
+    public void TakeEnvironmentDamage()
+    {
+        // audio de Dano 
+        AudioManager.instance.Play("Dano");
+        RemoveLife();
     }
 
     ///minAlpha: valor minimo de alpha 
@@ -140,23 +149,23 @@ public class PlayerDamage : MonoBehaviour
             if (ctxDuration <= duration / 2f)
             {
                 takingDamage = false;
-                if (!(_playerStatus.isTight && _playerStatus.playerState == PlayerSkill.BallMode))
-                {
-                    _playerStatus.playerAnimator.enabled = true;
-                
-                    if(_playerStatus.playerState != PlayerSkill.Normal)
-                        _playerStatus.SetToNormalState();
-                }
-
 
             }
 
             yield return null;
         }
 
-
+        if (!(_playerStatus.isTight && _playerStatus.playerState == PlayerSkill.BallMode))
+        {
+            _playerStatus.playerAnimator.enabled = true;
+                
+            if(_playerStatus.playerState != PlayerSkill.Normal)
+                _playerStatus.SetToNormalState();
+        }
     
         _sr.color = _sr.color;
+        cantChange = false;
+
     }
 
 

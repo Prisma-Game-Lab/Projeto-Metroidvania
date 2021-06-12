@@ -24,7 +24,7 @@ public class ShurikenSkill : MonoBehaviour
     public void OnShurikenSkill(InputAction.CallbackContext ctx)
     {
         // if player are constrained cant change form 
-        if (_playerStatus.isTight)
+        if (_playerStatus.isTight || _playerStatus.playerDamage.cantChange)
         {
             // play constrained sound effect 
             return;

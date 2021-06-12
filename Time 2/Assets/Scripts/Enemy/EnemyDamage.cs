@@ -36,6 +36,7 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(bool playerFliped)
     {
         // MUDAR SOMENTE PARA TESTE 
+        enemyLife -= 1;
         if (!_takingDamage)
         {
             _takingDamage = true;
@@ -48,7 +49,6 @@ public class EnemyDamage : MonoBehaviour
 
             if (!imortal)
             {
-                enemyLife -= 1;
                 StartCoroutine(FlashSprite());
             
                 // PARA empurrar o inimigo  

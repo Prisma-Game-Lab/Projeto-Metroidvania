@@ -23,7 +23,6 @@ public class EnemyCloud : MonoBehaviour
 
     private void Rain()
     {
-        Debug.Log("Choveu");
         Vector3 pos = new Vector3(_transform.position.x, _transform.position.y - 0.5f, _transform.position.z);
         GameObject bullet = Instantiate(enemyBullet, pos, _transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down*bulletSpeed, ForceMode2D.Impulse);

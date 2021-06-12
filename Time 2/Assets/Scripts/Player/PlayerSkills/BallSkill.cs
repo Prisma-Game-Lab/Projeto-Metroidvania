@@ -25,7 +25,7 @@ public class BallSkill : MonoBehaviour
     public void OnBallSkill(InputAction.CallbackContext ctx)
     {
         // if player are constrained cant change form 
-        if(_playerStatus.isTight)
+        if(_playerStatus.isTight || _playerStatus.playerDamage.cantChange)
         {
             // PLaytight soundeffect 
             return;

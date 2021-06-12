@@ -38,6 +38,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public PlayerMovement playerMovement;
+    [HideInInspector] public PlayerDamage playerDamage;
     [HideInInspector] public Animator playerAnimator;
     [HideInInspector] public BoxCollider2D playerCollider;
     [HideInInspector] public CircleCollider2D playerCircleCollider;
@@ -47,6 +48,8 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public PlayerInput playerInput;
     public GameObject transformationParticles;
 
+    // Fala se o player esta no processo de respawn 
+    [HideInInspector]public bool willRespawn = false;
     //Controls
     private static string _controlPrefs = "ControlPrefs";
     private int _controlValue;
@@ -108,6 +111,7 @@ public class PlayerStatus : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         playerInput = gameObject.GetComponent<PlayerInput>();
+        playerDamage = gameObject.GetComponent<PlayerDamage>();
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         playerGravity = rb.gravityScale; // gravidade original do player
         playerAnimator = gameObject.GetComponent<Animator>();
@@ -118,6 +122,9 @@ public class PlayerStatus : MonoBehaviour
         BoxCollider2D b = playerCollider;
         b.size = v;
         this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(PlayerActions);
+        
+        // control the respawn 
+        willRespawn = false;
 
 
     }
@@ -125,13 +132,39 @@ public class PlayerStatus : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         // Verifica a morte pela agua
-        if (collision.collider.CompareTag("Water") && (playerState != PlayerSkill.BoatMode) )
+        if (collision.collider.CompareTag("Water") && (playerState != PlayerSkill.BoatMode) && !willRespawn )
         {
-            gameObject.GetComponent<PlayerDamage>().TakeDamage();
-            Debug.Log(gameObject.name);
+            willRespawn = true;
+            gameObject.GetComponent<PlayerDamage>().TakeEnvironmentDamage();
+            ReturnPlayerToSafePos();
+            return;
+        }
+
+        if (collision.collider.CompareTag("Spike")  && !willRespawn)
+        {
+            willRespawn = true;
+            gameObject.GetComponent<PlayerDamage>().TakeEnvironmentDamage();
             ReturnPlayerToSafePos();
         }
     
+    }
+    
+    private void ReturnPlayerToSafePos()
+    {
+        transform.position = _lastSafePos;
+        rb.velocity = Vector2.zero;
+        // transformar o player no estado normal
+        SetToNormalState();
+        StartCoroutine(WaitRespawn());
+
+    }
+    
+    private IEnumerator WaitRespawn()
+    {
+        gameObject.GetComponent<PlayerInput>().enabled = false; 
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<PlayerInput>().enabled = true; 
+        willRespawn = false;
     }
 
     public void SetPlayerSkill(PlayerSkill skill, string description)
@@ -203,15 +236,6 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    private void ReturnPlayerToSafePos()
-    {
-        transform.position = _lastSafePos;
-        // transformar o player no estado normal
-        SetToNormalState();
-        StartCoroutine(WaitRespawn());
-
-    }
-
     public void SetToNormalState()
     {
         // BALL MOVE ANIMATION 
@@ -244,13 +268,6 @@ public class PlayerStatus : MonoBehaviour
         }
                 
         rb.gravityScale = playerGravity;
-    }
-
-    private IEnumerator WaitRespawn()
-    {
-        gameObject.GetComponent<PlayerInput>().actions.Disable();
-        yield return new WaitForSeconds(0.5f);
-        gameObject.GetComponent<PlayerInput>().actions.Enable();
     }
 
     public void SetStampStatus(stampDestination stampMailBox)

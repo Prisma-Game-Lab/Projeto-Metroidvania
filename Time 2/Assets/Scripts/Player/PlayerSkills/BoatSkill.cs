@@ -21,7 +21,7 @@ public class BoatSkill : MonoBehaviour
     public void OnBoatSkill(InputAction.CallbackContext ctx)
     {
         // if player are constrained cant change form 
-        if (_playerStatus.isTight)
+        if (_playerStatus.isTight || _playerStatus.playerDamage.cantChange)
         {
             // PLaytight soundeffect 
             return;
