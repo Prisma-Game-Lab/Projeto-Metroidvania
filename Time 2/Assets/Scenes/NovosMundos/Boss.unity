@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6646,8 +6646,10 @@ GameObject:
   - component: {fileID: 602008761}
   - component: {fileID: 602008760}
   - component: {fileID: 602008762}
+  - component: {fileID: 602008764}
+  - component: {fileID: 602008763}
   m_Layer: 0
-  m_Name: Square
+  m_Name: BossEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6694,7 +6696,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3969074, g: 0.7735849, b: 0.23718406, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6750,6 +6752,36 @@ MonoBehaviour:
   spitTime: 2.5
   inkFloorTime: 10
   waterTiles: {fileID: 287926162}
+--- !u!114 &602008763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602008759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc3be31e95e145c4b8d7a8f5cebc7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeRadius: 100
+  preparationTime: 1
+  tongueFastTime: 1
+  tongueSlowTime: 0
+  TonguePrefab: {fileID: 3300887967200027126, guid: ee9a143377b9f4b72bee1a10c5d552bd, type: 3}
+--- !u!114 &602008764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602008759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcafa272114a4042b7bc2c492592bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tongueAttack: {fileID: 0}
 --- !u!1 &701151474
 GameObject:
   m_ObjectHideFlags: 0
