@@ -105,7 +105,7 @@ MonoBehaviour:
   pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
-  knockbackForce: {x: 0, y: 0}
+  knockbackForce: {x: 10, y: 15}
   enemyState: 0
   _pointToStart: {x: 0, y: 0, z: 0}
   _pointToEnd: {x: 0, y: 0, z: 0}
