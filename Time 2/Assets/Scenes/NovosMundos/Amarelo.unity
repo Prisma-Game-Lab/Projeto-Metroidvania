@@ -304,7 +304,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1.7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7742,7 +7742,7 @@ PrefabInstance:
       objectReference: {fileID: 3604718283277237663, guid: d965f60cd046e544ca934ceba008233c, type: 3}
     - target: {fileID: 5264061326943915603, guid: 8ee8d73e19fc0ef46acf98b66601855b, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5264061326943915603, guid: 8ee8d73e19fc0ef46acf98b66601855b, type: 3}
       propertyPath: m_Color.g
@@ -7750,7 +7750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264061326943915603, guid: 8ee8d73e19fc0ef46acf98b66601855b, type: 3}
       propertyPath: m_Color.r
-      value: 0.9818833
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5264061326943915607, guid: 8ee8d73e19fc0ef46acf98b66601855b, type: 3}
       propertyPath: m_Name
