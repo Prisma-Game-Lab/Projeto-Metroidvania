@@ -14,7 +14,7 @@ public class EnemyCloud : MonoBehaviour
     [Header("Velocidade da chuva")]
     public float bulletSpeed;
 
-    [Header("Tempo de duracao da gota")]
+    [Header("Tempo de duracao da gota(Se estiver zerado, usa o tempo padrao de 2 segundos)")]
     public float bulletTimeLimit;
 
     private Transform _transform;
