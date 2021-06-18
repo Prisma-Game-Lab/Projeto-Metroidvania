@@ -14,6 +14,9 @@ public class EnemyCloud : MonoBehaviour
     [Header("Velocidade da chuva")]
     public float bulletSpeed;
 
+    [Header("Tempo de duracao da gota")]
+    public float bulletTimeLimit;
+
     private Transform _transform;
     void Start()
     {
@@ -26,6 +29,10 @@ public class EnemyCloud : MonoBehaviour
         Vector3 pos = new Vector3(_transform.position.x, _transform.position.y - 0.5f, _transform.position.z);
         GameObject bullet = Instantiate(enemyBullet, pos, _transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down*bulletSpeed, ForceMode2D.Impulse);
+        bullet.GetComponent<EnemyBullet>().isRain = true;
+        if (bulletTimeLimit == 0f)
+            bulletTimeLimit = 2f;
+        bullet.GetComponent<EnemyBullet>().bulletTimeLimit = bulletTimeLimit;
     }
-    
+
 }
