@@ -50056,6 +50056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668845600}
   - component: {fileID: 668845601}
+  - component: {fileID: 668845602}
   m_Layer: 0
   m_Name: pilastra e arco_3
   m_TagString: Untagged
@@ -50128,6 +50129,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &668845602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668845599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPlayer: {fileID: 309678963}
+  speedParallax: 0.25
 --- !u!1 &672787925
 GameObject:
   m_ObjectHideFlags: 0
@@ -52362,6 +52377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151679666}
   - component: {fileID: 1151679667}
+  - component: {fileID: 1151679668}
   m_Layer: 0
   m_Name: pilastra e arco_2
   m_TagString: Untagged
@@ -52434,6 +52450,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1151679668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151679665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPlayer: {fileID: 309678963}
+  speedParallax: 0.25
 --- !u!1 &1151953734
 GameObject:
   m_ObjectHideFlags: 0
@@ -56570,6 +56600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1734860302}
   - component: {fileID: 1734860301}
+  - component: {fileID: 1734860303}
   m_Layer: 0
   m_Name: pilastra e arco_3
   m_TagString: Untagged
@@ -56642,6 +56673,20 @@ Transform:
   m_Father: {fileID: 337496512}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.456}
+--- !u!114 &1734860303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734860300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPlayer: {fileID: 309678963}
+  speedParallax: 0.25
 --- !u!1 &1735422720
 GameObject:
   m_ObjectHideFlags: 3
@@ -58059,6 +58104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970391601}
   - component: {fileID: 1970391602}
+  - component: {fileID: 1970391603}
   m_Layer: 0
   m_Name: pilastra e arco_1
   m_TagString: Untagged
@@ -58131,6 +58177,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1970391603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970391600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPlayer: {fileID: 309678963}
+  speedParallax: 0.25
 --- !u!1001 &1972047452
 PrefabInstance:
   m_ObjectHideFlags: 0
