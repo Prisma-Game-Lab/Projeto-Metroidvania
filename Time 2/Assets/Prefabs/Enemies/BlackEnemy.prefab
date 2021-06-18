@@ -121,8 +121,8 @@ MonoBehaviour:
   duration: 0.4
   imortal: 0
   CanDamage: 1
-  damageMagnetude: 7
-  enemyLife: 1
+  damageMagnetude: 5
+  enemyLife: 2
 --- !u!114 &27090089945739725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,13 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
-  pointStart: 2
-  pointEnd: 2
+  speed: 150
+  pointStart: 1
+  pointEnd: 1
   enemyMovement: 0
   isFlipped: 0
-  knockbackForce: {x: 0, y: 0}
+  knockbackForce: {x: 9, y: 4}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
 --- !u!50 &27090089945739729
@@ -193,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e439019e1a774b67a539c6fc4338b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 6
-  aggroSpeed: 6
+  aggroRadius: 4
+  aggroSpeed: 4
   aggroPreparationTime: 0
   resetAggroTime: 2
 --- !u!114 &5897080041647197713
@@ -209,5 +211,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a730ff735fd04431ba6a0624ce12dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  littleMe: {fileID: 27090089945739735}
-  numberOfLifes: 2
+  littleMe: {fileID: 27090089945739735, guid: ef60255af4b368d42ac4316d536e901e, type: 3}
+  numberOfLifes: 1

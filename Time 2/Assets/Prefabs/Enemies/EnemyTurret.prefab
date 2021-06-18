@@ -120,7 +120,7 @@ MonoBehaviour:
   duration: 0.4
   imortal: 0
   CanDamage: 1
-  damageMagnetude: 0
+  damageMagnetude: 3
   enemyLife: 1
 --- !u!50 &2670785371601351748
 Rigidbody2D:
@@ -171,11 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092a1f3278956460f9f65579277d2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggroRadius: 8
-  aggroPreparationTime: 0.5
+  aggroRadius: 9.5
+  aggroPreparationTime: 0
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
-  resetAggroTime: 1
-  bulletSpeed: 8
+  resetAggroTime: 2.8
+  bulletSpeed: 7.5
 --- !u!114 &2670785371601351744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,5 +195,7 @@ MonoBehaviour:
   isFlipped: 0
   knockbackForce: {x: 8, y: 1}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}

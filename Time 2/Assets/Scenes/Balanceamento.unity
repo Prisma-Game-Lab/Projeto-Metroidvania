@@ -130,34 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 27090089945739724, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: enemyLife
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739724, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: damageMagnetude
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739725, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: speed
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739725, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: pointEnd
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739725, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: pointStart
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739725, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: knockbackForce.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 27090089945739725, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: knockbackForce.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 27090089945739731, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -206,26 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 2877117576662779237, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2877117576662779237, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: aggroSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2877117576662779237, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: aggroRadius
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5897080041647197713, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: littleMe
-      value: 
-      objectReference: {fileID: 27090089945739735, guid: ef60255af4b368d42ac4316d536e901e, type: 3}
-    - target: {fileID: 5897080041647197713, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
-      propertyPath: numberOfLifes
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
 --- !u!1001 &251939047
@@ -238,18 +190,6 @@ PrefabInstance:
     - target: {fileID: 4544590936722168257, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
       propertyPath: m_Name
       value: EnemyCyan
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544590936722168259, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
-      propertyPath: aggroRadius
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544590936722168259, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
-      propertyPath: resetAggroTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544590936722168260, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4544590936722168261, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
       propertyPath: m_RootOrder
@@ -294,10 +234,6 @@ PrefabInstance:
     - target: {fileID: 4544590936722168261, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544590936722168283, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
-      propertyPath: speed
-      value: 125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
@@ -554,26 +490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 407143104}
     m_Modifications:
-    - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: pointEnd
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: pointStart
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017939160169245545, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: duration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5017939160169245545, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: enemyLife
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5017939160169245554, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: m_Name
       value: BasicAggroEnemy
@@ -621,22 +537,6 @@ PrefabInstance:
     - target: {fileID: 5017939160169245558, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7074838829043703744, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7074838829043703744, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: aggroSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7074838829043703744, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: resetAggroTime
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7074838829043703744, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
-      propertyPath: aggroPreparationTime
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
@@ -686,22 +586,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTurret
       objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351747, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: aggroRadius
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351747, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: bulletSpeed
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351747, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: resetAggroTime
-      value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351747, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: aggroPreparationTime
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2670785371601351750, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -745,14 +629,6 @@ PrefabInstance:
     - target: {fileID: 2670785371601351750, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351769, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: enemyLife
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2670785371601351769, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-      propertyPath: damageMagnetude
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
@@ -9105,18 +8981,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyYellowCloud (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6574854409147658909, guid: 6234848c68cd24904ab0f5999f24fd1b, type: 3}
-      propertyPath: speed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574854409147658909, guid: 6234848c68cd24904ab0f5999f24fd1b, type: 3}
-      propertyPath: pointEnd
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574854409147658909, guid: 6234848c68cd24904ab0f5999f24fd1b, type: 3}
-      propertyPath: pointStart
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6234848c68cd24904ab0f5999f24fd1b, type: 3}
 --- !u!4 &1802462856 stripped
@@ -9133,7 +8997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: pointEnd
-      value: 
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: m_Enabled
@@ -9141,7 +9005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: pointStart
-      value: 
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5017939160169245545, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: duration

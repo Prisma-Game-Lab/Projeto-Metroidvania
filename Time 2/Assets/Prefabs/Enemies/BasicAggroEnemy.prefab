@@ -141,6 +141,8 @@ MonoBehaviour:
   isFlipped: 0
   knockbackForce: {x: 10, y: 0.5}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
 --- !u!50 &5017939160169245556
@@ -193,6 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 4
-  aggroSpeed: 15
+  aggroSpeed: 12
   aggroPreparationTime: 0.5
-  resetAggroTime: 2
+  resetAggroTime: 0.7
