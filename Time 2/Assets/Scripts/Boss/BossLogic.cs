@@ -46,7 +46,7 @@ public class BossLogic : MonoBehaviour
                 int seconds = 2; 
                 tongueAttack.PerformTongueAttack(seconds,lickTimes);
                 //time to perform fast tongue attacks 
-                yield return new WaitForSeconds(lickTimes * seconds + lickTimes);
+                yield return new WaitForSeconds(lickTimes * ( seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1);
                 bossMovement.IsStoped = false;
                 _canTakeDamage = true;
             }
@@ -55,7 +55,7 @@ public class BossLogic : MonoBehaviour
             
             tongueAttack.TongueSlowAttack();
             // time to perform slow tongue 
-            yield return new WaitForSeconds(tongueAttack.tongueSlowTime + 2);
+            yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.preparationTime + 1);
            
         }
     }

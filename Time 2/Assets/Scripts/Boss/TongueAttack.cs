@@ -60,6 +60,7 @@ public class TongueAttack : MonoBehaviour
             {
                 StartCoroutine(PrepareAggro(ToungueAttackType.fast));
             }
+            yield return new WaitForSeconds(tongueFastTime + preparationTime);
         }
     }
 
@@ -158,7 +159,7 @@ public class TongueAttack : MonoBehaviour
         float w = _sprite.GetComponent<SpriteRenderer>().sprite.rect.width/_sprite.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         if (_mirrorZ) _sprite.transform.right *= -1f;
         Vector3 scale = new Vector3(1,1,1);
-        scale.x = Vector3.Distance(_initialPosition, _finalPosition) / w;
+        scale.x = Vector3.Distance(_initialPosition, _finalPosition) ;
         _sprite.transform.localScale = scale;
         
         // float w = sprite.
