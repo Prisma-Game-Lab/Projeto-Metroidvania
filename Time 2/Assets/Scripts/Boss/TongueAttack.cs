@@ -56,10 +56,9 @@ public class TongueAttack : MonoBehaviour
         {
             _canAttack = false;
             yield return new WaitForSeconds(seconds);
-            if (PlayerInRange())
-            {
-                StartCoroutine(PrepareAggro(ToungueAttackType.fast));
-            }
+
+            StartCoroutine(PrepareAggro(ToungueAttackType.fast));
+            
             yield return new WaitForSeconds(tongueFastTime + preparationTime);
         }
     }
@@ -144,22 +143,33 @@ public class TongueAttack : MonoBehaviour
         // mostrar animacao de preparacao 
         AudioManager.instance.Play("Tombo");
         yield return new WaitForSeconds(preparationTime);
-        // criar a lingua 
-        GameObject tongue = Instantiate(TonguePrefab, _transform.position, Quaternion.identity);
-        StartCoroutine(PerformAttack(tongue, attackType));
-        
+        if (PlayerInRange())
+        {
+            yield return new WaitForSeconds(preparationTime*0.5f);
+            // criar a lingua 
+            GameObject tongue = Instantiate(TonguePrefab, _transform.position, Quaternion.identity);
+            StartCoroutine(PerformAttack(tongue, attackType));
+        }
+
     }
     
     public void Strech(GameObject _sprite,Vector3 _initialPosition, Vector3 _finalPosition, bool _mirrorZ) { 
         Vector3 centerPos = (_initialPosition + _finalPosition) / 2f;
+        centerPos.z = 0;
         _sprite.transform.position = centerPos;
         Vector3 direction = _finalPosition - _initialPosition;
+        direction.z = 0;
         direction = Vector3.Normalize(direction);
         _sprite.transform.right = direction;
         float w = _sprite.GetComponent<SpriteRenderer>().sprite.rect.width/_sprite.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         if (_mirrorZ) _sprite.transform.right *= -1f;
         Vector3 scale = new Vector3(1,1,1);
-        scale.x = Vector3.Distance(_initialPosition, _finalPosition) ;
+        Vector3 initialPos = _initialPosition;
+        initialPos.z = 0;
+        Vector3 finalPosition = _finalPosition;
+        finalPosition.z = 0;
+        
+        scale.x = Vector3.Distance(initialPos, finalPosition) ;
         _sprite.transform.localScale = scale;
         
         // float w = sprite.

@@ -55,7 +55,7 @@ public class BossLogic : MonoBehaviour
             
             tongueAttack.TongueSlowAttack();
             // time to perform slow tongue 
-            yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.preparationTime + 1);
+            yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
            
         }
     }
