@@ -77,8 +77,13 @@ public class PlayerAttack : MonoBehaviour
             {
                 if(enemies.Contains(enemy))
                     continue;
-                // Realizar dano no inimigo
-                if (enemy.CompareTag("Wall"))
+
+                if (enemy.CompareTag("Tongue") && !enemy.GetComponent<EnemyDamage>().imortal )
+                {
+                    enemy.GetComponent<TongueComponent>().boss.GetComponent<BossLogic>().TakeDamage();
+                }
+                
+                if (enemy.CompareTag("Wall")) // Realizar dano no inimigo
                     enemy.GetComponent<EnemyDamage>().TakeStaticDamage();
                 else
                 {
@@ -89,6 +94,7 @@ public class PlayerAttack : MonoBehaviour
                         enemyDeathDuration += enemy.GetComponent<EnemyDamage>().duration;
                     }
                 }
+                
                 
                 enemies.Add(enemy);
                       

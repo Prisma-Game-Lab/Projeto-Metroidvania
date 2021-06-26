@@ -5,13 +5,19 @@ using System.Linq;
 using System.Security.Cryptography;
 using UnityEngine;
 
+public enum ToungueAttackType
+{
+    fast,
+    slow 
+}
 public class TongueAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     // Range 
-    
     public float rangeRadius;
     public float preparationTime;
+    [Header("Tempo que o inimigo demora para mandar a linguada que gruda")]
+    public float SlowPreparationTime;
     [Header("Velocidade da lingua, medida em frames ")]
     public float tongueSpeed;
     [Header("Tempo que a lingua fica no ataque rapido")]
@@ -29,9 +35,7 @@ public class TongueAttack : MonoBehaviour
     private SpriteRenderer _sr;
 
     private bool _canAttack = false;
-    
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,21 +54,26 @@ public class TongueAttack : MonoBehaviour
     {
         for (int i = 0; i < times; i++)
         {
-            yield return new WaitUntil(NextAttack);
             _canAttack = false;
             yield return new WaitForSeconds(seconds);
             if (PlayerInRange())
             {
-                // atacar
-                StartCoroutine(PrepareAggro());
-                Debug.Log("Achou o player");
-            }
-            else
-            {
-                // animacao de nao achar o playere comecar a procurar de novo 
+                StartCoroutine(PrepareAggro(ToungueAttackType.fast));
             }
         }
     }
+
+    public void TongueSlowAttack()
+    {
+        StartCoroutine(PerformTongueSlowAttack());
+    }
+
+    private IEnumerator PerformTongueSlowAttack()
+    {
+        yield return new WaitForSeconds(SlowPreparationTime);
+        StartCoroutine(PrepareAggro(ToungueAttackType.slow));
+    }
+    
 
     private bool NextAttack()
     {
@@ -98,7 +107,7 @@ public class TongueAttack : MonoBehaviour
         
     }
 
-    private IEnumerator PerformAttack(GameObject tongue)
+    private IEnumerator PerformAttack(GameObject tongue, ToungueAttackType attackType)
     {
         // criar a lingua em direcao ao player
         Vector3 dist = _transform.position - _playerPosition;
@@ -113,33 +122,71 @@ public class TongueAttack : MonoBehaviour
         }
         
         //Strech(tongue, _transform.position, _playerPosition,false);
-        
-        yield return new WaitForSeconds(tongueFastTime);
+        if(attackType == ToungueAttackType.fast)
+            yield return new WaitForSeconds(tongueFastTime);
+        else
+        {
+            tongue.GetComponent<TongueComponent>().boss = gameObject;
+            tongue.GetComponent<EnemyDamage>().imortal = false;
+            // TONGUE STUCK SOUND EFFECT 
+            
+            //
+            yield return new WaitForSeconds(tongueSlowTime);
+        }
         // sumir ou voltar com a lingua;
         Destroy(tongue);
         _canAttack = true; 
     }
 
-    private IEnumerator PrepareAggro()
+    private IEnumerator PrepareAggro(ToungueAttackType attackType)
     {
         // mostrar animacao de preparacao 
         AudioManager.instance.Play("Tombo");
         yield return new WaitForSeconds(preparationTime);
         // criar a lingua 
         GameObject tongue = Instantiate(TonguePrefab, _transform.position, Quaternion.identity);
-        StartCoroutine(PerformAttack(tongue));
+        StartCoroutine(PerformAttack(tongue, attackType));
         
     }
     
-    public void Strech(GameObject _sprite,Vector3 _initialPosition, Vector3 _finalPosition, bool _mirrorZ) {
+    public void Strech(GameObject _sprite,Vector3 _initialPosition, Vector3 _finalPosition, bool _mirrorZ) { 
         Vector3 centerPos = (_initialPosition + _finalPosition) / 2f;
         _sprite.transform.position = centerPos;
         Vector3 direction = _finalPosition - _initialPosition;
         direction = Vector3.Normalize(direction);
         _sprite.transform.right = direction;
+        float w = _sprite.GetComponent<SpriteRenderer>().sprite.rect.width/_sprite.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         if (_mirrorZ) _sprite.transform.right *= -1f;
         Vector3 scale = new Vector3(1,1,1);
-        scale.x = Vector3.Distance(_initialPosition, _finalPosition);
+        scale.x = Vector3.Distance(_initialPosition, _finalPosition) / w;
         _sprite.transform.localScale = scale;
+        
+        // float w = sprite.
+
+        //
+        // _sprite.transform.position = centerPos;
+
+        // Vector3 scale = _sprite.transform.localScale;
+        // scale.x = (_initialPosition.x - _finalPosition.x) / w;
+        // _sprite.transform.localScale = scale;
+        //
+        // Vector3 dir = Vector3.Normalize(_finalPosition - _initialPosition);
+        // float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        // _sprite.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        // Vector3 scale = _sprite.transform.localScale;
+        // scale.x = Vector3.Distance(_initialPosition, _finalPosition);
+        // _sprite.transform.localScale = scale;
+        //
+        // 
+        // Vector3 centerPos = (initialPosition + finalPosition) / 2f;
+        // obj.transform.position = centerPos;
+        // Vector3 direction = finalPosition - initialPosition;
+        // direction = Vector3.Normalize(direction);
+        // obj.transform.right = direction;
+        // if (mirrorZ) obj.transform.right *= -1f;
+        // Vector3 scale = new Vector3(1, 1, 1);
+        // scale.x = Vector3.Distance(initialPosition, finalPosition)/ width;
+        // obj.transform.localScale = scale;
+
     }
 }

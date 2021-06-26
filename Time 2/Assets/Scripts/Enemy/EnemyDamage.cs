@@ -36,6 +36,11 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(bool playerFliped)
     {
         // MUDAR SOMENTE PARA TESTE 
+        if (imortal)
+        {
+            return;
+        }
+        
         enemyLife -= 1;
         if (!_takingDamage)
         {

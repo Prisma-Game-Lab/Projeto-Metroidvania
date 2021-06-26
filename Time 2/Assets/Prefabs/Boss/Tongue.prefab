@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 44174476760600699}
   - component: {fileID: 989919604099567443}
   - component: {fileID: 3314271229750684366}
+  - component: {fileID: 1143087656531498724}
   m_Layer: 6
   m_Name: Tongue
-  m_TagString: Untagged
+  m_TagString: Tongue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,3 +180,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1143087656531498724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300887967200027126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26893a62344ad4c70a5438d8bc605cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 0}
