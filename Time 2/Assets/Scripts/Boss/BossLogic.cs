@@ -15,8 +15,12 @@ public class BossLogic : MonoBehaviour
     // Start is called before the first frame update
     [HideInInspector] public TongueAttack tongueAttack;
     [HideInInspector] public BossMovement bossMovement;
+    [Header("Numero de ataques em cada rodada")]
+    public List<int> NumberOfAttackPerLife;
     
-    public int life;
+    [Header("Numero de linguadas por ataque em cada rodada")]
+    public List<int> NumberOfFastTongueAttacks;
+    [HideInInspector] public int life;
     private bool _canTakeDamage;
     void Start()
     {
@@ -24,7 +28,9 @@ public class BossLogic : MonoBehaviour
         tongueAttack = gameObject.GetComponent<TongueAttack>();
         bossMovement = gameObject.GetComponent<BossMovement>();
         StartCoroutine(PerformRounds());
-        
+        life = NumberOfAttackPerLife.Count;
+        NumberOfAttackPerLife.Reverse();
+        NumberOfFastTongueAttacks.Reverse();
         _canTakeDamage = true;
 
     }
@@ -39,11 +45,11 @@ public class BossLogic : MonoBehaviour
     {
         while (life > 0)
         {
-            var attacks = 2;
+            var attacks = NumberOfAttackPerLife[life-1];
             for (int i = 0; i < attacks; i++)
             {
-                int lickTimes = 3;
-                int seconds = 2; 
+                int lickTimes = NumberOfFastTongueAttacks[life-1];
+                int seconds = 1; 
                 tongueAttack.PerformTongueAttack(seconds,lickTimes);
                 //time to perform fast tongue attacks 
                 yield return new WaitForSeconds(lickTimes * ( seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1);
