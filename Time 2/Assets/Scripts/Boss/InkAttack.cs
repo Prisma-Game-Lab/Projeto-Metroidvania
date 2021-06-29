@@ -14,6 +14,8 @@ public class InkAttack : MonoBehaviour
     public float resetAttackTime;
     [Header("Velocidade do cuspe de tinta:")]
     public float inkSpeed;
+    [Header("Tempo que o chao permanece com tinta:")]
+    public float inkTimeLimit;
     [Header("Tilemap do chao:")]
     public Tilemap floor;
     public GameObject inkTileFloor;
