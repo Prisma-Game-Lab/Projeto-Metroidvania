@@ -30,10 +30,10 @@ public class InkAttack : MonoBehaviour
     {
         _transform = gameObject.GetComponent<Transform>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
-        if (PlayerInRange())
+        /*if (PlayerInRange())
         {
             PerformInkAttack();
-        }
+        }*/
         
 
     }
@@ -59,7 +59,7 @@ public class InkAttack : MonoBehaviour
 
     public void PerformInkAttack()
     {
-        if (!_performingAttack)
+        if ( PlayerInRange())
         {
             _performingAttack = true;
             float direction = 1f;
@@ -116,7 +116,22 @@ public class InkAttack : MonoBehaviour
 
     }
 
-   
+    public IEnumerator StartInkAttacksCoroutine(int times)
+    {
+        for(int i = 0; i< times; i++)
+        {
+            PerformInkAttack();
+            yield return new WaitForSeconds(attackPreparationTime + resetAttackTime + 1f);
+        }
+    }
+
+    public void StartInkAttacks(int times)
+    {
+        StartCoroutine(StartInkAttacksCoroutine(times));
+    }
+
+
+
 }
 
 

@@ -80,7 +80,10 @@ public class PlayerAttack : MonoBehaviour
 
                 if (enemy.CompareTag("Tongue") && !enemy.GetComponent<EnemyDamage>().imortal )
                 {
-                    enemy.GetComponent<TongueComponent>().boss.GetComponent<BossLogic>().TakeDamage();
+                    BossLogic bossLogic =  enemy.GetComponent<TongueComponent>().boss.GetComponent<BossLogic>();
+                    bossLogic.TakeDamage();
+                    if (bossLogic.life == 0)
+                        Destroy(enemy.gameObject);
                 }
                 
                 if (enemy.CompareTag("Wall")) // Realizar dano no inimigo
