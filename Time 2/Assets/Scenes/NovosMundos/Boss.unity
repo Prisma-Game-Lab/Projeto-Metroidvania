@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,7 +442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136957299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.09, y: 78.77, z: -10}
+  m_LocalPosition: {x: 48.09, y: 81.17, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1473480717}
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Follow: {fileID: 931989130}
   m_Lens:
     FieldOfView: 51
-    OrthographicSize: 5.1607003
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -6151,9 +6151,49 @@ PrefabInstance:
       propertyPath: BossDoor
       value: 
       objectReference: {fileID: 837692456}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfInkAttacks.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfInkAttacks.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfInkAttacks.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfAttackPerLife.Array.data[0]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfAttackPerLife.Array.data[1]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfAttackPerLife.Array.data[2]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfFastTongueAttacks.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfFastTongueAttacks.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfFastTongueAttacks.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2917235536485219920, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: m_Name
       value: BossEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219928, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2917235536485219928, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: BossPositions.Array.data[0]
@@ -6175,6 +6215,10 @@ PrefabInstance:
       propertyPath: Floor
       value: 
       objectReference: {fileID: 888815939}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: EnemiesParent
+      value: 
+      objectReference: {fileID: 504685395}
     - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: inkTiles.Array.data[0]
       value: 
@@ -35420,7 +35464,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.65
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -36080,7 +36124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4413943761699153218, guid: 546d07ca97daa8f478c246461b18c365, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -56.99945
+      value: -56.999573
       objectReference: {fileID: 0}
     - target: {fileID: 4413943761699153218, guid: 546d07ca97daa8f478c246461b18c365, type: 3}
       propertyPath: m_AnchoredPosition.y
