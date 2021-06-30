@@ -66,11 +66,11 @@ public class InkSpit : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("Player"))
+        else if(other.gameObject.layer != LayerMask.GetMask("Player"))
         {
-            Destroy(gameObject);
+            StartCoroutine(DestroyInk());
+            
         }
-
 
     }
 
@@ -85,13 +85,12 @@ public class InkSpit : MonoBehaviour
         else
             return 0;//tem tile a esquerda
     }
-    private IEnumerator DestroyBullet()
+
+    private IEnumerator DestroyInk()
     {
-        yield return new WaitForSeconds(bulletTimeLimit);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
-
     }
-
     
 
 }
