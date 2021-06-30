@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: 353e8caf264ac8649a00e0ac0d48821f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1636292155049819310
+    second: spritesheet magenta_0
+  - first:
+      213: 3292588779597329539
+    second: spritesheet magenta_4
+  - first:
+      213: 2574487701536005739
+    second: spritesheet magenta_5
+  - first:
+      213: -3994467403456796506
+    second: spritesheet magenta_6
+  - first:
+      213: 4845757279719394812
+    second: spritesheet magenta_7
+  - first:
+      213: 1989337617144843005
+    second: spritesheet magenta_8
+  - first:
+      213: -444727460257037511
+    second: spritesheet magenta_9
+  - first:
+      213: -8467702547643813070
+    second: spritesheet magenta_10
+  - first:
+      213: -5822797483453758943
+    second: spritesheet magenta_11
+  - first:
+      213: 7658007794487020474
+    second: spritesheet magenta_12
+  - first:
+      213: -1513159963940613300
+    second: spritesheet magenta_13
+  - first:
+      213: -4055036760448921549
+    second: spritesheet magenta_16
+  - first:
+      213: 5327207387541048673
+    second: spritesheet magenta_17
+  - first:
+      213: -7258083783098012122
+    second: spritesheet magenta_18
+  - first:
+      213: -5467832501535153197
+    second: spritesheet magenta_19
+  - first:
+      213: 6764250036822801155
+    second: spritesheet magenta_20
+  - first:
+      213: -3932630888112827536
+    second: spritesheet magenta_21
+  - first:
+      213: 6706924746240836929
+    second: spritesheet magenta_25
+  - first:
+      213: 5569451221045417408
+    second: spritesheet magenta_26
+  - first:
+      213: -8769514200828130577
+    second: spritesheet magenta_27
+  - first:
+      213: -6664726043129921714
+    second: spritesheet magenta_28
+  - first:
+      213: 6838275323857708248
+    second: spritesheet magenta_29
+  - first:
+      213: -4218657098400169925
+    second: spritesheet magenta_30
+  - first:
+      213: -9220807971884209714
+    second: spritesheet magenta_31
+  - first:
+      213: 2996585786795137535
+    second: spritesheet magenta_32
+  - first:
+      213: -1471296194100699213
+    second: spritesheet magenta_33
+  - first:
+      213: 7507583569683405347
+    second: spritesheet magenta_34
+  - first:
+      213: -3793628602245310713
+    second: spritesheet magenta_35
+  - first:
+      213: 5451312799305675279
+    second: spritesheet magenta_36
+  - first:
+      213: 8784318842004058716
+    second: spritesheet magenta_37
+  - first:
+      213: -1476598611614691905
+    second: spritesheet magenta_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet magenta_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2584
+        width: 201
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2534f7554f8ba49e0800000000000000
+      internalID: -1636292155049819310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 2600
+        width: 207
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384f557dc00a1bd20800000000000000
+      internalID: 3292588779597329539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_5
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2613
+        width: 231
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e5aa0acea6ab320800000000000000
+      internalID: 2574487701536005739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2539
+        width: 176
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8a4166f0dc098c0800000000000000
+      internalID: -3994467403456796506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_7
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 2584
+        width: 206
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd007d62969f3340800000000000000
+      internalID: 4845757279719394812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_8
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2597
+        width: 230
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa8d38d50c8b9b10800000000000000
+      internalID: 1989337617144843005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2190
+        width: 282
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933848d2bb204d9f0800000000000000
+      internalID: -444727460257037511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 2190
+        width: 192
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2333500956dac7a80800000000000000
+      internalID: -8467702547643813070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_11
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2202
+        width: 337
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12243bf0a84413fa0800000000000000
+      internalID: -5822797483453758943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_12
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb4295e385b64a60800000000000000
+      internalID: 7658007794487020474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c431af4a70d200be0800000000000000
+      internalID: -1513159963940613300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1907
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3309a460d8d99b7c0800000000000000
+      internalID: -4055036760448921549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1627
+        width: 255
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d883be4ea0ee940800000000000000
+      internalID: 5327207387541048673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1644
+        width: 255
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e6b66114b164b90800000000000000
+      internalID: -7258083783098012122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_19
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1635
+        width: 255
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d369a64f4b5e14b0800000000000000
+      internalID: -5467832501535153197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_20
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1452
+        width: 175
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bfeb8e1917fdd50800000000000000
+      internalID: 6764250036822801155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_21
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1441
+        width: 177
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0735e411b0d7c69c0800000000000000
+      internalID: -3932630888112827536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1441
+        width: 175
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14546fa9588c31d50800000000000000
+      internalID: 6706924746240836929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_26
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1269
+        width: 181
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c51748906aaa4d40800000000000000
+      internalID: 5569451221045417408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_27
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1230
+        width: 220
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea45e61c4d6c4680800000000000000
+      internalID: -8769514200828130577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_28
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1191
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f32f999f22283a0800000000000000
+      internalID: -6664726043129921714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_29
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1220
+        width: 270
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4abd22d2f66ee50800000000000000
+      internalID: 6838275323857708248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_30
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 768
+        width: 206
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b308dac68b15475c0800000000000000
+      internalID: -4218657098400169925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 806
+        width: 255
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec960c5e00c190080800000000000000
+      internalID: -9220807971884209714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_32
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 771
+        width: 234
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff998e085e2069920800000000000000
+      internalID: 2996585786795137535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_33
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 784
+        width: 174
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf5e3f18e7e49be0800000000000000
+      internalID: -1471296194100699213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_34
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 751
+        width: 162
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ad980da7b403860800000000000000
+      internalID: 7507583569683405347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_35
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 819
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7071861c2e25a5bc0800000000000000
+      internalID: -3793628602245310713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_36
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 422
+        width: 316
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02b722db14f6ab40800000000000000
+      internalID: 5451312799305675279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_37
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c523c6b027b28e970800000000000000
+      internalID: 8784318842004058716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet magenta_38
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd0fd6d261128be0800000000000000
+      internalID: -1476598611614691905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1fcc2a9db1774564e9d409098e920e66
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

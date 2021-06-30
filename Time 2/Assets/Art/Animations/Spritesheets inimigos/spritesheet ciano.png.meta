@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: 43614e18a9454a7488d40fbd49f060ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2589330855800605358
+    second: spritesheet ciano_0
+  - first:
+      213: -7143636516283915086
+    second: spritesheet ciano_4
+  - first:
+      213: 1630126298943023293
+    second: spritesheet ciano_5
+  - first:
+      213: -4395366267301008232
+    second: spritesheet ciano_6
+  - first:
+      213: -7261436321144856195
+    second: spritesheet ciano_7
+  - first:
+      213: 5523206200522522926
+    second: spritesheet ciano_8
+  - first:
+      213: -7707471578292768641
+    second: spritesheet ciano_9
+  - first:
+      213: -3132569486117839006
+    second: spritesheet ciano_10
+  - first:
+      213: 3338675442195251966
+    second: spritesheet ciano_11
+  - first:
+      213: -2209889491440526627
+    second: spritesheet ciano_12
+  - first:
+      213: 8288853722908117931
+    second: spritesheet ciano_13
+  - first:
+      213: 4016498111290749064
+    second: spritesheet ciano_16
+  - first:
+      213: -1224140575891982484
+    second: spritesheet ciano_17
+  - first:
+      213: -4218093993979322646
+    second: spritesheet ciano_18
+  - first:
+      213: -207970666433266671
+    second: spritesheet ciano_19
+  - first:
+      213: -8356596401485566797
+    second: spritesheet ciano_20
+  - first:
+      213: 2536375502599178592
+    second: spritesheet ciano_21
+  - first:
+      213: 4534735995503604840
+    second: spritesheet ciano_25
+  - first:
+      213: 7221822432135811728
+    second: spritesheet ciano_26
+  - first:
+      213: -5888481964688253207
+    second: spritesheet ciano_27
+  - first:
+      213: -5589679789195088354
+    second: spritesheet ciano_28
+  - first:
+      213: 994572796456435210
+    second: spritesheet ciano_29
+  - first:
+      213: -6398962237402333675
+    second: spritesheet ciano_30
+  - first:
+      213: 6206644067749981906
+    second: spritesheet ciano_31
+  - first:
+      213: -1331464005152842953
+    second: spritesheet ciano_32
+  - first:
+      213: 5986751336955287283
+    second: spritesheet ciano_33
+  - first:
+      213: -4804424609737542942
+    second: spritesheet ciano_34
+  - first:
+      213: 9002933216072122376
+    second: spritesheet ciano_35
+  - first:
+      213: 4165773123567293508
+    second: spritesheet ciano_36
+  - first:
+      213: 4320570798167253019
+    second: spritesheet ciano_37
+  - first:
+      213: 9064046209084052321
+    second: spritesheet ciano_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet ciano_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2584
+        width: 201
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255fb063e49d01cd0800000000000000
+      internalID: -2589330855800605358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 2600
+        width: 207
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b46362ef64bcdc90800000000000000
+      internalID: -7143636516283915086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_5
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2613
+        width: 231
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8658b6b3f5f9610800000000000000
+      internalID: 1630126298943023293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2539
+        width: 175
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ce9c3eaa58003c0800000000000000
+      internalID: -4395366267301008232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_7
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 2584
+        width: 206
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71aa0f73223a3b90800000000000000
+      internalID: -7261436321144856195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_8
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2597
+        width: 230
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e214163b6ce56ac40800000000000000
+      internalID: 5523206200522522926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2190
+        width: 282
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70b07b7f6f890590800000000000000
+      internalID: -7707471578292768641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 2190
+        width: 192
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fd7b146a0e684d0800000000000000
+      internalID: -3132569486117839006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_11
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2202
+        width: 337
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef24e5820ab555e20800000000000000
+      internalID: 3338675442195251966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_12
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda91dd4735e451e0800000000000000
+      internalID: -2209889491440526627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babcc157b8ce70370800000000000000
+      internalID: 8288853722908117931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_16
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1907
+        width: 201
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880338c70c77db730800000000000000
+      internalID: 4016498111290749064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1627
+        width: 255
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67f0dac1aaf20fe0800000000000000
+      internalID: -1224140575891982484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1644
+        width: 255
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee57a36cd15675c0800000000000000
+      internalID: -4218093993979322646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_19
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1635
+        width: 255
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c3b8fd7c32d1df0800000000000000
+      internalID: -207970666433266671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_20
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1452
+        width: 175
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc252619d7670c80800000000000000
+      internalID: -8356596401485566797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_21
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1441
+        width: 178
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0694d61d414033320800000000000000
+      internalID: 2536375502599178592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1441
+        width: 175
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8647b22ac5e9eee30800000000000000
+      internalID: 4534735995503604840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_26
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1269
+        width: 181
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092176a3d31193460800000000000000
+      internalID: 7221822432135811728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_27
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1230
+        width: 220
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee56740ad8e74ea0800000000000000
+      internalID: -5888481964688253207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_28
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1191
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ea8dcd8d77d62b0800000000000000
+      internalID: -5589679789195088354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_29
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1220
+        width: 270
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e7d0c50be6dcd00800000000000000
+      internalID: 994572796456435210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_30
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 768
+        width: 206
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ebe7c8fb15237a0800000000000000
+      internalID: -6398962237402333675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 806
+        width: 255
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dee58935ed622650800000000000000
+      internalID: 6206644067749981906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_32
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 771
+        width: 234
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b55adaa80b58de0800000000000000
+      internalID: -1331464005152842953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_33
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 784
+        width: 174
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f690dd2f96351350800000000000000
+      internalID: 5986751336955287283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_34
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 751
+        width: 162
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2f27ab541435db0800000000000000
+      internalID: -4804424609737542942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_35
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 819
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8004b887f08d0fc70800000000000000
+      internalID: 9002933216072122376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_36
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 422
+        width: 316
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444191da59ccfc930800000000000000
+      internalID: 4165773123567293508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_37
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b106fa3ef30c5fb30800000000000000
+      internalID: 4320570798167253019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet ciano_38
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1635e28f006f9cd70800000000000000
+      internalID: 9064046209084052321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ecd13f9475d399446919cf4062cc5cc8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

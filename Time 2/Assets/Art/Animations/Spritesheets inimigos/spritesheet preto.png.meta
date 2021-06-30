@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: 544cb6ff81e264e4eb0ff605bb81268b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -650511426832562876
+    second: spritesheet preto_0
+  - first:
+      213: 2219280839657618834
+    second: spritesheet preto_4
+  - first:
+      213: 69486279691771326
+    second: spritesheet preto_5
+  - first:
+      213: 1667256301194050757
+    second: spritesheet preto_6
+  - first:
+      213: -5075333403606403913
+    second: spritesheet preto_7
+  - first:
+      213: -2165218406379615376
+    second: spritesheet preto_8
+  - first:
+      213: 2029371875019716820
+    second: spritesheet preto_9
+  - first:
+      213: 3417531634236318823
+    second: spritesheet preto_10
+  - first:
+      213: 1125638930045395976
+    second: spritesheet preto_11
+  - first:
+      213: -5759278733128061214
+    second: spritesheet preto_12
+  - first:
+      213: 8475667431744280687
+    second: spritesheet preto_13
+  - first:
+      213: 4673555976798366457
+    second: spritesheet preto_16
+  - first:
+      213: -7750568626027591581
+    second: spritesheet preto_17
+  - first:
+      213: -7667310671153971002
+    second: spritesheet preto_18
+  - first:
+      213: 5700085442771787494
+    second: spritesheet preto_19
+  - first:
+      213: 3995618890891970815
+    second: spritesheet preto_20
+  - first:
+      213: -5270607820769645210
+    second: spritesheet preto_21
+  - first:
+      213: 3273847039666798606
+    second: spritesheet preto_25
+  - first:
+      213: -138791907085076343
+    second: spritesheet preto_26
+  - first:
+      213: -3264423908134748067
+    second: spritesheet preto_27
+  - first:
+      213: -1380435845845162101
+    second: spritesheet preto_28
+  - first:
+      213: -8623326012381532977
+    second: spritesheet preto_29
+  - first:
+      213: -8654172496896633121
+    second: spritesheet preto_30
+  - first:
+      213: -6143756880959637638
+    second: spritesheet preto_31
+  - first:
+      213: -6828645137289170513
+    second: spritesheet preto_32
+  - first:
+      213: -6714263219520004802
+    second: spritesheet preto_33
+  - first:
+      213: -806505717167350612
+    second: spritesheet preto_34
+  - first:
+      213: 6423686314162597691
+    second: spritesheet preto_35
+  - first:
+      213: 428764421101492443
+    second: spritesheet preto_36
+  - first:
+      213: -8704235134780586878
+    second: spritesheet preto_37
+  - first:
+      213: 3217397794654836742
+    second: spritesheet preto_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet preto_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2584
+        width: 201
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4450059cd4be8f6f0800000000000000
+      internalID: -650511426832562876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 2600
+        width: 207
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d7f985a287cce10800000000000000
+      internalID: 2219280839657618834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_5
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2613
+        width: 231
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd9ac9376dd6f000800000000000000
+      internalID: 69486279691771326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2539
+        width: 179
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccf33eb5c8432710800000000000000
+      internalID: 1667256301194050757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_7
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 2584
+        width: 206
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4bd51e82bc099b0800000000000000
+      internalID: -5075333403606403913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_8
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2597
+        width: 230
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b0b9ac45993f1e0800000000000000
+      internalID: -2165218406379615376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2190
+        width: 282
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8f7bfd7f6c92c10800000000000000
+      internalID: 2029371875019716820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 2190
+        width: 192
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764e05b1ae28d6f20800000000000000
+      internalID: 3417531634236318823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_11
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2202
+        width: 337
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804e4ba94a21f9f00800000000000000
+      internalID: 1125638930045395976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_12
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eea075918ee210b0800000000000000
+      internalID: -5759278733128061214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6817778f9e9f9570800000000000000
+      internalID: 8475667431744280687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1908
+        width: 200
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa68fa366ecbd040800000000000000
+      internalID: 4673555976798366457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1627
+        width: 255
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368865e16e2707490800000000000000
+      internalID: -7750568626027591581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1644
+        width: 255
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c04e47519d389590800000000000000
+      internalID: -7667310671153971002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_19
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1635
+        width: 255
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee99c58285ca1f40800000000000000
+      internalID: 5700085442771787494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_20
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1452
+        width: 175
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8c479263a437730800000000000000
+      internalID: 3995618890891970815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_21
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1441
+        width: 177
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d21a4ac1a0bd6b0800000000000000
+      internalID: -5270607820769645210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1441
+        width: 175
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00cd48798a0f6d20800000000000000
+      internalID: 3273847039666798606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_26
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1269
+        width: 181
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988be70fe79e21ef0800000000000000
+      internalID: -138791907085076343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_27
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1230
+        width: 220
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50065f40cf62b2d0800000000000000
+      internalID: -3264423908134748067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_28
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1191
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87ee2d79e4b7dce0800000000000000
+      internalID: -1380435845845162101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_29
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1220
+        width: 270
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccec991eaac35880800000000000000
+      internalID: -8623326012381532977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_30
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 768
+        width: 206
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6558147f336e780800000000000000
+      internalID: -8654172496896633121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 806
+        width: 255
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77f904faadfcbaa0800000000000000
+      internalID: -6143756880959637638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_32
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 771
+        width: 234
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa13ea66d67cb31a0800000000000000
+      internalID: -6828645137289170513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_33
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 784
+        width: 174
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d1a00fc2522d2a0800000000000000
+      internalID: -6714263219520004802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_34
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 751
+        width: 162
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac1be2c257bec4f0800000000000000
+      internalID: -806505717167350612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_35
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 819
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f23382ba4852950800000000000000
+      internalID: 6423686314162597691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_36
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 422
+        width: 316
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8941428f643f500800000000000000
+      internalID: 428764421101492443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_37
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284cded0348543780800000000000000
+      internalID: -8704235134780586878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet preto_38
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608d68b6f3e76ac20800000000000000
+      internalID: 3217397794654836742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 53688e7826c14ed49a540dfd97949876
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

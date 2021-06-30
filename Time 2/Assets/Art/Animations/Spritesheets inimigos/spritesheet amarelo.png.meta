@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: 909e5524eb584ec4f90b3bba995fa03e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1567603964622257051
+    second: spritesheet amarelo_0
+  - first:
+      213: 2291613627995717138
+    second: spritesheet amarelo_4
+  - first:
+      213: -2660452118397984477
+    second: spritesheet amarelo_5
+  - first:
+      213: -8034096873087711072
+    second: spritesheet amarelo_6
+  - first:
+      213: 4825933756579086903
+    second: spritesheet amarelo_7
+  - first:
+      213: 8680823810969715711
+    second: spritesheet amarelo_8
+  - first:
+      213: 6322684958839163160
+    second: spritesheet amarelo_9
+  - first:
+      213: 5611446274291909118
+    second: spritesheet amarelo_10
+  - first:
+      213: 7816048134287310370
+    second: spritesheet amarelo_11
+  - first:
+      213: 6919035605607772874
+    second: spritesheet amarelo_12
+  - first:
+      213: -7663916772698874761
+    second: spritesheet amarelo_13
+  - first:
+      213: -5130952392732423805
+    second: spritesheet amarelo_16
+  - first:
+      213: -7582075135295493773
+    second: spritesheet amarelo_17
+  - first:
+      213: -3696241512118436854
+    second: spritesheet amarelo_18
+  - first:
+      213: 1380476163295898240
+    second: spritesheet amarelo_19
+  - first:
+      213: 826708109943029416
+    second: spritesheet amarelo_20
+  - first:
+      213: 7798864983614022693
+    second: spritesheet amarelo_21
+  - first:
+      213: 6400287354914861760
+    second: spritesheet amarelo_25
+  - first:
+      213: 1931349479186107159
+    second: spritesheet amarelo_26
+  - first:
+      213: -723241411412508023
+    second: spritesheet amarelo_27
+  - first:
+      213: -1271165141297039421
+    second: spritesheet amarelo_28
+  - first:
+      213: -3722812381434970619
+    second: spritesheet amarelo_29
+  - first:
+      213: -387381345659513650
+    second: spritesheet amarelo_30
+  - first:
+      213: 3241185581687144592
+    second: spritesheet amarelo_31
+  - first:
+      213: 8919087257846312771
+    second: spritesheet amarelo_32
+  - first:
+      213: -7241457275761296384
+    second: spritesheet amarelo_33
+  - first:
+      213: -2522229588871191180
+    second: spritesheet amarelo_34
+  - first:
+      213: 2584864571105065674
+    second: spritesheet amarelo_35
+  - first:
+      213: -6412924637914915724
+    second: spritesheet amarelo_36
+  - first:
+      213: -4917704351684654299
+    second: spritesheet amarelo_37
+  - first:
+      213: -3070859411071958845
+    second: spritesheet amarelo_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet amarelo_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 2584
+        width: 201
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bbdc3108f31c510800000000000000
+      internalID: 1567603964622257051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_4
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 2600
+        width: 207
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ef02304727dcf10800000000000000
+      internalID: 2291613627995717138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_5
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 2613
+        width: 231
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321e3fcd4ec241bd0800000000000000
+      internalID: -2660452118397984477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 2539
+        width: 173
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8c78cd577218090800000000000000
+      internalID: -8034096873087711072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_7
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 2584
+        width: 206
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7328676ce2929f240800000000000000
+      internalID: 4825933756579086903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_8
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2597
+        width: 230
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff34a9a534b787870800000000000000
+      internalID: 8680823810969715711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 2190
+        width: 282
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81940569870beb750800000000000000
+      internalID: 6322684958839163160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_10
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 2190
+        width: 192
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1cb5fd7acdfdd40800000000000000
+      internalID: 5611446274291909118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_11
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 2202
+        width: 337
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ebc8fed5e287c60800000000000000
+      internalID: 7816048134287310370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_12
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2f784893a550060800000000000000
+      internalID: 6919035605607772874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 1907
+        width: 179
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c1027ec4c44a590800000000000000
+      internalID: -7663916772698874761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_16
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1907
+        width: 196
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3894eb7dbf13bc8b0800000000000000
+      internalID: -5130952392732423805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_17
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1627
+        width: 255
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379e36406de07c690800000000000000
+      internalID: -7582075135295493773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1644
+        width: 255
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cb022adef44bcc0800000000000000
+      internalID: -3696241512118436854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_19
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1635
+        width: 255
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a6526a1cf682310800000000000000
+      internalID: 1380476163295898240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_20
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1452
+        width: 175
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aeb61a55ae097b00800000000000000
+      internalID: 826708109943029416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_21
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1441
+        width: 179
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524eb87e1622b3c60800000000000000
+      internalID: 7798864983614022693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1441
+        width: 175
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2ff1a607362d850800000000000000
+      internalID: 6400287354914861760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_26
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1269
+        width: 181
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b060c5e188dca10800000000000000
+      internalID: 1931349479186107159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_27
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1230
+        width: 220
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982c7e9a4c786f5f0800000000000000
+      internalID: -723241411412508023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_28
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1191
+        width: 232
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c77126f90aeb5ee0800000000000000
+      internalID: -1271165141297039421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_29
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1220
+        width: 270
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e74270dd9e55cc0800000000000000
+      internalID: -3722812381434970619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_30
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 768
+        width: 206
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec41a53f7bebf9af0800000000000000
+      internalID: -387381345659513650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 806
+        width: 255
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090849f2d110bfc20800000000000000
+      internalID: 3241185581687144592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_32
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 771
+        width: 234
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f64ac0b96f6cb70800000000000000
+      internalID: 8919087257846312771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_33
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 784
+        width: 174
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c741e79fc218b90800000000000000
+      internalID: -7241457275761296384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_34
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 751
+        width: 162
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4756a516d8d3ffcd0800000000000000
+      internalID: -2522229588871191180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_35
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 819
+        width: 218
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acab539d1a84fd320800000000000000
+      internalID: 2584864571105065674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_36
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 422
+        width: 316
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c1bb9d407b007a0800000000000000
+      internalID: -6412924637914915724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_37
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b817f72fdc0cbb0800000000000000
+      internalID: -4917704351684654299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet amarelo_38
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 422
+        width: 317
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c004efb2ad1265d0800000000000000
+      internalID: -3070859411071958845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4204eb5d61c165447a9054217374f80b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
