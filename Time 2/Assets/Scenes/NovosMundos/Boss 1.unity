@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -694,6 +694,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1618651587560635641, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
   m_PrefabInstance: {fileID: 1664353967}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211072358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211072360}
+  - component: {fileID: 211072359}
+  m_Layer: 0
+  m_Name: PossibleCloud3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &211072359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211072358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 0
+  haveRained: 0
+--- !u!4 &211072360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211072358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6350002, y: -0.72999954, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &244071929
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +818,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244071929}
   m_CullTransparentMesh: 1
+--- !u!1 &279965373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279965374}
+  - component: {fileID: 279965375}
+  m_Layer: 0
+  m_Name: PossibleCloud1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279965374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279965373}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &279965375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279965373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 0
+  haveRained: 0
 --- !u!1001 &281261161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -860,7 +950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321364501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 20, z: 30.563286}
+  m_LocalPosition: {x: 2.61, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -6308,6 +6398,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 837692456}
     - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfAttackPerLife.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: NumberOfInkAttacks.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
@@ -6332,6 +6430,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: NumberOfFastTongueAttacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219879, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: NumberOfFastTongueAttacks.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
@@ -6350,6 +6452,10 @@ PrefabInstance:
     - target: {fileID: 2917235536485219928, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: speed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219928, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2917235536485219928, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: BossPositions.Array.size
@@ -6379,14 +6485,30 @@ PrefabInstance:
       propertyPath: bossSpit
       value: 
       objectReference: {fileID: 8244487705585772404, guid: 3b468c91b4c3192428acbf5787dfaf09, type: 3}
+    - target: {fileID: 2917235536485219930, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219932, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: Floor
       value: 
       objectReference: {fileID: 888815939}
     - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsLimit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: EnemiesParent
       value: 
       objectReference: {fileID: 504685395}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: EnemyYellowCloudPrefab
+      value: 
+      objectReference: {fileID: 6574854409147658887, guid: 6234848c68cd24904ab0f5999f24fd1b, type: 3}
     - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: inkTiles.Array.data[0]
       value: 
@@ -6412,6 +6534,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 326734518}
     - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: rainParticles.Array.data[0]
       value: 
       objectReference: {fileID: 321364504}
@@ -6435,6 +6561,30 @@ PrefabInstance:
       propertyPath: rainParticles.Array.data[5]
       value: 
       objectReference: {fileID: 1468071723}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[0]
+      value: 
+      objectReference: {fileID: 279965373}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1609120613}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[2]
+      value: 
+      objectReference: {fileID: 211072358}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[3]
+      value: 
+      objectReference: {fileID: 1016752661}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1764890368}
+    - target: {fileID: 2917235536485219933, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
+      propertyPath: cloudsPositions.Array.data[5]
+      value: 
+      objectReference: {fileID: 1168474989}
     - target: {fileID: 2917235536485219934, guid: 0fbe2ebf9ffdb354d8b998fee9c75dda, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -21649,6 +21799,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edae7dd522f614187a61550e0b5b70ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1016752661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016752663}
+  - component: {fileID: 1016752662}
+  m_Layer: 0
+  m_Name: PossibleCloud4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1016752662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016752661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 1
+  haveRained: 0
+--- !u!4 &1016752663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016752661}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.4349995, y: 1.2449989, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1053107069
 GameObject:
   m_ObjectHideFlags: 0
@@ -21789,7 +21984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099523665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.06, y: 20, z: 30.563286}
+  m_LocalPosition: {x: -10.99, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -26700,6 +26895,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 239.99994}
   m_SizeDelta: {x: -1214.9507, y: -802.68994}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1168474989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168474991}
+  - component: {fileID: 1168474990}
+  m_Layer: 0
+  m_Name: PossibleCloud6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1168474990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168474989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 0
+  haveRained: 0
+--- !u!4 &1168474991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168474989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.65, y: -4.3050003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1221531736
 GameObject:
   m_ObjectHideFlags: 0
@@ -27186,7 +27426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223304734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.19, y: 20, z: 30.563286}
+  m_LocalPosition: {x: 4.22, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -31990,7 +32230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236979123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.79, y: 20, z: 30.563286}
+  m_LocalPosition: {x: -14.72, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -37614,7 +37854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450734821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.06, y: 20, z: 30.563286}
+  m_LocalPosition: {x: -3.2, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -42702,7 +42942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468071720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.78, y: 20, z: 30.563286}
+  m_LocalPosition: {x: -15.16, y: 20, z: 30.563286}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1520531224}
@@ -48231,6 +48471,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1565650672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565650673}
+  m_Layer: 0
+  m_Name: CloudEnemyPositions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565650673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565650672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.48, y: 86.28, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children:
+  - {fileID: 279965374}
+  - {fileID: 1609120615}
+  - {fileID: 211072360}
+  - {fileID: 1016752663}
+  - {fileID: 1764890370}
+  - {fileID: 1168474991}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1568292726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48288,6 +48564,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a663d9c6c7ea24fe599d9cd67f2ec73f, type: 3}
+--- !u!1 &1609120613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1609120615}
+  - component: {fileID: 1609120614}
+  m_Layer: 0
+  m_Name: PossibleCloud2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1609120614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609120613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 1
+  haveRained: 0
+--- !u!4 &1609120615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609120613}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.375, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1624120557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48932,6 +49253,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
+--- !u!1 &1764890368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764890370}
+  - component: {fileID: 1764890369}
+  m_Layer: 0
+  m_Name: PossibleCloud5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1764890369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764890368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1915269b4e69281499e439611d895f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCloudPosition: 1
+  haveRained: 0
+--- !u!4 &1764890370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764890368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.85, y: -1.1650009, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1565650673}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!224 &1766012198 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1618651586330346651, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
