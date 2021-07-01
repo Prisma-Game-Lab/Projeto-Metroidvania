@@ -24,18 +24,19 @@ public class BossLogic : MonoBehaviour
     [Header("Numero de cuspes por ataque em cada rodada")]
     public List<int> NumberOfInkAttacks;
     public GameObject BossDoor;
+    [HideInInspector] public Rain rain;
+    [HideInInspector] public InkAttack inkAttack;
 
     private bool _canTakeDamage;
-    [HideInInspector]public Rain _rain;
-    [HideInInspector]public InkAttack _inkAttack;
+    
     void Start()
     {
         // Somente para teste 
         tongueAttack = gameObject.GetComponent<TongueAttack>();
         bossMovement = gameObject.GetComponent<BossMovement>();
         life = NumberOfAttackPerLife.Count;
-        _rain = gameObject.GetComponent<Rain>();
-        _inkAttack = gameObject.GetComponent<InkAttack>();
+        rain = gameObject.GetComponent<Rain>();
+        inkAttack = gameObject.GetComponent<InkAttack>();
         NumberOfAttackPerLife.Reverse();
         NumberOfFastTongueAttacks.Reverse();
         NumberOfInkAttacks.Reverse();
@@ -117,15 +118,15 @@ public class BossLogic : MonoBehaviour
         else if ((num<0.666f && num>0.333f) || life>=3)
         {
             int times = NumberOfInkAttacks[life - 1];
-            _inkAttack.StartInkAttacks(times);
-            return times * (_inkAttack.attackPreparationTime + _inkAttack.resetAttackTime + 1f);
+            inkAttack.StartInkAttacks(times);
+            return times * (inkAttack.attackPreparationTime + inkAttack.resetAttackTime + 1f);
             //performar cuspe
             //esperar
         }
         else
         {
-            _rain.StartRain();
-            return _rain.spitTime + _rain.rainTime + _rain.inkFloorTime + 1f;
+            rain.StartRain();
+            return rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f;
             //esperar
 
         }

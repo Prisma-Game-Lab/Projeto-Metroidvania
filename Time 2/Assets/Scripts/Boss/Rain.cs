@@ -8,9 +8,10 @@ public class Rain : MonoBehaviour
 {
     public List<ParticleSystem> rainParticles;
     public List<Tilemap> inkTiles;
-    public List<Vector3> enemiesPositions;
+    public List<GameObject> cloudsPositions;
+    public int cloudsLimit;
+    [HideInInspector]public List<Vector3> enemiesPositions;
     public Tilemap Floor;
-    //public Tilemap waterTiles;
     public ParticleSystem spitParticles;
     [Header("Tempo de duração da chuva")]
     public float rainTime;
@@ -18,27 +19,19 @@ public class Rain : MonoBehaviour
     public float spitTime;
     [Header("Tempo que o chão permanece com tinta, após a chuva")]
     public float inkFloorTime;
+    [Header("Altura do limite superior da fase")]
     public float ySuperiorLimit;
+    [Header("Altura do limite inferior da fase")]
     public float yInferiorLimit;
+    [Header("Altura a partir da qual só podem aparecer inimigos tipo torreta ou nuvem")]
     public float yAboveFloor;
     public GameObject BasicAggroEnemyPrefab;
     public GameObject EnemyTurretPrefab;
     public GameObject EnemyMagentaPrefab;
     public GameObject EnemyCyanPrefab;
+    public GameObject EnemyYellowCloudPrefab;
     public GameObject EnemiesParent;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void SetRainActive()
     {
@@ -54,13 +47,14 @@ public class Rain : MonoBehaviour
         foreach(ParticleSystem rain in rainParticles)
         {
             int sortOption = Random.Range(1, 100);
-            if (rain.gameObject.activeSelf && (sortOption % 4 == 0 || sortOption % 4 == 2 || sortOption % 4 == 1))// 3/4 de chance de ser so tinta
+            if (rain.gameObject.activeSelf && (sortOption % 4 == 0 || sortOption % 4 == 2))// 1/2 de chance de ser so tinta
             {
                 inkTiles[rainParticles.IndexOf(rain)].gameObject.SetActive(true);
             }
-            else if(rain.gameObject.activeSelf && sortOption % 4 == 3)// 1/4 de chance de ter inimigo
+            else if(rain.gameObject.activeSelf && (sortOption % 4 == 1 || sortOption % 4 == 3))// 1/2 de chance de ter inimigo
             {
                 enemiesPositions.Add(FindEnemyPosition(rain.gameObject.transform.position.x));
+                cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
             }       
         }
     }
@@ -91,15 +85,12 @@ public class Rain : MonoBehaviour
         yield return new WaitForSeconds(rainTime);
         SetRainTilesActive();
         SetEnemyPosition();
-        //waterTiles.gameObject.SetActive(true);
         yield return new WaitForSeconds(inkFloorTime);
         spitParticles.gameObject.SetActive(false);
         enemiesPositions.Clear();
         SetRainTilesTriggerOn();
-        //waterTiles.gameObject.GetComponent<Animator>().SetTrigger("FillWater");
         yield return new WaitForSeconds(1f);
         SetRainTilesUnactive();
-        //waterTiles.gameObject.SetActive(false);
         foreach (ParticleSystem rain in rainParticles)
             rain.gameObject.SetActive(false);
     }
@@ -109,7 +100,7 @@ public class Rain : MonoBehaviour
         StartCoroutine(WaitRain());
     }
 
-    public Vector3 FindEnemyPosition(float positionX)//coloca inimigos ´somente onde tem tile de chao
+    public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao
     {
         int i = Mathf.FloorToInt(yInferiorLimit);
         Vector3Int cell;
@@ -128,6 +119,7 @@ public class Rain : MonoBehaviour
     {
         int i = 0;
         bool avaiablePosition = true;
+        int numberOfClouds = 0;
         foreach(Vector3 enemyPosition in enemiesPositions)
         {
             while (i < EnemiesParent.transform.childCount)//verifica se ja tem inimigo naquele tile e impede que apareca outro
@@ -147,15 +139,34 @@ public class Rain : MonoBehaviour
             }
             else if(enemyPosition.y >= yAboveFloor && avaiablePosition)
             {
-                GameObject enemy = Instantiate(EnemyTurretPrefab, enemyPosition, Quaternion.identity);
-                enemy.transform.SetParent(EnemiesParent.transform);
+                GameObject enemyType = SortPlatformEnemy();
+                if(enemyType == EnemyYellowCloudPrefab && numberOfClouds<cloudsLimit)
+                {
+                    foreach (GameObject cloudPosition in cloudsPositions)
+                    {
+                        if (cloudPosition.GetComponent<CloudPosition>().haveRained && cloudPosition.GetComponent<CloudPosition>().isCloudPosition)
+                        {
+                            GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
+                            enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+                            enemy.transform.SetParent(EnemiesParent.transform);
+                            cloudPosition.GetComponent<CloudPosition>().haveRained = false;
+                            numberOfClouds++;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    GameObject enemy = Instantiate(EnemyTurretPrefab, enemyPosition, Quaternion.identity);
+                    enemy.transform.SetParent(EnemiesParent.transform);
+                } 
             }
         }
     }
 
     public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
     {
-        int sortOption = Random.Range(1, 1000) % 4;
+        int sortOption = Random.Range(1, 1000) % 3;
 
         switch (sortOption)
         {
@@ -163,11 +174,22 @@ public class Rain : MonoBehaviour
                 return EnemyMagentaPrefab;
             case 1:
                 return EnemyCyanPrefab;
-            case 2:
-                return EnemyTurretPrefab;
             default:
                 return BasicAggroEnemyPrefab;
         }  
     }
- 
+
+    public GameObject SortPlatformEnemy()//funcao para sortear qual inimigo vai surgir na posicao
+    {
+        int sortOption = Random.Range(1, 1000) % 2;
+
+        switch (sortOption)
+        {
+            case 0:
+                return EnemyTurretPrefab;
+            default:
+                return EnemyYellowCloudPrefab;
+        }
+    }
+
 }
