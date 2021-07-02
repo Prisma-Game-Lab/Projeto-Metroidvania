@@ -10,8 +10,12 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject UIMaster;
     public GameObject GameMaster;
     private GameObject _mailBoxObject;
-    [HideInInspector]public bool onDoor = false;
+    [HideInInspector] public bool onDoor = false;
     [HideInInspector] public bool onMailBox = false;
+    // life statue interaction 
+    [HideInInspector] public bool onFillHeartSTatue = false;
+    [HideInInspector] public bool onAddHeartStatue = false;
+    private int _statueId;
     private PlayerVictory _playerVictory;
     private PlayerStatus _playerStatus;
     private MailBox _mailBox;
@@ -53,6 +57,13 @@ public class PlayerInteraction : MonoBehaviour
                 GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
                 //Time.timeScale = 0f;
             }
+            else if (onAddHeartStatue)
+            {
+                _playerStatus.playerLifeStatue.AddNewHeart(_statueId);
+            }else if (onFillHeartSTatue)
+            {
+                _playerStatus.playerLifeStatue.FillLife();
+            }
         }
         
 
@@ -77,12 +88,25 @@ public class PlayerInteraction : MonoBehaviour
             _mailBox = _mailBoxObject.GetComponent<MailBox>();
             _mailBox.GetStamp(_mailBox.myMailBox);
         }
+
+        if (collision.CompareTag("FillLifeStatue"))
+        {
+            onFillHeartSTatue = true;
+        }
+        
+        if (collision.CompareTag("NewHeartStatue"))
+        {
+            _statueId = collision.GetComponent<StatueData>().id;
+            onAddHeartStatue = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         onMailBox = false;
         _uiMaster.InteractionPanel.SetActive(false);
+        onFillHeartSTatue = false;
+        onAddHeartStatue = false;
     }
 
     public bool IsInteracting()

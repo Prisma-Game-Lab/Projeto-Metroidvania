@@ -24,17 +24,12 @@ public class PlayerDamage : MonoBehaviour
     public bool takingDamage;
     public bool cantChange;
     private PlayerStatus _playerStatus;
-    
-
-    private void Awake()
-    {
-        life.life = playerLife;
-    }
 
     private void Start()
     {
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _playerStatus = gameObject.GetComponent<PlayerStatus>();
+        //life.totalLife = _playerStatus.totalLife;
         cantChange = false;
 
     }
@@ -95,13 +90,13 @@ public class PlayerDamage : MonoBehaviour
 
 
     // Função auxiliar para monstrar a área do ataque
-    private void OnDrawGizmosSelected()
-    {
-        if (transform.position == null)
-            return;
-
-        Gizmos.DrawWireCube(transform.position, new Vector3(_playerStatus.playerCollider.size.x, _playerStatus.playerCollider.size.y,0.1f));
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     if (transform.position == null)
+    //         return;
+    //
+    //     Gizmos.DrawWireCube(transform.position, new Vector3(_playerStatus.playerCollider.size.x, _playerStatus.playerCollider.size.y,0.1f));
+    // }
 
     public void TakeDamage()
     {
@@ -171,6 +166,7 @@ public class PlayerDamage : MonoBehaviour
 
     public void KillPlayer()
     {
+        life.life = life.totalLife;
         Destroy(gameObject);
     }
 
@@ -183,6 +179,8 @@ public class PlayerDamage : MonoBehaviour
             KillPlayer();
         }
     }
+    
+    
 
     
 

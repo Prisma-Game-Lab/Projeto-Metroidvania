@@ -6,6 +6,10 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public class PlayerData
 {
+    // Life
+    public int totalLife;
+
+    public int[] newHeartsId;
     // Colors 
     public bool cyan;
     public bool yellow;
@@ -33,6 +37,10 @@ public class PlayerData
     // Class init 
     public PlayerData(PlayerStatus player)
     {
+        // life
+        totalLife = player.totalLife;
+        newHeartsId = player.NewHeartsId;
+        
         // colors 
         cyan = player.cyan;
         yellow = player.yellow;

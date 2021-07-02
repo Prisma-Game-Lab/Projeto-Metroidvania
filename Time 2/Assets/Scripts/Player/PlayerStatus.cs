@@ -46,6 +46,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public Vector3 originalLocalScale;
     [HideInInspector] public float playerGravity;
     [HideInInspector] public PlayerInput playerInput;
+    [HideInInspector] public PlayerLifeStatue playerLifeStatue;
     public GameObject transformationParticles;
 
     // Fala se o player esta no processo de respawn 
@@ -53,11 +54,15 @@ public class PlayerStatus : MonoBehaviour
     //Controls
     private static string _controlPrefs = "ControlPrefs";
     private int _controlValue;
+    public PlayerHealth playerHealth;
     [HideInInspector] public string PlayerActions;
     [HideInInspector] public string GlobalActions;
     [HideInInspector] public string PlayerInUI;
 
     // Variaveis para serem salvas 
+    [HideInInspector] public int totalLife;
+    [HideInInspector] public int[] NewHeartsId;
+    
     // Colors
     [HideInInspector] public bool cyan = false;
     [HideInInspector] public bool yellow = false;
@@ -117,6 +122,7 @@ public class PlayerStatus : MonoBehaviour
         playerAnimator = gameObject.GetComponent<Animator>();
         playerAnimator.SetBool("Player", true);
         playerCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+        playerLifeStatue = gameObject.GetComponent<PlayerLifeStatue>();
         // correct player colider 
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
@@ -205,6 +211,16 @@ public class PlayerStatus : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         if (data == null) return;
+        //life 
+        if (data.totalLife != 0)
+            totalLife = data.totalLife;
+        else
+            totalLife = playerHealth.totalLife;
+            
+        
+        NewHeartsId = data.newHeartsId;
+
+        //colors 
         cyan = data.cyan;
         yellow = data.yellow; 
         magenta = data.magenta;

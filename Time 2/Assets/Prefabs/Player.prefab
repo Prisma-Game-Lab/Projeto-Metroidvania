@@ -9870,6 +9870,7 @@ GameObject:
   - component: {fileID: 8024735329453298166}
   - component: {fileID: 6875496449765456379}
   - component: {fileID: 5168414375088595286}
+  - component: {fileID: 7350269477882495878}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -9935,7 +9936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3891481647079869347, guid: f7cb1e502769b8d41a17c45f7f4f8198, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10794,6 +10795,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   rb: {fileID: 0}
   playerMovement: {fileID: 0}
+  playerDamage: {fileID: 0}
   playerAnimator: {fileID: 0}
   playerCollider: {fileID: 0}
   playerCircleCollider: {fileID: 0}
@@ -10801,10 +10803,15 @@ MonoBehaviour:
   originalLocalScale: {x: 0, y: 0, z: 0}
   playerGravity: 0
   playerInput: {fileID: 0}
+  playerLifeStatue: {fileID: 0}
   transformationParticles: {fileID: 1913081182035609188}
+  willRespawn: 0
+  playerHealth: {fileID: 11400000, guid: ddd46d8dbda19421f81016db4a4ce479, type: 2}
   PlayerActions: 
   GlobalActions: 
   PlayerInUI: 
+  totalLife: 0
+  NewHeartsId: 
   cyan: 0
   yellow: 0
   magenta: 0
@@ -10922,8 +10929,9 @@ MonoBehaviour:
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.2
-  duration: 1
+  duration: 0.5
   takingDamage: 0
+  cantChange: 0
 --- !u!114 &1616248053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11011,6 +11019,8 @@ MonoBehaviour:
   GameMaster: {fileID: 0}
   onDoor: 0
   onMailBox: 0
+  onFillHeartSTatue: 0
+  onAddHeartStatue: 0
 --- !u!95 &5168414375088595286
 Animator:
   serializedVersion: 3
@@ -11030,6 +11040,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7350269477882495878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a5ef4f7e3f04840bc5f163245f9c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0

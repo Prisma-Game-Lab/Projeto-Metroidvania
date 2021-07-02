@@ -22,6 +22,7 @@ public class GameMaster : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject firstButtonPauseMenu;
     public GameObject firstButtonSettings;
+    public PlayerHealth life;
     public GameObject firstButtonControls;
     public GameObject player;
     [HideInInspector] public bool onOtherMenu = false;
@@ -59,6 +60,7 @@ public class GameMaster : MonoBehaviour
             playerDestination.SceneToGo = "Lobby";
             teleportDestination.SceneToGo = "Lobby";
             teleportDestination.targetedMailBox = stampDestination.lobby;
+            life.life = life.totalLife;
             AudioManager.instance.Play(playerDestination.SceneToGo);
             playerDestination.door = -1;
             SceneManager.LoadScene("Lobby");
