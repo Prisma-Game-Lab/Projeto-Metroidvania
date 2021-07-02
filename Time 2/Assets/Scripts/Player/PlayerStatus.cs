@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 
 public enum PlayerSkill
@@ -208,6 +209,22 @@ public class PlayerStatus : MonoBehaviour
 
     private void LoadPlayer()
     {
+
+        if(SceneManager.GetActiveScene().name=="Boss 1")
+        {
+            gameObject.GetComponent<PlayerAttack>().obtained = true;
+            sword = true;
+            gameObject.GetComponent<BoatSkill>().obtained = true;
+            boat = true;
+            gameObject.GetComponent<PlaneSkill>().obtained = true;
+            airplane = true;
+            gameObject.GetComponent<BallSkill>().obtained = true;
+            ball = true;
+            gameObject.GetComponent<ShurikenSkill>().obtained = true;
+            shuriken = true;
+            totalLife = playerHealth.totalLife;
+            return;
+        }
         PlayerData data = SaveSystem.LoadPlayer();
 
         if (data == null) return;
