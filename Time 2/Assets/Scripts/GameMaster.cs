@@ -168,6 +168,11 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("FirstScene");
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("Boss 1");
+    }
+
     private IEnumerator WaitFadeCutscene()
     {
         yield return new WaitForSeconds(1f);
