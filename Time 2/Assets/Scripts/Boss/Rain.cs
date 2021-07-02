@@ -111,7 +111,7 @@ public class Rain : MonoBehaviour
             cell = Floor.WorldToCell(new Vector3(positionX, i, 0));
             cell2 = Floor.WorldToCell(new Vector3(positionX, i + 1, 0));
             if (Floor.HasTile(cell) && !Floor.HasTile(cell2))
-                worldPosition = new Vector3(positionX, i + 1f, 0);
+                worldPosition = new Vector3(positionX, i + 2f, 0);
         }
         return worldPosition;
     }
