@@ -64662,7 +64662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: doorToGo
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2112924893825498926, guid: 1543ebe998a4448268ac20dfe1424168, type: 3}
       propertyPath: sceneToLoad
@@ -67107,6 +67107,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 956505065}
     m_Modifications:
+    - target: {fileID: 222069547470339807, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
+      propertyPath: obtained
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2348440294670770224, guid: 35b961aa5c25b41d4aea25ed9fef05b9, type: 3}
       propertyPath: m_RootOrder
       value: 0
