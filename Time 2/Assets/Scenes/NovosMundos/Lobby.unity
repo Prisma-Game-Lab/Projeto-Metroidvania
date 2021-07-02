@@ -52983,6 +52983,22 @@ PrefabInstance:
       value: BreakableFloor
       objectReference: {fileID: 0}
     - target: {fileID: 2489116974409604430, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7644258895050160478, guid: f2acfc58f50c7134caf8d8cbfb51a824, type: 3}
+    - target: {fileID: 2489116974409604430, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.77647066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489116974409604430, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.86666673
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489116974409604430, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.92549026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489116974409604430, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
@@ -52992,15 +53008,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2489116974409604431, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.71
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2489116974409604431, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -93.97774
+      value: -94.1
       objectReference: {fileID: 0}
     - target: {fileID: 2489116974409604431, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.702122
+      value: 30.677
       objectReference: {fileID: 0}
     - target: {fileID: 2489116974409604431, guid: 90de84229ccd2cf43a8329037ee0256c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -72419,6 +72435,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 375305420}
     m_Modifications:
+    - target: {fileID: 4191050248473076648, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1683056504822761676, guid: 84ac01591503c0942aa71ef61ca3d586, type: 3}
+    - target: {fileID: 4191050248473076648, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
+      propertyPath: m_Color.b
+      value: 0.77647066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191050248473076648, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
+      propertyPath: m_Color.g
+      value: 0.86666673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191050248473076648, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
+      propertyPath: m_Color.r
+      value: 0.92549026
+      objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076650, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_Name
       value: BreakableWall
@@ -72429,7 +72461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.41
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72437,7 +72469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.817881
+      value: -11.37
       objectReference: {fileID: 0}
     - target: {fileID: 4191050248473076695, guid: a1b7ea7fa44dd42f19ade2b4dc91e378, type: 3}
       propertyPath: m_LocalPosition.z
