@@ -8,6 +8,7 @@ public class EnemyShoot : MonoBehaviour{
     public float aggroRadius;
     public float aggroPreparationTime;
     public GameObject enemyBullet;
+    public Transform bulletPoint;
 
     public float resetAggroTime;
     public float bulletSpeed;
@@ -15,9 +16,11 @@ public class EnemyShoot : MonoBehaviour{
     private EnemyMovement _enemyMovement;
     private Transform _transform;
     private Transform _playerTransform;
+    
 
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
+    private Animator _animator;
 
     private bool _performingAggro = false;
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class EnemyShoot : MonoBehaviour{
         _transform = transform;
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -93,12 +97,13 @@ public class EnemyShoot : MonoBehaviour{
                  _enemyMovement.isFlipped = false;
              }
 
-            Vector2 MovePos = (_playerTransform.position - _transform.position);
+            Vector2 MovePos = (_playerTransform.position - bulletPoint.position);
             MovePos = MovePos.normalized;
             // _transform.position = MovePos;
             MovePos.x = MovePos.x * bulletSpeed;
             MovePos.y = MovePos.y * bulletSpeed;
             // _rb.velocity = MovePos;
+            _animator.SetTrigger("Trigger");
             StartCoroutine(PrepareAggro(MovePos));
         }
 
@@ -106,20 +111,27 @@ public class EnemyShoot : MonoBehaviour{
     
     private IEnumerator StopAggro()
     {
+        
         yield return new WaitForSeconds(resetAggroTime);
+        _animator.SetBool("Aggro", false);
         _performingAggro = false;
         _enemyMovement.enemyState = EnemyState.Idle;
+        
     }
     
     private IEnumerator PrepareAggro(Vector2 MovePos)
     {
         AudioManager.instance.Play("Tombo");
+        yield return new WaitForSeconds(0.2f);
         
+        _animator.SetBool("Aggro", true);
         yield return new WaitForSeconds(aggroPreparationTime);
+        
         // criar a bala 
-        GameObject bullet = Instantiate(enemyBullet, _transform.position, _transform.rotation);
+        GameObject bullet = Instantiate(enemyBullet, bulletPoint.position, _transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(MovePos, ForceMode2D.Impulse);
         StartCoroutine(StopAggro());
+        
         
     }
     

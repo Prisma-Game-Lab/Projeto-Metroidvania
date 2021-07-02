@@ -8,11 +8,13 @@ public class EnemyJump : EnemyMovement
 {
     public float jumpForce;
     private CircleCollider2D _enemyCollider;
+    private Animator _animator;
     
     void Start()
     {
         base.Start();
         _enemyCollider = gameObject.GetComponent<CircleCollider2D>();
+        _animator = gameObject.GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -30,6 +32,7 @@ public class EnemyJump : EnemyMovement
     private void Jump()
     {
         rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
+        _animator.SetTrigger("Jumped");
     }
 
     private bool CheckGround()

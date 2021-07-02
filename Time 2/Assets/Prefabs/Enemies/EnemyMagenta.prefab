@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 830981702858744775}
   - component: {fileID: 830981702858744774}
   - component: {fileID: 830981702858744768}
+  - component: {fileID: 740643099425849534}
   m_Layer: 6
   m_Name: EnemyMagenta
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
-  m_Color: {r: 0.990566, g: 0, b: 0.68039393, a: 1}
+  m_Sprite: {fileID: -4218657098400169925, guid: 353e8caf264ac8649a00e0ac0d48821f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -155,9 +156,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16151273, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.4054487
 --- !u!114 &830981702858744768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,8 +176,29 @@ MonoBehaviour:
   pointEnd: 2
   enemyMovement: 0
   isFlipped: 0
-  knockbackForce: 8
+  knockbackForce: {x: 0, y: 0}
   enemyState: 0
+  _pointToStart: {x: 0, y: 0, z: 0}
+  _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
   jumpForce: 4
+--- !u!95 &740643099425849534
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830981702858744769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68cb9f8e3d6194d4ea43e5da522961ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

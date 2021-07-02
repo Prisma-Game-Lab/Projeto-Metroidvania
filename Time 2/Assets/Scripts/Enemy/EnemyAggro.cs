@@ -18,6 +18,7 @@ public class EnemyAggro : MonoBehaviour
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     private EnemyDamage _enemyDamage;
+    private Animator _animator;
 
     private bool _performingAggro = false;
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class EnemyAggro : MonoBehaviour
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _sr = gameObject.GetComponent<SpriteRenderer>();
         _enemyDamage = gameObject.GetComponent<EnemyDamage>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -111,8 +113,9 @@ public class EnemyAggro : MonoBehaviour
     private IEnumerator PrepareAggro(Vector2 MovePos)
     {
         AudioManager.instance.Play("Tombo");
-        
+        _animator.SetBool("Triggered", true);
         yield return new WaitForSeconds(aggroPreparationTime);
+        _animator.SetBool("Triggered", false);
         _rb.AddForce(MovePos, ForceMode2D.Impulse);
         StartCoroutine(StopAggro());
         

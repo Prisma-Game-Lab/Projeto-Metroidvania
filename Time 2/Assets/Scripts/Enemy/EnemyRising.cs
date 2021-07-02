@@ -82,6 +82,7 @@ public class EnemyRising : MonoBehaviour
     {
         // perfoma indicativo de ataque 
         AudioManager.instance.Play("Tombo");
+        _animator.SetTrigger("Trigger");
         yield return new WaitForSeconds(aggroPreparationTime);
         //performa animacao de pulo orizontal   
         StartCoroutine(StopAggro());
