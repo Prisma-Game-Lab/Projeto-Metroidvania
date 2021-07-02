@@ -31840,6 +31840,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
+      propertyPath: life
+      value: 
+      objectReference: {fileID: 11400000, guid: ddd46d8dbda19421f81016db4a4ce479, type: 2}
+    - target: {fileID: 5043188181269210629, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 931989113}
