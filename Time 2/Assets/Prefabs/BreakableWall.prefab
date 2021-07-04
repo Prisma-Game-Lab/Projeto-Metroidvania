@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4191050248473076650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.16, y: 3.81, z: 0}
-  m_LocalScale: {x: 1, y: 2.08, z: 1}
+  m_LocalScale: {x: 1, y: 1.02, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 2582829362503924535, guid: 84ac01591503c0942aa71ef61ca3d586, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,10 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bd5a597729547b9bf623bb58e646fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls: []
   minAlpha: 0.3
   maxAlpha: 1
   interval: 0.1
   duration: 0.4
+  imortal: 0
   CanDamage: 0
   damageMagnetude: 0
   enemyLife: 1
@@ -121,14 +125,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
 --- !u!50 &4191050248473076693
 Rigidbody2D:
