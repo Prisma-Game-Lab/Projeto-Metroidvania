@@ -1633,6 +1633,60 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerInMapKeyboard",
+            "id": "67f425e9-d246-4a39-b5bb-ac1762de8ebc",
+            "actions": [
+                {
+                    "name": "Map",
+                    "type": "Button",
+                    "id": "83d3ed9e-d5cd-48fa-8d63-6c8e10ad9262",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f5ad46c2-49d2-4024-aa35-a09b7dbce68e",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerInMapController",
+            "id": "729462e2-ba8d-4e92-b549-9941b9d340fb",
+            "actions": [
+                {
+                    "name": "Map",
+                    "type": "Button",
+                    "id": "cd14ce90-2c5b-4252-ab53-091ee51d41f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "80b0294f-946b-4c34-aa4c-65f10527bcc3",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

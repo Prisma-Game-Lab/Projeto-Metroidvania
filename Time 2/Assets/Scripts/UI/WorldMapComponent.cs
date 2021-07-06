@@ -9,7 +9,9 @@ public class WorldMapComponent : MonoBehaviour
     public GameObject Player;
     public GameObject mapImages;
     public Image pin;
-    public GameMaster gameMaster;
+    public GameObject GameMaster;
+
+    private PlayerStatus _playerStatus;
     //public Destination playerDestination;
     //public TeleportDestination teleportDestination;
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class WorldMapComponent : MonoBehaviour
     {
         mapActivated = false;
         mapImages.SetActive(false);
+        _playerStatus = Player.GetComponent<PlayerStatus>();
     }
 
     // Update is called once per frame
@@ -36,7 +39,10 @@ public class WorldMapComponent : MonoBehaviour
 
                 mapActivated = true;
                 mapImages.SetActive(true);
-                gameMaster.GetComponent<GameMaster>().onOtherMenu = true;//bloqueia o menu de pause quando o mapa estiver ativado
+                //gameMaster.GetComponent<GameMaster>().onOtherMenu = true;//bloqueia o menu de pause quando o mapa estiver ativado
+                Player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInMap);
+                GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
+                Time.timeScale = 0f;
 
 
                 pin.rectTransform.position = Player.GetComponent<PinPositions>().ReturnActualPosition().position;
@@ -47,7 +53,10 @@ public class WorldMapComponent : MonoBehaviour
             {
                 mapImages.SetActive(false);
                 mapActivated = false;
-                gameMaster.GetComponent<GameMaster>().onOtherMenu = false;
+                //gameMaster.GetComponent<GameMaster>().onOtherMenu = false;
+                Player.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
+                GameMaster.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
+                Time.timeScale = 1f;
             }
 
         }

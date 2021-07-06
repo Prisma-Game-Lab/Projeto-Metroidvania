@@ -59,6 +59,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public string PlayerActions;
     [HideInInspector] public string GlobalActions;
     [HideInInspector] public string PlayerInUI;
+    [HideInInspector] public string PlayerInMap;
 
     // Variaveis para serem salvas 
     [HideInInspector] public int totalLife;
@@ -163,6 +164,7 @@ public class PlayerStatus : MonoBehaviour
         // transformar o player no estado normal
         SetToNormalState();
         StartCoroutine(WaitRespawn());
+        
 
     }
     
@@ -172,6 +174,9 @@ public class PlayerStatus : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<PlayerInput>().enabled = true; 
         willRespawn = false;
+        yield return new WaitForSeconds(0.5f);
+        SetControl();
+        this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(PlayerActions);
     }
 
     public void SetPlayerSkill(PlayerSkill skill, string description)
@@ -287,7 +292,7 @@ public class PlayerStatus : MonoBehaviour
         Vector3 v = sr.bounds.size;
         BoxCollider2D b = playerCollider;
         b.size = v;
-                
+
         // flip tem que se manter 
         if (playerMovement.isFlipped)
         {
@@ -366,21 +371,25 @@ public class PlayerStatus : MonoBehaviour
                 PlayerActions = "PlayerActionsK1";
                 GlobalActions = "GlobalActionsKeyboard";
                 PlayerInUI = "PlayerInUIKeyboard";
+                PlayerInMap = "PlayerInMapKeyboard";
                 break;
             case 1:
                 PlayerActions = "PlayerActionsK2";
                 GlobalActions = "GlobalActionsKeyboard";
                 PlayerInUI = "PlayerInUIKeyboard";
+                PlayerInMap = "PlayerInMapKeyboard";
                 break;
             case 2:
                 PlayerActions = "PlayerActionsXbox";
                 GlobalActions = "GlobalActionsController";
                 PlayerInUI = "PlayerInUIController";
+                PlayerInMap = "PlayerInMapController";
                 break;
             case 3:
                 PlayerActions = "PlayerActionsPS";
                 GlobalActions = "GlobalActionsController";
                 PlayerInUI = "PlayerInUIController";
+                PlayerInMap = "PlayerInMapController";
                 break;
         }
     }

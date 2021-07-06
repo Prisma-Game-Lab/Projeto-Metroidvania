@@ -52,7 +52,7 @@ public class GameMaster : MonoBehaviour
 
     public void OnReset(InputAction.CallbackContext ctx)
     {
-        if (ctx.started)
+        if (ctx.started && !_paused)
         {
             // parar as musicas de outros leveis
             AudioManager.instance.Stop(playerDestination.SceneToGo);
@@ -77,7 +77,7 @@ public class GameMaster : MonoBehaviour
                 {
                     Debug.Log(_playerStatus.PlayerActions);
                     player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
-                    this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
+                    //this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
                     EventSystem.current.SetSelectedGameObject(null);
                     PauseMenuUI.SetActive(false);
                     _paused = false;
@@ -86,11 +86,11 @@ public class GameMaster : MonoBehaviour
                 }
 
                 PauseMenuUI.SetActive(true);
-                Debug.Log(_playerStatus.PlayerInUI);
+                //Debug.Log(_playerStatus.PlayerInUI);
                 player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
-                Debug.Log(player.GetComponent<PlayerInput>().currentActionMap.name);
+                //Debug.Log(player.GetComponent<PlayerInput>().currentActionMap.name);
                 EventSystem.current.SetSelectedGameObject(firstButtonPauseMenu);
-                this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
+                //this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
                 _paused = true;
                 Time.timeScale = 0f;
             }
@@ -102,7 +102,7 @@ public class GameMaster : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
-        this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
+        //this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
         Time.timeScale = 1f;
     }
     
