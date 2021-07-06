@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GateListener : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class GateListener : MonoBehaviour
     {
         if (!player.GetComponent<PlayerStatus>().stampTeleport)
         {
-            AudioManager.instance.Play(playerDestination.SceneToGo);
+            //AudioManager.instance.Play(playerDestination.SceneToGo);
+            AudioManager.instance.Play(SceneManager.GetActiveScene().name);
             // No inicio da scena procura atribuir o player a porta que ele adentrou 
             foreach (GateComponent gate in gates)
             {

@@ -31,6 +31,10 @@ public class AudioManager : MonoBehaviour
             s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs")*0.005f;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            if (s.name == "Magenta")
+            {
+                s.source.volume = s.source.volume * 0.3f;
+            }
         }
         foreach (Sound s in soundEffects)
         {
@@ -82,10 +86,15 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source.volume = PlayerPrefs.GetFloat("Backgroundprefs")*0.005f;
+            if (s.name == "Magenta")
+            {
+                s.source.volume = s.source.volume * 0.3f;
+            }
         }
         foreach (Sound s in soundEffects)
         {
             s.source.volume = PlayerPrefs.GetFloat("SoundEffectsPrefs")*0.005f;
+
         }
 
     }
