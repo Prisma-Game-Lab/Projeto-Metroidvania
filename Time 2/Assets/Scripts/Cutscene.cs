@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Cutscene : MonoBehaviour
 {
     public VideoPlayer video;
     private double _videoDuration;
     public Animator fade;
+    public GameObject firstButtonCutscene;
 
     // Start is called before the first frame update
     void Start()
     {
         _videoDuration = video.clip.length;
         StartCoroutine(WaitVideo());
+        EventSystem.current.SetSelectedGameObject(firstButtonCutscene);
     }
 
     // Update is called once per frame
