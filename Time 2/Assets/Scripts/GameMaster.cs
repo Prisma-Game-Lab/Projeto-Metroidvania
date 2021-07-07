@@ -52,11 +52,8 @@ public class GameMaster : MonoBehaviour
 
     public void OnReset(InputAction.CallbackContext ctx)
     {
-        Debug.Log(_paused);
-        
         if (ctx.started && !_paused)
         {
-            Debug.Log("reset");
             // parar as musicas de outros leveis
             AudioManager.instance.Stop(playerDestination.SceneToGo);
             AudioManager.instance.Stop(teleportDestination.SceneToGo);
@@ -78,7 +75,6 @@ public class GameMaster : MonoBehaviour
             if (!onOtherMenu){
                 if (_paused)
                 {
-                    //Debug.Log(_playerStatus.PlayerActions);
                     if(life.life > 0)
                         player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
                     //this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
@@ -90,7 +86,6 @@ public class GameMaster : MonoBehaviour
                 }
 
                 PauseMenuUI.SetActive(true);
-                //Debug.Log(_playerStatus.PlayerInUI);
                 if (life.life > 0)
                     player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerInUI);
                 //Debug.Log(player.GetComponent<PlayerInput>().currentActionMap.name);
@@ -175,7 +170,7 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("FirstScene");
     }
 
-    public void Restart()
+    public void Restart()//funcao de botao de restart da cena do boss
     {
         SceneManager.LoadScene("Boss 1");
     }
