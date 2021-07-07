@@ -170,13 +170,17 @@ public class PlayerStatus : MonoBehaviour
     
     private IEnumerator WaitRespawn()
     {
-        gameObject.GetComponent<PlayerInput>().enabled = false; 
-        yield return new WaitForSeconds(0.5f);
-        gameObject.GetComponent<PlayerInput>().enabled = true; 
-        willRespawn = false;
+        if (playerHealth.life > 0)
+        {
+            gameObject.GetComponent<PlayerInput>().enabled = false;
+            yield return new WaitForSeconds(0.5f);
+            gameObject.GetComponent<PlayerInput>().enabled = true;
+            willRespawn = false;
+        }
         yield return new WaitForSeconds(0.5f);
         SetControl();
         this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(PlayerActions);
+
     }
 
     public void SetPlayerSkill(PlayerSkill skill, string description)

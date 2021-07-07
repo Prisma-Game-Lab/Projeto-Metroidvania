@@ -166,7 +166,7 @@ public class PlayerDamage : MonoBehaviour
 
     public void KillPlayer()
     {
-        life.life = life.totalLife;
+        //life.life = life.totalLife;
         Destroy(gameObject);
     }
 
