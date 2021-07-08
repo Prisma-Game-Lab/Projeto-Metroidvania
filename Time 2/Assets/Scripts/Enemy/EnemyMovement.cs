@@ -141,10 +141,10 @@ public class EnemyMovement : MonoBehaviour
         // inimigo ciano se move de forma diferente 
 
         Vector3 position = transform.position;
-        Vector2 hitPosition = new Vector2(position.x - sp.bounds.size.x * 0.25f, position.y);
+        Vector2 hitPosition = new Vector2(position.x - sp.bounds.size.x * 0.5f, position.y);
 
         if (isFlipped)
-            hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.25f, position.y);
+            hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.5f, position.y);
         
         LayerMask layer = LayerMask.GetMask( "Floor", "Water");
         Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,0.1f),0f ,layer);
@@ -156,7 +156,7 @@ public class EnemyMovement : MonoBehaviour
             hitPosition.y += sp.bounds.size.y;
             hitWall2 = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,0.1f),0f ,layer);
         }
-        
+
         if (hitWall.Length > 0 || hitWall2.Length > 0)
         {
             if (!isFlipped)

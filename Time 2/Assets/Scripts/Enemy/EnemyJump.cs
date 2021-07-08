@@ -9,6 +9,8 @@ public class EnemyJump : EnemyMovement
     public float jumpForce;
     private CircleCollider2D _enemyCollider;
     private Animator _animator;
+    private bool _alreadyJumped = false;
+    
     
     void Start()
     {
@@ -19,15 +21,18 @@ public class EnemyJump : EnemyMovement
     void FixedUpdate()
     {
         base.FixedUpdate();
-    }
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (CheckGround())
+        if (CheckGround() && !_alreadyJumped)
         {
             Jump();
+            _alreadyJumped = true;
+        }
+        else
+        {
+            _alreadyJumped = false;
         }
     }
+    
+    
 
     private void Jump()
     {
@@ -39,8 +44,8 @@ public class EnemyJump : EnemyMovement
     {
         Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - sp.bounds.size.y * 0.5f);
         LayerMask layers = LayerMask.GetMask( "Floor");
-        //Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(sp.bounds.size.x * 0.9f, 0.1f),0f ,layers);
-        Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition,_enemyCollider.radius*0.9f ,layers);
+        Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(sp.bounds.size.x * 0.5f, 0.5f),0f ,layers);
+        //Collider2D[] hitGround = Physics2D.OverlapCircleAll(hitPosition,_enemyCollider.radius*0.9f ,layers);
 
         if (hitGround.Length > 0)
         {
@@ -57,7 +62,7 @@ public class EnemyJump : EnemyMovement
         {
             
             Vector2 hitPosition = new Vector2(transform.position.x, transform.position.y - sp.bounds.size.y * 0.5f);
-            Gizmos.DrawCube(hitPosition, new Vector2(sp.bounds.size.x * 0.9f, 0.1f));
+            Gizmos.DrawCube(hitPosition, new Vector2(sp.bounds.size.x * 0.5f, 0.5f));
         }
         
         
