@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136980168617097984}
-  m_LocalRotation: {x: -0, y: -0, z: 0.012128528, w: 0.99992645}
-  m_LocalPosition: {x: -0.61999893, y: 1.2, z: 0}
+  m_LocalRotation: {x: -0.03382102, y: 0.00041023764, z: 0.0121215815, w: 0.9993543}
+  m_LocalPosition: {x: -0.6199995, y: 1.2000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 317126284134780158}
   m_Father: {fileID: 2670785371601351750}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.39}
+  m_LocalEulerAnglesHint: {x: -3.877, y: 0, z: 1.39}
 --- !u!212 &4259278110218681159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -257,9 +257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 9.5
-  aggroPreparationTime: 0.55
+  aggroPreparationTime: 1
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
   bulletPoint: {fileID: 317126284134780158}
+  Cannon: {fileID: 136980168617097984}
   resetAggroTime: 2.8
   bulletSpeed: 7.5
 --- !u!114 &2670785371601351744

@@ -9,6 +9,7 @@ public class EnemyShoot : MonoBehaviour{
     public float aggroPreparationTime;
     public GameObject enemyBullet;
     public Transform bulletPoint;
+    public GameObject Cannon;
 
     public float resetAggroTime;
     public float bulletSpeed;
@@ -122,16 +123,21 @@ public class EnemyShoot : MonoBehaviour{
     private IEnumerator PrepareAggro(Vector2 MovePos)
     {
         AudioManager.instance.Play("Tombo");
-        yield return new WaitForSeconds(0.2f);
+        if(_enemyMovement.isFlipped)
+            Cannon.transform.right = MovePos;
+        else
+            Cannon.transform.right =  -MovePos;
+        yield return new WaitForSeconds(0.5f);
         
         _animator.SetBool("Aggro", true);
         yield return new WaitForSeconds(aggroPreparationTime);
         
         // criar a bala 
         GameObject bullet = Instantiate(enemyBullet, bulletPoint.position, _transform.rotation);
+        bullet.transform.up = MovePos;
+
         bullet.GetComponent<Rigidbody2D>().AddForce(MovePos, ForceMode2D.Impulse);
         StartCoroutine(StopAggro());
-        
         
     }
     
