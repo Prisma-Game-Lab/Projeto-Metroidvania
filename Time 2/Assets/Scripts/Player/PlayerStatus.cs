@@ -164,7 +164,6 @@ public class PlayerStatus : MonoBehaviour
         // transformar o player no estado normal
         SetToNormalState();
         StartCoroutine(WaitRespawn());
-        
 
     }
     
@@ -177,7 +176,7 @@ public class PlayerStatus : MonoBehaviour
             gameObject.GetComponent<PlayerInput>().enabled = true;
             willRespawn = false;
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         SetControl();
         this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(PlayerActions);
 
@@ -218,7 +217,7 @@ public class PlayerStatus : MonoBehaviour
 
     private void LoadPlayer()
     {
-
+        
         if(SceneManager.GetActiveScene().name=="Boss 1")
         {
             gameObject.GetComponent<PlayerAttack>().obtained = true;
@@ -236,13 +235,47 @@ public class PlayerStatus : MonoBehaviour
         }
         PlayerData data = SaveSystem.LoadPlayer();
 
-        if (data == null) return;
-        //life 
-        if (data.totalLife != 0)
-            totalLife = data.totalLife;
-        else
-            totalLife = playerHealth.totalLife;
+        if (data == null)
+        {
+            totalLife = playerHealth.startLife;
+            playerHealth.life = totalLife;
+            playerHealth.totalLife = totalLife;
+            cyan = false;
+            yellow = false; 
+            magenta = false;
+            black = false;
+        
+            // Skills 
+            boat = false;
+            airplane = false;
+            sword = false;
+            ball = false;
+            shuriken = false;
+
+            NewHeartsId = new int[] {};
             
+            // liberar as skills de acordo com o save 
+            gameObject.GetComponent<BoatSkill>().obtained = false;
+            gameObject.GetComponent<PlayerAttack>().obtained = false;
+            gameObject.GetComponent<PlaneSkill>().obtained = false;
+            gameObject.GetComponent<BallSkill>().obtained = false;
+            gameObject.GetComponent<ShurikenSkill>().obtained = false;
+
+            //stamps
+            stampMagenta = false;
+            stampCyan = false;
+            stampYellow = false;
+            stampBlack = false;
+            stampLobby = false;
+
+            //Teleport Status
+            stampTeleport = false;
+            return;
+        }
+
+        totalLife = data.totalLife;
+        playerHealth.life = totalLife;
+        playerHealth.totalLife = totalLife;
         
         NewHeartsId = data.newHeartsId;
 

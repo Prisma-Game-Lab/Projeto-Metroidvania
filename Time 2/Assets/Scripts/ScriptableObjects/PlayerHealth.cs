@@ -8,4 +8,5 @@ public class PlayerHealth : ScriptableObject
 {
   public int life;
   public int totalLife;
+  public int startLife;
 }
