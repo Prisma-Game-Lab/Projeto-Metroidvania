@@ -47,14 +47,19 @@ public class UIMaster : MonoBehaviour
         HelpSkillText.GetComponent<Text>().text = description;
         //HelpSkillText.SetActive(true);
         HelpPanel.SetActive(true);
-        StartCoroutine(DisableHelperText());
+        //StartCoroutine(DisableHelperText());
+    }
+
+    public void DisableSkillDescription()
+    {
+        HelpPanel.SetActive(false);
     }
     
-    private IEnumerator DisableHelperText()
+    /*private IEnumerator DisableHelperText()
     {
         yield return new WaitForSeconds(5.0f);
         HelpPanel.SetActive(false);
-    }
+    }*/
     
     
     public void KillPlayer()
@@ -121,11 +126,11 @@ public class UIMaster : MonoBehaviour
             RemoveLife();
         }
 
-        if (_UIItemDescription != itemDescription.description)
+        /*if (_UIItemDescription != itemDescription.description)
         {
             _UIItemDescription = itemDescription.description;
             ShowSkillDescription(_UIItemDescription);
-        }
+        }*/
 
         if (_sceneToGo != playerDestination.SceneToGo)
         {

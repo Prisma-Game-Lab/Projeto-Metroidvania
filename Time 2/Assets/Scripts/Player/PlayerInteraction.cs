@@ -15,11 +15,14 @@ public class PlayerInteraction : MonoBehaviour
     // life statue interaction 
     [HideInInspector] public bool onFillHeartSTatue = false;
     [HideInInspector] public bool onAddHeartStatue = false;
+    //Skill Statue Interaction
+    [HideInInspector] public bool onSkillStatue = false;
     private int _statueId;
     private PlayerVictory _playerVictory;
     private PlayerStatus _playerStatus;
     private MailBox _mailBox;
     private UIMaster _uiMaster;
+    private SkillStatue _skillStatue;
 
     void Start()
     {
@@ -64,6 +67,12 @@ public class PlayerInteraction : MonoBehaviour
             {
                 _playerStatus.playerLifeStatue.FillLife();
             }
+            else if(onSkillStatue)
+            {
+                _playerStatus.SetPlayerSkill(_skillStatue.skill, _skillStatue.helpDescription.text);
+                _uiMaster.InteractionPanel.SetActive(false);
+                _uiMaster.ShowSkillDescription(_skillStatue.helpDescription.text);
+            }
         }
         
 
@@ -78,6 +87,10 @@ public class PlayerInteraction : MonoBehaviour
         else if(collision.CompareTag("MailBox")){
             _uiMaster.InteractionPanel.SetActive(true);
         }
+        else if (collision.CompareTag("SkillStatue") || collision.CompareTag("FillLifeStatue") || collision.CompareTag("NewHeartStatue"))
+        {
+            _uiMaster.InteractionPanel.SetActive(true);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -89,15 +102,21 @@ public class PlayerInteraction : MonoBehaviour
             _mailBox.GetStamp(_mailBox.myMailBox);
         }
 
-        if (collision.CompareTag("FillLifeStatue"))
+        else if (collision.CompareTag("FillLifeStatue"))
         {
             onFillHeartSTatue = true;
         }
         
-        if (collision.CompareTag("NewHeartStatue"))
+        else if (collision.CompareTag("NewHeartStatue"))
         {
             _statueId = collision.GetComponent<StatueData>().id;
             onAddHeartStatue = true;
+        }
+
+        else if (collision.CompareTag("SkillStatue"))
+        {
+            onSkillStatue = true;
+            _skillStatue = collision.gameObject.GetComponent<SkillStatue>();
         }
     }
 
@@ -107,11 +126,14 @@ public class PlayerInteraction : MonoBehaviour
         _uiMaster.InteractionPanel.SetActive(false);
         onFillHeartSTatue = false;
         onAddHeartStatue = false;
+        onSkillStatue = false;
+        _uiMaster.DisableSkillDescription();
+
     }
 
     public bool IsInteracting()
     {
-        return onMailBox || onDoor;
+        return onMailBox || onDoor || onAddHeartStatue || onSkillStatue || onFillHeartSTatue;
     }
 
 
