@@ -24,10 +24,10 @@ public class GateListener : MonoBehaviour
                     switch (gate.typerOfGate)
                     {
                         case TyperOfGate.Left:
-                            spawPosition.x += 3f;
+                            spawPosition.x += 10f;
                             break;
                         case TyperOfGate.Right:
-                            spawPosition.x -= 3f;
+                            spawPosition.x -= 10f;
                             Vector3 newLocalScale = player.transform.localScale;
                             newLocalScale.x *= -1;
                             player.transform.localScale = newLocalScale;

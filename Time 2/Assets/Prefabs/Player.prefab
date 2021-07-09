@@ -9819,7 +9819,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -9872,6 +9872,7 @@ GameObject:
   - component: {fileID: 5168414375088595286}
   - component: {fileID: 7350269477882495878}
   - component: {fileID: 8874434172665775451}
+  - component: {fileID: 8263210015198069017}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -10771,6 +10772,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9b87a5f5-2080-4451-bcbc-5c17cc2b210c
     m_ActionName: PlayerInUIController/Pause
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 83d3ed9e-d5cd-48fa-8d63-6c8e10ad9262
+    m_ActionName: PlayerInMapKeyboard/Map[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cd14ce90-2c5b-4252-ab53-091ee51d41f8
+    m_ActionName: PlayerInMapController/Map
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -10811,6 +10820,7 @@ MonoBehaviour:
   PlayerActions: 
   GlobalActions: 
   PlayerInUI: 
+  PlayerInMap: 
   totalLife: 0
   NewHeartsId: 
   cyan: 0
@@ -11067,6 +11077,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possiblePositions: []
   actualPosition: 0
+--- !u!114 &8263210015198069017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2348440294670770226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ba69eb8bd42420888dcc70aa0d6165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineVirtualCamera: {fileID: 0}
+  WalkVelocity: 12
+  timeUntilFade: 0.5
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,15 +21,18 @@ public class GateComponent : MonoBehaviour
             destination.door = doorToGo;
             // para a musica da fase 
             AudioManager.instance.Stop(destination.SceneToGo);
-            destination.SceneToGo = sceneToLoad;
-            StartCoroutine(WaitFade());
+            float waitSeconds = other.GetComponent<PlayerGateCinematic>().PerformWarpAnimation(typerOfGate == TyperOfGate.Left);
+            StartCoroutine(WaitFade(waitSeconds));
         }
     }
 
-    private IEnumerator WaitFade()
+    private IEnumerator WaitFade(float waitSeconds)
     {
+        yield return new WaitForSeconds(waitSeconds);
+        destination.SceneToGo = sceneToLoad;
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(destination.SceneToGo);
+        
     }
 }
 
