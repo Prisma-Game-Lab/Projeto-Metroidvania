@@ -20,14 +20,21 @@ public class PlayerGateCinematic : MonoBehaviour
 
     public float PerformWarpAnimation(bool isFlipped)
     {
+        float transformationSeconds = 0;
+        if (_playerStatus.playerState != PlayerSkill.Normal)
+        {
+            _playerStatus.SetToNormalState();
+            transformationSeconds = 0.5f;
+        }
         _playerStatus.playerInput.enabled = false;
         _cinemachineVirtualCamera.Follow = null;
-        StartCoroutine(WarpAnimation(isFlipped));
+        StartCoroutine(WarpAnimation(isFlipped,transformationSeconds));
         return timeUntilFade;
     }
 
-    private IEnumerator WarpAnimation(bool isFlipped)
+    private IEnumerator WarpAnimation(bool isFlipped, float transformationSeconds)
     {
+        yield return new WaitForSeconds(transformationSeconds);
         Vector3 reachPoint = transform.position;
         _playerStatus.playerMovement.enabled = false;
         _playerStatus.playerAnimator.SetBool("Moving", true);
