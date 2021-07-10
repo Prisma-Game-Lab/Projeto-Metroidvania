@@ -241,9 +241,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10191345, y: -0.2649759}
+  m_Offset: {x: -0.101913475, y: 0.05711105}
   serializedVersion: 2
-  m_Radius: 0.72420895
+  m_Radius: 1.0369258
 --- !u!114 &2670785371601351747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,8 +261,8 @@ MonoBehaviour:
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
   bulletPoint: {fileID: 317126284134780158}
   Cannon: {fileID: 136980168617097984}
-  resetAggroTime: 2.8
-  bulletSpeed: 7.5
+  resetAggroTime: 1.1
+  bulletSpeed: 9
 --- !u!114 &2670785371601351744
 MonoBehaviour:
   m_ObjectHideFlags: 0
