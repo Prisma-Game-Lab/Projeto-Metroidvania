@@ -34,6 +34,12 @@ public class PlayerData
     //Teleport Status
     public bool stampTeleport;
 
+    //Color Locks
+    public bool lockMagenta;
+    public bool lockCyan;
+    public bool lockYellow;
+    public bool lockBlack;
+
     // Class init 
     public PlayerData(PlayerStatus player)
     {
@@ -64,5 +70,11 @@ public class PlayerData
         //Teleport Status
         stampTeleport = player.stampTeleport;
 
-    }
+        //Color Locks
+        lockMagenta = player.lockMagenta;
+        lockCyan = player.lockCyan;
+        lockYellow = player.lockYellow;
+        lockBlack = player.lockBlack;
+
+}
 }

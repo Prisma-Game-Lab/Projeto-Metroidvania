@@ -16,10 +16,15 @@ public class UIMaster : MonoBehaviour
     public PlayerHealth life;
     public ItemDescription itemDescription;
     public GameObject InteractionPanel;
+    public GameObject DoorLockPanel;
+    public Text UnlockColorText;
 
     public Destination playerDestination;
 
     public GameObject Fade;
+
+    public List<Text> InteractionTexts;
+    public List<Text> LockTexts;
     // variavies de monitoramento da UI
     private string _UIItemDescription;
     private string _sceneToGo;
@@ -161,6 +166,60 @@ public class UIMaster : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         DoorPanel.transform.GetChild(1).gameObject.SetActive(false);
         DoorPanel.SetActive(false);
+    }
+
+    public void ShowInteractionPanel(int controlValue)
+    {
+        ShowInteractionText(controlValue);
+        InteractionPanel.SetActive(true);
+    }
+
+    public void ShowLockPanel(int controlValue)
+    {
+        ShowLockText(controlValue);
+        DoorLockPanel.SetActive(true);
+    }
+    public void ShowInteractionText(int controlValue)
+    {
+        switch (controlValue)
+        {
+            case 0://teclado1
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[0].text;
+                break;
+            case 1://teclado2
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[1].text;
+                break;
+            case 2://xbox
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[2].text;
+                break;
+            case 3://ps
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[3].text;
+                break;
+        }
+    }
+
+    public void ShowLockText(int controlValue)
+    {
+        switch (controlValue)
+        {
+            case 0://teclado1
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[0].text;
+                break;
+            case 1://teclado2
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[1].text;
+                break;
+            case 2://xbox
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[2].text;
+                break;
+            case 3://ps
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[3].text;
+                break;
+        }
+    }
+
+    public void ShowUnLockText()
+    {
+            DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.text;
     }
 
 }

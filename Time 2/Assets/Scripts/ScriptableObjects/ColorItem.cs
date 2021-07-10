@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ObjectColor
 {
+    None,
     Magenta,
     Cyan,
     Yellow,

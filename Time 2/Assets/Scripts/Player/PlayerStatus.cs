@@ -54,7 +54,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector]public bool willRespawn = false;
     //Controls
     private static string _controlPrefs = "ControlPrefs";
-    private int _controlValue;
+    [HideInInspector]public int controlValue;
     public PlayerHealth playerHealth;
     [HideInInspector] public string PlayerActions;
     [HideInInspector] public string GlobalActions;
@@ -90,6 +90,12 @@ public class PlayerStatus : MonoBehaviour
 
     //Teleport Status
     [HideInInspector] public bool stampTeleport = false;
+
+    //Color Locks
+    [HideInInspector] public bool lockMagenta = false;
+    [HideInInspector] public bool lockCyan = false;
+    [HideInInspector] public bool lockYellow = false;
+    [HideInInspector] public bool lockBlack = false;
 
 
     // Start is called before the first frame update
@@ -214,8 +220,28 @@ public class PlayerStatus : MonoBehaviour
         SaveSystem.SavePlayer(this);
         itemDescription.description = description;
     }
+    public void SetColorLock(ObjectColor color)
+    {
+        switch (color)
+        {
+            case ObjectColor.Magenta:
+                lockMagenta = true;
+                break;
+            case ObjectColor.Cyan:
+                lockCyan = true;
+                break;
+            case ObjectColor.Yellow:
+                lockYellow = true;
+                break;
+            case ObjectColor.Black:
+                lockBlack = true;
+                break;
+        }
+        SaveSystem.SavePlayer(this);
+    }
 
-    private void LoadPlayer()
+
+        private void LoadPlayer()
     {
         
         if(SceneManager.GetActiveScene().name=="Boss 1")
@@ -270,6 +296,12 @@ public class PlayerStatus : MonoBehaviour
 
             //Teleport Status
             stampTeleport = false;
+
+            //Color Locks
+            lockMagenta = false;
+            lockCyan = false;
+            lockYellow = false;
+            lockBlack = false;
             return;
         }
 
@@ -308,6 +340,12 @@ public class PlayerStatus : MonoBehaviour
 
         //Teleport Status
         stampTeleport = data.stampTeleport;
+
+        //Color Locks
+        lockMagenta = data.lockMagenta;
+        lockCyan = data.lockCyan;
+        lockYellow = data.lockYellow ;
+        lockBlack = data.lockBlack;
 
     }
 
@@ -400,9 +438,9 @@ public class PlayerStatus : MonoBehaviour
 
     public void SetControl()
     {
-        _controlValue = PlayerPrefs.GetInt(_controlPrefs);
+        controlValue = PlayerPrefs.GetInt(_controlPrefs);
         //Debug.Log(_controlValue);
-        switch (_controlValue)
+        switch (controlValue)
         {
             case 0:
                 PlayerActions = "PlayerActionsK1";
