@@ -219,7 +219,8 @@ public class UIMaster : MonoBehaviour
 
     public void ShowUnLockText()
     {
-            DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.text;
+        Debug.Log("Mostra texto");
+        DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.text;
     }
 
 }

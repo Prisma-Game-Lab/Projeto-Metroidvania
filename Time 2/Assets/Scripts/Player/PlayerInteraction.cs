@@ -9,8 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public GameObject UIMaster;
     public GameObject GameMaster;
-    public float unlockAnimationTime;
-    private GameObject _mailBoxObject;
+    public float unlockTextTime;
     [HideInInspector] public bool onDoor = false;
     [HideInInspector] public bool onMailBox = false;
     // life statue interaction 
@@ -18,15 +17,16 @@ public class PlayerInteraction : MonoBehaviour
     [HideInInspector] public bool onAddHeartStatue = false;
     //Skill Statue Interaction
     [HideInInspector] public bool onSkillStatue = false;
+
+    private GameObject _mailBoxObject;
     private int _statueId;
     private PlayerVictory _playerVictory;
     private PlayerStatus _playerStatus;
     private MailBox _mailBox;
     private UIMaster _uiMaster;
     private SkillStatue _skillStatue;
-    private ObjectColor _lockColor = ObjectColor.None;
+    private ObjectColor _lockColor;
     private GameObject _finalDoor;
-    private bool _unlocking = false;
 
     void Start()
     {
@@ -34,8 +34,6 @@ public class PlayerInteraction : MonoBehaviour
         _playerStatus = GetComponent<PlayerStatus>();
         _uiMaster = UIMaster.GetComponent<UIMaster>();
         _lockColor = ObjectColor.None;
-
-
     }
 
     public void Interaction(InputAction.CallbackContext ctx)
@@ -53,12 +51,10 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     if(_lockColor != ObjectColor.None)
                     {
-                        _uiMaster.DoorLockPanel.SetActive(false);
+                        //_uiMaster.DoorLockPanel.SetActive(false);
                         _finalDoor.GetComponent<FinalDoor>().ActivateLock(_lockColor);
                         _lockColor = ObjectColor.None;
-                        _unlocking = true;
-                        StartCoroutine(UnlockColor());
-                        
+                        StartCoroutine(UnlockColor());  
                     }
                     else
                     {
@@ -92,41 +88,28 @@ public class PlayerInteraction : MonoBehaviour
                 _uiMaster.ShowSkillDescription(_skillStatue.helpDescription.text);
             }
         }
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("FinalDoor"))
         {
-            Debug.Log("Na porta");
-            //verificar se existem cores a ser colocadas na porta
-            //se sim, tela de colocar cor
             _lockColor = CheckLock();
             _finalDoor = collision.gameObject;
             if (_lockColor != ObjectColor.None)
             {
-                //exibir tela que oferece interação para colocar cor na porta
-                Debug.Log("Na porta depois de pegar cor");
                 _uiMaster.ShowLockPanel(_playerStatus.controlValue);
             }
-            else//se não tela de interação
+            else
             {
-                //_uiMaster.InteractionPanel.SetActive(true);
                 _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
-            }
-            
-            
-            
+            } 
         }
         else if(collision.CompareTag("MailBox")){
-            //_uiMaster.InteractionPanel.SetActive(true);
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
         }
         else if (collision.CompareTag("SkillStatue") || collision.CompareTag("FillLifeStatue") || collision.CompareTag("NewHeartStatue"))
         {
-            //_uiMaster.InteractionPanel.SetActive(true);
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
         }
     }
@@ -139,18 +122,6 @@ public class PlayerInteraction : MonoBehaviour
             _mailBox = _mailBoxObject.GetComponent<MailBox>();
             _mailBox.GetStamp(_mailBox.myMailBox);
         }
-        /*else if (collision.CompareTag("FinalDoor"))
-        {
-            /*_lockColor = CheckLock();
-            _finalDoor = collision.gameObject;
-            if (_lockColor != ObjectColor.None && !_unlocking)
-            {
-                //exibir tela que oferece interação para colocar cor na porta
-                _uiMaster.ShowLockPanel(_playerStatus.controlValue);
-                Debug.Log("Na porta depois de pegar cor");
-            }*/
-        //}*/
-
         else if (collision.CompareTag("FillLifeStatue"))
         {
             onFillHeartSTatue = true;
@@ -210,9 +181,9 @@ public class PlayerInteraction : MonoBehaviour
 
     public IEnumerator UnlockColor()
     {
-        //_uiMaster.ShowUnLockText();
-        yield return new WaitForSeconds(unlockAnimationTime);
-        _unlocking = false;
+        _uiMaster.ShowUnLockText();
+        yield return new WaitForSeconds(unlockTextTime);//tempo para o texto aparecer
+        _uiMaster.DoorLockPanel.SetActive(false);
         _lockColor = CheckLock();
         if (_lockColor != ObjectColor.None)
             _uiMaster.ShowLockPanel(_playerStatus.controlValue);
