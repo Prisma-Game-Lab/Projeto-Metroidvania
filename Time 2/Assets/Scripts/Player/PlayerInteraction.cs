@@ -108,9 +108,13 @@ public class PlayerInteraction : MonoBehaviour
         else if(collision.CompareTag("MailBox")){
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
         }
-        else if (collision.CompareTag("SkillStatue") || collision.CompareTag("FillLifeStatue") || collision.CompareTag("NewHeartStatue"))
+        else if (collision.CompareTag("SkillStatue") || collision.CompareTag("NewHeartStatue"))
         {
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
+        }
+        else if (collision.CompareTag("FillLifeStatue"))
+        {
+            _uiMaster.ShowHealPanel(_playerStatus.controlValue);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -147,7 +151,8 @@ public class PlayerInteraction : MonoBehaviour
         onFillHeartSTatue = false;
         onAddHeartStatue = false;
         onSkillStatue = false;
-        _uiMaster.DoorLockPanel.SetActive(false);
+        if(_uiMaster.DoorLockPanel != null)
+            _uiMaster.DoorLockPanel.SetActive(false);
         _uiMaster.DisableSkillDescription();
 
     }

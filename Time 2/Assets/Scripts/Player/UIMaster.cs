@@ -25,6 +25,7 @@ public class UIMaster : MonoBehaviour
 
     public List<Text> InteractionTexts;
     public List<Text> LockTexts;
+    public List<Text> HealTexts;
     // variavies de monitoramento da UI
     private string _UIItemDescription;
     private string _sceneToGo;
@@ -173,6 +174,11 @@ public class UIMaster : MonoBehaviour
         ShowInteractionText(controlValue);
         InteractionPanel.SetActive(true);
     }
+    public void ShowHealPanel(int controlValue)
+    {
+        ShowHealText(controlValue);
+        InteractionPanel.SetActive(true);
+    }
 
     public void ShowLockPanel(int controlValue)
     {
@@ -222,4 +228,22 @@ public class UIMaster : MonoBehaviour
         DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.text;
     }
 
+    public void ShowHealText(int controlValue)
+    {
+        switch (controlValue)
+        {
+            case 0://teclado1
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[0].text;
+                break;
+            case 1://teclado2
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[1].text;
+                break;
+            case 2://xbox
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[2].text;
+                break;
+            case 3://ps
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[3].text;
+                break;
+        }
+    }
 }
