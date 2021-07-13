@@ -45,13 +45,13 @@ public class InkSpit : MonoBehaviour
                     break;
                 case 2:
                     position = floor.CellToWorld(cell + new Vector3Int(1, 0, 0));
-                    positionCorrected = new Vector3(position.x - 0.5f, position.y + 0.5f, position.z);
+                    positionCorrected = new Vector3(position.x + 0.5f, position.y + 0.5f, position.z);
                     ink = Instantiate(inkTileWall, positionCorrected, Quaternion.identity);
                     Debug.Log("direita\n");
                     break;
                 case 3:
                     position = floor.CellToWorld(cell + new Vector3Int(-1, 0, 0));
-                    positionCorrected = new Vector3(position.x + 1.5f, position.y + 0.5f, position.z);
+                    positionCorrected = new Vector3(position.x + 0.5f, position.y + 0.5f, position.z);
                     ink = Instantiate(inkTileWall, positionCorrected, Quaternion.identity);
                     Vector3 newLocalScale = ink.transform.localScale;
                     newLocalScale.x *= -1;
