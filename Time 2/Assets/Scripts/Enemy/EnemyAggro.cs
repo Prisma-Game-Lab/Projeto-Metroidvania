@@ -114,6 +114,7 @@ public class EnemyAggro : MonoBehaviour
     {
         AudioManager.instance.Play("Tombo");
         _animator.SetBool("Triggered", true);
+        AudioManager.instance.Play("Inimigo_Trigger");
         yield return new WaitForSeconds(aggroPreparationTime);
         _animator.SetBool("Triggered", false);
         _rb.AddForce(MovePos, ForceMode2D.Impulse);

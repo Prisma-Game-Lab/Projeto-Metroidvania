@@ -35,6 +35,7 @@ public class BallSkill : MonoBehaviour
         if (ctx.started && obtained)
         {
             AudioManager.instance.Play("Transform");
+            _playerStatus.StopAllTransformationSounds();
             if(_playerStatus.playerState != PlayerSkill.BallMode)
             {
                 _trasformationParticles.Play();//liga particulas de transformacao

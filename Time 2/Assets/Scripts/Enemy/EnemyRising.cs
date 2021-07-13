@@ -8,6 +8,7 @@ public class EnemyRising : MonoBehaviour
     public float aggroRadius;
     public float aggroSpeed;
     public float aggroPreparationTime;
+    public SpriteRenderer EnemyRisingBody;
     public GameObject enemyBullet;
 
     public float resetAggroTime;
@@ -70,12 +71,17 @@ public class EnemyRising : MonoBehaviour
     private IEnumerator StopAggro()
     {
         _animator.SetBool("Rising", true);
+        AudioManager.instance.Play("Inimigo_Surge");
         _enemyDamage.imortal = false;
         yield return new WaitForSeconds(resetAggroTime);
-        _performingAggro = false;
-        _enemyMovement.enemyState = EnemyState.Idle;
-        _animator.SetBool("Rising", false);
-        _enemyDamage.imortal = true;
+        if (!PlayerInRange())
+        {
+            _performingAggro = false;
+            _enemyMovement.enemyState = EnemyState.Idle;
+            _animator.SetBool("Rising", false);
+            _enemyDamage.imortal = true;
+        }
+
     }
     
     private IEnumerator PrepareAggro()

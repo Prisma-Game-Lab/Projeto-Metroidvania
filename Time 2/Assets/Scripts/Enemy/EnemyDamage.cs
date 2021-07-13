@@ -29,7 +29,12 @@ public class EnemyDamage : MonoBehaviour
 
     private void Start()
     {
+
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        if (gameObject.GetComponent<EnemyRising>() != null)
+        {
+            _sr = gameObject.GetComponent<EnemyRising>().EnemyRisingBody;
+        }
         _rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -54,6 +59,11 @@ public class EnemyDamage : MonoBehaviour
 
             if (!imortal)
             {
+                AudioManager.instance.Play("Inimigo_Dano");
+                if (gameObject.GetComponent<EnemyRising>() != null)
+                {
+                    gameObject.GetComponent<Animator>().enabled = false;
+                }
                 StartCoroutine(FlashSprite());
             
                 // PARA empurrar o inimigo  
@@ -74,13 +84,17 @@ public class EnemyDamage : MonoBehaviour
     {
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
+        AudioManager.instance.Play("Muro_Dano");
+        StartCoroutine(FlashSprite());
+        
+        // MUDAR SOMENTE PARA TESTE 
         if (enemyLife == 0 && !imortal)
         {
+            AudioManager.instance.Play("Muro_Morte");
+            Destroy(gameObject);
             CanDamage = false;
         }
-        // MUDAR SOMENTE PARA TESTE 
-        if(enemyLife == 0 && !imortal)
-            Destroy(gameObject);
+            
     }
     
     // Funcao para ganhar de novo o aggro
@@ -122,12 +136,25 @@ public class EnemyDamage : MonoBehaviour
         if(enemyLife <= 0)
             dieEvent.Invoke();
         else
+        {
+            if (gameObject.GetComponent<EnemyRising>() != null)
+            {
+                gameObject.GetComponent<Animator>().enabled = false;
+            }
             gameObject.GetComponent<EnemyMovement>().enabled = true;
+        }
+            
     }
 
     public void DeathAnimation()
     {
         // ENQUANTO NAO TEM ANIMACAO 
+        if (gameObject.GetComponent<EnemyBullet>() == null)
+        {
+            int random = Random.Range(1, 4);
+            AudioManager.instance.Play(string.Concat("Inimigo_Morte",random));
+        }
+
         Destroy(gameObject);
     }
 }

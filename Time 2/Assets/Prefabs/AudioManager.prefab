@@ -84,7 +84,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Transform
     clip: {fileID: 8300000, guid: 7370c9b65c4be42f1ba5264cd99e824a, type: 3}
-    volume: 0.3
+    volume: 0
     pitch: 1.2
     loop: 0
     source: {fileID: 0}
@@ -104,6 +104,84 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d8f2195310b7a4b1898c1366fc1184e2, type: 3}
     volume: 0.3
     pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Barco
+    clip: {fileID: 8300000, guid: 1a7ac20d988a9448386b864e64438a46, type: 3}
+    volume: 0.3
+    pitch: 1.6
+    loop: 0
+    source: {fileID: 0}
+  - name: Ninja
+    clip: {fileID: 8300000, guid: 36339250ab0284e74b7c7ca65b34ffe7, type: 3}
+    volume: 0.3
+    pitch: 1.4
+    loop: 0
+    source: {fileID: 0}
+  - name: Aviao
+    clip: {fileID: 8300000, guid: f1684d58aaa45441486a7c16fa6f03bd, type: 3}
+    volume: 0.3
+    pitch: 1.4
+    loop: 0
+    source: {fileID: 0}
+  - name: Normal
+    clip: {fileID: 8300000, guid: b8bf3607ef3254735abc41431a5eb43a, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Dano
+    clip: {fileID: 8300000, guid: da54fa328b52c46cd881c615ed063a9e, type: 3}
+    volume: 0.3
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Morte1
+    clip: {fileID: 8300000, guid: fc179646c920c4a59904c81e64d1f6fc, type: 3}
+    volume: 0.3
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Morte2
+    clip: {fileID: 8300000, guid: 7ff188cdf64614e3686a805925bb4c4a, type: 3}
+    volume: 0.3
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Morte3
+    clip: {fileID: 8300000, guid: e4a513e7067e24df6b14ebf9fe205a50, type: 3}
+    volume: 0.3
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Tiro
+    clip: {fileID: 8300000, guid: e5d985b5fcf1a4c029c103477c54a0bd, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Trigger
+    clip: {fileID: 8300000, guid: fe43988fe7db342f7ac0993359089ad7, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Inimigo_Surge
+    clip: {fileID: 8300000, guid: d9a94828f81dc4d6bb75cb6e6ff51754, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Muro_Dano
+    clip: {fileID: 8300000, guid: 70c7b04c9338649b598d5db49d624166, type: 3}
+    volume: 0.3
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Muro_Morte
+    clip: {fileID: 8300000, guid: c23a38146715d407dad1bc0a40f0eb98, type: 3}
+    volume: 0.3
+    pitch: 0.7
     loop: 0
     source: {fileID: 0}
 --- !u!82 &6073523794936321909

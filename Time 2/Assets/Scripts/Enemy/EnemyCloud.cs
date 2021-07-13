@@ -30,6 +30,7 @@ public class EnemyCloud : MonoBehaviour
         GameObject bullet = Instantiate(enemyBullet, pos, _transform.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.down*bulletSpeed, ForceMode2D.Impulse);
         bullet.GetComponent<EnemyBullet>().isRain = true;
+        bullet.transform.up = Vector3.down;
         if (bulletTimeLimit == 0f)
             bulletTimeLimit = 2f;
         bullet.GetComponent<EnemyBullet>().bulletTimeLimit = bulletTimeLimit;

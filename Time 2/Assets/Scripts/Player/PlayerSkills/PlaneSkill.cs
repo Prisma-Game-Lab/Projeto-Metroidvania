@@ -36,6 +36,7 @@ public class PlaneSkill : MonoBehaviour
          if (ctx.started && obtained)
          {
              AudioManager.instance.Play("Transform");
+             _playerStatus.StopAllTransformationSounds();
              if(_playerStatus.playerState != PlayerSkill.PlaneMode)
              {
                  _trasformationParticles.Play();//liga particulas de transformacao
@@ -57,6 +58,7 @@ public class PlaneSkill : MonoBehaviour
                  _playerStatus.playerMovement._jumpbreak = false;
                  _playerStatus.playerAnimator.SetTrigger("PlaneTrigger");
                  _playerStatus.playerAnimator.SetBool("Player", false);
+                 AudioManager.instance.Play("Aviao");
                  
                  if (_playerStatus.rb.velocity.y < -5f)
                  {

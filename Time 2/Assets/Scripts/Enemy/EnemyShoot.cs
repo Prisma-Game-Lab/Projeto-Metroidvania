@@ -122,7 +122,6 @@ public class EnemyShoot : MonoBehaviour{
     
     private IEnumerator PrepareAggro(Vector2 MovePos)
     {
-        AudioManager.instance.Play("Tombo");
         if(_enemyMovement.isFlipped)
             Cannon.transform.right = MovePos;
         else
@@ -137,6 +136,7 @@ public class EnemyShoot : MonoBehaviour{
         bullet.transform.up = MovePos;
 
         bullet.GetComponent<Rigidbody2D>().AddForce(MovePos, ForceMode2D.Impulse);
+        AudioManager.instance.Play("Tiro");
         StartCoroutine(StopAggro());
         
     }

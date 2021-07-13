@@ -32,6 +32,7 @@ public class BoatSkill : MonoBehaviour
         if (ctx.started && obtained)
         {
             AudioManager.instance.Play("Transform");
+            _playerStatus.StopAllTransformationSounds();
             if(_playerStatus.playerState != PlayerSkill.BoatMode)
             {
                 _playerStatus.playerState = PlayerSkill.BoatMode;
@@ -66,6 +67,7 @@ public class BoatSkill : MonoBehaviour
                 _playerStatus.playerAnimator.SetTrigger("BoatTrigger");
                 _playerStatus.playerAnimator.SetBool("Boat", true);
                 _playerStatus.playerAnimator.SetBool("Player", false);
+                AudioManager.instance.Play("Barco");
             }
             else
             {

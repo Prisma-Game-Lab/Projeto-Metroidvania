@@ -34,6 +34,7 @@ public class ShurikenSkill : MonoBehaviour
         if (ctx.started && obtained)
         {
             AudioManager.instance.Play("Transform");
+            _playerStatus.StopAllTransformationSounds();
             if(_playerStatus.playerState != PlayerSkill.ShurikenMode)
             {
                 _trasformationParticles.Play();
@@ -67,6 +68,7 @@ public class ShurikenSkill : MonoBehaviour
                 
                 _playerStatus.playerAnimator.SetBool("Player", false);
                 _playerStatus.playerAnimator.SetTrigger("ShurikenTrigger");
+                AudioManager.instance.Play("Ninja");
             }
             else
             {

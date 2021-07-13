@@ -172,6 +172,14 @@ public class PlayerStatus : MonoBehaviour
         StartCoroutine(WaitRespawn());
 
     }
+
+    public void StopAllTransformationSounds()
+    {
+        AudioManager.instance.Stop("Barco");
+        AudioManager.instance.Stop("Aviao");
+        AudioManager.instance.Stop("Ninja");
+        AudioManager.instance.Stop("Normal");
+    }
     
     private IEnumerator WaitRespawn()
     {

@@ -209,6 +209,7 @@ MonoBehaviour:
   aggroRadius: 4
   aggroSpeed: 8
   aggroPreparationTime: 0.2
+  EnemyRisingBody: {fileID: 5724319308695092169}
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
   resetAggroTime: 3
 --- !u!95 &8940956689521036661
