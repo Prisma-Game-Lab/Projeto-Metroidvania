@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 27090089945739724}
   - component: {fileID: 27090089945739725}
   - component: {fileID: 27090089945739729}
-  - component: {fileID: 27090089945739728}
   - component: {fileID: 2877117576662779237}
   - component: {fileID: 5897080041647197713}
+  - component: {fileID: 1085870401279850409}
   m_Layer: 6
   m_Name: BlackEnemy
   m_TagString: Untagged
@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27090089945739735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.8, y: -2.9, z: 41.757584}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 63.8, y: -3.14, z: 41.757584}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 291a06ba11dcfd64dabab5fbf6683600, type: 3}
-  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
+  m_Sprite: {fileID: -3268015974794613622, guid: 6301870ab786aef4383da9a5b41734a6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -167,22 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &27090089945739728
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27090089945739735}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &2877117576662779237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,4 +196,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   littleMe: {fileID: 27090089945739735, guid: ef60255af4b368d42ac4316d536e901e, type: 3}
+  littleMe2: {fileID: 3770217361901197744, guid: 5372bf04e8009440db2879ffbf0294fd, type: 3}
   numberOfLifes: 1
+--- !u!61 &1085870401279850409
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27090089945739735}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.021496892}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.71, y: 1.76}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.71, y: 1.7170062}
+  m_EdgeRadius: 0

@@ -8,7 +8,7 @@ public class EnemyBomb : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject littleMe;
-    
+    public GameObject littleMe2;
     public int numberOfLifes;
 
     private EnemyMovement _enemyMovement;
@@ -31,7 +31,7 @@ public class EnemyBomb : MonoBehaviour
             posSecondSon.x -= xDiff;
 
             GameObject firstSon = Instantiate(littleMe, posFisrtSon, transform.rotation);
-            GameObject secondSon = Instantiate(littleMe, posSecondSon, transform.rotation);
+            GameObject secondSon = Instantiate(littleMe2, posSecondSon, transform.rotation);
         
             // atualizando o movimento dos filhos 
             EnemyMovement firstSonEnemyMovement = firstSon.GetComponent<EnemyMovement>();
