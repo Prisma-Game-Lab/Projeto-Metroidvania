@@ -252,7 +252,7 @@ public class PlayerStatus : MonoBehaviour
         private void LoadPlayer()
     {
         
-        if(SceneManager.GetActiveScene().name=="Boss 1")
+        if(SceneManager.GetActiveScene().name=="Boss 1" || SceneManager.GetActiveScene().name == "Boss2")
         {
             gameObject.GetComponent<PlayerAttack>().obtained = true;
             sword = true;

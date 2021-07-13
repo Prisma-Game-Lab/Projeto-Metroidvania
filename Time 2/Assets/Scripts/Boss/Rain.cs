@@ -6,17 +6,22 @@ using UnityEngine.Animations;
 
 public class Rain : MonoBehaviour
 {
+    [Header("Tilemap dos tles de chao")]
+    public Tilemap Floor;
+    [Header("Tilemap da agua que estara na fase desde o inicio")]
+    public Tilemap waterTiles;
+    [Header("Tilemaps das camadas de agua que vao encher a cada golpe do player na lingua")]
+    public List<Tilemap> waterSpecialTiles;
+    [Header("Lista das particulas de chuva")]
     public List<ParticleSystem> rainParticles;
+    [Header("Lista de tilemaps das tintas que mancham o chao quando chove")]
     public List<Tilemap> inkTiles;
-    public List<Tilemap> waterTiles;
+    [Header("Lista de possiveis posicoes do inimigo nuvem")]
     public List<GameObject> cloudsPositions;
+    [Header("Quantidade maxima de inimigos nuvem por chuva")]
     public int cloudsLimit;
-    [HideInInspector]public List<Vector3> enemiesPositions;
-    [HideInInspector] public bool specialRain = false;
     [Header("Quantidade de camadas de agua")]
     public int SpecialRainRoundsNumber;
-    public Tilemap Floor;
-    public ParticleSystem spitParticles;
     [Header("Tempo de duração da chuva")]
     public float rainTime;
     [Header("Tempo entre o boss jogar a tinta e a tinta cair")]
@@ -29,6 +34,11 @@ public class Rain : MonoBehaviour
     public float yInferiorLimit;
     [Header("Altura a partir da qual só podem aparecer inimigos tipo torreta ou nuvem")]
     public float yAboveFloor;
+    public ParticleSystem spitParticles;
+    public List<Vector3> enemiesPositions;
+    [HideInInspector] public bool specialRain = false;
+
+    //Prefabs dos inimigos
     public GameObject BasicAggroEnemyPrefab;
     public GameObject EnemyTurretPrefab;
     public GameObject EnemyMagentaPrefab;
@@ -59,7 +69,7 @@ public class Rain : MonoBehaviour
         if (specialRain)
         {
             //encher camada de agua correspondente ao round
-            waterTiles[_actualSpecialRainRound].gameObject.SetActive(true);
+            waterSpecialTiles[_actualSpecialRainRound].gameObject.SetActive(true);
             return;
         }
         foreach(ParticleSystem rain in rainParticles)
@@ -71,8 +81,13 @@ public class Rain : MonoBehaviour
             }
             else if(rain.gameObject.activeSelf && (sortOption % 4 == 1 || sortOption % 4 == 3))// 1/2 de chance de ter inimigo
             {
-                enemiesPositions.Add(FindEnemyPosition(rain.gameObject.transform.position.x));
-                cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
+                Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
+                //if (CheckIfEnemyPositionAvailable(position))
+                //{
+                    enemiesPositions.Add(position);
+                    cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
+                //}
+                
             }       
         }
     }
@@ -118,45 +133,72 @@ public class Rain : MonoBehaviour
         StartCoroutine(WaitRain());
     }
 
-    public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao
+    public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao e nao tem agua
     {
-        int i = Mathf.FloorToInt(yInferiorLimit);
+        
         Vector3Int cell;
         Vector3Int cell2;
-        Vector3 worldPosition = new Vector3(0, 0, 0);
-        for(; i < Mathf.FloorToInt(ySuperiorLimit); i++)
+        Vector3 worldPosition = new Vector3(0f, 0f, 0f);
+        for(int i = Mathf.FloorToInt(yInferiorLimit); i < Mathf.FloorToInt(ySuperiorLimit); i++)
         {
             cell = Floor.WorldToCell(new Vector3(positionX, i, 0));
             cell2 = Floor.WorldToCell(new Vector3(positionX, i + 1, 0));
-            if (Floor.HasTile(cell) && !Floor.HasTile(cell2))
-                worldPosition = new Vector3(positionX, i + 2f, 0);
+            if (Floor.HasTile(cell) && !(Floor.HasTile(cell2)) && !CheckWater(cell2) && !CheckWater(cell))
+            {
+                worldPosition = new Vector3(positionX, i + 1.5f, 0);
+            }
+                
         }
+        
         return worldPosition;
     }
+    public bool CheckIfEnemyPositionAvailable(Vector3 position)//coloca inimigos somente onde tem tile de chao e nao tem agua
+    {
+        if (position == new Vector3(0f, 0f, 0f))
+            return false;
+        foreach (Vector3 enemyPosition in enemiesPositions)
+        {
+            Debug.Log("Verificando");
+            if (Floor.WorldToCell(position) == Floor.WorldToCell(enemyPosition))
+            {
+                Debug.Log("Falso");
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void SetEnemyPosition()
     {
         int i = 0;
-        bool avaiablePosition = true;
+        bool availablePosition = true;
         int numberOfClouds = 0;
         foreach(Vector3 enemyPosition in enemiesPositions)
         {
+            availablePosition = true;
+            i = 0;
             while (i < EnemiesParent.transform.childCount)//verifica se ja tem inimigo naquele tile e impede que apareca outro
             {
-                if (Floor.WorldToCell(EnemiesParent.transform.GetChild(i).position) == Floor.WorldToCell(enemyPosition))
+                Debug.Log(enemyPosition);
+                if (Floor.WorldToCell(enemyPosition) == Floor.WorldToCell(EnemiesParent.transform.GetChild(i).position))
                 {
-                    avaiablePosition = false;
+                    Debug.Log("Ja existe inimigo");
+                    availablePosition = false;
                     break;
                 }  
                 i++;
             }
 
-            if (enemyPosition.y < yAboveFloor && avaiablePosition)
+            if (enemyPosition.y < yAboveFloor && availablePosition)
             {
+                Debug.Log("Inimigo chao");
                 GameObject enemy = Instantiate(SortFloorEnemy(), enemyPosition, Quaternion.identity);
                 enemy.transform.SetParent(EnemiesParent.transform);
+                enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
             }
-            else if(enemyPosition.y >= yAboveFloor && avaiablePosition)
+            else if(enemyPosition.y >= yAboveFloor && availablePosition)
             {
+                Debug.Log("Inimigo plataforma");
                 GameObject enemyType = SortPlatformEnemy();
                 if(enemyType == EnemyYellowCloudPrefab && numberOfClouds<cloudsLimit)
                 {
@@ -172,6 +214,7 @@ public class Rain : MonoBehaviour
                             break;
                         }
                     }
+                    
                 }
                 else
                 {
@@ -179,7 +222,12 @@ public class Rain : MonoBehaviour
                     enemy.transform.SetParent(EnemiesParent.transform);
                 } 
             }
+            else
+            {
+                Debug.Log("Posicao já ocupada");
+            }
         }
+        
     }
 
     public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
@@ -208,6 +256,20 @@ public class Rain : MonoBehaviour
             default:
                 return EnemyYellowCloudPrefab;
         }
+    }
+
+    public bool CheckWater(Vector3Int cell)
+    {
+        if (waterTiles.HasTile(cell))
+            return true;
+        foreach(Tilemap water in waterSpecialTiles)
+        {
+            if (water.gameObject.activeSelf && water.HasTile(cell))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
