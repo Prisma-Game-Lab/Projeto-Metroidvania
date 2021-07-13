@@ -60,7 +60,7 @@ public class PlayerVictory : MonoBehaviour
 
     public bool CollectedAll()
     {
-        if (playerStatus.magenta && playerStatus.cyan && playerStatus.yellow && playerStatus.black)
+        if (playerStatus.lockMagenta && playerStatus.lockCyan && playerStatus.lockYellow && playerStatus.lockBlack)
             return true;
         return false;
     }
