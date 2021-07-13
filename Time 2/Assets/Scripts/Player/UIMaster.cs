@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIMaster : MonoBehaviour
 {
@@ -153,11 +154,14 @@ public class UIMaster : MonoBehaviour
 
     private IEnumerator WaitDoor1()//mostra o texto da porta quando ha vitoria
     {
-        DoorPanel.SetActive(true);
-        DoorPanel.transform.GetChild(0).gameObject.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
-        DoorPanel.transform.GetChild(0).gameObject.SetActive(false);
-        DoorPanel.SetActive(false);
+        Fade.GetComponent<Animator>().SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Boss 1");
+        //DoorPanel.SetActive(true);
+        //DoorPanel.transform.GetChild(0).gameObject.SetActive(true);
+        
+        //DoorPanel.transform.GetChild(0).gameObject.SetActive(false);
+        //DoorPanel.SetActive(false);
     }
 
     private IEnumerator WaitDoor2()//mostra o texto da porta quando ainda nao foram coletadadas todas as tintas

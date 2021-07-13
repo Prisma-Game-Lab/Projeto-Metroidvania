@@ -264,7 +264,7 @@ public class PlayerStatus : MonoBehaviour
             ball = true;
             gameObject.GetComponent<ShurikenSkill>().obtained = true;
             shuriken = true;
-            totalLife = playerHealth.totalLife;
+            playerHealth.life = playerHealth.startLife;
             return;
         }
         PlayerData data = SaveSystem.LoadPlayer();

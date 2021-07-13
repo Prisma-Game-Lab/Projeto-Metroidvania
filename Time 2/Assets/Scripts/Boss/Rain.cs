@@ -8,9 +8,13 @@ public class Rain : MonoBehaviour
 {
     public List<ParticleSystem> rainParticles;
     public List<Tilemap> inkTiles;
+    public List<Tilemap> waterTiles;
     public List<GameObject> cloudsPositions;
     public int cloudsLimit;
     [HideInInspector]public List<Vector3> enemiesPositions;
+    [HideInInspector] public bool specialRain = false;
+    [Header("Quantidade de camadas de agua")]
+    public int SpecialRainRoundsNumber;
     public Tilemap Floor;
     public ParticleSystem spitParticles;
     [Header("Tempo de duração da chuva")]
@@ -31,10 +35,18 @@ public class Rain : MonoBehaviour
     public GameObject EnemyCyanPrefab;
     public GameObject EnemyYellowCloudPrefab;
     public GameObject EnemiesParent;
-    
 
+    private int _actualSpecialRainRound;
     public void SetRainActive()
     {
+        if (specialRain)
+        {
+            foreach (ParticleSystem rain in rainParticles)
+            {
+                    rain.gameObject.SetActive(true);
+            }
+            return;
+        }
         foreach (ParticleSystem rain in rainParticles)
         {
             int sortOption = Random.Range(1, 100);
@@ -44,6 +56,12 @@ public class Rain : MonoBehaviour
     }
     public void SetRainTilesActive()
     {
+        if (specialRain)
+        {
+            //encher camada de agua correspondente ao round
+            waterTiles[_actualSpecialRainRound].gameObject.SetActive(true);
+            return;
+        }
         foreach(ParticleSystem rain in rainParticles)
         {
             int sortOption = Random.Range(1, 100);
