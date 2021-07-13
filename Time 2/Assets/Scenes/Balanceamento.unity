@@ -518,6 +518,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 407143104}
     m_Modifications:
+    - target: {fileID: 5017939160169245544, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
+      propertyPath: knockbackForce.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5017939160169245545, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
       propertyPath: enemyLife
       value: 2
@@ -2453,11 +2457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7331859493690822234, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.23
+      value: 17.7
       objectReference: {fileID: 0}
     - target: {fileID: 7331859493690822234, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.64
+      value: -4.21
       objectReference: {fileID: 0}
     - target: {fileID: 7331859493746999020, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_ScreenY
@@ -8905,11 +8909,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8601953840782243195, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.23
+      value: 17.7
       objectReference: {fileID: 0}
     - target: {fileID: 8601953840782243195, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.75
+      value: -6.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83770053b6fb249b898e66712f37b61d, type: 3}
