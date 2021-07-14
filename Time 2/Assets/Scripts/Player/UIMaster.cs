@@ -18,15 +18,15 @@ public class UIMaster : MonoBehaviour
     public ItemDescription itemDescription;
     public GameObject InteractionPanel;
     public GameObject DoorLockPanel;
-    public Text UnlockColorText;
+    public LanguageComponent UnlockColorText;
 
     public Destination playerDestination;
 
     public GameObject Fade;
 
-    public List<Text> InteractionTexts;
-    public List<Text> LockTexts;
-    public List<Text> HealTexts;
+    public List<LanguageComponent> InteractionTexts;
+    public List<LanguageComponent> LockTexts;
+    public List<LanguageComponent> HealTexts;
     // variavies de monitoramento da UI
     private string _UIItemDescription;
     private string _sceneToGo;
@@ -35,7 +35,6 @@ public class UIMaster : MonoBehaviour
 
     private void Start()
     {
-        
         _UILife = life.life;
         itemDescription.description = "";
         _UIItemDescription = itemDescription.description;
@@ -194,16 +193,16 @@ public class UIMaster : MonoBehaviour
         switch (controlValue)
         {
             case 0://teclado1
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[0].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[0].rightText;
                 break;
             case 1://teclado2
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[1].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[1].rightText;
                 break;
             case 2://xbox
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[2].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[2].rightText;
                 break;
             case 3://ps
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[3].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = InteractionTexts[3].rightText;
                 break;
         }
     }
@@ -213,23 +212,23 @@ public class UIMaster : MonoBehaviour
         switch (controlValue)
         {
             case 0://teclado1
-                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[0].text;
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[0].rightText;
                 break;
             case 1://teclado2
-                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[1].text;
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[1].rightText;
                 break;
             case 2://xbox
-                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[2].text;
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[2].rightText;
                 break;
             case 3://ps
-                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[3].text;
+                DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LockTexts[3].rightText;
                 break;
         }
     }
 
     public void ShowUnLockText()
     {
-        DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.text;
+        DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.rightText;
     }
 
     public void ShowHealText(int controlValue)
@@ -237,16 +236,16 @@ public class UIMaster : MonoBehaviour
         switch (controlValue)
         {
             case 0://teclado1
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[0].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[0].rightText;
                 break;
             case 1://teclado2
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[1].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[1].rightText;
                 break;
             case 2://xbox
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[2].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[2].rightText;
                 break;
             case 3://ps
-                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[3].text;
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = HealTexts[3].rightText;
                 break;
         }
     }

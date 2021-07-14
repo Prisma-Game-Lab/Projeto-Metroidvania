@@ -21,13 +21,15 @@ public class GateListener : MonoBehaviour
                 if (playerDestination.door == gate.myDoor)
                 {
                     Vector3 spawPosition = gate.gameObject.transform.position;
+                    float offset = gate.gameObject.GetComponent<BoxCollider2D>().size.x * 0.5f;
+                    spawPosition.x += offset;
                     switch (gate.typerOfGate)
                     {
                         case TyperOfGate.Left:
-                            spawPosition.x += 10f;
+                            spawPosition.x += 3f;
                             break;
                         case TyperOfGate.Right:
-                            spawPosition.x -= 10f;
+                            spawPosition.x -= 3f;
                             Vector3 newLocalScale = player.transform.localScale;
                             newLocalScale.x *= -1;
                             player.transform.localScale = newLocalScale;
