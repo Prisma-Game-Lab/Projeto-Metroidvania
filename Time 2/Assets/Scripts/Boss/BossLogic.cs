@@ -28,6 +28,7 @@ public class BossLogic : MonoBehaviour
     [HideInInspector] public InkAttack inkAttack;
 
     private bool _canTakeDamage;
+    private Animator _animator;
     
     void Start()
     {
@@ -41,20 +42,16 @@ public class BossLogic : MonoBehaviour
         NumberOfFastTongueAttacks.Reverse();
         NumberOfInkAttacks.Reverse();
         _canTakeDamage = true;
+        _animator = gameObject.GetComponent<Animator>();
+        _animator.SetBool("Black", true);
+        _animator.SetTrigger("Prepare");
         StartCoroutine(PerformRounds());
 
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private IEnumerator PerformRounds()
     {
-        Debug.Log("antes do while");
         yield return new WaitForSeconds(1f);
         while (life > 0)
         {
@@ -62,8 +59,10 @@ public class BossLogic : MonoBehaviour
             
                 for (int i = 0; i < attacks; i++)
                 {
+                    
                     float waitTime = PerformRandomAttack();
                     yield return new WaitForSeconds(waitTime);
+
                     /*int lickTimes = NumberOfFastTongueAttacks[life-1];
                     int seconds = 1; 
                     tongueAttack.PerformTongueAttack(seconds,lickTimes);
@@ -79,9 +78,11 @@ public class BossLogic : MonoBehaviour
                 // wait to go to new position 
                 yield return new WaitForSeconds(3);
 
+                _animator.SetTrigger("BigTongue");
                 tongueAttack.TongueSlowAttack();
                 // time to perform slow tongue 
                 yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
+                
             
         }
     }

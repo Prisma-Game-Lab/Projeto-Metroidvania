@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,16 +19,19 @@ public class InkAttack : MonoBehaviour
     public Tilemap floor;
     public GameObject inkTileFloor;
     public GameObject inkTileWall;
+    public GameObject TonguePosition;
 
     private Transform _transform;
     private Transform _playerTransform;
+    private Animator _animator;
     private Rigidbody2D _rb;
     private bool _performingAttack = false;
 
-    private void Update()
+    private void Start()
     {
         _transform = gameObject.GetComponent<Transform>();
         _rb = gameObject.GetComponent<Rigidbody2D>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
 
@@ -39,7 +43,7 @@ public class InkAttack : MonoBehaviour
 
         if(hit.Length > 0)
         {
-            if (!_performingAttack)//se o inimigo não estiver atacando ou no tempo de espera entre um ataque e outro
+            if (!_performingAttack)//se o inimigo nï¿½o estiver atacando ou no tempo de espera entre um ataque e outro
             {
                 _playerTransform = hit[0].transform;
                 return true;
@@ -96,10 +100,11 @@ public class InkAttack : MonoBehaviour
     private IEnumerator PrepareAttack(Vector2 MovePos)
     {
 
-        //animacaoo de preparação do cuspe de tinta
+        //animacaoo de preparaï¿½ï¿½o do cuspe de tinta
         yield return new WaitForSeconds(attackPreparationTime);
+        _animator.SetTrigger("Idle");
         // criar a bala 
-        GameObject bullet = Instantiate(bossSpit, _transform.position, _transform.rotation);
+        GameObject bullet = Instantiate(bossSpit, TonguePosition.transform.position, _transform.rotation);
         bullet.GetComponent<InkSpit>().inkTileFloor = inkTileFloor;
         bullet.GetComponent<InkSpit>().inkTileWall = inkTileWall;
         bullet.GetComponent<InkSpit>().floor = floor;
@@ -112,6 +117,7 @@ public class InkAttack : MonoBehaviour
     {
         for(int i = 0; i< times; i++)
         {
+            _animator.SetTrigger("Prepare");
             PerformInkAttack();
             yield return new WaitForSeconds(attackPreparationTime + resetAttackTime + 1f);
         }

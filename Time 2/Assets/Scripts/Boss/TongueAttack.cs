@@ -28,9 +28,12 @@ public class TongueAttack : MonoBehaviour
 
     [Header("Prefab da lingua do boss")]
     public GameObject TonguePrefab;
+
+    public GameObject TonguePosition;
     
     private Transform _transform;
     private Vector3 _playerPosition;
+    private Animator _animator;
     
     private SpriteRenderer _sr;
 
@@ -39,8 +42,9 @@ public class TongueAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _transform = transform;
+        _transform = TonguePosition.transform;
         _sr = gameObject.GetComponent<SpriteRenderer>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     // seconds time for make the attack, times e o numero de ataques 
@@ -112,6 +116,7 @@ public class TongueAttack : MonoBehaviour
         // criar a lingua em direcao ao player
         Vector3 dist = _transform.position - _playerPosition;
         Vector3 initial = _transform.position;
+        _animator.SetTrigger("Idle");
         for (int i = 0; i < (int)(tongueSpeed + 1); i++)
         {
             
@@ -142,6 +147,7 @@ public class TongueAttack : MonoBehaviour
     {
         // mostrar animacao de preparacao 
         AudioManager.instance.Play("Tombo");
+        _animator.SetTrigger("Prepare");
         yield return new WaitForSeconds(preparationTime);
         if (PlayerInRange())
         {
