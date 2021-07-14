@@ -10816,6 +10816,7 @@ MonoBehaviour:
   playerLifeStatue: {fileID: 0}
   transformationParticles: {fileID: 1913081182035609188}
   willRespawn: 0
+  controlValue: 0
   playerHealth: {fileID: 11400000, guid: ddd46d8dbda19421f81016db4a4ce479, type: 2}
   PlayerActions: 
   GlobalActions: 
@@ -10839,6 +10840,10 @@ MonoBehaviour:
   stampBlack: 0
   stampLobby: 0
   stampTeleport: 0
+  lockMagenta: 0
+  lockCyan: 0
+  lockYellow: 0
+  lockBlack: 0
 --- !u!114 &2348440294670770236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11028,10 +11033,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIMaster: {fileID: 0}
   GameMaster: {fileID: 0}
+  unlockTextTime: 0
   onDoor: 0
   onMailBox: 0
   onFillHeartSTatue: 0
   onAddHeartStatue: 0
+  onSkillStatue: 0
 --- !u!95 &5168414375088595286
 Animator:
   serializedVersion: 3
@@ -11089,9 +11096,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ba69eb8bd42420888dcc70aa0d6165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineVirtualCamera: {fileID: 0}
-  WalkVelocity: 12
-  timeUntilFade: 0.5
+  WalkVelocity: 5
+  timeUntilFade: 1
 --- !u!1 &2348440294905451807
 GameObject:
   m_ObjectHideFlags: 0
