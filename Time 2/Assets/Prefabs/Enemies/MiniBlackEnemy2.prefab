@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  pointStart: 2
-  pointEnd: 2
+  pointStart: 3
+  pointEnd: 3
   enemyMovement: 0
   isFlipped: 0
   knockbackForce: {x: 5, y: 3}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   littleMe: {fileID: 3770217361901197744}
   littleMe2: {fileID: 3770217361901197744}
-  numberOfLifes: 2
+  numberOfLifes: 1
 --- !u!95 &3894515384283663005
 Animator:
   serializedVersion: 3
