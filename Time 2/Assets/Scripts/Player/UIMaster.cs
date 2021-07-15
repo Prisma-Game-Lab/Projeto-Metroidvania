@@ -155,7 +155,7 @@ public class UIMaster : MonoBehaviour
     {
         Fade.GetComponent<Animator>().SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Boss 1");
+        SceneManager.LoadScene("BossDoorCutscene");
         //DoorPanel.SetActive(true);
         //DoorPanel.transform.GetChild(0).gameObject.SetActive(true);
         

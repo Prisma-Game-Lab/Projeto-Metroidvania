@@ -12,10 +12,12 @@ public class Cutscene : MonoBehaviour
     private double _videoDuration;
     public Animator fade;
     public GameObject firstButtonCutscene;
+    public string SceneToLoadNext;
 
     // Start is called before the first frame update
     void Start()
     {
+        fade.SetTrigger("Fade");
         _videoDuration = video.clip.length;
         StartCoroutine(WaitVideo());
         EventSystem.current.SetSelectedGameObject(firstButtonCutscene);
@@ -36,17 +38,17 @@ public class Cutscene : MonoBehaviour
     {
         yield return new WaitForSeconds((float)_videoDuration-1f);
         //fade.gameObject.SetActive(true);
-        fade.SetTrigger("Start");
+        fade.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene(SceneToLoadNext);
     }
 
     private IEnumerator WaitFade()
     {
         video.Stop();
-        fade.SetTrigger("Start");
+        fade.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene(SceneToLoadNext);
     }
 
 }
