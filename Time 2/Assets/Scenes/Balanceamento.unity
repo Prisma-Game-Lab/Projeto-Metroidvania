@@ -198,6 +198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1085870401279850409, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2545344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085870401279850409, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.20973903
+      objectReference: {fileID: 0}
     - target: {fileID: 2877117576662779237, guid: 125c2cee2693a4c8db194f54c1de45ef, type: 3}
       propertyPath: m_Enabled
       value: 0
