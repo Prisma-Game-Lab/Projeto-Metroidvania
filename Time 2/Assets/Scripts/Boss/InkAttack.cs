@@ -64,23 +64,7 @@ public class InkAttack : MonoBehaviour
                 direction = -1f;
             }
             _rb.velocity = Vector2.zero;
-            //bool isFlipped = _enemyMovement.isFlipped;
-            if (/*!isFlipped && */direction > 0)
-            {
-                Vector3 newLocalScale = transform.localScale;
-                newLocalScale.x *= -1;
-                _transform.localScale = newLocalScale;
-                //_enemyMovement.isFlipped = true;
-            }
-
-            // movendo para a direta flipado. Vai flipar 
-            if (/*isFlipped && */direction < 0)
-            {
-                Vector3 newLocalScale = transform.localScale;
-                newLocalScale.x *= -1;
-                _transform.localScale = newLocalScale;
-                //_enemyMovement.isFlipped = false;
-            }
+            
 
             Vector2 MovePos = (_playerTransform.position - _transform.position);
             MovePos = MovePos.normalized;
@@ -100,7 +84,7 @@ public class InkAttack : MonoBehaviour
     private IEnumerator PrepareAttack(Vector2 MovePos)
     {
 
-        //animacaoo de prepara��o do cuspe de tinta
+        //animacaoo de preparacao do cuspe de tinta
         yield return new WaitForSeconds(attackPreparationTime);
         _animator.SetTrigger("Idle");
         // criar a bala 

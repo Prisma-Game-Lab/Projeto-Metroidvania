@@ -97,7 +97,7 @@ public class PlayerStatus : MonoBehaviour
     [HideInInspector] public bool lockYellow = false;
     [HideInInspector] public bool lockBlack = false;
 
-
+    public GameObject BossSafePosition;
     // Start is called before the first frame update
 
     private void Awake()
@@ -165,7 +165,15 @@ public class PlayerStatus : MonoBehaviour
     
     private void ReturnPlayerToSafePos()
     {
-        transform.position = _lastSafePos;
+        if(BossSafePosition != null)
+        {
+            transform.position = BossSafePosition.transform.position;
+        }
+        else
+        {
+            transform.position = _lastSafePos;
+        }
+        
         rb.velocity = Vector2.zero;
         // transformar o player no estado normal
         SetToNormalState();

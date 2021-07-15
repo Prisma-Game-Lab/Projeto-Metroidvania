@@ -26,6 +26,7 @@ public class BossLogic : MonoBehaviour
     public GameObject BossDoor;
     [HideInInspector] public Rain rain;
     [HideInInspector] public InkAttack inkAttack;
+    [HideInInspector] public bool tongueAttacking = false;
 
     private bool _canTakeDamage;
     private Animator _animator;
@@ -63,6 +64,7 @@ public class BossLogic : MonoBehaviour
                     
                     float waitTime = PerformRandomAttack();
                     yield return new WaitForSeconds(waitTime);
+                    tongueAttacking = false;
 
                     /*int lickTimes = NumberOfFastTongueAttacks[life-1];
                     int seconds = 1; 
@@ -81,8 +83,10 @@ public class BossLogic : MonoBehaviour
 
                 _animator.SetTrigger("BigTongue");
                 tongueAttack.TongueSlowAttack();
+                tongueAttacking = true;
                 // time to perform slow tongue 
                 yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
+                tongueAttacking = false;
                 /*if (IsDamaged(beforeLife))
                 {
                     rain.StartSpecialRain();
@@ -129,7 +133,8 @@ public class BossLogic : MonoBehaviour
             int lickTimes = NumberOfFastTongueAttacks[life - 1];
             int seconds = 1;
             tongueAttack.PerformTongueAttack(seconds, lickTimes);
-            //time to perform fast tongue attacks 
+            //time to perform fast tongue attacks
+            tongueAttacking = true;
              return lickTimes * (seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1;
             //performar lingua
             //esperar tempo de conclusao da lingua

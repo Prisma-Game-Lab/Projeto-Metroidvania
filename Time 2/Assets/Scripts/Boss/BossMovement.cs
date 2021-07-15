@@ -11,6 +11,7 @@ public class BossMovement : MonoBehaviour
     public int startPosition;
 
     public float speed;
+    [HideInInspector] public bool isFlipped = false;
 
     private int actualPos;
 
@@ -25,6 +26,7 @@ public class BossMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Flip();
         if (!IsStoped)
         {
             Move();
@@ -50,5 +52,51 @@ public class BossMovement : MonoBehaviour
 
             IsStoped = true;
         }
+    }
+
+    public void Flip()
+    {
+        if (!gameObject.GetComponent<BossLogic>().tongueAttacking)
+        {
+            if (!isFlipped && !PlayerInRange())
+            {
+                Vector3 newLocalScale = transform.localScale;
+                newLocalScale.x *= -1;
+                transform.localScale = newLocalScale;
+                isFlipped = true;
+            }
+
+            // movendo para a direta flipado. Vai flipar 
+            if (isFlipped && PlayerInRange())
+            {
+                Vector3 newLocalScale = transform.localScale;
+                newLocalScale.x *= -1;
+                transform.localScale = newLocalScale;
+                isFlipped = false;
+            }
+        }
+    }
+
+    private bool PlayerInRange()
+    {
+        LayerMask layer = LayerMask.GetMask("Player");
+        Collider2D[] hitWall = Physics2D.OverlapCircleAll(transform.position, 300, layer);
+
+        // Verificar se o player esta no range 
+        if (hitWall.Length > 0)
+        {
+            Vector3 playerPosition = hitWall[0].transform.position;
+            if (transform.position.x > playerPosition.x)
+            {
+                return true;
+            }
+            else
+                return false;
+
+
+        }
+
+        return false;
+
     }
 }

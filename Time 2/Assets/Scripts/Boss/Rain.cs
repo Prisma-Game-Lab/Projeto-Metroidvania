@@ -71,6 +71,7 @@ public class Rain : MonoBehaviour
                 int sortOption = Random.Range(1, 100);
                 if (sortOption % 2 == 0 && !rain.gameObject.activeSelf)
                 {
+                    Debug.Log("Ativou");
                     rain.gameObject.SetActive(true);
                     numOfRains++;
                 }
@@ -202,7 +203,7 @@ public class Rain : MonoBehaviour
         Vector3Int cell;
         Vector3Int cell2;
         Vector3 worldPosition = new Vector3(0f, 0f, 0f);
-        for(int i = Mathf.FloorToInt(yInferiorLimit); i < Mathf.FloorToInt(ySuperiorLimit); i++)
+        for(int i = Mathf.FloorToInt(yInferiorLimit); i < Mathf.FloorToInt(ySuperiorLimit) + 1; i++)
         {
             cell = Floor.WorldToCell(new Vector3(positionX, i, 0));
             cell2 = Floor.WorldToCell(new Vector3(positionX, i + 1, 0));
@@ -240,7 +241,7 @@ public class Rain : MonoBehaviour
         {
             availablePosition = true;
             i = 0;
-            while (i < EnemiesParent.transform.childCount)//verifica se ja tem inimigo naquele tile e impede que apareca outro
+            /*while (i < EnemiesParent.transform.childCount)//verifica se ja tem inimigo naquele tile e impede que apareca outro
             {
                 Debug.Log(enemyPosition);
                 if (Floor.WorldToCell(enemyPosition) == Floor.WorldToCell(EnemiesParent.transform.GetChild(i).position))
@@ -250,14 +251,14 @@ public class Rain : MonoBehaviour
                     break;
                 }  
                 i++;
-            }
+            }*/
 
             if (enemyPosition.y < yAboveFloor && availablePosition)
             {
                 Debug.Log("Inimigo chao");
                 GameObject enemy = Instantiate(SortFloorEnemy(), enemyPosition, Quaternion.identity);
-                enemy.transform.SetParent(EnemiesParent.transform);
-                enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+                //enemy.transform.SetParent(EnemiesParent.transform);
+                //enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
             }
             else if(enemyPosition.y >= yAboveFloor && availablePosition)
             {
@@ -271,7 +272,7 @@ public class Rain : MonoBehaviour
                         {
                             GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
                             enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
-                            enemy.transform.SetParent(EnemiesParent.transform);
+                            //enemy.transform.SetParent(EnemiesParent.transform);
                             cloudPosition.GetComponent<CloudPosition>().haveRained = false;
                             numberOfClouds++;
                             break;
@@ -282,7 +283,7 @@ public class Rain : MonoBehaviour
                 else
                 {
                     GameObject enemy = Instantiate(EnemyTurretPrefab, enemyPosition, Quaternion.identity);
-                    enemy.transform.SetParent(EnemiesParent.transform);
+                    //enemy.transform.SetParent(EnemiesParent.transform);
                 } 
             }
             else
@@ -295,17 +296,7 @@ public class Rain : MonoBehaviour
 
     public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
     {
-        int sortOption = Random.Range(1, 1000) % 3;
-
-        switch (sortOption)
-        {
-            case 0:
-                return EnemyMagentaPrefab;
-            case 1:
-                return EnemyCyanPrefab;
-            default:
-                return BasicAggroEnemyPrefab;
-        }  
+        return BasicAggroEnemyPrefab;
     }
 
     public GameObject SortPlatformEnemy()//funcao para sortear qual inimigo vai surgir na posicao

@@ -31,8 +31,15 @@ public class EnemyJump : EnemyMovement
             _alreadyJumped = false;
         }
     }
-    
-    
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Verifica a morte pela agua
+        if (collision.collider.CompareTag("Water"))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Jump()
     {

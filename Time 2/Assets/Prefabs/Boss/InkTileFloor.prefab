@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2012855514696400443}
   - component: {fileID: 3159077148120621224}
   - component: {fileID: -3448634323725803409}
-  m_Layer: 4
+  m_Layer: 10
   m_Name: InkTileFloor
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009214401, y: 0.4131279}
+  m_Offset: {x: 0.009214401, y: 0.43164825}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -121,5 +121,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9017143, y: 0.16146088}
+  m_Size: {x: 0.9017143, y: 0.23820496}
   m_EdgeRadius: 0

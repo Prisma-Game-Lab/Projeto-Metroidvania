@@ -129,7 +129,6 @@ public class EnemyAggro : MonoBehaviour
         // Verifica a morte pela agua
         if (collision.collider.CompareTag("Water"))
         {
-            Debug.Log("agua");
             Destroy(gameObject);
         }
     }
