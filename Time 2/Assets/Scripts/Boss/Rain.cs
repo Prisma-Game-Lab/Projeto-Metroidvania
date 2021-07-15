@@ -296,7 +296,7 @@ public class Rain : MonoBehaviour
 
     public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
     {
-        return BasicAggroEnemyPrefab;
+        return EnemyTurretPrefab;
     }
 
     public GameObject SortPlatformEnemy()//funcao para sortear qual inimigo vai surgir na posicao
