@@ -41,13 +41,11 @@ public class InkSpit : MonoBehaviour
                     position = floor.CellToWorld(cell + new Vector3Int(0, -1, 0));
                     positionCorrected = new Vector3(position.x + 0.5f, position.y + 0.5f, position.z);
                     ink = Instantiate(inkTileFloor, positionCorrected, Quaternion.identity);
-                    Debug.Log("Chao\n");
                     break;
                 case 2:
                     position = floor.CellToWorld(cell + new Vector3Int(1, 0, 0));
                     positionCorrected = new Vector3(position.x + 0.5f, position.y + 0.5f, position.z);
                     ink = Instantiate(inkTileWall, positionCorrected, Quaternion.identity);
-                    Debug.Log("direita\n");
                     break;
                 case 3:
                     position = floor.CellToWorld(cell + new Vector3Int(-1, 0, 0));
@@ -56,7 +54,6 @@ public class InkSpit : MonoBehaviour
                     Vector3 newLocalScale = ink.transform.localScale;
                     newLocalScale.x *= -1;
                     ink.transform.localScale = newLocalScale;
-                    Debug.Log("esquerda\n");
                     break;
             }
             Destroy(gameObject);

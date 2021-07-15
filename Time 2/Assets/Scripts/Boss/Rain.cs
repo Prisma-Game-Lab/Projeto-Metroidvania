@@ -6,22 +6,24 @@ using UnityEngine.Animations;
 
 public class Rain : MonoBehaviour
 {
-    [Header("Tilemap dos tles de chao")]
+    [Header("Tilemap dos tiles de chao")]
     public Tilemap Floor;
     [Header("Tilemap da agua que estara na fase desde o inicio")]
     public Tilemap waterTiles;
-    [Header("Tilemaps das camadas de agua que vao encher a cada golpe do player na lingua")]
-    public List<Tilemap> waterSpecialTiles;
+    /*[Header("Tilemaps das camadas de agua que vao encher a cada golpe do player na lingua")]
+    public List<Tilemap> waterSpecialTiles;*/
     [Header("Lista das particulas de chuva")]
     public List<ParticleSystem> rainParticles;
     [Header("Lista de tilemaps das tintas que mancham o chao quando chove")]
     public List<Tilemap> inkTiles;
     [Header("Lista de possiveis posicoes do inimigo nuvem")]
     public List<GameObject> cloudsPositions;
+    [Header("Lista de possiveis posicoes do inimigo torreta")]
+    public List<GameObject> turretPositions;
     [Header("Quantidade maxima de inimigos nuvem por chuva")]
     public int cloudsLimit;
-    [Header("Quantidade de camadas de agua")]
-    public int SpecialRainRoundsNumber;
+    //[Header("Quantidade de camadas de agua")]
+    //public int SpecialRainRoundsNumber;
     [Header("Tempo de duração da chuva")]
     public float rainTime;
     [Header("Tempo entre o boss jogar a tinta e a tinta cair")]
@@ -32,10 +34,10 @@ public class Rain : MonoBehaviour
     public float ySuperiorLimit;
     [Header("Altura do limite inferior da fase")]
     public float yInferiorLimit;
-    [Header("Altura a partir da qual só podem aparecer inimigos tipo torreta ou nuvem")]
+    [Header("Altura a partir da qual podem aparecer inimigos nuvem")]
     public float yAboveFloor;
     public ParticleSystem spitParticles;
-    public List<Vector3> enemiesPositions;
+    [HideInInspector] public List<Vector3> enemiesPositions;
     [HideInInspector] public bool specialRain = false;
     [Header("Minimo de lugares onde deve haver chuva")]
     public int rainsMin;
@@ -43,27 +45,33 @@ public class Rain : MonoBehaviour
     public int enemiesMin;
     [Header("Minimo de manchas de tinta no chao por chuva")]
     public int inkMin;
+    /*[Header("Maximo de lugares onde deve haver chuva")]
+    public int rainsMax;
+    [Header("Maximo de inimigos surgindo por chuva")]
+    public int enemiesMax;
+    [Header("Maximo de manchas de tinta no chao por chuva")]
+    public int inkMax;*/
 
     //Prefabs dos inimigos
-    public GameObject BasicAggroEnemyPrefab;
+    //public GameObject BasicAggroEnemyPrefab;
     public GameObject EnemyTurretPrefab;
-    public GameObject EnemyMagentaPrefab;
-    public GameObject EnemyCyanPrefab;
+    //public GameObject EnemyMagentaPrefab;
+    //public GameObject EnemyCyanPrefab;
     public GameObject EnemyYellowCloudPrefab;
     public GameObject EnemiesParent;
 
-    private int _actualSpecialRainRound = 0;
+    //private int _actualSpecialRainRound = 0;
     public void SetRainActive()
     {
         int numOfRains = 0;
-        if (specialRain)
+        /*if (specialRain)
         {
             foreach (ParticleSystem rain in rainParticles)
             {
                     rain.gameObject.SetActive(true);
             }
             return;
-        }
+        }*/
         while(numOfRains < rainsMin)
         {
             foreach (ParticleSystem rain in rainParticles)
@@ -71,7 +79,6 @@ public class Rain : MonoBehaviour
                 int sortOption = Random.Range(1, 100);
                 if (sortOption % 2 == 0 && !rain.gameObject.activeSelf)
                 {
-                    Debug.Log("Ativou");
                     rain.gameObject.SetActive(true);
                     numOfRains++;
                 }
@@ -84,13 +91,13 @@ public class Rain : MonoBehaviour
     {
         int numOfEnemies = 0;
         int numOfInkTiles = 0;
-        if (specialRain)
+        /*if (specialRain)
         {
             //encher camada de agua correspondente ao round
             waterSpecialTiles[_actualSpecialRainRound].gameObject.SetActive(true);
             _actualSpecialRainRound++;
             return;
-        }
+        }*/
         foreach (ParticleSystem rain in rainParticles)
         {
             int sortOption = Random.Range(1, 100);
@@ -98,11 +105,12 @@ public class Rain : MonoBehaviour
             {
                 if (numOfInkTiles >= inkMin && numOfEnemies < enemiesMin)
                 {
-                    Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
+                    //Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
                     //if (CheckIfEnemyPositionAvailable(position))
                     //{
-                    enemiesPositions.Add(position);
+                    //enemiesPositions.Add(position);
                     cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
+                    turretPositions[rainParticles.IndexOf(rain)].GetComponent<TurretPosition>().haveRained = true;
                     //}
                     numOfEnemies++;
                 }
@@ -123,11 +131,12 @@ public class Rain : MonoBehaviour
                 }
                 else
                 {
-                    Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
+                    //Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
                     //if (CheckIfEnemyPositionAvailable(position))
                     //{
-                    enemiesPositions.Add(position);
+                    //enemiesPositions.Add(position);
                     cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
+                    turretPositions[rainParticles.IndexOf(rain)].GetComponent<TurretPosition>().haveRained = true;
                     //}
                     numOfEnemies++;
                 }
@@ -197,7 +206,7 @@ public class Rain : MonoBehaviour
         StartCoroutine(SpecialRain());
     }
 
-    public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao e nao tem agua
+    /*public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao e nao tem agua
     {
         
         Vector3Int cell;
@@ -215,19 +224,22 @@ public class Rain : MonoBehaviour
         }
         
         return worldPosition;
-    }
+    }*/
     public bool CheckIfEnemyPositionAvailable(Vector3 position)//coloca inimigos somente onde tem tile de chao e nao tem agua
     {
-        if (position == new Vector3(0f, 0f, 0f))
-            return false;
-        foreach (Vector3 enemyPosition in enemiesPositions)
+        int i = 0;
+        while (i < EnemiesParent.transform.childCount)//verifica se ja tem inimigo naquele tile e impede que apareca outro
         {
-            Debug.Log("Verificando");
-            if (Floor.WorldToCell(position) == Floor.WorldToCell(enemyPosition))
+            //Debug.Log(enemyPosition);
+            Vector3 positionRigth = new Vector3(position.x - 1f, position.y, position.z);
+            Vector3 positionLeft = new Vector3(position.x + 1f, position.y, position.z);
+            float distanceX = Mathf.Abs(EnemiesParent.transform.GetChild(i).position.x - position.x);
+            float distanceY = Mathf.Abs(EnemiesParent.transform.GetChild(i).position.y - position.y);
+            if (distanceX < 4f && distanceY < 2f)
             {
-                Debug.Log("Falso");
                 return false;
             }
+            i++;
         }
         return true;
     }
@@ -237,7 +249,8 @@ public class Rain : MonoBehaviour
         int i = 0;
         bool availablePosition = true;
         int numberOfClouds = 0;
-        foreach(Vector3 enemyPosition in enemiesPositions)
+        int numberOfTurrets = 0;
+        /*foreach(Vector3 enemyPosition in enemiesPositions)
         {
             availablePosition = true;
             i = 0;
@@ -253,77 +266,118 @@ public class Rain : MonoBehaviour
                 i++;
             }*/
 
-            if (enemyPosition.y < yAboveFloor && availablePosition)
+        /* if (enemyPosition.y < yAboveFloor && availablePosition)
+         {
+             Debug.Log("Inimigo chao");
+             GameObject enemy = Instantiate(SortFloorEnemy(), enemyPosition, Quaternion.identity);
+             //enemy.transform.SetParent(EnemiesParent.transform);
+             //enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+         }
+         else if(enemyPosition.y >= yAboveFloor && availablePosition)
+         {
+             Debug.Log("Inimigo plataforma");
+             GameObject enemyType = SortPlatformEnemy();
+             if(enemyType == EnemyYellowCloudPrefab && numberOfClouds<cloudsLimit)
+             {
+                 foreach (GameObject cloudPosition in cloudsPositions)
+                 {
+                     if (cloudPosition.GetComponent<CloudPosition>().haveRained && cloudPosition.GetComponent<CloudPosition>().isCloudPosition)
+                     {
+                         GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
+                         enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+                         //enemy.transform.SetParent(EnemiesParent.transform);
+                         cloudPosition.GetComponent<CloudPosition>().haveRained = false;
+                         numberOfClouds++;
+                         break;
+                     }
+                 }
+
+             }
+             else
+             {
+                 GameObject enemy = Instantiate(EnemyTurretPrefab, enemyPosition, Quaternion.identity);
+                 //enemy.transform.SetParent(EnemiesParent.transform);
+             } 
+         }
+         else
+         {
+             Debug.Log("Posicao já ocupada");
+         }
+     }*/
+
+        foreach (ParticleSystem rain in rainParticles)
+        {
+            availablePosition = true;
+            i = 0;
+            GameObject enemyType = SortPlatformEnemy();
+            
+            if(enemyType == EnemyYellowCloudPrefab && numberOfClouds<cloudsLimit)
             {
-                Debug.Log("Inimigo chao");
-                GameObject enemy = Instantiate(SortFloorEnemy(), enemyPosition, Quaternion.identity);
-                //enemy.transform.SetParent(EnemiesParent.transform);
-                //enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
-            }
-            else if(enemyPosition.y >= yAboveFloor && availablePosition)
-            {
-                Debug.Log("Inimigo plataforma");
-                GameObject enemyType = SortPlatformEnemy();
-                if(enemyType == EnemyYellowCloudPrefab && numberOfClouds<cloudsLimit)
+                foreach (GameObject cloudPosition in cloudsPositions)
                 {
-                    foreach (GameObject cloudPosition in cloudsPositions)
+                    if (cloudPosition.GetComponent<CloudPosition>().haveRained && cloudPosition.GetComponent<CloudPosition>().isCloudPosition && CheckIfEnemyPositionAvailable(cloudPosition.transform.position))
                     {
-                        if (cloudPosition.GetComponent<CloudPosition>().haveRained && cloudPosition.GetComponent<CloudPosition>().isCloudPosition)
-                        {
-                            GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
-                            enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
-                            //enemy.transform.SetParent(EnemiesParent.transform);
-                            cloudPosition.GetComponent<CloudPosition>().haveRained = false;
-                            numberOfClouds++;
-                            break;
-                        }
+                        GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
+                        enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+                        enemy.transform.SetParent(EnemiesParent.transform);
+                        cloudPosition.GetComponent<CloudPosition>().haveRained = false;
+                        numberOfClouds++;
+                        break;
                     }
-                    
                 }
-                else
-                {
-                    GameObject enemy = Instantiate(EnemyTurretPrefab, enemyPosition, Quaternion.identity);
-                    //enemy.transform.SetParent(EnemiesParent.transform);
-                } 
+
             }
             else
             {
-                Debug.Log("Posicao já ocupada");
+                foreach (GameObject turretPosition in turretPositions)
+                {
+                    if (turretPosition.GetComponent<TurretPosition>().haveRained && CheckIfEnemyPositionAvailable(turretPosition.transform.position))
+                    {
+                        GameObject enemy = Instantiate(enemyType, turretPosition.transform.position, Quaternion.identity);
+                        enemy.transform.SetParent(EnemiesParent.transform);
+                        turretPosition.GetComponent<TurretPosition>().haveRained = false;
+                        enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
+                        numberOfTurrets++;
+                        break;
+                    }
+                }
             }
         }
-        
+
     }
 
-    public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
-    {
-        return EnemyTurretPrefab;
-    }
 
-    public GameObject SortPlatformEnemy()//funcao para sortear qual inimigo vai surgir na posicao
-    {
-        int sortOption = Random.Range(1, 1000) % 2;
 
-        switch (sortOption)
-        {
-            case 0:
-                return EnemyTurretPrefab;
-            default:
-                return EnemyYellowCloudPrefab;
-        }
-    }
+     public GameObject SortFloorEnemy()//funcao para sortear qual inimigo vai surgir na posicao
+     {
+         return EnemyTurretPrefab;
+     }
 
-    public bool CheckWater(Vector3Int cell)
-    {
-        if (waterTiles.HasTile(cell))
-            return true;
-        foreach(Tilemap water in waterSpecialTiles)
-        {
-            if (water.gameObject.activeSelf && water.HasTile(cell))
-            {
-                return true;
-            }
-        }
-        return false;
+     public GameObject SortPlatformEnemy()//funcao para sortear qual inimigo vai surgir na posicao
+     {
+         int sortOption = Random.Range(1, 1000) % 2;
+
+         switch (sortOption)
+         {
+             case 0:
+                 return EnemyTurretPrefab;
+             default:
+                 return EnemyYellowCloudPrefab;
+         }
+     }
+
+     public bool CheckWater(Vector3Int cell)
+     {
+         if (waterTiles.HasTile(cell))
+             return true;
+         /*foreach(Tilemap water in waterSpecialTiles)
+         {
+             if (water.gameObject.activeSelf && water.HasTile(cell))
+             {
+                 return true;
+             }
+         }*/
+            return false;
     }
 
 }

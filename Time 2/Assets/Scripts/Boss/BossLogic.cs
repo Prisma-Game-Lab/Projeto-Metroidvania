@@ -27,9 +27,12 @@ public class BossLogic : MonoBehaviour
     [HideInInspector] public Rain rain;
     [HideInInspector] public InkAttack inkAttack;
     [HideInInspector] public bool tongueAttacking = false;
+    [HideInInspector] public bool canRain = false;
+    [HideInInspector] public bool rained = false;
 
     private bool _canTakeDamage;
     private Animator _animator;
+    private int totalLifes;
     
     void Start()
     {
@@ -37,6 +40,7 @@ public class BossLogic : MonoBehaviour
         tongueAttack = gameObject.GetComponent<TongueAttack>();
         bossMovement = gameObject.GetComponent<BossMovement>();
         life = NumberOfAttackPerLife.Count;
+        totalLifes = life;
         rain = gameObject.GetComponent<Rain>();
         inkAttack = gameObject.GetComponent<InkAttack>();
         NumberOfAttackPerLife.Reverse();
@@ -47,8 +51,6 @@ public class BossLogic : MonoBehaviour
         _animator.SetBool("Black", true);
         _animator.SetTrigger("Prepare");
         StartCoroutine(PerformRounds());
-
-
     }
 
     private IEnumerator PerformRounds()
@@ -58,43 +60,52 @@ public class BossLogic : MonoBehaviour
         {
             var attacks = NumberOfAttackPerLife[life-1];
             int beforeLife = life;
+            if (life <= totalLifes-1)
+                canRain = true;
             
-                for (int i = 0; i < attacks; i++)
+            for (int i = 0; i < attacks; i++)
+            {
+                if((i-1) == attacks && !rained && canRain)
                 {
-                    
-                    float waitTime = PerformRandomAttack();
-                    yield return new WaitForSeconds(waitTime);
-                    tongueAttacking = false;
-
-                    /*int lickTimes = NumberOfFastTongueAttacks[life-1];
-                    int seconds = 1; 
-                    tongueAttack.PerformTongueAttack(seconds,lickTimes);
-                    //time to perform fast tongue attacks 
-                    yield return new WaitForSeconds(lickTimes * ( seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1)*/
-                    bossMovement.IsStoped = false;
-                    while (!bossMovement.IsStoped)
-                    {
-                        yield return new WaitForEndOfFrame();
-                    }
-                    _canTakeDamage = true;
-                }
-                // wait to go to new position 
-                yield return new WaitForSeconds(3);
-
-                _animator.SetTrigger("BigTongue");
-                tongueAttack.TongueSlowAttack();
-                tongueAttacking = true;
-                // time to perform slow tongue 
-                yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
-                tongueAttacking = false;
-                /*if (IsDamaged(beforeLife))
-                {
-                    rain.StartSpecialRain();
+                    rain.StartRain();
                     yield return new WaitForSeconds(rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f);
-                    rain.specialRain = false;
-                }*/
-                
-            
+                    tongueAttacking = false;
+                    rained = true;
+                    break;
+                }
+
+                float waitTime = PerformRandomAttack();
+                yield return new WaitForSeconds(waitTime);
+                tongueAttacking = false;
+
+                /*int lickTimes = NumberOfFastTongueAttacks[life-1];
+                int seconds = 1; 
+                tongueAttack.PerformTongueAttack(seconds,lickTimes);
+                //time to perform fast tongue attacks 
+                yield return new WaitForSeconds(lickTimes * ( seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1)*/
+                bossMovement.IsStoped = false;
+                while (!bossMovement.IsStoped)
+                {
+                    yield return new WaitForEndOfFrame();
+                }
+                _canTakeDamage = true;
+            }
+            rained = false;
+            // wait to go to new position 
+            yield return new WaitForSeconds(3);
+
+            _animator.SetTrigger("BigTongue");
+            tongueAttack.TongueSlowAttack();
+            tongueAttacking = true;
+            // time to perform slow tongue 
+            yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
+            tongueAttacking = false;
+            /*if (IsDamaged(beforeLife))
+            {
+                rain.StartSpecialRain();
+                yield return new WaitForSeconds(rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f);
+                rain.specialRain = false;
+            }*/   
         }
     }
 
@@ -114,7 +125,7 @@ public class BossLogic : MonoBehaviour
 
     }
 
-    public bool IsDamaged(int beforeLife)
+    /*public bool IsDamaged(int beforeLife)
     {
         if(beforeLife < life)
         {
@@ -123,7 +134,7 @@ public class BossLogic : MonoBehaviour
         }
         return false; 
         
-    }
+    }*/
 
     public float PerformRandomAttack()
     {
@@ -136,24 +147,20 @@ public class BossLogic : MonoBehaviour
             //time to perform fast tongue attacks
             tongueAttacking = true;
              return lickTimes * (seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1;
-            //performar lingua
-            //esperar tempo de conclusao da lingua
         }
         else if ((num<0.666f && num>0.333f) || life>=3)
         {
             int times = NumberOfInkAttacks[life - 1];
             inkAttack.StartInkAttacks(times);
             return times * (inkAttack.attackPreparationTime + inkAttack.resetAttackTime + 1f);
-            //performar cuspe
-            //esperar
         }
         else
         {
             rain.StartRain();
+            rained = true;
             return rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f;
-            //esperar
-
         }
+        
     }
 
     public void BossDied()

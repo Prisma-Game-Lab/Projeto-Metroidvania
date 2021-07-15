@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 2670785371601351747}
   - component: {fileID: 2670785371601351744}
   - component: {fileID: 623793615791108772}
+  - component: {fileID: 2602363969123641396}
   m_Layer: 6
   m_Name: EnemyTurret
   m_TagString: Untagged
@@ -114,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2670785371601351746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57.69, y: -2.462513, z: 41.757584}
+  m_LocalPosition: {x: 57.69, y: -2.48, z: 0}
   m_LocalScale: {x: 0.7631, y: 0.7409, z: 1}
   m_Children:
   - {fileID: 8212803929293744842}
@@ -226,7 +227,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &2670785371601351749
 CircleCollider2D:
@@ -235,15 +236,15 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2670785371601351746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.101913475, y: 0.05711105}
+  m_Offset: {x: -0.11615056, y: 0.05711105}
   serializedVersion: 2
-  m_Radius: 1.0369258
+  m_Radius: 0.7949027
 --- !u!114 &2670785371601351747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &2602363969123641396
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670785371601351746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.108825624, y: -0.28822774}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.7900001, y: 1.8004395}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4168817, y: 1.0958818}
+  m_EdgeRadius: 0
 --- !u!1 &4149901904107296467
 GameObject:
   m_ObjectHideFlags: 0
