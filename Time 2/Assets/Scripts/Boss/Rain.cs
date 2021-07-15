@@ -37,6 +37,12 @@ public class Rain : MonoBehaviour
     public ParticleSystem spitParticles;
     public List<Vector3> enemiesPositions;
     [HideInInspector] public bool specialRain = false;
+    [Header("Minimo de lugares onde deve haver chuva")]
+    public int rainsMin;
+    [Header("Minimo de inimigos surgindo por chuva")]
+    public int enemiesMin;
+    [Header("Minimo de manchas de tinta no chao por chuva")]
+    public int inkMin;
 
     //Prefabs dos inimigos
     public GameObject BasicAggroEnemyPrefab;
@@ -46,9 +52,10 @@ public class Rain : MonoBehaviour
     public GameObject EnemyYellowCloudPrefab;
     public GameObject EnemiesParent;
 
-    private int _actualSpecialRainRound;
+    private int _actualSpecialRainRound = 0;
     public void SetRainActive()
     {
+        int numOfRains = 0;
         if (specialRain)
         {
             foreach (ParticleSystem rain in rainParticles)
@@ -57,39 +64,76 @@ public class Rain : MonoBehaviour
             }
             return;
         }
-        foreach (ParticleSystem rain in rainParticles)
+        while(numOfRains < rainsMin)
         {
-            int sortOption = Random.Range(1, 100);
-            if (sortOption % 2 == 0)
-                rain.gameObject.SetActive(true);
+            foreach (ParticleSystem rain in rainParticles)
+            {
+                int sortOption = Random.Range(1, 100);
+                if (sortOption % 2 == 0 && !rain.gameObject.activeSelf)
+                {
+                    rain.gameObject.SetActive(true);
+                    numOfRains++;
+                }
+                    
+            }
         }
+        
     }
     public void SetRainTilesActive()
     {
+        int numOfEnemies = 0;
+        int numOfInkTiles = 0;
         if (specialRain)
         {
             //encher camada de agua correspondente ao round
             waterSpecialTiles[_actualSpecialRainRound].gameObject.SetActive(true);
+            _actualSpecialRainRound++;
             return;
         }
-        foreach(ParticleSystem rain in rainParticles)
+        foreach (ParticleSystem rain in rainParticles)
         {
             int sortOption = Random.Range(1, 100);
             if (rain.gameObject.activeSelf && (sortOption % 4 == 0 || sortOption % 4 == 2))// 1/2 de chance de ser so tinta
             {
-                inkTiles[rainParticles.IndexOf(rain)].gameObject.SetActive(true);
-            }
-            else if(rain.gameObject.activeSelf && (sortOption % 4 == 1 || sortOption % 4 == 3))// 1/2 de chance de ter inimigo
-            {
-                Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
-                //if (CheckIfEnemyPositionAvailable(position))
-                //{
+                if (numOfInkTiles >= inkMin && numOfEnemies < enemiesMin)
+                {
+                    Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
+                    //if (CheckIfEnemyPositionAvailable(position))
+                    //{
                     enemiesPositions.Add(position);
                     cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
-                //}
-                
-            }       
+                    //}
+                    numOfEnemies++;
+                }
+                else
+                {
+                    inkTiles[rainParticles.IndexOf(rain)].gameObject.SetActive(true);
+                    numOfInkTiles++;
+                }
+
+                }
+            else if (rain.gameObject.activeSelf && (sortOption % 4 == 1 || sortOption % 4 == 3))// 1/2 de chance de ter inimigo
+            {
+                    
+                if (numOfEnemies >= enemiesMin && numOfInkTiles < inkMin)
+                {
+                    inkTiles[rainParticles.IndexOf(rain)].gameObject.SetActive(true);
+                    numOfInkTiles++;
+                }
+                else
+                {
+                    Vector3 position = FindEnemyPosition(rain.gameObject.transform.position.x);
+                    //if (CheckIfEnemyPositionAvailable(position))
+                    //{
+                    enemiesPositions.Add(position);
+                    cloudsPositions[rainParticles.IndexOf(rain)].GetComponent<CloudPosition>().haveRained = true;
+                    //}
+                    numOfEnemies++;
+                }
+
+            }
         }
+        
     }
 
     public void SetRainTilesUnactive()
@@ -128,9 +172,28 @@ public class Rain : MonoBehaviour
             rain.gameObject.SetActive(false);
     }
 
+    private IEnumerator SpecialRain()
+    {
+        spitParticles.gameObject.SetActive(true);
+        yield return new WaitForSeconds(spitTime);
+        SetRainActive();
+        yield return new WaitForSeconds(rainTime);
+        SetRainTilesActive();
+        yield return new WaitForSeconds(inkFloorTime);
+        spitParticles.gameObject.SetActive(false);
+        SetRainTilesTriggerOn();
+        yield return new WaitForSeconds(1f);
+        foreach (ParticleSystem rain in rainParticles)
+            rain.gameObject.SetActive(false);
+    }
+
     public void StartRain()
     {
         StartCoroutine(WaitRain());
+    }
+    public void StartSpecialRain()
+    {
+        StartCoroutine(SpecialRain());
     }
 
     public Vector3 FindEnemyPosition(float positionX)//coloca inimigos somente onde tem tile de chao e nao tem agua

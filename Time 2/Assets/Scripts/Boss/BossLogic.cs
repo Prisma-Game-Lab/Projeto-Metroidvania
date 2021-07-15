@@ -56,6 +56,7 @@ public class BossLogic : MonoBehaviour
         while (life > 0)
         {
             var attacks = NumberOfAttackPerLife[life-1];
+            int beforeLife = life;
             
                 for (int i = 0; i < attacks; i++)
                 {
@@ -82,6 +83,12 @@ public class BossLogic : MonoBehaviour
                 tongueAttack.TongueSlowAttack();
                 // time to perform slow tongue 
                 yield return new WaitForSeconds(tongueAttack.tongueSlowTime + tongueAttack.SlowPreparationTime + 1);
+                /*if (IsDamaged(beforeLife))
+                {
+                    rain.StartSpecialRain();
+                    yield return new WaitForSeconds(rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f);
+                    rain.specialRain = false;
+                }*/
                 
             
         }
@@ -101,6 +108,17 @@ public class BossLogic : MonoBehaviour
             } 
         }
 
+    }
+
+    public bool IsDamaged(int beforeLife)
+    {
+        if(beforeLife < life)
+        {
+            rain.specialRain = true;
+            return true;
+        }
+        return false; 
+        
     }
 
     public float PerformRandomAttack()
