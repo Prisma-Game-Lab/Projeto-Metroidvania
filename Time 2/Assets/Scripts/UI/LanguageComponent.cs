@@ -20,7 +20,7 @@ public class LanguageComponent : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Language", 1); // portuguese
+        //PlayerPrefs.SetInt("Language", 1); // portuguese
         //PlayerPrefs.SetInt("Language", 2); // english
         int idiom = PlayerPrefs.GetInt("Language");
         if (idiom == 1)
@@ -32,6 +32,29 @@ public class LanguageComponent : MonoBehaviour
             idioms = Idioms.English;
         }
         
+        switch (idioms)
+        {
+            case Idioms.English:
+                rightText = englishText.text;
+                break;
+            case Idioms.Portuguese:
+                rightText = portugueseText.text;
+                break;
+        }
+    }
+
+    private void Update()
+    {
+        int idiom = PlayerPrefs.GetInt("Language");
+        if (idiom == 1)
+        {
+            idioms = Idioms.Portuguese;
+        }
+        else if (idiom == 2)
+        {
+            idioms = Idioms.English;
+        }
+
         switch (idioms)
         {
             case Idioms.English:
