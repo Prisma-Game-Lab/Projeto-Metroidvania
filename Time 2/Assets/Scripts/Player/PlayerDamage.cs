@@ -17,8 +17,8 @@ public class PlayerDamage : MonoBehaviour
     public float maxAlpha = 1f;
     public float interval = 0.1f;
     public float duration = 0.4f;
-    
 
+    public ParticleSystem damageParticle;
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     public bool takingDamage;
@@ -106,6 +106,7 @@ public class PlayerDamage : MonoBehaviour
         AudioManager.instance.Play("Dano");
         RemoveLife();
         StartCoroutine(FlashSprite());
+        damageParticle.Play();
         _playerStatus.playerAnimator.enabled = false;
     }
 

@@ -4911,6 +4911,7 @@ MonoBehaviour:
   duration: 0.4
   imortal: 0
   CanDamage: 0
+  damageParticle: {fileID: 2818851820960645539}
   damageMagnetude: 0
   enemyLife: 3
 --- !u!61 &4191050248473076694

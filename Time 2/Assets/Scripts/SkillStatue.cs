@@ -7,6 +7,7 @@ public class SkillStatue : MonoBehaviour
 {
     // skill que o item vai dar para o player
     public PlayerSkill skill;
+    public ParticleSystem idleParticle;
     [HideInInspector]public Text helpDescription;
     // Start is called before the first frame update
     void Start()
