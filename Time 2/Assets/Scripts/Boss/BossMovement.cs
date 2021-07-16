@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BossMovement : MonoBehaviour
@@ -14,6 +15,7 @@ public class BossMovement : MonoBehaviour
     [HideInInspector] public bool isFlipped = false;
 
     private int actualPos;
+    private Animator _animator;
 
     [HideInInspector] public bool IsStoped = false;
 
@@ -21,6 +23,7 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         actualPos = startPosition;
+        _animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame

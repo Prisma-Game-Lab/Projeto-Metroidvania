@@ -77,19 +77,24 @@ public class BossLogic : MonoBehaviour
 
                 float waitTime = PerformRandomAttack();
                 yield return new WaitForSeconds(waitTime);
-                tongueAttacking = false;
 
                 /*int lickTimes = NumberOfFastTongueAttacks[life-1];
                 int seconds = 1; 
                 tongueAttack.PerformTongueAttack(seconds,lickTimes);
                 //time to perform fast tongue attacks 
                 yield return new WaitForSeconds(lickTimes * ( seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1)*/
+                _animator.SetTrigger("FadeOut");
+                yield return new WaitForSeconds(0.6f);
                 bossMovement.IsStoped = false;
                 while (!bossMovement.IsStoped)
                 {
                     yield return new WaitForEndOfFrame();
+                    
                 }
                 _canTakeDamage = true;
+                _animator.SetTrigger("FadeIn");
+                yield return new WaitForSeconds(0.6f);
+                tongueAttacking = false;
             }
             rained = false;
             // wait to go to new position 
@@ -147,7 +152,7 @@ public class BossLogic : MonoBehaviour
             tongueAttack.PerformTongueAttack(seconds, lickTimes);
             //time to perform fast tongue attacks
             tongueAttacking = true;
-             return lickTimes * (seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime) + 1;
+             return lickTimes * (seconds + tongueAttack.preparationTime + tongueAttack.tongueFastTime + 1);
         }
         else if ((num<0.666f && num>0.333f) || life>=3)
         {

@@ -121,18 +121,36 @@ public class TongueAttack : MonoBehaviour
             AudioManager.instance.Play("Lingua");
         else 
             AudioManager.instance.Play("Lingua_Longa");
-        for (int i = 0; i < (int)(tongueSpeed + 1); i++)
+        
+        //TODO SOMENTE PARA TESTE 
+        var realTongue = tongueSpeed;
+        if (dist.x > 20 && dist.x < 30)
+        {
+            realTongue = realTongue ;
+        }else if (dist.x > 10 && dist.x < 20)
+        {
+            realTongue = realTongue / 2;
+        }
+        else
+        {
+            realTongue = realTongue / 4;
+        }
+        
+        for (int i = 0; i < (int)(realTongue + 1); i++)
         {
             
             Strech(tongue, _transform.position, initial,true);
-            initial -= dist * 1.0f/ tongueSpeed;
+            initial -= dist * 1.0f/ realTongue;
             
             yield return new WaitForEndOfFrame();
         }
         
         //Strech(tongue, _transform.position, _playerPosition,false);
-        if(attackType == ToungueAttackType.fast)
+        if (attackType == ToungueAttackType.fast)
+        {
+            Destroy(tongue);
             yield return new WaitForSeconds(tongueFastTime);
+        }
         else
         {
             tongue.GetComponent<TongueComponent>().boss = gameObject;
