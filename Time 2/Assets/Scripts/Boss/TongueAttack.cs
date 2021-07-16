@@ -188,8 +188,8 @@ public class TongueAttack : MonoBehaviour
         Vector3 direction = _finalPosition - _initialPosition;
         direction.z = 0;
         direction = Vector3.Normalize(direction);
-        _sprite.transform.right = direction;
-        float w = _sprite.GetComponent<SpriteRenderer>().sprite.rect.width/_sprite.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
+        _sprite.transform.up = direction;
+        float w = _sprite.GetComponent<SpriteRenderer>().sprite.rect.height/_sprite.GetComponent<SpriteRenderer>().sprite.pixelsPerUnit;
         if (_mirrorZ) _sprite.transform.right *= -1f;
         Vector3 scale = new Vector3(1,1,1);
         Vector3 initialPos = _initialPosition;
@@ -197,7 +197,7 @@ public class TongueAttack : MonoBehaviour
         Vector3 finalPosition = _finalPosition;
         finalPosition.z = 0;
         
-        scale.x = Vector3.Distance(initialPos, finalPosition) ;
+        scale.y = Vector3.Distance(initialPos, finalPosition) ;
         _sprite.transform.localScale = scale;
         
         // float w = sprite.
