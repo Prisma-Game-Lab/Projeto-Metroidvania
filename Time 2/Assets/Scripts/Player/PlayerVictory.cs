@@ -7,9 +7,13 @@ public class PlayerVictory : MonoBehaviour
 {
     [HideInInspector]public PlayerInteraction playerInteraction;
     [HideInInspector]public PlayerStatus playerStatus;
+    public GameObject UIMaster;
+    private UIMaster _uiMaster;
+
     private void Start()
     {
         playerStatus = gameObject.GetComponent<PlayerStatus>();
+        _uiMaster = UIMaster.GetComponent<UIMaster>();
         playerInteraction = gameObject.GetComponent<PlayerInteraction>();
     }
 
@@ -21,15 +25,23 @@ public class PlayerVictory : MonoBehaviour
             switch (collectedColor)
             {
                 case ObjectColor.Magenta:
+                    _uiMaster.ColorPanel.transform.GetChild(0).GetComponent<Text>().text = collision.gameObject.transform.GetChild(1).GetComponent<LanguageComponent>().rightText;
+                    _uiMaster.ShowColorText();
                     playerStatus.magenta= true;
                     break;
                 case ObjectColor.Cyan:
+                    _uiMaster.ColorPanel.transform.GetChild(0).GetComponent<Text>().text = collision.gameObject.transform.GetChild(1).GetComponent<LanguageComponent>().rightText;
+                    _uiMaster.ShowColorText();
                     playerStatus.cyan = true;
                     break;
                 case ObjectColor.Yellow:
+                    _uiMaster.ColorPanel.transform.GetChild(0).GetComponent<Text>().text = collision.gameObject.transform.GetChild(1).GetComponent<LanguageComponent>().rightText;
+                    _uiMaster.ShowColorText();
                     playerStatus.yellow = true;
                     break;
                 case ObjectColor.Black:
+                    _uiMaster.ColorPanel.transform.GetChild(0).GetComponent<Text>().text = collision.gameObject.transform.GetChild(1).GetComponent<LanguageComponent>().rightText;
+                    _uiMaster.ShowColorText();
                     playerStatus.black = true;
                     break;
             }
@@ -66,6 +78,7 @@ public class PlayerVictory : MonoBehaviour
         return false;
     }
 
+    
     
 
 }

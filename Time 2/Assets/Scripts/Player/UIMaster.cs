@@ -18,6 +18,7 @@ public class UIMaster : MonoBehaviour
     public PlayerHealth life;
     public ItemDescription itemDescription;
     public GameObject InteractionPanel;
+    public GameObject ColorPanel;
     public GameObject DoorLockPanel;
     public LanguageComponent UnlockColorText;
     public GameObject DeathUI;
@@ -280,5 +281,17 @@ public class UIMaster : MonoBehaviour
                 InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = AddHeartTexts[3].rightText;
                 break;
         }
+    }
+
+    public void ShowColorText()
+    {
+        ColorPanel.SetActive(true);
+        StartCoroutine(WaitColorText());
+    }
+    private IEnumerator WaitColorText()
+    {
+        yield return new WaitForSeconds(2f);
+        ColorPanel.SetActive(false);
+
     }
 }
