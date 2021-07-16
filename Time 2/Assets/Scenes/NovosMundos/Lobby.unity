@@ -1861,6 +1861,10 @@ PrefabInstance:
       value: Aperte X para recuperar vida.
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -5283,7 +5287,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -6327,8 +6331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: -1214.9508, y: -802.69}
+  m_AnchoredPosition: {x: 0.000061035156, y: 240}
+  m_SizeDelta: {x: -1295.487, y: -823.437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300043369
 MonoBehaviour:
@@ -6343,14 +6347,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e827ef227a2280a40baf2f2e4a5e9b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62ad06b356f4c24eb63521faf84c0bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6652,10 +6656,18 @@ PrefabInstance:
       propertyPath: m_Text
       value: Press Z to interact.
       objectReference: {fileID: 0}
+    - target: {fileID: 4783996281038344120, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Text
       value: Aperte Z para interagir
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 5662120822934362703, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Name
       value: Keyboard1InteractionText
@@ -8069,6 +8081,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976875434833673591, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Text
       value: "Voc\xEA precisa encontrar todos os orbes de tinta para abrir essa porta."
@@ -8085,6 +8101,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.05660379
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 18
@@ -8899,6 +8919,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte Quadrado para interagir
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 5662120822934362703, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Name
       value: PsInteractionText
@@ -55103,7 +55127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428987809}
   m_Layer: 0
-  m_Name: ExtraLifeTexts
+  m_Name: AddHeartTexts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55504,6 +55528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976875434833673591, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Text
       value: 
@@ -55520,6 +55548,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.05660379
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 18
@@ -60225,7 +60257,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -60867,6 +60899,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte Quadrado para inserir a tinta
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -64193,8 +64229,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: -965.2667, y: -717.3948}
+  m_AnchoredPosition: {x: 11.755981, y: 261.32}
+  m_SizeDelta: {x: -1129.846, y: -760.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790919348
 MonoBehaviour:
@@ -64209,14 +64245,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.84705883}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e827ef227a2280a40baf2f2e4a5e9b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62ad06b356f4c24eb63521faf84c0bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64549,6 +64585,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte X para ganhar uma vida extra
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -65835,6 +65875,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1011839479067622265, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
   m_PrefabInstance: {fileID: 1818543610}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &851604133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7687356141193882652, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+  m_PrefabInstance: {fileID: 1101470863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2309168bce3473794004ec909186fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &851999600 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8714444878438412092, guid: cdf62345b1adcbd45a7680790d74d648, type: 3}
@@ -66749,8 +66800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.793945, y: 190.78998}
-  m_SizeDelta: {x: -1222.36, y: -846.18}
+  m_AnchoredPosition: {x: -0.40997314, y: 190.78998}
+  m_SizeDelta: {x: -1331.155, y: -846.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881064440
 MonoBehaviour:
@@ -66765,14 +66816,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8352941}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e827ef227a2280a40baf2f2e4a5e9b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62ad06b356f4c24eb63521faf84c0bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67162,6 +67213,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte X para interagir
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 5662120822934362703, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Name
       value: XboxInteractionText
@@ -70654,7 +70709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e827ef227a2280a40baf2f2e4a5e9b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f62ad06b356f4c24eb63521faf84c0bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70689,8 +70744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: -965.2667, y: -717.3948}
+  m_AnchoredPosition: {x: -10.062012, y: 256.85}
+  m_SizeDelta: {x: -884.776, y: -683.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1063166642
 GameObject:
@@ -71696,6 +71751,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte J para ganhar uma vida extra
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -75575,6 +75634,10 @@ PrefabInstance:
       value: Aperte J para recuperar vida.
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -76919,6 +76982,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte J para interagir
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 5662120822934362703, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Name
       value: Keyboard2InteractionText
@@ -83288,6 +83355,10 @@ PrefabInstance:
       value: Aperte Z para inserir a tinta
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -83838,7 +83909,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -84153,6 +84224,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte Quadrado para ganhar uma vida extra
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -84514,6 +84589,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte J para inserir a tinta
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -86859,6 +86938,17 @@ Transform:
   m_Father: {fileID: 1883207694}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620734016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7687356141193882652, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+  m_PrefabInstance: {fileID: 1550902660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2309168bce3473794004ec909186fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1624860583
 GameObject:
   m_ObjectHideFlags: 0
@@ -87762,6 +87852,17 @@ Transform:
   m_Father: {fileID: 1898845527}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659835841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7687356141193882652, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+  m_PrefabInstance: {fileID: 2116105174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2309168bce3473794004ec909186fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1673843259
 GameObject:
   m_ObjectHideFlags: 0
@@ -90732,6 +90833,10 @@ PrefabInstance:
       value: Aperte Quadrado para recuperar vida.
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -91158,6 +91263,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: Aperte Z para recuperar vida.
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
@@ -94682,6 +94791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976875434833673591, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_Text
       value: "Parab\xE9ns, voc\xEA venceu!"
@@ -94698,6 +94811,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.05660379
       objectReference: {fileID: 0}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 18
@@ -98325,6 +98442,10 @@ PrefabInstance:
       value: Aperte Z para ganhar uma vida extra
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -98406,6 +98527,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPlayer: {fileID: 309678963}
   speedParallax: 0.1
+--- !u!114 &2122514586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7687356141193882652, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+  m_PrefabInstance: {fileID: 810853493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2309168bce3473794004ec909186fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2124476256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99831,6 +99963,10 @@ PrefabInstance:
       value: Aperte X para inserir a tinta
       objectReference: {fileID: 0}
     - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f0f03965027b7794da6e4a31a8edbdfb, type: 3}
+    - target: {fileID: 4784655882221631850, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 40
       objectReference: {fileID: 0}
@@ -100016,6 +100152,26 @@ PrefabInstance:
       propertyPath: LockTexts.Array.data[3]
       value: 
       objectReference: {fileID: 1695752048}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: AddHeartTexts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: AddHeartTexts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1659835841}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: AddHeartTexts.Array.data[1]
+      value: 
+      objectReference: {fileID: 851604133}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: AddHeartTexts.Array.data[2]
+      value: 
+      objectReference: {fileID: 2122514586}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: AddHeartTexts.Array.data[3]
+      value: 
+      objectReference: {fileID: 1620734016}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: InteractionTexts.Array.size
       value: 4
