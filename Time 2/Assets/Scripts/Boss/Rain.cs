@@ -317,7 +317,7 @@ public class Rain : MonoBehaviour
                 {
                     if (cloudPosition.GetComponent<CloudPosition>().haveRained && cloudPosition.GetComponent<CloudPosition>().isCloudPosition && CheckIfEnemyPositionAvailable(cloudPosition.transform.position))
                     {
-                        GameObject enemy = Instantiate(enemyType, cloudPosition.transform.position, Quaternion.identity);
+                        GameObject enemy = Instantiate(EnemyYellowCloudPrefab, cloudPosition.transform.position, Quaternion.identity);
                         enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
                         enemy.transform.SetParent(EnemiesParent.transform);
                         cloudPosition.GetComponent<CloudPosition>().haveRained = false;
@@ -333,7 +333,7 @@ public class Rain : MonoBehaviour
                 {
                     if (turretPosition.GetComponent<TurretPosition>().haveRained && CheckIfEnemyPositionAvailable(turretPosition.transform.position))
                     {
-                        GameObject enemy = Instantiate(enemyType, turretPosition.transform.position, Quaternion.identity);
+                        GameObject enemy = Instantiate(EnemyTurretPrefab, turretPosition.transform.position, Quaternion.identity);
                         enemy.transform.SetParent(EnemiesParent.transform);
                         turretPosition.GetComponent<TurretPosition>().haveRained = false;
                         enemy.GetComponent<EnemyMovement>().enemyMovement = SimpleEnemyMovements.None;
