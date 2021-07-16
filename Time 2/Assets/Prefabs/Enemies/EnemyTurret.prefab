@@ -262,8 +262,8 @@ MonoBehaviour:
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
   bulletPoint: {fileID: 317126284134780158}
   Cannon: {fileID: 136980168617097984}
-  resetAggroTime: 1.1
-  bulletSpeed: 9
+  resetAggroTime: 0.8
+  bulletSpeed: 9.5
 --- !u!114 &2670785371601351744
 MonoBehaviour:
   m_ObjectHideFlags: 0

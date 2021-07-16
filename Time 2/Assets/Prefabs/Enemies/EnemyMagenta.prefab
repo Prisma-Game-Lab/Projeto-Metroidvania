@@ -120,8 +120,8 @@ MonoBehaviour:
   duration: 0.4
   imortal: 0
   CanDamage: 1
-  damageMagnetude: 6
-  enemyLife: 3
+  damageMagnetude: 4
+  enemyLife: 2
 --- !u!50 &830981702858744775
 Rigidbody2D:
   serializedVersion: 4
@@ -182,7 +182,7 @@ MonoBehaviour:
   _pointToEnd: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   sp: {fileID: 0}
-  jumpForce: 12
+  jumpForce: 8
 --- !u!95 &740643099425849534
 Animator:
   serializedVersion: 3

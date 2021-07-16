@@ -123,7 +123,7 @@ MonoBehaviour:
   imortal: 1
   CanDamage: 1
   damageMagnetude: 8
-  enemyLife: 1
+  enemyLife: 3
 --- !u!114 &4544590936722168283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4387c0163cfc40c5b046a651d183b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 125
+  speed: 130
   pointStart: 2
   pointEnd: 2
   enemyMovement: 0
@@ -207,11 +207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aggroRadius: 4
-  aggroSpeed: 8
-  aggroPreparationTime: 0.2
+  aggroSpeed: 6
+  aggroPreparationTime: 0.3
   EnemyRisingBody: {fileID: 5724319308695092169}
   enemyBullet: {fileID: 210561461128472566, guid: f19dbfdf808614043bf4278229d7a42b, type: 3}
-  resetAggroTime: 3
+  resetAggroTime: 2
 --- !u!95 &8940956689521036661
 Animator:
   serializedVersion: 3
