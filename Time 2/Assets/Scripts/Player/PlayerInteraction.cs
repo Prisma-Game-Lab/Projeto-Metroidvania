@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     // life statue interaction 
     [HideInInspector] public bool onFillHeartSTatue = false;
     [HideInInspector] public bool onAddHeartStatue = false;
+    
     //Skill Statue Interaction
     [HideInInspector] public bool onSkillStatue = false;
 
@@ -27,6 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     private SkillStatue _skillStatue;
     private ObjectColor _lockColor;
     private GameObject _finalDoor;
+    private StatueData _fillHeart;
 
     void Start()
     {
@@ -35,7 +37,7 @@ public class PlayerInteraction : MonoBehaviour
         _uiMaster = UIMaster.GetComponent<UIMaster>();
         _lockColor = ObjectColor.None;
     }
-
+    
     public void Interaction(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
@@ -83,6 +85,8 @@ public class PlayerInteraction : MonoBehaviour
             }else if (onFillHeartSTatue)
             {
                 _playerStatus.playerLifeStatue.FillLife();
+                _fillHeart.interactionParticle.Play();
+                AudioManager.instance.Play("Restaura_Vida");
             }
             else if(onSkillStatue)
             {
@@ -119,6 +123,7 @@ public class PlayerInteraction : MonoBehaviour
         else if (collision.CompareTag("FillLifeStatue"))
         {
             _uiMaster.ShowHealPanel(_playerStatus.controlValue);
+            _fillHeart = collision.gameObject.GetComponent<StatueData>();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

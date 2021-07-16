@@ -17,6 +17,8 @@ public class EnemyDamage : MonoBehaviour
     public bool imortal; 
 
     public bool CanDamage = true;
+
+    public ParticleSystem damageParticle;
     
     //forca que lanca o inimigo depois do ataque
     public float damageMagnetude; 
@@ -64,6 +66,7 @@ public class EnemyDamage : MonoBehaviour
                 {
                     gameObject.GetComponent<Animator>().enabled = false;
                 }
+                damageParticle.Play();
                 StartCoroutine(FlashSprite());
             
                 // PARA empurrar o inimigo  
@@ -85,6 +88,7 @@ public class EnemyDamage : MonoBehaviour
         // MUDAR SOMENTE PARA TESTE 
         enemyLife -= 1;
         AudioManager.instance.Play("Muro_Dano");
+        damageParticle.Play();
         StartCoroutine(FlashSprite());
         
         // MUDAR SOMENTE PARA TESTE 
