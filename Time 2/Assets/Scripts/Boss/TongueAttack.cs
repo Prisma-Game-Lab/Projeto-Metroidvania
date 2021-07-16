@@ -117,6 +117,10 @@ public class TongueAttack : MonoBehaviour
         Vector3 dist = _transform.position - _playerPosition;
         Vector3 initial = _transform.position;
         _animator.SetTrigger("Idle");
+        if(attackType == ToungueAttackType.fast)
+            AudioManager.instance.Play("Lingua");
+        else 
+            AudioManager.instance.Play("Lingua_Longa");
         for (int i = 0; i < (int)(tongueSpeed + 1); i++)
         {
             

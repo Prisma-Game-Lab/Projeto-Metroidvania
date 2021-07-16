@@ -15,6 +15,7 @@ public class PlayerLifeStatue : MonoBehaviour
     {
         PlayerHealth life = _playerStatus.playerDamage.life;
         life.life = life.totalLife;
+        AudioManager.instance.Play("Restaura_Vida");
     }
     
     public void AddNewHeart(int statueId)
@@ -26,7 +27,7 @@ public class PlayerLifeStatue : MonoBehaviour
                 return;
             }
         }
-        
+        AudioManager.instance.Play("Ganha_Vida");
         _playerStatus.totalLife += 1;
         _playerStatus.playerDamage.life.totalLife += 1;
         List<int> heartsIds = new List<int>(_playerStatus.NewHeartsId);

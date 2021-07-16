@@ -38,6 +38,7 @@ public class BallSkill : MonoBehaviour
             _playerStatus.StopAllTransformationSounds();
             if(_playerStatus.playerState != PlayerSkill.BallMode)
             {
+                AudioManager.instance.Play("Bolinha");
                 _trasformationParticles.Play();//liga particulas de transformacao
                 _playerStatus.playerState = PlayerSkill.BallMode;
                  _playerStatus.rb.gravityScale = ballGravity;

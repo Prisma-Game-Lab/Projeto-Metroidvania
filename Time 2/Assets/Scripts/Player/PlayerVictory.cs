@@ -33,6 +33,7 @@ public class PlayerVictory : MonoBehaviour
                     playerStatus.black = true;
                     break;
             }
+            AudioManager.instance.Play("Vitoria");
             SaveSystem.SavePlayer(playerStatus);
             /*Debug.Log(playerStatus.magenta);
             Debug.Log(playerStatus.black);

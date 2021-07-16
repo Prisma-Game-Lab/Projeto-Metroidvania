@@ -87,6 +87,7 @@ public class InkAttack : MonoBehaviour
         //animacaoo de preparacao do cuspe de tinta
         yield return new WaitForSeconds(attackPreparationTime);
         _animator.SetTrigger("Idle");
+        AudioManager.instance.Play("Cuspe");
         // criar a bala 
         GameObject bullet = Instantiate(bossSpit, TonguePosition.transform.position, _transform.rotation);
         bullet.GetComponent<InkSpit>().inkTileFloor = inkTileFloor;

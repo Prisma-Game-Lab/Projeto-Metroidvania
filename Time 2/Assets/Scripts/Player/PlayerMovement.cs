@@ -176,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _rb.gravityScale = 0f;
                 _rb.velocity = new Vector2(_rb.velocity.x,0f);
+                AudioManager.instance.Play("Fincar");
             }
             else
             {

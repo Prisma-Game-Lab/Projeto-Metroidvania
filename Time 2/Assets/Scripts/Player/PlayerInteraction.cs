@@ -42,6 +42,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (onDoor)
             {
+                AudioManager.instance.Play("Porta");
                 if (_playerVictory.CollectedAll())
                 {
                     _uiMaster.InteractionPanel.SetActive(false);
@@ -66,6 +67,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if (onMailBox)
             {
+                AudioManager.instance.Play("Carimbo");
                 _uiMaster.InteractionPanel.SetActive(false);
                 _mailBox.mailBoxUI.SetActive(true);
                 GameMaster.GetComponent<GameMaster>().onOtherMenu = true;
@@ -76,6 +78,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if (onAddHeartStatue)
             {
+                AudioManager.instance.Play("Interaction");
                 _playerStatus.playerLifeStatue.AddNewHeart(_statueId);
             }else if (onFillHeartSTatue)
             {
@@ -83,6 +86,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if(onSkillStatue)
             {
+                AudioManager.instance.Play("Interaction");
                 _playerStatus.SetPlayerSkill(_skillStatue.skill, _skillStatue.helpDescription.text);
                 _uiMaster.InteractionPanel.SetActive(false);
                 _uiMaster.ShowSkillDescription(_skillStatue.helpDescription.text);

@@ -143,6 +143,14 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Water") && playerState == PlayerSkill.BoatMode)
+        {
+            AudioManager.instance.Play("Pulo_Agua");
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         // Verifica a morte pela agua
@@ -209,26 +217,33 @@ public class PlayerStatus : MonoBehaviour
         switch (skill)
         {
             case  PlayerSkill.AttackSkill:
+                if(!sword) AudioManager.instance.Play("Espada");
                 gameObject.GetComponent<PlayerAttack>().obtained = true;
                 sword = true;
+                
                 break;
             case PlayerSkill.BoatMode:
+                if(!boat) AudioManager.instance.Play("Barco");
                 gameObject.GetComponent<BoatSkill>().obtained = true;
                 boat = true;
+               
                 break;
             case PlayerSkill.Normal:
                 break;
             case PlayerSkill.PlaneMode:
+                if(!airplane) AudioManager.instance.Play("Aviao");
                 gameObject.GetComponent<PlaneSkill>().obtained = true;
-                airplane = true; 
+                airplane = true;
                 break;
             case PlayerSkill.BallMode:
+                if(!ball) AudioManager.instance.Play("Bolinha");
                 gameObject.GetComponent<BallSkill>().obtained = true;
-                ball = true; 
+                ball = true;
                 break;
             case PlayerSkill.ShurikenMode:
+                if(!shuriken) AudioManager.instance.Play("Ninja");
                 gameObject.GetComponent<ShurikenSkill>().obtained = true;
-                shuriken = true; 
+                shuriken = true;
                 break;
         }
 

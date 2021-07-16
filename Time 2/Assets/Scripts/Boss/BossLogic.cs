@@ -36,6 +36,7 @@ public class BossLogic : MonoBehaviour
     
     void Start()
     {
+        AudioManager.instance.Play("Boss");
         // Somente para teste 
         tongueAttack = gameObject.GetComponent<TongueAttack>();
         bossMovement = gameObject.GetComponent<BossMovement>();
@@ -157,6 +158,7 @@ public class BossLogic : MonoBehaviour
         else
         {
             rain.StartRain();
+            AudioManager.instance.Play("Chuva");
             rained = true;
             return rain.spitTime + rain.rainTime + rain.inkFloorTime + 1f;
         }
@@ -165,6 +167,9 @@ public class BossLogic : MonoBehaviour
 
     public void BossDied()
     {
+        AudioManager.instance.Play("Boss_Final");
+        AudioManager.instance.Stop("Boss");
+        AudioManager.instance.Play("Boss_Morte");
         BossDoor.SetActive(false);//trocar por animacao da porta sendo destruida
         Destroy(gameObject);//animacao do boss morrendo
     }

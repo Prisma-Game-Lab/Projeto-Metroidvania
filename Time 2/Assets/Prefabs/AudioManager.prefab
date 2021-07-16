@@ -75,6 +75,18 @@ MonoBehaviour:
     pitch: 1.2
     loop: 1
     source: {fileID: 0}
+  - name: Boss_Final
+    clip: {fileID: 8300000, guid: 2724108222861482cac14071d7a0ca77, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: abd2acdd81bcf48ec9603e7f9b7d96ae, type: 3}
+    volume: 0.02
+    pitch: 1.2
+    loop: 1
+    source: {fileID: 0}
   soundEffects:
   - name: Jump
     clip: {fileID: 8300000, guid: 7a4ae53efa6364cb38a0fb161ff0ed30, type: 3}
@@ -109,19 +121,19 @@ MonoBehaviour:
   - name: Barco
     clip: {fileID: 8300000, guid: 1a7ac20d988a9448386b864e64438a46, type: 3}
     volume: 0.3
-    pitch: 1.6
+    pitch: 1.7
     loop: 0
     source: {fileID: 0}
   - name: Ninja
     clip: {fileID: 8300000, guid: 36339250ab0284e74b7c7ca65b34ffe7, type: 3}
     volume: 0.3
-    pitch: 1.4
+    pitch: 1.6
     loop: 0
     source: {fileID: 0}
   - name: Aviao
     clip: {fileID: 8300000, guid: f1684d58aaa45441486a7c16fa6f03bd, type: 3}
     volume: 0.3
-    pitch: 1.4
+    pitch: 1.12
     loop: 0
     source: {fileID: 0}
   - name: Normal
@@ -182,6 +194,96 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c23a38146715d407dad1bc0a40f0eb98, type: 3}
     volume: 0.3
     pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Restaura_Vida
+    clip: {fileID: 8300000, guid: f0e89379164d248509b74cea99843bd2, type: 3}
+    volume: 0.3
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Ganha_Vida
+    clip: {fileID: 8300000, guid: b5ebc7380be314944935ecee0a49166e, type: 3}
+    volume: 0.311
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Pulo_Agua
+    clip: {fileID: 8300000, guid: 00adad103b91a4d9580567e0af0177a4, type: 3}
+    volume: 0.311
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Espada
+    clip: {fileID: 8300000, guid: 3b6208051794246a19f14a0524a7d46d, type: 3}
+    volume: 0.311
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bolinha
+    clip: {fileID: 8300000, guid: 9f00d9098be3a48599c3cb3e134650ab, type: 3}
+    volume: 0.311
+    pitch: 1.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Vitoria
+    clip: {fileID: 8300000, guid: 62ce2c4ee35cb453081eae5f29f656f8, type: 3}
+    volume: 0.311
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: Fincar
+    clip: {fileID: 8300000, guid: 3b53a3b334ab64c5d98e4c4432481cc6, type: 3}
+    volume: 0.311
+    pitch: 1.3
+    loop: 0
+    source: {fileID: 0}
+  - name: Carimbo
+    clip: {fileID: 8300000, guid: 0785a4b5f152540488d4fed5c2071154, type: 3}
+    volume: 0.311
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Porta
+    clip: {fileID: 8300000, guid: 347e4556e620649dd904c3ffaf75ee7d, type: 3}
+    volume: 0.311
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: Interaction
+    clip: {fileID: 8300000, guid: abfe08c7ea80249aa916d79d2e39fc14, type: 3}
+    volume: 0.311
+    pitch: 0.9
+    loop: 0
+    source: {fileID: 0}
+  - name: Lingua
+    clip: {fileID: 8300000, guid: f378413ff53a54ac1a136a86dc3407f5, type: 3}
+    volume: 0.311
+    pitch: 1.41
+    loop: 0
+    source: {fileID: 0}
+  - name: Cuspe
+    clip: {fileID: 8300000, guid: c09911652493044fa8a198b9180b9e0c, type: 3}
+    volume: 0.311
+    pitch: 1.39
+    loop: 0
+    source: {fileID: 0}
+  - name: Chuva
+    clip: {fileID: 8300000, guid: badecec514a614828ab3a6f51e39f646, type: 3}
+    volume: 0.311
+    pitch: 0.71
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss_Morte
+    clip: {fileID: 8300000, guid: dbe8d37bc009e4dd0b509c9a91a2093e, type: 3}
+    volume: 0.311
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: Lingua_Longa
+    clip: {fileID: 8300000, guid: f378413ff53a54ac1a136a86dc3407f5, type: 3}
+    volume: 0.311
+    pitch: 0.6
     loop: 0
     source: {fileID: 0}
 --- !u!82 &6073523794936321909
