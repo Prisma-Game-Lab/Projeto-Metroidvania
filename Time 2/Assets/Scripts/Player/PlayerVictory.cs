@@ -78,6 +78,25 @@ public class PlayerVictory : MonoBehaviour
         return false;
     }
 
+    public bool CheckIfLastInk()
+    {
+        int totalInks = 0;
+        if (playerStatus.lockMagenta)
+            totalInks++;
+        if (playerStatus.lockCyan)
+            totalInks++;
+        if (playerStatus.lockBlack)
+            totalInks++;
+        if (playerStatus.lockYellow)
+            totalInks++;
+
+        if(totalInks == 4)
+        {
+            return true;
+        }
+        return false;
+
+    }
     
     
 

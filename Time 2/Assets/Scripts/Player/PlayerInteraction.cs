@@ -203,17 +203,38 @@ public class PlayerInteraction : MonoBehaviour
 
     public IEnumerator UnlockColor()
     {
-        _uiMaster.ShowUnLockText();
+        float actualUnlockTime = 0f;
+        if (!_playerVictory.CollectedAll())
+        {
+            _uiMaster.ShowUnLockText();
+            actualUnlockTime = unlockTextTime + 1f;
+        }   
+        else
+        {
+            _uiMaster.ShowLastInkPanel();
+            actualUnlockTime = unlockTextTime;
+        }
+        gameObject.GetComponent<PlayerInput>().DeactivateInput();
         yield return new WaitForSeconds(unlockTextTime);//tempo para o texto aparecer
+        gameObject.GetComponent<PlayerInput>().ActivateInput();
         _uiMaster.DoorLockPanel.SetActive(false);
         _lockColor = CheckLock();
         if (_lockColor != ObjectColor.None)
+        {
             _uiMaster.ShowLockPanel(_playerStatus.controlValue);
+        }
         else if (_playerVictory.CollectedAll())
         {
             _uiMaster.ShowOpenDoorPanel(_playerStatus.controlValue);
+
         }
         else
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
+    }
+
+    private IEnumerator WaitInkMessage()
+    {
+        yield return new WaitForSeconds(1f);
+        _uiMaster.ShowOpenDoorPanel(_playerStatus.controlValue);
     }
 }

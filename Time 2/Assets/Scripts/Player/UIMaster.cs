@@ -21,6 +21,7 @@ public class UIMaster : MonoBehaviour
     public GameObject ColorPanel;
     public GameObject DoorLockPanel;
     public LanguageComponent UnlockColorText;
+    public LanguageComponent LastInkText;
     public GameObject DeathUI;
     public GameObject firstDeathButton;
 
@@ -185,6 +186,7 @@ public class UIMaster : MonoBehaviour
         ShowInteractionText(controlValue);
         InteractionPanel.SetActive(true);
     }
+
     public void ShowHealPanel(int controlValue)
     {
         ShowHealText(controlValue);
@@ -228,6 +230,8 @@ public class UIMaster : MonoBehaviour
         }
     }
 
+
+
     public void ShowLockText(int controlValue)
     {
         switch (controlValue)
@@ -250,6 +254,17 @@ public class UIMaster : MonoBehaviour
     public void ShowUnLockText()
     {
         DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = UnlockColorText.rightText;
+    }
+
+    public void ShowLastInkText()
+    {
+        DoorLockPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = LastInkText.rightText;
+    }
+
+    public void ShowLastInkPanel()
+    {
+        ShowLastInkText();
+        DoorLockPanel.SetActive(true);
     }
 
     public void ShowHealText(int controlValue)
