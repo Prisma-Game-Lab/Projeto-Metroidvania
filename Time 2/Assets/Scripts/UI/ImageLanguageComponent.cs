@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonLanguageComponent : MonoBehaviour
+public class ImageLanguageComponent : MonoBehaviour
 {
 
-    public Text englishText;
-    public Text portugueseText;
+    public Image englishImage;
+    public Image portugueseImage;
 
-    [HideInInspector] public string rightText;
     public Idioms idioms;
     // Start is called before the first frame update
     void Start()
@@ -27,12 +26,10 @@ public class ButtonLanguageComponent : MonoBehaviour
         switch (idioms)
         {
             case Idioms.English:
-                englishText.gameObject.SetActive(true);
-                //rightText = englishText.text;
+                englishImage.gameObject.SetActive(true);
                 break;
             case Idioms.Portuguese:
-                portugueseText.gameObject.SetActive(true);
-                //rightText = portugueseText.text;
+                portugueseImage.gameObject.SetActive(true);
                 break;
         }
     }
@@ -53,14 +50,12 @@ public class ButtonLanguageComponent : MonoBehaviour
         switch (idioms)
         {
             case Idioms.English:
-                englishText.gameObject.SetActive(true);
-                portugueseText.gameObject.SetActive(false);
-                //rightText = englishText.text;
+                englishImage.gameObject.SetActive(true);
+                portugueseImage.gameObject.SetActive(false);
                 break;
             case Idioms.Portuguese:
-                portugueseText.gameObject.SetActive(true);
-                englishText.gameObject.SetActive(false);
-                //rightText = portugueseText.text;
+                portugueseImage.gameObject.SetActive(true);
+                englishImage.gameObject.SetActive(false);
                 break;
         }
     }

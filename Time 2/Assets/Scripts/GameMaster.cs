@@ -186,4 +186,13 @@ public class GameMaster : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
 
+    public void SetPortuguese()
+    {
+        PlayerPrefs.SetInt("Language", 1);
+    }
+
+    public void SetEnglish()
+    {
+        PlayerPrefs.SetInt("Language", 2);
+    }
 }
