@@ -72210,6 +72210,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 538276410974405829, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
+      propertyPath: m_Text
+      value: "Brittle walls no longer will be a blockade, and to face ink enemies
+        now you\u2019ll have an aid. This newfound power has got your back, by pressing
+        Square you can attack"
+      objectReference: {fileID: 0}
     - target: {fileID: 539024455196946967, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
       propertyPath: m_Text
       value: "Agora voc\xEA pode enfrentar os perigos, atacando voc\xEA vence seus
@@ -72343,6 +72349,12 @@ PrefabInstance:
       propertyPath: SkillTexts.Array.data[3]
       value: 
       objectReference: {fileID: 2147254839}
+    - target: {fileID: 1321059163447475190, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
+      propertyPath: m_Text
+      value: "Brittle walls no longer will be a blockade, and to face ink enemies
+        now you\u2019ll have an aid. This newfound power has got your back, by pressing
+        Z you can attack"
+      objectReference: {fileID: 0}
     - target: {fileID: 1321789064723467556, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
       propertyPath: m_Text
       value: "Agora voc\xEA pode enfrentar os perigos, atacando voc\xEA vence seus
@@ -72353,10 +72365,22 @@ PrefabInstance:
       value: "Agora voc\xEA pode enfrentar os perigos, atacando voc\xEA vence seus
         inimigos. Tamb\xE9m paredes consegue quebrar, apertando J para atacar."
       objectReference: {fileID: 0}
+    - target: {fileID: 1972200750346444529, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
+      propertyPath: m_Text
+      value: "Brittle walls no longer will be a blockade, and to face ink enemies
+        now you\u2019ll have an aid. This newfound power has got your back, by pressing
+        J you can attack"
+      objectReference: {fileID: 0}
     - target: {fileID: 6748662507565307006, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
       propertyPath: m_Text
       value: "Agora voc\xEA pode enfrentar os perigos, atacando voc\xEA vence seus
         inimigos. Tamb\xE9m paredes consegue quebrar, apertando X para atacar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749409999945228972, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
+      propertyPath: m_Text
+      value: "Brittle walls no longer will be a blockade, and to face ink enemies
+        now you\u2019ll have an aid. This newfound power has got your back, by pressing
+        X you can attack"
       objectReference: {fileID: 0}
     - target: {fileID: 7165112090836843784, guid: c5cc0acb3d8894440a4ac114fdae4e5b, type: 3}
       propertyPath: m_RootOrder
