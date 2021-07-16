@@ -195,4 +195,24 @@ public class GameMaster : MonoBehaviour
     {
         PlayerPrefs.SetInt("Language", 2);
     }
+
+    public void ResetGame()
+    {
+        // parar as musicas de outros leveis
+        AudioManager.instance.Stop(playerDestination.SceneToGo);
+        AudioManager.instance.Stop(teleportDestination.SceneToGo);
+        playerDestination.SceneToGo = "Lobby";
+        teleportDestination.SceneToGo = "Lobby";
+        teleportDestination.targetedMailBox = stampDestination.lobby;
+        life.life = life.totalLife;
+        AudioManager.instance.Play(playerDestination.SceneToGo);
+        playerDestination.door = -1;
+        SceneManager.LoadScene("Lobby");
+    }
+
+    public void GoToMenuFromDeath()
+    {
+        AudioManager.instance.Stop(playerDestination.SceneToGo);
+        SceneManager.LoadScene("FirstScene");
+    }
 }

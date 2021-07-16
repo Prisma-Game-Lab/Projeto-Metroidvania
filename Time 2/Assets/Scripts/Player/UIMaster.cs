@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UIMaster : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class UIMaster : MonoBehaviour
     public GameObject InteractionPanel;
     public GameObject DoorLockPanel;
     public LanguageComponent UnlockColorText;
+    public GameObject DeathUI;
+    public GameObject firstDeathButton;
 
     public Destination playerDestination;
 
@@ -71,7 +74,9 @@ public class UIMaster : MonoBehaviour
     
     public void KillPlayer()
     {
-        GameOverText.SetActive(true);
+        //GameOverText.SetActive(true);
+        DeathUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstDeathButton);
         Destroy(gameObject);
     }
 
