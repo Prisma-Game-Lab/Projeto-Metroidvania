@@ -93827,7 +93827,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2136042717}
         m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
-        m_MethodName: ResetGame
+        m_MethodName: ReturnToLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
