@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 82bd89d63d644ef4daaccbf72ae8a5cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,7 +105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Floor: {fileID: 0}
   waterTiles: {fileID: 0}
-  waterSpecialTiles: []
   rainParticles:
   - {fileID: 0}
   - {fileID: 0}
@@ -121,8 +120,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   cloudsPositions: []
+  turretPositions: []
   cloudsLimit: 0
-  SpecialRainRoundsNumber: 0
   rainTime: 1.5
   spitTime: 2.5
   inkFloorTime: 10
@@ -132,10 +131,10 @@ MonoBehaviour:
   spitParticles: {fileID: 2917235537088646689}
   enemiesPositions: []
   specialRain: 0
-  BasicAggroEnemyPrefab: {fileID: 5017939160169245554, guid: 905cd7ad314a54fc19d3d93c27e5321f, type: 3}
+  rainsMin: 0
+  enemiesMin: 0
+  inkMin: 0
   EnemyTurretPrefab: {fileID: 2670785371601351746, guid: ffc0b96eb929d4adcb88add968f501ed, type: 3}
-  EnemyMagentaPrefab: {fileID: 830981702858744769, guid: 50343e6bbf36c433e925b1a71bdd3c2d, type: 3}
-  EnemyCyanPrefab: {fileID: 4544590936722168257, guid: a70ca6528fc674ead8bf25dab5c99b90, type: 3}
   EnemyYellowCloudPrefab: {fileID: 0}
   EnemiesParent: {fileID: 0}
 --- !u!114 &2917235536485219932
@@ -221,6 +220,9 @@ MonoBehaviour:
   BossDoor: {fileID: 0}
   rain: {fileID: 0}
   inkAttack: {fileID: 0}
+  tongueAttacking: 0
+  canRain: 0
+  rained: 0
 --- !u!114 &2917235536485219928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +240,7 @@ MonoBehaviour:
   - {fileID: 0}
   startPosition: 0
   speed: 10
+  isFlipped: 0
   IsStoped: 0
 --- !u!95 &2172596374549574249
 Animator:
