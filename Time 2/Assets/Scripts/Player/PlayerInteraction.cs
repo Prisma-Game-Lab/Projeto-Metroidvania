@@ -108,6 +108,10 @@ public class PlayerInteraction : MonoBehaviour
             {
                 _uiMaster.ShowLockPanel(_playerStatus.controlValue);
             }
+            else if (_playerVictory.CollectedAll())
+            {
+                _uiMaster.ShowOpenDoorPanel(_playerStatus.controlValue);
+            }
             else
             {
                 _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
@@ -205,6 +209,10 @@ public class PlayerInteraction : MonoBehaviour
         _lockColor = CheckLock();
         if (_lockColor != ObjectColor.None)
             _uiMaster.ShowLockPanel(_playerStatus.controlValue);
+        else if (_playerVictory.CollectedAll())
+        {
+            _uiMaster.ShowOpenDoorPanel(_playerStatus.controlValue);
+        }
         else
             _uiMaster.ShowInteractionPanel(_playerStatus.controlValue);
     }

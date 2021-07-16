@@ -32,6 +32,7 @@ public class UIMaster : MonoBehaviour
     public List<LanguageComponent> LockTexts;
     public List<LanguageComponent> HealTexts;
     public List<LanguageComponent> AddHeartTexts;
+    public List<LanguageComponent> OpenDoorTexts;
     // variavies de monitoramento da UI
     private string _UIItemDescription;
     private string _sceneToGo;
@@ -202,6 +203,12 @@ public class UIMaster : MonoBehaviour
         InteractionPanel.SetActive(true);
     }
 
+    public void ShowOpenDoorPanel(int controlValue)
+    {
+        ShowOpenDoorText(controlValue);
+        InteractionPanel.SetActive(true);
+    }
+
     public void ShowInteractionText(int controlValue)
     {
         switch (controlValue)
@@ -279,6 +286,25 @@ public class UIMaster : MonoBehaviour
                 break;
             case 3://ps
                 InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = AddHeartTexts[3].rightText;
+                break;
+        }
+    }
+
+    public void ShowOpenDoorText(int controlValue)
+    {
+        switch (controlValue)
+        {
+            case 0://teclado1
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = OpenDoorTexts[0].rightText;
+                break;
+            case 1://teclado2
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = OpenDoorTexts[1].rightText;
+                break;
+            case 2://xbox
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = OpenDoorTexts[2].rightText;
+                break;
+            case 3://ps
+                InteractionPanel.transform.GetChild(0).gameObject.GetComponent<Text>().text = OpenDoorTexts[3].rightText;
                 break;
         }
     }
