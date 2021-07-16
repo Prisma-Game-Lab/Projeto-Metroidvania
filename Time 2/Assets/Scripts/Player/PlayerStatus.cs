@@ -337,7 +337,6 @@ public class PlayerStatus : MonoBehaviour
         }
 
         totalLife = data.totalLife;
-        playerHealth.life = totalLife;
         playerHealth.totalLife = totalLife;
         
         NewHeartsId = data.newHeartsId;
