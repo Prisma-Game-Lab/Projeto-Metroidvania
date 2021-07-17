@@ -102535,7 +102535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: LifeHUDBars.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: HealTexts.Array.data[0]
@@ -102601,6 +102601,10 @@ PrefabInstance:
       propertyPath: LifeHUDBars.Array.data[5]
       value: 
       objectReference: {fileID: 6617677296500515365}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: LifeHUDBars.Array.data[6]
+      value: 
+      objectReference: {fileID: 6617677296500515366}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: AddHeartTexts.Array.data[0]
       value: 
@@ -103113,6 +103117,17 @@ RectTransform:
 --- !u!114 &6617677296500515365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5204465366852778511, guid: b404963932752984ea80a1fd28ae0d4e, type: 3}
+  m_PrefabInstance: {fileID: 6617677296500515363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6617677296500515366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1696037558036048584, guid: b404963932752984ea80a1fd28ae0d4e, type: 3}
   m_PrefabInstance: {fileID: 6617677296500515363}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

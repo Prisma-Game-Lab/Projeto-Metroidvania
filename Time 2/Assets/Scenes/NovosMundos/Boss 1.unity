@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1356,7 +1356,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6a00c6e5ffc8b4779b0fe043d1a33ce3, type: 2}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: LifeHUDBars.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: LifeHUDBars.Array.data[0]
@@ -1382,6 +1382,10 @@ PrefabInstance:
       propertyPath: LifeHUDBars.Array.data[5]
       value: 
       objectReference: {fileID: 1386317692}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: LifeHUDBars.Array.data[6]
+      value: 
+      objectReference: {fileID: 446457312}
     - target: {fileID: 2892224073605061357, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -21850,6 +21854,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445658492}
   m_CullTransparentMesh: 1
+--- !u!114 &446457312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1696037558036048584, guid: b404963932752984ea80a1fd28ae0d4e, type: 3}
+  m_PrefabInstance: {fileID: 1514421837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &455871184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29590,6 +29605,7 @@ GameObject:
   - component: {fileID: 886634576}
   - component: {fileID: 886634575}
   - component: {fileID: 886634574}
+  - component: {fileID: 886634578}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -29673,6 +29689,18 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: -0.00012207031}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &886634578
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886634573}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &887417533
 GameObject:
   m_ObjectHideFlags: 0
@@ -127466,6 +127494,14 @@ PrefabInstance:
     - target: {fileID: 7064708065589594681, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244160110855341192, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1818840677}
+    - target: {fileID: 7244160110855341192, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToLobby
       objectReference: {fileID: 0}
     - target: {fileID: 8214340884043167795, guid: 62e6d092cdc577745b7b61252d5db622, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
