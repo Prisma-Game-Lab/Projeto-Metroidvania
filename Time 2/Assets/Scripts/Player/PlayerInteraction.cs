@@ -40,6 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     
     public void Interaction(InputAction.CallbackContext ctx)
     {
+
         if (ctx.started)
         {
             if (onDoor)
