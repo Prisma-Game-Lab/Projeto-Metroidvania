@@ -61,7 +61,7 @@ public class BossMovement : MonoBehaviour
     {
         if (!gameObject.GetComponent<BossLogic>().tongueAttacking)
         {
-            if (!isFlipped && !PlayerInRange())
+            if (!isFlipped && PlayerInRange())
             {
                 Vector3 newLocalScale = transform.localScale;
                 newLocalScale.x *= -1;
@@ -70,7 +70,7 @@ public class BossMovement : MonoBehaviour
             }
 
             // movendo para a direta flipado. Vai flipar 
-            if (isFlipped && PlayerInRange())
+            if (isFlipped && !PlayerInRange())
             {
                 Vector3 newLocalScale = transform.localScale;
                 newLocalScale.x *= -1;

@@ -179,6 +179,8 @@ public class BossLogic : MonoBehaviour
         AudioManager.instance.Play("Boss_Final");
         AudioManager.instance.Stop("Boss");
         AudioManager.instance.Play("Boss_Morte");
+        GameObject Enemies = gameObject.GetComponent<Rain>().EnemiesParent;
+        Destroy(Enemies);
         BossDoor.SetActive(false);//trocar por animacao da porta sendo destruida
         Destroy(gameObject);//animacao do boss morrendo
     }

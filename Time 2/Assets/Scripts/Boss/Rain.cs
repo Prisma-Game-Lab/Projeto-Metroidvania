@@ -24,11 +24,11 @@ public class Rain : MonoBehaviour
     public int cloudsLimit;
     //[Header("Quantidade de camadas de agua")]
     //public int SpecialRainRoundsNumber;
-    [Header("Tempo de duração da chuva")]
+    [Header("Tempo de duraï¿½ï¿½o da chuva")]
     public float rainTime;
     [Header("Tempo entre o boss jogar a tinta e a tinta cair")]
     public float spitTime;
-    [Header("Tempo que o chão permanece com tinta, após a chuva")]
+    [Header("Tempo que o chï¿½o permanece com tinta, apï¿½s a chuva")]
     public float inkFloorTime;
     [Header("Altura do limite superior da fase")]
     public float ySuperiorLimit;
@@ -167,8 +167,10 @@ public class Rain : MonoBehaviour
     private IEnumerator WaitRain()
     {
         spitParticles.gameObject.SetActive(true);
+        gameObject.GetComponent<Animator>().SetTrigger("Spit");
         yield return new WaitForSeconds(spitTime);
         SetRainActive();
+        gameObject.GetComponent<Animator>().SetTrigger("Idle");
         yield return new WaitForSeconds(rainTime);
         SetRainTilesActive();
         SetEnemyPosition();
@@ -301,7 +303,7 @@ public class Rain : MonoBehaviour
          }
          else
          {
-             Debug.Log("Posicao já ocupada");
+             Debug.Log("Posicao jï¿½ ocupada");
          }
      }*/
 
