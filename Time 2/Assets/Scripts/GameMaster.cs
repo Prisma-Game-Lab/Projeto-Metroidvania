@@ -125,8 +125,7 @@ public class GameMaster : MonoBehaviour
         StartCoroutine(WaitFadeCutscene());
 
     }
-
-
+    
     public void LoadGame()
     {
         playerDestination.SceneToGo = "Lobby";
@@ -178,6 +177,7 @@ public class GameMaster : MonoBehaviour
     private IEnumerator WaitFadeCutscene()
     {
         yield return new WaitForSeconds(1f);
+        AudioManager.instance.Stop("Lobby");
         SceneManager.LoadScene("Cutscene");
     }
     private IEnumerator WaitFadeLobby()

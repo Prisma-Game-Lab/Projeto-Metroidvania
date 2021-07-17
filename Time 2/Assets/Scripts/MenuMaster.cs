@@ -24,6 +24,7 @@ public class MenuMaster : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
+        AudioManager.instance.Play("Lobby");
         _gameMaster = GetComponent<GameMaster>();
         EventSystem.current.SetSelectedGameObject(firstButtonLanguageUI);
         if (PlayerPrefs.GetInt("FirstGame")==1)
