@@ -160,7 +160,7 @@ public class UIMaster : MonoBehaviour
 
     public void SelectLifeHUDBar()
     {
-        int idx = life.totalLife - 5;
+        int idx = life.totalLife - life.startLife;
         foreach (Image lifeBar in LifeHUDBars)
         {
             lifeBar.gameObject.SetActive(false);
