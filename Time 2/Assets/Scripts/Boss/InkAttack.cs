@@ -90,6 +90,7 @@ public class InkAttack : MonoBehaviour
         AudioManager.instance.Play("Cuspe");
         // criar a bala 
         GameObject bullet = Instantiate(bossSpit, TonguePosition.transform.position, _transform.rotation);
+        bullet.transform.up = MovePos;
         bullet.GetComponent<InkSpit>().inkTileFloor = inkTileFloor;
         bullet.GetComponent<InkSpit>().inkTileWall = inkTileWall;
         bullet.GetComponent<InkSpit>().floor = floor;
