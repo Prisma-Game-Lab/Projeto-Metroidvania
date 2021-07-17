@@ -58,8 +58,7 @@ public class PlaneSkill : MonoBehaviour
                  _playerStatus.playerMovement._jumpbreak = false;
                  _playerStatus.playerAnimator.SetTrigger("PlaneTrigger");
                  _playerStatus.playerAnimator.SetBool("Player", false);
-                 AudioManager.instance.Play("Aviao");
-                 
+
                  if (_playerStatus.rb.velocity.y < -5f)
                  {
                      _playerStatus.rb.velocity = new Vector2(_playerStatus.rb.velocity.x, 0f);

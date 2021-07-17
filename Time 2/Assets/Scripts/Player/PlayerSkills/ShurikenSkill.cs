@@ -68,7 +68,6 @@ public class ShurikenSkill : MonoBehaviour
                 
                 _playerStatus.playerAnimator.SetBool("Player", false);
                 _playerStatus.playerAnimator.SetTrigger("ShurikenTrigger");
-                AudioManager.instance.Play("Ninja");
             }
             else
             {

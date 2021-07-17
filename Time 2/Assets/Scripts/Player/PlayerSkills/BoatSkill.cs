@@ -67,7 +67,6 @@ public class BoatSkill : MonoBehaviour
                 _playerStatus.playerAnimator.SetTrigger("BoatTrigger");
                 _playerStatus.playerAnimator.SetBool("Boat", true);
                 _playerStatus.playerAnimator.SetBool("Player", false);
-                AudioManager.instance.Play("Barco");
             }
             else
             {
