@@ -15,6 +15,8 @@ public class UIMaster : MonoBehaviour
     public GameObject LifeHud;
     public GameObject GameOverText;
     public GameObject LifeIcon;
+    public GameObject LifeBorder;
+    public List<Image> LifeHUDBars;
     public PlayerHealth life;
     public ItemDescription itemDescription;
     public GameObject InteractionPanel;
@@ -39,15 +41,21 @@ public class UIMaster : MonoBehaviour
     private string _sceneToGo;
     private int _UILife;
     private List<GameObject> _UILifes;
+    private int _UILifeBorder;
+    private List<GameObject> _UILifeBorders;
 
     private void Start()
     {
         _UILife = life.life;
+        _UILifeBorder = life.totalLife;
         itemDescription.description = "";
         _UIItemDescription = itemDescription.description;
         _sceneToGo = playerDestination.SceneToGo;
         _UILifes = new List<GameObject>();
         CreateLifeIcon(_UILife);
+        _UILifeBorders = new List<GameObject>();
+        CreateLifeBorder(_UILifeBorder);
+        SelectLifeHUDBar();
     }
 
     private void Awake()
@@ -107,6 +115,8 @@ public class UIMaster : MonoBehaviour
         else
         {
             CreateLifeIcon(life.life);
+            CreateLifeBorder(life.totalLife);
+            SelectLifeHUDBar();
         }
     }
 
@@ -123,21 +133,49 @@ public class UIMaster : MonoBehaviour
         }
     }
 
+    private void CreateLifeBorder(int totalLife)
+    {
+        float offset = 50f;
+        for (int i = 0; i < totalLife; i++)
+        {
+            Vector3 position = LifeHud.transform.position;
+            position.x += offset * i;
+            GameObject Life = Instantiate(LifeBorder, position, LifeHud.transform.rotation);
+            Life.transform.SetParent(LifeHud.transform);
+            _UILifeBorders.Add(Life);
+        }
+    }
+
     private void ReRenderLifes()
     {
         foreach (var life in _UILifes)
         {
             Destroy(life);
         }
+        foreach (var life in _UILifeBorders)
+        {
+            Destroy(life);
+        }
     }
 
+    public void SelectLifeHUDBar()
+    {
+        int idx = life.totalLife - 5;
+        foreach (Image lifeBar in LifeHUDBars)
+        {
+            lifeBar.gameObject.SetActive(false);
+        }
+        LifeHUDBars[idx].gameObject.SetActive(true);
+    }
     private void Update()
     {
         // verifica se os ScriptableObjects estao mudando OBS: Mudar para eventos
-        if (_UILife != life.life)
+        
+        if (_UILife != life.life || _UILifeBorder != life.totalLife)
         {
-            _UILife = life.life;
             ReRenderLifes();
+            _UILife = life.life;
+            _UILifeBorder = life.totalLife;
             RemoveLife();
         }
 
