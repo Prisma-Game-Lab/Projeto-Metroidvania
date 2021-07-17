@@ -36,7 +36,6 @@ public class BossLogic : MonoBehaviour
     
     void Start()
     {
-        AudioManager.instance.Play("Boss");
         // Somente para teste 
         tongueAttack = gameObject.GetComponent<TongueAttack>();
         bossMovement = gameObject.GetComponent<BossMovement>();
@@ -50,7 +49,12 @@ public class BossLogic : MonoBehaviour
         _canTakeDamage = true;
         _animator = gameObject.GetComponent<Animator>();
         _animator.SetBool("Black", true);
-        _animator.SetTrigger("Prepare");
+        _animator.SetTrigger("FadeOut");
+        
+    }
+
+    public void StartLogic()
+    {
         StartCoroutine(PerformRounds());
     }
 
