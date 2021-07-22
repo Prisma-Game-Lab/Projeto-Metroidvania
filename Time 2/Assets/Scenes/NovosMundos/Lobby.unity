@@ -64893,7 +64893,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 869038655}
-  - component: {fileID: 869038656}
   m_Layer: 0
   m_Name: Folhas (1)
   m_TagString: Untagged
@@ -64921,20 +64920,6 @@ Transform:
   m_Father: {fileID: 551196723}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &869038656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869038654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!1 &870491810
 GameObject:
   m_ObjectHideFlags: 0
@@ -64944,7 +64929,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870491811}
-  - component: {fileID: 870491812}
   m_Layer: 0
   m_Name: Folhas
   m_TagString: Untagged
@@ -64972,20 +64956,6 @@ Transform:
   m_Father: {fileID: 383502427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &870491812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870491810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!1 &872225497
 GameObject:
   m_ObjectHideFlags: 0
@@ -68425,7 +68395,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030492385}
-  - component: {fileID: 1030492386}
   m_Layer: 0
   m_Name: Folhas (1)
   m_TagString: Untagged
@@ -68453,20 +68422,6 @@ Transform:
   m_Father: {fileID: 719458632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.832}
---- !u!114 &1030492386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030492384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!1 &1035536890
 GameObject:
   m_ObjectHideFlags: 0
@@ -75547,7 +75502,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306658513}
-  - component: {fileID: 1306658514}
   m_Layer: 0
   m_Name: Folhas (1)
   m_TagString: Untagged
@@ -75575,20 +75529,6 @@ Transform:
   m_Father: {fileID: 1348541041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1306658514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306658512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!114 &1307094284 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1509018957269624061, guid: dd0143b0c480941a8b2515a42cb022aa, type: 3}
@@ -91688,7 +91628,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1978615084}
-  - component: {fileID: 1978615085}
   m_Layer: 0
   m_Name: Folhas (1)
   m_TagString: Untagged
@@ -91716,20 +91655,6 @@ Transform:
   m_Father: {fileID: 876995647}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.832}
---- !u!114 &1978615085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978615083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!1 &1980540602
 GameObject:
   m_ObjectHideFlags: 0
@@ -95049,7 +94974,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118717093}
-  - component: {fileID: 2118717094}
   m_Layer: 0
   m_Name: Folhas
   m_TagString: Untagged
@@ -95077,20 +95001,6 @@ Transform:
   m_Father: {fileID: 1565713030}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2118717094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118717092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e600c2aa44116a24191fc1f76bf4e6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPlayer: {fileID: 309678963}
-  speedParallax: 0.1
 --- !u!114 &2122514586 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7687356141193882652, guid: 3005fa27a52124e9abde1091734a0061, type: 3}
