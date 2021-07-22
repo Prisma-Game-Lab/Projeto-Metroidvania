@@ -199,6 +199,7 @@ public class GameMaster : MonoBehaviour
     public void ResetGame()
     {
         // parar as musicas de outros leveis
+        AudioManager.instance.Stop("Boss");
         AudioManager.instance.Stop(playerDestination.SceneToGo);
         AudioManager.instance.Stop(teleportDestination.SceneToGo);
         playerDestination.SceneToGo = "Lobby";
@@ -212,6 +213,7 @@ public class GameMaster : MonoBehaviour
 
     public void ReturnToLobby()
     {
+        AudioManager.instance.Stop("Boss");
         // parar as musicas de outros leveis
         AudioManager.instance.Stop(playerDestination.SceneToGo);
         AudioManager.instance.Stop(teleportDestination.SceneToGo);

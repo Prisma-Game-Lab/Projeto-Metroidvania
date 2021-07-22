@@ -54,7 +54,7 @@ public class EnemyAggro : MonoBehaviour
             {
                 _playerTransform = hitWall[0].transform;
             }
-            if(_playerTransform.position.y < _transform.position.y + _sr.bounds.size.y*0.5f)
+            if(_playerTransform.position.y < _transform.position.y + _sr.bounds.size.y*0.25f)
                 return true; 
         }
         

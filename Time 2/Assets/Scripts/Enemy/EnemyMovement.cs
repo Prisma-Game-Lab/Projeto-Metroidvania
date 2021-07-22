@@ -147,7 +147,7 @@ public class EnemyMovement : MonoBehaviour
             hitPosition = new Vector2(position.x + sp.bounds.size.x * 0.5f, position.y);
         
         LayerMask layer = LayerMask.GetMask( "Floor", "Water");
-        Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,0.1f),0f ,layer);
+        Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,sp.bounds.size.y * 0.60f),0f ,layer);
         
         Collider2D[] hitWall2 = {};
         // CIANO ENEMY CHECK 
