@@ -390,7 +390,9 @@ public class PlayerMovement : MonoBehaviour
             layers = LayerMask.GetMask( "Floor");
             Collider2D[] hitGround = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.01f, 0.05f), 0f, layers);
             
-            if (hitGround.Length > 0)
+            
+            
+            if (hitGround.Length > 0 && !CheckWall() && !CheckWallReverse())
             {
                 _playerStatus._lastSafePos = _playerTransform.position;
                 float safeDistance = _playerStatus.playerCollider.size.x * 0.5f;
@@ -518,6 +520,26 @@ public class PlayerMovement : MonoBehaviour
         Vector2 hitPosition = new Vector2(position.x + _collider2D.size.x * 0.5f, position.y);
         if (isFlipped)
             hitPosition = new Vector2(position.x - _collider2D.size.x * 0.5f, position.y);
+        
+        LayerMask layer = LayerMask.GetMask( "Floor");
+        Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f),0f ,layer);
+        
+        // breake floors with ballmode 
+        if (hitWall.Length > 0)
+        {
+            return true; 
+        }
+        
+        return false;
+        
+    }
+    
+    private bool CheckWallReverse()
+    {
+        Vector3 position = transform.position;
+        Vector2 hitPosition = new Vector2(position.x - _collider2D.size.x * 0.5f, position.y);
+        if (isFlipped)
+            hitPosition = new Vector2(position.x + _collider2D.size.x * 0.5f, position.y);
         
         LayerMask layer = LayerMask.GetMask( "Floor");
         Collider2D[] hitWall = Physics2D.OverlapBoxAll(hitPosition, new Vector2(0.1f,_playerStatus.playerCollider.size.y * 0.2f),0f ,layer);
