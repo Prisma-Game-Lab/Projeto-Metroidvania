@@ -73,7 +73,7 @@ public class FinalDoor : MonoBehaviour
                     }
                     break;
                 case ObjectColor.Black:
-                    if (_playerStatus.lockYellow)
+                    if (_playerStatus.lockBlack)
                     {
                         color.SetActive(true);
                         break;
