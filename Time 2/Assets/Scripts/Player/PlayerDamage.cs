@@ -142,12 +142,6 @@ public class PlayerDamage : MonoBehaviour
                 currentInterval = currentInterval - interval;
             }
             ctxDuration -= Time.deltaTime;
-            if (ctxDuration <= duration / 2f)
-            {
-                takingDamage = false;
-
-            }
-
             yield return null;
         }
 
@@ -161,6 +155,7 @@ public class PlayerDamage : MonoBehaviour
     
         _sr.color = _sr.color;
         cantChange = false;
+        takingDamage = false;
 
     }
 
