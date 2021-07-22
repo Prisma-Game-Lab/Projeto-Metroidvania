@@ -275,21 +275,6 @@ public class PlayerStatus : MonoBehaviour
         private void LoadPlayer()
     {
         
-        if(SceneManager.GetActiveScene().name=="Boss 1" || SceneManager.GetActiveScene().name == "Boss2")
-        {
-            gameObject.GetComponent<PlayerAttack>().obtained = true;
-            sword = true;
-            gameObject.GetComponent<BoatSkill>().obtained = true;
-            boat = true;
-            gameObject.GetComponent<PlaneSkill>().obtained = true;
-            airplane = true;
-            gameObject.GetComponent<BallSkill>().obtained = true;
-            ball = true;
-            gameObject.GetComponent<ShurikenSkill>().obtained = true;
-            shuriken = true;
-            playerHealth.life = playerHealth.startLife;
-            return;
-        }
         PlayerData data = SaveSystem.LoadPlayer();
 
         if (data == null)
