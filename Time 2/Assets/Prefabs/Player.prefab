@@ -11022,6 +11022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInteraction: {fileID: 0}
   playerStatus: {fileID: 0}
+  UIMaster: {fileID: 0}
 --- !u!114 &6875496449765456379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11157,13 +11158,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2357364127393380730}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.2920904, y: -0.74398804, z: -5.510179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.01, z: -5.510179}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2348440294670770224}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &8642274486504648053
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -11797,7 +11798,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: -2.2329264, y: 0.0000015480309, z: 0.5179829}
+    m_Position: {x: 0, y: 0.0000015480309, z: 0.5179829}
     m_Rotation: {x: -0.0005409234, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
