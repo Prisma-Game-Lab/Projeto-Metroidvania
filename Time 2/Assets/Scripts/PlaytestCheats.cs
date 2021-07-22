@@ -45,6 +45,16 @@ public class PlaytestCheats : MonoBehaviour
         _playerStatus.sword = true;
         player.GetComponent<BallSkill>().obtained = true;
         _playerStatus.ball = true;
+        
+        _playerStatus.cyan = true;
+        _playerStatus.black = true;
+        _playerStatus.magenta = true;
+        _playerStatus.yellow = true;
+        
+        _playerStatus.playerHealth.totalLife = 9;
+        _playerStatus.playerHealth.life = 9;
+        
+        
 
         SaveSystem.SavePlayer(_playerStatus);
 
