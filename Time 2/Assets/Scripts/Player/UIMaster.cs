@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 
 public class UIMaster : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class UIMaster : MonoBehaviour
     private List<GameObject> _UILifes;
     private int _UILifeBorder;
     private List<GameObject> _UILifeBorders;
+
 
     private void Start()
     {
@@ -363,6 +365,7 @@ public class UIMaster : MonoBehaviour
                 break;
         }
     }
+    
 
     public void ShowColorText()
     {

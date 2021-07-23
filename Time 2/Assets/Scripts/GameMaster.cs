@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+
 
 public class GameMaster : MonoBehaviour
 {
@@ -26,7 +28,8 @@ public class GameMaster : MonoBehaviour
     public GameObject firstButtonControls;
     public GameObject player;
     [HideInInspector] public bool onOtherMenu = false;
-
+    private bool _uiActionsEnable = true;
+    
     void Awake()
     { 
         if (instance == null)
@@ -37,6 +40,7 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(this);
         }
+        
     }
 
     private void Start()
@@ -45,8 +49,11 @@ public class GameMaster : MonoBehaviour
         {
             _playerStatus = player.GetComponent<PlayerStatus>();
             this.gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.GlobalActions);
+            
+           
         }
-       
+        if(SceneManager.GetActiveScene().name != "FirstScene")
+            ToogleUIActions();
     }
 
 
@@ -73,6 +80,7 @@ public class GameMaster : MonoBehaviour
         if (ctx.started)
         {
             if (!onOtherMenu){
+                ToogleUIActions();
                 if (_paused)
                 {
                     if(life.life > 0)
@@ -100,6 +108,8 @@ public class GameMaster : MonoBehaviour
 
     public void BackToGame()
     {
+        
+        ToogleUIActions();
         PauseMenuUI.SetActive(false);
         if (life.life > 0)
             player.GetComponent<PlayerInput>().SwitchCurrentActionMap(_playerStatus.PlayerActions);
@@ -225,9 +235,21 @@ public class GameMaster : MonoBehaviour
         playerDestination.door = -1;
         SceneManager.LoadScene("Lobby");
     }
+    
+    public void ToogleUIActions()
+    {
+        if(_uiActionsEnable)
+            EventSystem.current.GetComponent<InputSystemUIInputModule>().actionsAsset.Disable();
+        else 
+            EventSystem.current.GetComponent<InputSystemUIInputModule>().actionsAsset.Enable();
+
+        _uiActionsEnable = !_uiActionsEnable;
+    }
 
     public void GoToMenuFromDeath()
     {
+        
+        ToogleUIActions();
         AudioManager.instance.Stop(playerDestination.SceneToGo);
         SceneManager.LoadScene("FirstScene");
     }

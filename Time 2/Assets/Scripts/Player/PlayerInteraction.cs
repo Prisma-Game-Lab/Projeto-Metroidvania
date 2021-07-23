@@ -70,6 +70,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if (onMailBox)
             {
+                GameMaster.GetComponent<GameMaster>().ToogleUIActions();
                 AudioManager.instance.Play("Carimbo");
                 _uiMaster.InteractionPanel.SetActive(false);
                 _mailBox.mailBoxUI.SetActive(true);

@@ -3128,7 +3128,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 4502412055082496612, guid: be078d6f1d42c4151ae4f102a7414fc1, type: 3}
   m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: be078d6f1d42c4151ae4f102a7414fc1, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: be078d6f1d42c4151ae4f102a7414fc1, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
 --- !u!114 &401296097
 MonoBehaviour:
@@ -7621,7 +7621,7 @@ MonoBehaviour:
   languageUI: {fileID: 2000816943}
   firstButtonMain: {fileID: 1426536321}
   firstButtonSettings: {fileID: 2114465937}
-  firstButtonControls: {fileID: 0}
+  firstButtonControls: {fileID: 923931750}
   firstButtonfirstControlUI: {fileID: 1859662988}
   firstButtonCredits: {fileID: 168613204}
   firstButtonWarning: {fileID: 947712762}
