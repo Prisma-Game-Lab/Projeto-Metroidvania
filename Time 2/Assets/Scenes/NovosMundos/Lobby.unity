@@ -54375,6 +54375,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113566724464686716, guid: 7cb598ec16dba452d9968ff1e60c117e, type: 3}
+      propertyPath: skill
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8113566724464686716, guid: 7cb598ec16dba452d9968ff1e60c117e, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1616248052}
@@ -81792,6 +81796,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113566724464686715, guid: 7cb598ec16dba452d9968ff1e60c117e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8113566724464686716, guid: 7cb598ec16dba452d9968ff1e60c117e, type: 3}
+      propertyPath: skill
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8113566724464686716, guid: 7cb598ec16dba452d9968ff1e60c117e, type: 3}
