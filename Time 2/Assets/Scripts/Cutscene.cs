@@ -13,12 +13,19 @@ public class Cutscene : MonoBehaviour
     public Animator fade;
     public GameObject firstButtonCutscene;
     public string SceneToLoadNext;
+    private int _firstGameValue;
 
     // Start is called before the first frame update
     void Start()
     {
+        _firstGameValue = PlayerPrefs.GetInt("FirstGame");
         fade.SetTrigger("Fade");
         _videoDuration = video.clip.length;
+        if(_firstGameValue==0)
+            video.SetDirectAudioVolume(0, 0.5f);
+        else
+            video.SetDirectAudioVolume(0, PlayerPrefs.GetFloat("Backgroundprefs") / 100f);
+
         StartCoroutine(WaitVideo());
         EventSystem.current.SetSelectedGameObject(firstButtonCutscene);
     }
