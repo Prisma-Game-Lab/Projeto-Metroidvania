@@ -20,6 +20,8 @@ public class GateComponent : MonoBehaviour
         {
             destination.door = doorToGo;
             // para a musica da fase 
+            AudioManager.instance.Stop("Boss");
+            AudioManager.instance.Stop("Boss_Final");
             AudioManager.instance.Stop(destination.SceneToGo);
             float waitSeconds = other.GetComponent<PlayerGateCinematic>().PerformWarpAnimation(typerOfGate == TyperOfGate.Left);
             StartCoroutine(WaitFade(waitSeconds));
