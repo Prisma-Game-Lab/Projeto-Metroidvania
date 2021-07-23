@@ -89,6 +89,7 @@ public class UIMaster : MonoBehaviour
     public void KillPlayer()
     {
         //GameOverText.SetActive(true);
+        GameMaster.instance.ToogleUIActions();
         DeathUI.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstDeathButton);
         Destroy(gameObject);
