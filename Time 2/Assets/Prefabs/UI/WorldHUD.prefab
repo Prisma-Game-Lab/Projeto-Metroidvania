@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 7803428993689776547}
   - component: {fileID: 7803428993689776549}
   - component: {fileID: 7803428993689776548}
+  - component: {fileID: 3818133423343010542}
   m_Layer: 5
   m_Name: WorldHUD
   m_TagString: Untagged
@@ -467,3 +468,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3818133423343010542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803428993689776546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fce24e513827e8419d14b13cbc8f4d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  ButtonIcons:
+  - {fileID: 4694072057007310647}
+  - {fileID: 6573533946739342890}
+  - {fileID: 2026495325173548772}
+  - {fileID: 1451286843096013982}
