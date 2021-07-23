@@ -66,6 +66,7 @@ public class MenuMaster : MonoBehaviour
         creditsUI.SetActive(false);
         settingsUI.SetActive(false);
         controlsUI.SetActive(false);
+        warningUI.SetActive(false);
         if (CheckLoad())
         {
             EventSystem.current.SetSelectedGameObject(loadGameButton);
