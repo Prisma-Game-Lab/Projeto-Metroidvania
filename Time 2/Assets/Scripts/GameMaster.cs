@@ -79,7 +79,7 @@ public class GameMaster : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!onOtherMenu){
+            if (!onOtherMenu && life.life>0){
                 ToogleUIActions();
                 if (_paused)
                 {

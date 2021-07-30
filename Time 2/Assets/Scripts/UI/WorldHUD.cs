@@ -9,13 +9,15 @@ public class WorldHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetMapHUDButton(Player.GetComponent<PlayerStatus>().controlValue);
+        if(Player != null)
+            SetMapHUDButton(Player.GetComponent<PlayerStatus>().controlValue);
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetMapHUDButton(Player.GetComponent<PlayerStatus>().controlValue);
+        if (Player != null)
+            SetMapHUDButton(Player.GetComponent<PlayerStatus>().controlValue);
     }
 
     public void SetMapHUDButton(int controlValue)
