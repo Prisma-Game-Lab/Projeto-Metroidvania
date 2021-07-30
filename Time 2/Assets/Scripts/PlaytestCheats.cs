@@ -23,7 +23,7 @@ public class PlaytestCheats : MonoBehaviour
     }
 
     public void GetAllStampsAndSkills(InputAction.CallbackContext ctx)
-    {
+    {/*
         _playerstatus.SetStampStatus(stampDestination.magenta);
         _playerstatus.SetStampStatus(stampDestination.cyan);
         _playerstatus.SetStampStatus(stampDestination.yellow);
@@ -59,6 +59,6 @@ public class PlaytestCheats : MonoBehaviour
         SaveSystem.SavePlayer(_playerstatus);
 
         Debug.Log("Os Cheats estao comentados");
-
+*/
     }
 }
