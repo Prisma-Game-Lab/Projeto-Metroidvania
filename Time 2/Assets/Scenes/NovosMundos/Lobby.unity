@@ -96477,6 +96477,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1866405393}
     - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 248906710}
+    - target: {fileID: 2892224073605061356, guid: 827232d0f6b3749ceac184e658d24c6b, type: 3}
       propertyPath: DeathUI
       value: 
       objectReference: {fileID: 990818934}
