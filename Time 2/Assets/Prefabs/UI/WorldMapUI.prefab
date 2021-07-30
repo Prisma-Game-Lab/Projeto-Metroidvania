@@ -348,7 +348,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   mapImages: {fileID: 2248325160633501881}
   pin: {fileID: 2248325160419090591}
-  gameMaster: {fileID: 0}
+  GameMaster: {fileID: 0}
   mapActivated: 0
 --- !u!1 &2248325160419090589
 GameObject:
@@ -527,7 +527,7 @@ RectTransform:
   m_GameObject: {fileID: 2248325160569776274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 17.161171, y: 8.6892, z: 8.6892}
+  m_LocalScale: {x: 106.450745, y: 53.89911, z: 53.89911}
   m_Children: []
   m_Father: {fileID: 2248325160633501882}
   m_RootOrder: 0
