@@ -28,6 +28,7 @@ public class UIMaster : MonoBehaviour
     public LanguageComponent BlockedText;
     public GameObject DeathUI;
     public GameObject firstDeathButton;
+    public GameObject Canvas;
 
     public Destination playerDestination;
 
@@ -126,26 +127,33 @@ public class UIMaster : MonoBehaviour
 
     private void CreateLifeIcon(int actualLife)
     {
-        float offset = 50f;
+        float offset = Canvas.GetComponent<RectTransform>().localScale.x *60;
         for (int i = 0; i < actualLife; i++)
         {
             Vector3 position = LifeHud.transform.position;
             position.x += offset * i;
             GameObject Life = Instantiate(LifeIcon, position, LifeHud.transform.rotation);
-            Life.transform.SetParent(LifeHud.transform);
+            //GameObject Life = Instantiate(LifeIcon);
+            RectTransform rect = Life.GetComponent<Image>().rectTransform;
+            rect.SetParent(Canvas.transform);
+            rect.localScale = Vector3.one;
+            //Life.GetComponent<Image>().rectTransform.localScale = new Vector3(1f, 1f, 1f);
             _UILifes.Add(Life);
         }
     }
 
     private void CreateLifeBorder(int totalLife)
     {
-        float offset = 50f;
+        float offset = Canvas.GetComponent<RectTransform>().localScale.x * 60;
         for (int i = 0; i < totalLife; i++)
         {
             Vector3 position = LifeHud.transform.position;
             position.x += offset * i;
             GameObject Life = Instantiate(LifeBorder, position, LifeHud.transform.rotation);
-            Life.transform.SetParent(LifeHud.transform);
+            //Life.transform.SetParent(LifeHud.transform);
+            RectTransform rect = Life.GetComponent<Image>().rectTransform;
+            rect.SetParent(Canvas.transform);
+            rect.localScale = Vector3.one;
             _UILifeBorders.Add(Life);
         }
     }
