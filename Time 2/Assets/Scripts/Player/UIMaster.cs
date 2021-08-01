@@ -29,6 +29,7 @@ public class UIMaster : MonoBehaviour
     public GameObject DeathUI;
     public GameObject firstDeathButton;
     public GameObject Canvas;
+    public GameObject LifeParent;
 
     public Destination playerDestination;
 
@@ -135,7 +136,8 @@ public class UIMaster : MonoBehaviour
             GameObject Life = Instantiate(LifeIcon, position, LifeHud.transform.rotation);
             //GameObject Life = Instantiate(LifeIcon);
             RectTransform rect = Life.GetComponent<Image>().rectTransform;
-            rect.SetParent(Canvas.transform);
+            //rect.SetParent(Canvas.transform);
+            rect.SetParent(LifeParent.transform);
             rect.localScale = Vector3.one;
             //Life.GetComponent<Image>().rectTransform.localScale = new Vector3(1f, 1f, 1f);
             _UILifes.Add(Life);
@@ -152,7 +154,8 @@ public class UIMaster : MonoBehaviour
             GameObject Life = Instantiate(LifeBorder, position, LifeHud.transform.rotation);
             //Life.transform.SetParent(LifeHud.transform);
             RectTransform rect = Life.GetComponent<Image>().rectTransform;
-            rect.SetParent(Canvas.transform);
+            //rect.SetParent(Canvas.transform);
+            rect.SetParent(LifeParent.transform);
             rect.localScale = Vector3.one;
             _UILifeBorders.Add(Life);
         }
