@@ -109,6 +109,7 @@ public class MenuMaster : MonoBehaviour
     {
         mainMenuUI.SetActive(true);
         languageUI.SetActive(false);
+        firstControlUI.SetActive(false);
         if (CheckLoad())
         {
             EventSystem.current.SetSelectedGameObject(loadGameButton);
